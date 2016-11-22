@@ -370,21 +370,35 @@ function generateVerbQuestion() {
   $('#next').prop('disabled', true);
   $('#response').html("");
   $('#message').html("");
+
+  $('#proceed').hide();
+  $('#input').show();
+  $('#answer').focus();
 }
 
 function processAnswer() {
 
   var response = $('#answer').val();
+  var correct = ((response == window.answer) || (response == window.answer2));
+  var klass = correct ? "correct" : "incorrect";
 
   $('#answer').val("");
-  $('#response').text(response);
+  $('#response').prop('class', klass).text(response);
   $('#next').prop('disabled', false);
-
+  
   if ((response == window.answer) || (response == window.answer2)) {
-    $('#message').html("<div class='correct'>Correct answer.</div>");
+    $('#message').html("");
   } else {
-    $('#message').html("<div class='incorrect'>Incorrect answer. The correct answer was " + window.answer + "</div>");
+    $('#message').html("<div>The correct answer was " + window.answer + "</div>");
   }
+
+  $('#input').hide();
+  $('#proceed').show();
+  $('#proceed input').focus();
+}
+
+function proceed() {
+  generateVerbQuestion();
 }
 
 $('window').ready(function() {

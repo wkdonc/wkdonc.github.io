@@ -1,33 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="drill.css" type="text/css" media="screen"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet"> 
     <script type="text/ecmascript" src="//code.jquery.com/jquery-3.1.1.min.js"></script>
     <script type="text/ecmascript" src="drill.js"></script>
   </head>
   <body>
 
-    <h1>Japanese conjugation test</h1>
-
-    <h2>Question</h2>
-
-    <div id="question"></div>
-
-    <h2>Answer</h2>
-
-    <form action="javascript:processAnswer()">
-      <input autocomplete="off" id="answer">
-    </form>
-
-    <div id="response">
+    <div class="questionOuter">
+      <div id="question"></div>
     </div>
 
-    <div id="message">
+    <div id="input">
+      <form action="javascript:processAnswer()">
+        <input placeholder="答え" autocomplete="off" id="answer">
+      </form>
     </div>
 
-    <div>
-      <input id="next" type="button" value="Generate question" onclick="generateVerbQuestion()">
+    <div id="proceed">
+
+      <form style="float: right" action="javascript:proceed()">
+        <input type="submit" value="Next">
+      </form>
+
+      <div id="response">
+      </div>
+
+      <div id="message">
+      </div>
+
     </div>
+
 <!--
     <h2>Conjugator</h2>
 
