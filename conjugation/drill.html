@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="drill.css" type="text/css" media="screen"/>
+    <script type="text/ecmascript" src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/ecmascript" src="drill.js"></script>
+  </head>
+  <body>
+
+    <h1>Japanese conjugation test</h1>
+
+    <h2>Question</h2>
+
+    <div id="question"></div>
+
+    <h2>Answer</h2>
+
+    <form action="javascript:processAnswer()">
+      <input autocomplete="off" id="answer">
+    </form>
+
+    <div id="response">
+    </div>
+
+    <div id="message">
+    </div>
+
+    <div>
+      <input id="next" type="button" value="Generate question" onclick="generateVerbQuestion()">
+    </div>
+<!--
+    <h2>Conjugator</h2>
+
+    <div class="entry"><input id="input" onkeypress="showForms(event)"/></div>
+
+    <h3>Verb</h3>
+
+    <table>
+      <tr>
+        <th>Word</th>
+        <td id="word">
+      </tr>
+      <tr>
+        <th>Masu form</th>
+        <td id="masu">
+      </tr>
+      <tr>
+        <th>Te form</th>
+        <td id="te">
+      </tr>
+      <tr>
+        <th>Present negative</th>
+        <td id="present_negative">
+      </tr>
+      <tr>
+        <th>Past negative informal</th>
+        <td id="past_negative_informal">
+      </tr>
+      <tr>
+        <th>Past informal</th>
+        <td id="past_informal">
+      </tr>
+    </table>
+
+    <h3>Adjective</h3>
+
+    <table>
+      <tr>
+        <th>Present negative form</th>
+        <td id="present_negative_adj">
+      </tr>
+      <tr>
+        <th>Past affirmative form</th>
+        <td id="past_affirmative_adj">
+      </tr>
+    </table>
+    -->
+  </body>
+</html>
