@@ -72,6 +72,41 @@ var words = [
 
   {
     "pos": "verb",
+    "english": "to make",
+    "word": "作る",
+    "kana": "つくる"
+  },
+
+  {
+    "pos": "verb",
+    "english": "to add",
+    "word": "足す",
+    "kana": "たす"
+  },
+
+  {
+    "pos": "verb",
+    "english": "to see",
+    "word": "見る",
+    "kana": "みる"
+  },
+
+  {
+    "pos": "verb",
+    "english": "to rest",
+    "word": "休む",
+    "kana": "やすむ"
+  },
+
+  {
+    "pos": "verb",
+    "english": "to sing",
+    "word": "歌う",
+    "kana": "うたう"
+  },
+
+  {
+    "pos": "verb",
     "english": "to sit",
     "word": "座る",
     "kana": "すわる"
