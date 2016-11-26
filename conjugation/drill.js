@@ -127,6 +127,8 @@ var words = [
   }
 ]
 
+var log = { "history": [] };
+
 Array.prototype.randomElement = function () {
   return this[Math.floor(Math.random() * this.length)]
 }
@@ -399,6 +401,8 @@ function generateVerbQuestion() {
   console.log("Answer = " + answer);
 
   $('#question').text(question);
+
+  window.question = question;
   window.answer = answer;
   window.answer2 = answer2;
 
@@ -409,6 +413,10 @@ function generateVerbQuestion() {
   $('#proceed').hide();
   $('#input').show();
   $('#answer').focus();
+
+  if (log.start == undefined) {
+    log.start = Date.now();
+  }
 }
 
 function processAnswer() {
@@ -416,6 +424,13 @@ function processAnswer() {
   var response = $('#answer').val();
   var correct = ((response == window.answer) || (response == window.answer2));
   var klass = correct ? "correct" : "incorrect";
+
+  log.history.push({
+    "question" : window.question,
+    "response" : response,
+    "answer"   : window.answer,
+    "correct"  : correct
+  });
 
   $('#answer').val("");
   $('#response').prop('class', klass).text(response);
@@ -430,10 +445,60 @@ function processAnswer() {
   $('#input').hide();
   $('#proceed').show();
   $('#proceed input').focus();
+
+  if (log.end == undefined) {
+    log.end = Date.now();
+  }
+
+  updateHistoryView(log);
+}
+
+function updateHistoryView(log) {
+  var review = $('<table>');
+
+  var total = 0;
+  var correct = 0;
+
+  log.history.forEach(function (entry) {
+
+    total++;
+
+    if (entry.correct) {
+      correct++;
+    }
+
+    var tr = $('<tr>');
+
+    var td1 = $('<td>'); 
+    var td2 = $('<td>'); 
+    var td3 = $('<td>'); 
+    var td4 = $('<td>'); 
+
+    td1.text(entry.question);
+    td2.text(entry.answer);
+    td3.text(entry.response);
+    td4.text(entry.correct);
+
+    tr.append(td1);
+    tr.append(td2);
+    tr.append(td3);
+    tr.append(td4);
+
+    review.append(tr);
+  });
+
+  $('#history').empty().append(review);
+
+  $('#history').append("<p>" + correct + " of " + total + " correct.</p>");
+  $('#history').append("<p>" + ((log.end - log.start) / 1000.0) + " seconds.</p>");
 }
 
 function proceed() {
-  generateVerbQuestion();
+  if (log.history.length == 10) {
+    console.log("Finished.");
+  } else {
+    generateVerbQuestion();
+  }
 }
 
 $('window').ready(function() {

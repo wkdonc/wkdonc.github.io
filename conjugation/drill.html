@@ -9,30 +9,36 @@
   </head>
   <body>
 
-    <div class="questionOuter">
-      <div id="question"></div>
-    </div>
+    <div class="quizSection">
 
-    <div id="input">
-      <form action="javascript:processAnswer()">
-        <input placeholder="答え" autocomplete="off" id="answer">
-      </form>
-    </div>
-
-    <div id="proceed">
-
-      <form style="float: right" action="javascript:proceed()">
-        <input type="submit" value="Next">
-      </form>
-
-      <div id="response">
+      <div class="questionOuter">
+        <div id="question"></div>
       </div>
-
-      <div id="message">
+  
+      <div id="input">
+        <form action="javascript:processAnswer()">
+          <input placeholder="答え" autocomplete="off" id="answer">
+        </form>
       </div>
-
+  
+      <div id="proceed">
+  
+        <form style="float: right" action="javascript:proceed()">
+          <input type="submit" value="Next">
+        </form>
+  
+        <div id="response">
+        </div>
+  
+        <div id="message">
+        </div>
+  
+      </div>
+  
+      <div id="history">
+      </div>
+  
     </div>
-
 <!--
     <h2>Conjugator</h2>
 
