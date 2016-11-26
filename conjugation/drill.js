@@ -60,6 +60,7 @@ var words = [
     "pos" : "verb",
     "english": "to eat",
     "word": "食べる",
+    "furigana": "食[た]べる",
     "kana": "たべる"
   },
 
@@ -67,6 +68,7 @@ var words = [
     "pos": "verb",
     "english": "to drink",
     "word": "飲む",
+    "furigana": "飲[の]む",
     "kana": "のむ"
   },
 
@@ -74,6 +76,7 @@ var words = [
     "pos": "verb",
     "english": "to make",
     "word": "作る",
+    "furigana": "作[つく]る",
     "kana": "つくる"
   },
 
@@ -81,6 +84,7 @@ var words = [
     "pos": "verb",
     "english": "to add",
     "word": "足す",
+    "furigana": "足[た]す",
     "kana": "たす"
   },
 
@@ -88,6 +92,7 @@ var words = [
     "pos": "verb",
     "english": "to see",
     "word": "見る",
+    "furigana": "見[み]る",
     "kana": "みる"
   },
 
@@ -95,6 +100,7 @@ var words = [
     "pos": "verb",
     "english": "to rest",
     "word": "休む",
+    "furigana": "休[やす]む",
     "kana": "やすむ"
   },
 
@@ -102,6 +108,7 @@ var words = [
     "pos": "verb",
     "english": "to sing",
     "word": "歌う",
+    "furigana": "歌[うた]う",
     "kana": "うたう"
   },
 
@@ -109,6 +116,7 @@ var words = [
     "pos": "verb",
     "english": "to sit",
     "word": "座る",
+    "furigana": "座[すわ]る",
     "kana": "すわる"
   },
 
@@ -116,6 +124,7 @@ var words = [
     "pos": "verb",
     "english": "to buy as a gift",
     "word": "買い与える",
+    "furigana": "買[か]い与[あた]える",
     "kana": "かいあたえる"
   },
 
@@ -123,6 +132,7 @@ var words = [
     "pos": "verb",
     "english": "to buy as a replacement",
     "word": "買い換える",
+    "furigana": "買[か]い換[か]える",
     "kana": "かいかえる"
   }
 ]
