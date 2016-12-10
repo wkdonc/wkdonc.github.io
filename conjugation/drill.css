@@ -1,5 +1,5 @@
 body {
-  font-family: 'Source Sans Pro', sans-serif; 
+  font-family: 'Amaranth', sans-serif; 
   margin: 0;
 }
 
@@ -65,4 +65,83 @@ body {
 
 .incorrect {
   background: #f88;
+}
+
+div#history,
+div#explanation {
+  margin-left: auto;
+  margin-right: auto;
+  display: table;
+}
+
+table.syllabary {
+  border-collapse: collapse;
+}
+
+table.syllabary td {
+  padding: 12px;
+  font-size: 14px;
+  color: gray;
+  border: 1px solid gray;
+  text-align: center;
+  width: 32px;
+  height: 32px;
+}
+
+table.syllabary td div:first-child {
+  color: black;
+  font-size: 24px;
+}
+
+table.syllabary td.empty {
+  background: #eee;
+}
+
+.answer-correct {
+  color: red;
+}
+
+.answer-wrong {
+  color: blue;
+}
+
+div#history table {
+  border-collapse: collapse;
+}
+
+div#history table th,
+div#history table td {
+  padding: 8px;
+  border: 1px solid gray;
+}:
+
+div#history table th {
+  text-align: left;
+}
+
+/* Tooltip from http://jsfiddle.net/AndreaLigios/jtLbpy62/ */
+
+[tooltip]:before {
+  /* needed - do not touch */
+  content: attr(tooltip);
+  position: absolute;
+  opacity: 0;
+  
+  /* customizable */
+  transition: all 0.15s ease;
+  color: #333;
+  font-size: 12px;
+background: yellow;
+}
+
+[tooltip]:hover:before {
+  /* needed - do not touch */
+  opacity: 1;
+  
+  /* customizable */
+  margin-top: -20px;
+}
+
+[tooltip]:not([tooltip-persistent]):before {
+  pointer-events: none;
 }
