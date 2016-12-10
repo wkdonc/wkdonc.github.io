@@ -397,27 +397,6 @@ function getAdjectiveForms(dictionary_form) {
   }
 }
 
-function showForms(event) {
-
-  if (event.keyCode == 13) {
-
-    var input = $("input").val();
-    var result = new getVerbForms(input);
-
-    $("#word").html(input);
-    $("#masu").html(result["formal"]);
-    $("#te").html(result["te-form"]);
-    $("#present_negative").html(result["negative"]);
-    $("#past_informal").html(result["past"]);
-    $("#past_negative_informal").html(result["past negative"]);
-
-    var result = new getAdjectiveForms(input);
-
-    $("#present_negative_adj").html(result["present negative adj"]);
-    $("#past_affirmative_adj").html(result["past affirmative adj"]);
-  }
-}
-
 var verb_relative_form = {
 
   "dictionary" : {
