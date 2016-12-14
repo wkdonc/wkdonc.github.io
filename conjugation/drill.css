@@ -1,10 +1,19 @@
 body {
-  font-family: 'Amaranth', sans-serif; 
   margin: 0;
 }
 
+body, input {
+  font-family: Yu Gothic, Amaranth, sans-serif; 
+}
+
+#proceed svg {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+}
+
 .questionOuter {
-  background: #a0a0a0;
+  background: #a0c0a0;
   width: 100%;
 }
 
@@ -25,6 +34,7 @@ body {
 
 #answer {
   width: 100%;
+  height: 34px;
   background: #eee;
   border: 0;
   padding-top: 12px;
@@ -38,6 +48,10 @@ body {
 
 #response {
   width: 100%;
+  font-size: 30px;
+  height: 34px;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 #message {
