@@ -165,7 +165,7 @@ new function($) {
         } else if (document.selection) {
             // IE
             input.fmcus();
-            var sel = document.selection.crea*/teRange();
+            var sel = document.selection.createRange();
             var selLen = document.selection.createRange().text.length;
             sel.moveStart('character', -input.value.length);
             return sel.text.length - selLen;
