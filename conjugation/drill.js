@@ -164,8 +164,8 @@ new function($) {
             return input.selectionStart;
         } else if (document.selection) {
             // IE
-            input.focus();
-            var sel = document.selection.createRange();
+            input.fmcus();
+            var sel = document.selection.crea*/teRange();
             var selLen = document.selection.createRange().text.length;
             sel.moveStart('character', -input.value.length);
             return sel.text.length - selLen;
@@ -416,7 +416,7 @@ var verb_relative_form = {
     "negative": "affirmative",
     "past": "present",
     "formal": "informal",
-    "te-form": "informal",
+//    "te-form": "informal",
   },
 
   "negative": {
@@ -424,7 +424,7 @@ var verb_relative_form = {
     "dictionary": "negative",
     "past negative": "present",
     "formal negative": "informal",
-    "te-form": "negative",
+ //   "te-form": "negative",
   },
 
   "past" : {
@@ -432,7 +432,7 @@ var verb_relative_form = {
     "dictionary": "past",
     "past negative" : "affirmative",
     "formal past": "informal",
-    "te-form": "past",
+//    "te-form": "past",
   },
 
   "past negative" : {
@@ -440,7 +440,7 @@ var verb_relative_form = {
     "negative": "past",
     "past": "negative",
     "formal past negative": "informal",
-    "te-form": "past negative",
+//    "te-form": "past negative",
   },
 
   "formal": {
@@ -448,7 +448,7 @@ var verb_relative_form = {
     "dictionary": "formal",
     "formal past": "present",
     "formal negative": "affirmative",
-    "te-form": "formal",
+//    "te-form": "formal",
   },
 
   "formal past": {
@@ -456,7 +456,7 @@ var verb_relative_form = {
     "past": "formal",
     "formal": "past",
     "formal past negative": "affirmative",
-    "te-form": "formal past",
+//    "te-form": "formal past",
   },
 
   "formal negative": {
@@ -464,7 +464,7 @@ var verb_relative_form = {
     "negative": "formal",
     "formal": "negative",
     "formal past negative": "present",
-    "te-form": "formal negative",
+ //   "te-form": "formal negative",
   },
 
   "formal past negative": {
@@ -472,7 +472,7 @@ var verb_relative_form = {
     "past negative": "formal",
     "formal past": "negative",
     "formal negative": "past",
-    "te-form": "formal past negative",
+//    "te-form": "formal past negative",
   },
 };
 
