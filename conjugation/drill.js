@@ -153,6 +153,45 @@ Array.prototype.randomElement = function () {
   return this[Math.floor(Math.random() * this.length)]
 }
 
+// From: http://stackoverflow.com/a/2897510
+
+new function($) {
+    $.fn.getCursorPosition = function() {
+        var input = this.get(0);
+        if (!input) return; // No (input) element found
+        if ('selectionStart' in input) {
+            // Standard-compliant browsers
+            return input.selectionStart;
+        } else if (document.selection) {
+            // IE
+            input.focus();
+            var sel = document.selection.createRange();
+            var selLen = document.selection.createRange().text.length;
+            sel.moveStart('character', -input.value.length);
+            return sel.text.length - selLen;
+        }
+    }
+}(jQuery);
+
+// From: http://stackoverflow.com/questions/499126/jquery-set-cursor-position-in-text-area
+
+new function($) {
+  $.fn.setCursorPosition = function(pos) {
+    if (this.setSelectionRange) {
+      this.setSelectionRange(pos, pos);
+    } else if (this.createTextRange) {
+      var range = this.createTextRange();
+      range.collapse(true);
+      if(pos < 0) {
+        pos = $(this).val().length + pos;
+      }
+      range.moveEnd('character', pos);
+      range.moveStart('character', pos);
+      range.select();
+    }
+  }
+}(jQuery);
+
 function getVerbForms(word) {
 
   function aux(dictionary_form, dictionary_kana) {
@@ -449,6 +488,132 @@ function wordWithFurigana(word) {
   return bits[0];
 }
 
+function processAnswerKey() {
+
+  var el = $('#answer');
+
+  var pos = el.getCursorPosition();
+  var val = el.val();
+
+  var last1 = val.slice(pos - 1, pos);
+  var last2 = val.slice(pos - 2, pos);
+  var last3 = val.slice(pos - 3, pos);
+
+  var replace1 = {
+    "a" : "あ", "i" : "い", "u" : "う", "e" : "え", "o" : "お"
+  };
+
+  var replace2 = {
+
+    "ka" : "か", "ki" : "き", "ku" : "く", "ke" : "け", "ko" : "こ",
+    "sa" : "さ", "si" : "し", "su" : "す", "se" : "せ", "so" : "そ",
+    "ta" : "た", "ti" : "ち", "tu" : "つ", "te" : "て", "to" : "と",
+    "na" : "な", "ni" : "に", "nu" : "ぬ", "ne" : "ね", "no" : "の",
+    "ha" : "は", "hi" : "ひ", "hu" : "ふ", "he" : "へ", "ho" : "ほ",
+    "ma" : "ま", "mi" : "み", "mu" : "む", "me" : "め", "mo" : "も",
+    "ra" : "ら", "ri" : "り", "ru" : "る", "re" : "れ", "ro" : "ろ",
+    "ga" : "が", "gi" : "ぎ", "gu" : "ぐ", "ge" : "げ", "go" : "ご",
+    "za" : "ざ", "zi" : "じ", "zu" : "ず", "ze" : "ぜ", "zo" : "ぞ",
+    "da" : "だ", "di" : "ぢ", "du" : "づ", "de" : "で", "do" : "ど",
+    "ba" : "ば", "bi" : "び", "bu" : "ぶ", "be" : "べ", "bo" : "ぼ",
+    "pa" : "ぱ", "pi" : "ぴ", "pu" : "ぷ", "pe" : "ぺ", "po" : "ぽ",
+
+    "qa" : "くぁ", "qi" : "くぃ", "qu" : "く", "qe" : "くぇ", "qo" : "くぉ",
+    "wa" : "わ", "wi" : "うぃ", "wu" : "う", "we" : "うぇ", "wo" : "を",
+    "ya" : "や", "yi" : "い", "yu" : "ゆ", "ye" : "いぇ", "yo" : "よ",
+    "fa" : "ふぁ", "fi" : "ふぃ", "fu" : "ふ", "fe" : "ふぇ", "fo" : "ふぉ",
+    "ja" : "じゃ", "ji" : "じ", "ju" : "じゅ", "je" : "じぇ", "jo" : "じょ",
+    "la" : "ぁ", "li" : "ぃ", "lu" : "ぅ", "le" : "ぇ", "lo" : "ぉ",
+    "za" : "ざ", "zi" : "じ", "zu" : "ず", "ze" : "ぜ", "zo" : "ぞ",
+    "xa" : "ぁ", "xi" : "ぃ", "xu" : "ぅ", "xe" : "ぇ", "xo" : "ぉ",
+    "ca" : "か", "ci" : "し", "cu" : "く", "ce" : "せ", "co" : "こ",
+    "va" : "ヴぁ", "vi" : "ヴぃ", "vu" : "ヴ", "ve" : "ヴぇ", "vo" : "ヴぉ",
+
+    "lu" : "っ",
+
+    "nn" : "ん",
+
+    "nb" : "んb",
+    "nc" : "んc",
+    "nd" : "んd",
+    "nf" : "んf",
+    "ng" : "んg",
+    "nh" : "んh",
+    "nj" : "んj",
+    "nk" : "んk",
+    "nl" : "んl",
+    "nm" : "んm",
+    "np" : "んp",
+    "nq" : "んq",
+    "nr" : "んr",
+    "ns" : "んs",
+    "nt" : "んt",
+    "nv" : "んv",
+    "nw" : "んw",
+    "nx" : "んx",
+    "nz" : "んz",
+
+    "aa" : "っa",
+    "bb" : "っb",
+    "cc" : "っc",
+    "dd" : "っd",
+    "ee" : "っe",
+    "ff" : "っf",
+    "gg" : "っg",
+    "hh" : "っh",
+    "ii" : "っi",
+    "jj" : "っj",
+    "kk" : "っk",
+    "ll" : "っl",
+    "mm" : "っm",
+    "oo" : "っo",
+    "pp" : "っp",
+    "qq" : "っq",
+    "rr" : "っr",
+    "ss" : "っs",
+    "tt" : "っt",
+    "uu" : "っu",
+    "vv" : "っv",
+    "ww" : "っw",
+    "xx" : "っx",
+    "yy" : "っy",
+    "zz" : "っz",
+  };
+
+  var replace3 = {
+
+    "kya" : "きゃ", "kyi" : "きぃ", "kyu" : "きゅ", "kye" : "きぇ", "kyo" : "きょ",
+    "sya" : "しゃ", "syi" : "しぃ", "syu" : "しゅ", "sye" : "しぇ", "syo" : "しょ",
+    "tya" : "ちゃ", "tyi" : "ちぃ", "tyu" : "ちゅ", "tye" : "ちぇ", "tyo" : "ちょ",
+    "nya" : "にゃ", "nyi" : "にぃ", "nyu" : "にゅ", "nye" : "にぇ", "nyo" : "にょ",
+    "hya" : "ひゃ", "hyi" : "ひぃ", "hyu" : "ひゅ", "hye" : "ひぇ", "hyo" : "ひょ",
+    "mya" : "みゃ", "myi" : "みぃ", "myu" : "みゅ", "mye" : "みぇ", "myo" : "みょ",
+    "rya" : "りゃ", "ryi" : "りぃ", "ryu" : "りゅ", "rye" : "りぇ", "ryo" : "りょ",
+    "gya" : "ぎゃ", "gyi" : "ぎぃ", "gyu" : "ぎゅ", "gye" : "ぎぇ", "gyo" : "ぎょ",
+    "zya" : "じゃ", "zyi" : "じぃ", "zyu" : "じゅ", "zye" : "じぇ", "zyo" : "じょ",
+    "dya" : "ぢゃ", "dyi" : "ぢぃ", "dyu" : "ぢゅ", "dye" : "ぢぇ", "dyo" : "ぢょ",
+    "bya" : "びゃ", "byi" : "びぃ", "byu" : "びゅ", "bye" : "びぇ", "byo" : "びょ",
+    "pya" : "ぴゃ", "pyi" : "ぴぃ", "pyu" : "ぴゅ", "pye" : "ぴぇ", "pyo" : "ぴょ",
+
+    "shi" : "し",
+    "tsu" : "つ",
+  };
+
+  if (replace3[last3]) {
+    val = val.slice(0, pos - 3) + replace3[last3] + val.slice(pos, -1);
+    el.val(val);
+    el.setCursorPosition(pos - 3 + replace3[last3].length);
+  } else if (replace2[last2]) {
+    val = val.slice(0, pos - 2) + replace2[last2] + val.slice(pos, -1);
+    el.val(val);
+    el.setCursorPosition(pos - 2 + replace2[last2].length);
+  } else if (replace1[last1]) {
+    val = val.slice(0, pos - 1) + replace1[last1] + val.slice(pos, -1);
+    el.val(val);
+    el.setCursorPosition(pos - 1 + replace1[last1].length);
+  }
+}
+
 function generateVerbQuestion() {
   
   var entry = words.randomElement();
@@ -486,6 +651,8 @@ function generateVerbQuestion() {
   $('#proceed').hide();
   $('#input').show();
   $('#answer').focus();
+
+  $('#answer').on('input', processAnswerKey);
 
   if (log.start == undefined) {
     log.start = Date.now();

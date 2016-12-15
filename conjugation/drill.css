@@ -12,6 +12,12 @@ body, input {
   height: 48px;
 }
 
+#proceed button {
+  border: none;
+  padding: 12px;
+  background: none;
+}
+
 .questionOuter {
   background: #a0c0a0;
   width: 100%;
