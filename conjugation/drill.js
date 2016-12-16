@@ -729,7 +729,7 @@ function updateHistoryView(log) {
     var td3 = $('<td>'); 
 
     td1.html(entry.question);
-    td2.html(entry.answerWithFurigana);
+    td2.html(entry.answer);
     td3.text(entry.response);
 
     tr.append(td1);
