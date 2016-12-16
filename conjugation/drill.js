@@ -641,7 +641,8 @@ function generateVerbQuestion() {
 
   window.question = question;
   window.word = word;
-  window.answer = wordWithFurigana(furiganaForms[to_form]);
+  window.answer = kanjiForms[to_form];
+  window.answerWithFurigana = wordWithFurigana(furiganaForms[to_form]);
   window.answer2 = answer2;
 
   $('#next').prop('disabled', true);
@@ -672,7 +673,7 @@ function processAnswer() {
   log.history.push({
     "question" : window.question,
     "response" : response,
-    "answer"   : window.answer,
+    "answer"   : window.answerWithFurigana,
     "kana"     : window.answer2,
     "correct"  : correct
   });
@@ -684,7 +685,7 @@ function processAnswer() {
   if ((response == window.answer) || (response == window.answer2)) {
     $('#message').html("");
   } else {
-    $('#message').html("<div>The correct answer is " + window.answer + "</div>");
+    $('#message').html("<div>The correct answer is " + window.answerWithFurigana + "</div>");
   }
 
   $('#input').hide();
@@ -728,7 +729,7 @@ function updateHistoryView(log) {
     var td3 = $('<td>'); 
 
     td1.html(entry.question);
-    td2.html(entry.answer);
+    td2.html(entry.answerWithFurigana);
     td3.text(entry.response);
 
     tr.append(td1);
