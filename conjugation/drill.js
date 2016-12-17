@@ -55,97 +55,224 @@ var combineParts = {
   "ぱあ": "ぱ", "ぱい": "ぴ", "ぱう": "ぷ", "ぱえ": "ぺ", "ぱお": "ぽ"
 };
 
-var words = [
-  {
-    "pos" : "verb",
-    "english": "to eat",
-    "word": "食[た]べる",
+var conjugations = {
+
+  "行く" : {
+
+    "plain" : "行[い]く",
+    "negative" : "行[い]かない",
+    "polite" : "行[い]きます",
+    "polite negative" : "行[い]きません",
+    "past" : "行[い]った",
+    "past negative" : "行[い]かなかった",
+    "polite past" : "行[い]きました",
+    "polite past negative" : "行[い]きませんでした",
   },
 
-  {
-    "pos": "verb",
-    "english": "to drink",
-    "word": "飲[の]む",
+  "飲む" : {
+
+    "plain" : "飲[の]む",
+    "negative" : "飲[の]まない",
+    "polite" : "飲[の]みます",
+    "polite negative" : "飲[の]みません",
+    "past" : "飲[の]んだ",
+    "past negative" : "飲[の]まなかった",
+    "polite past" : "飲[の]みました",
+    "polite past negative" : "飲[の]みませんでした",
   },
 
-  {
-    "pos": "verb",
-    "english": "to make",
-    "word": "作[つく]る",
+  "作る" : {
+
+    "plain" : "作[つく]る",
+    "negative" : "作[つく]らない",
+    "polite" : "作[つく]ります",
+    "polite negative" : "作[つく]りません",
+    "past" : "作[つく]った",
+    "past negative" : "作[つく]らなかった",
+    "polite past" : "作[つく]りました",
+    "polite past negative" : "作[つく]りませんでした",
   },
 
-  {
-    "pos": "verb",
-    "english": "to add",
-    "word": "足[た]す",
+  "買い戻す" : {
+
+    "plain" : "買[か]い戻[もど]す",
+    "negative" : "買[か]い戻[もど]さない",
+    "polite" : "買[か]い戻[もど]します",
+    "polite negative" : "買[か]い戻[もど]しません",
+    "past" : "買[か]い戻[もど]した",
+    "past negative" : "買[か]い戻[もど]さなかった",
+    "polite past" : "買[か]い戻[もど]しました",
+    "polite past negative" : "買[か]い戻[もど]しませんでした",
   },
 
-  {
-    "pos": "verb",
-    "english": "to see",
-    "word": "見[み]る",
+  "見る" : {
+
+    "plain" : "見[み]る",
+    "negative" : "見[み]ない",
+    "polite" : "見[み]ます",
+    "polite negative" : "見[み]ません",
+    "past" : "見[み]た",
+    "past negative" : "見[み]なかった",
+    "polite past" : "見[み]ました",
+    "polite past negative" : "見[み]ませんでした",
   },
 
-  {
-    "pos": "verb",
-    "english": "to rest",
-    "word": "休[やす]む",
+  "食べる" : {
+
+    "plain" : "食[た]べる",
+    "negative" : "食[た]べない",
+    "polite" : "食[た]べます",
+    "polite negative" : "食[た]べません",
+    "past" : "食[た]べた",
+    "past negative" : "食[た]べなかった",
+    "polite past" : "食[た]べました",
+    "polite past negative" : "食[た]べませんでした",
   },
 
-  {
-    "pos": "verb",
-    "english": "to sing",
-    "word": "歌[うた]う",
+  "起きる" : {
+
+    "plain" : "起[お]きる",
+    "negative" : "起[お]きない",
+    "polite" : "起[お]きます",
+    "polite negative" : "起[お]きません",
+    "past" : "起[お]きた",
+    "past negative" : "起[お]きなかった",
+    "polite past" : "起[お]きました",
+    "polite past negative" : "起[お]きませんでした",
   },
 
-  {
-    "pos": "verb",
-    "english": "to sit",
-    "word": "座[すわ]る",
+  "買い換える" : {
+
+    "plain" : "買[か]い換[か]える",
+    "negative" : "買[か]い換[か]えない",
+    "polite" : "買[か]い換[か]えます",
+    "polite negative" : "買[か]い換[か]えません",
+    "past" : "買[か]い換[か]えた",
+    "past negative" : "買[か]い換[か]えなかった",
+    "polite past" : "買[か]い換[か]えました",
+    "polite past negative" : "買[か]い換[か]えませんでした",
   },
 
-  {
-    "pos": "verb",
-    "english": "to buy as a gift",
-    "word": "買[か]い与[あた]える",
+  "来る" : {
+
+    "plain" : "来[く]る",
+    "negative" : "来[こ]ない",
+    "polite" : "来[き]ます",
+    "polite negative" : "来[き]ません",
+    "past" : "来[き]た",
+    "past negative" : "来[こ]なかった",
+    "polite past" : "来[き]ました",
+    "polite past negative" : "来[き]ませんでした",
   },
 
-  {
-    "pos": "verb",
-    "english": "to buy as a replacement",
-    "word": "買[か]い換[か]える",
+  "勉強する" : {
+
+    "plain" : "勉[べん]強[きょう]する",
+    "negative" : "勉[べん]強[きょう]しない",
+    "polite" : "勉[べん]強[きょう]します",
+    "polite negative" : "勉[べん]強[きょう]しません",
+    "past" : "勉[べん]強[きょう]した",
+    "past negative" : "勉[べん]強[きょう]しなかった",
+    "polite past" : "勉[べん]強[きょう]しました",
+    "polite past negative" : "勉[べん]強[きょう]しませんでした",
   },
 
-  {
-    "pos": "verb",
-    "english": "to buy back",
-    "word": "買[か]い戻[もど]す",
+  "電話する" : {
+
+    "plain" : "電[でん]話[わ]する",
+    "negative" : "電[でん]話[わ]しない",
+    "polite" : "電[でん]話[わ]します",
+    "polite negative" : "電[でん]話[わ]しません",
+    "past" : "電[でん]話[わ]した",
+    "past negative" : "電[でん]話[わ]しなかった",
+    "polite past" : "電[でん]話[わ]しました",
+    "polite past negative" : "電[でん]話[わ]しませんでした",
   },
 
-  {
-    "pos": "verb",
-    "english": "to think",
-    "word": "思[おも]う",
+  "読む" : {
+
+    "plain" : "読[よ]む",
+    "negative" : "読[よ]まない",
+    "polite" : "読[よ]みます",
+    "polite negative" : "読[よ]みません",
+    "past" : "読[よ]んだ",
+    "past negative" : "読[よ]まなかった",
+    "polite past" : "読[よ]みました",
+    "polite past negative" : "読[よ]みませんでした",
   },
 
-  {
-    "pos": "verb",
-    "english": "to go",
-    "word": "行[い]く",
+  "思う" : {
+
+    "plain" : "思[おも]う",
+    "negative" : "思[おも]わない",
+    "polite" : "思[おも]います",
+    "polite negative" : "思[おも]いません",
+    "past" : "思[おも]った",
+    "past negative" : "思[おも]わなかった",
+    "polite past" : "思[おも]いました",
+    "polite past negative" : "思[おも]いませんでした",
   },
 
-  {
-    "pos": "verb",
-    "english": "to read",
-    "word": "読[よ]む",
+  "買い与える" : {
+
+    "plain" : "買[か]い与[あた]える",
+    "negative" : "買[か]い与[あた]えない",
+    "polite" : "買[か]い与[あた]えます",
+    "polite negative" : "買[か]い与[あた]えません",
+    "past" : "買[か]い与[あた]えた",
+    "past negative" : "買[か]い与[あた]えなかった",
+    "polite past" : "買[か]い与[あた]えました",
+    "polite past negative" : "買[か]い与[あた]えませんでした",
   },
 
-  {
-    "pos": "verb",
-    "english": "to wake up",
-    "word": "起[お]きる",
+  "座る" : {
+
+    "plain" : "座[すわ]る",
+    "negative" : "座[すわ]らない",
+    "polite" : "座[すわ]ります",
+    "polite negative" : "座[すわ]りません",
+    "past" : "座[すわ]った",
+    "past negative" : "座[すわ]らなかった",
+    "polite past" : "座[すわ]りました",
+    "polite past negative" : "座[すわ]りませんでした",
   },
-];
+
+  "休む" : {
+
+    "plain" : "休[やす]む",
+    "negative" : "休[やす]まない",
+    "polite" : "休[やす]みます",
+    "polite negative" : "休[やす]みません",
+    "past" : "休[やす]んだ",
+    "past negative" : "休[やす]まなかった",
+    "polite past" : "休[やす]みました",
+    "polite past negative" : "休[やす]みませんでした",
+  },
+
+  "足す" : {
+
+    "plain" : "足[た]す",
+    "negative" : "足[た]さない",
+    "polite" : "足[た]します",
+    "polite negative" : "足[た]しません",
+    "past" : "足[た]した",
+    "past negative" : "足[た]さなかった",
+    "polite past" : "足[た]しました",
+    "polite past negative" : "足[た]しませんでした",
+  },
+
+  "歌う" : {
+
+    "plain" : "歌[うた]う",
+    "negative" : "歌[うた]わない",
+    "polite" : "歌[うた]います",
+    "polite negative" : "歌[うた]いません",
+    "past" : "歌[うた]った",
+    "past negative" : "歌[うた]わなかった",
+    "polite past" : "歌[うた]いました",
+    "polite past negative" : "歌[うた]いませんでした",
+  },
+};
 
 var log = { "history": [] };
 
@@ -192,226 +319,59 @@ new function($) {
   }
 }(jQuery);
 
-function getVerbForms(word) {
+function getVerbForms(entry) {
 
-  function aux(dictionary_form, dictionary_kana) {
-
-    var forms = new Object();
+  function kanaForm(word) {
+    return word.split(/.\[([^\]]*)\]/).join("");
+  }
   
-    forms["dictionary"] = dictionary_form;
-  
-    // Special case for くる and する
-  
-    if (dictionary_kana == "くる") {
-  
-      forms["negative"] = "こない";
-      forms["past"] = "きた";
-      forms["past negative"] = "こなかった";
-      forms["polite"] = "きます";
-      forms["te-form"] = "きて";
-  
-      // forms["dictionary"] = "来る";
-      // forms["polite"] = "来ます";
-      // forms["past"] = "来た";
-      // forms["polite past"] = "来ました";
-      // forms["negative"] = "来ない";
-      // forms["polite negative"] = "来ません";
-      // forms["past negative"] = "来なかった";
-      // forms["polite past negative"] = "来ませんでした";
-      // forms["te-form"] = "来て";
-      // forms["conditional"] = "来れば";
-      // forms["volitional"] = "来よう";
-      // forms["passive"] = "来られる";
-      // forms["causative"] = "来させる";
-      // forms["potential"] = "来られる";
-      // forms["imperative"] = "来い";
-  
-      return forms;
-  
-    } else if (dictionary_kana == "する") {
-  
-      forms["negative"] = "しない";
-      forms["past"] = "した";
-      forms["past negative"] = "しなかった";
-      forms["polite"] = "します";
-      forms["te-form"] = "して";
-  
-      return forms;
-    }
-  
-    var group;
-  
-    if (dictionary_kana.slice(-2) == "する") {
-      group = "suru";
-    } else if ((dictionary_kana.slice(-1) == "る") && (
-      (vowelPart[dictionary_kana.slice(-2)[0]] == "い") ||
-      (vowelPart[dictionary_kana.slice(-2)[0]] == "え"))) {
-  
-      group = "ichidan";
-  
-    } else {
-  
-      group = "godan";
-    }
-  
-    // masu form (verbs)
-  
-    var masu_root;
-  
-    if (group == "ichidan") {
-      masu_root = dictionary_form.slice(0, -1);
-    } if (group == "godan") {
-      masu_root = dictionary_form.slice(0, -1) + combineParts[consonantPart[dictionary_form.slice(-1)] + "い"];
-    }
-  
-    forms["polite"]               = masu_root + "ます";
-    forms["polite past"]          = masu_root + "ました";
-    forms["polite negative"]      = masu_root + "ません";
-    forms["polite past negative"] = masu_root + "ませんでした";
-    forms["volitional"]           = masu_root + "ましょう";
-  
-    // te form
-  
-    if (dictionary_kana == "いく") {
-      forms["te-form"] = dictionary_form.slice(0, -1) + "って";
-    } else if (group == "godan") {
-      switch (dictionary_kana.slice(-1)) {
-  
-        case "う":
-        case "つ":
-        case "る":
-        forms["te-form"] = dictionary_form.slice(0, -1) + "って";
-        break;
-  
-        case "す":
-        forms["te-form"] = dictionary_form.slice(0, -1) + "して";
-        break;
-  
-        case "く":
-        forms["te-form"] = dictionary_form.slice(0, -1) + "いて";
-        break;
-  
-        case "ぐ":
-        forms["te-form"] = dictionary_form.slice(0, -1) + "いで";
-        break;
-  
-        case "ぶ":
-        case "む":
-        case "ぬ":
-        forms["te-form"] = dictionary_form.slice(0, -1) + "んで";
-        break;
-      }
-    } else {
-      forms["te-form"] = dictionary_form.slice(0, -1) + "て";
-    }
-  
-    // present negative
-  
-    if (group == "godan") {
-  
-      if (dictionary_kana.slice(-1) == "う") {
-        forms["negative"] = dictionary_form.slice(0, -1) + "わない";
-      } else {
-        forms["negative"] = dictionary_form.slice(0, -1) +
-          combineParts[consonantPart[dictionary_form.slice(-1)] + "あ"] + "ない";
-      }
-    } else {
-  
-      // ichidan verb
-  
-      forms["negative"] = dictionary_form.slice(0, -1) + "ない";
-    }
-  
-    // past plain
-  
-    if (dictionary_kana == "いく") {
-      forms["past"] = dictionary_form.slice(0, -1) + "った";
-    } else if (group == "godan") {
-      switch (dictionary_form.slice(-1)) {
-  
-        case "う":
-        case "つ":
-        case "る":
-        forms["past"] = dictionary_form.slice(0, -1) + "った";
-        break;
-  
-        case "す":
-        forms["past"] = dictionary_form.slice(0, -1) + "した";
-        break;
-  
-        case "く":
-        forms["past"] = dictionary_form.slice(0, -1) + "いた";
-        break;
-  
-        case "ぐ":
-        forms["past"] = dictionary_form.slice(0, -1) + "いだ";
-        break;
-  
-        case "ぶ":
-        case "む":
-        case "ぬ":
-        forms["past"] = dictionary_form.slice(0, -1) + "んだ";
-        break;
-      }
-    } else {
-      forms["past"] = dictionary_form.slice(0, -1) + "た";
-    }
-  
-    // plain past negative
-  
-    if (group == "godan") {
-      if (dictionary_kana.slice(-1) == "う") {
-        forms["past negative"] = dictionary_form.slice(0, -1) + "わなかった";
-      } else {
-        forms["past negative"] = dictionary_form.slice(0, -1) +
-          combineParts[consonantPart[dictionary_form.slice(-1)] + "あ"] + "なかった";
-      }
-    } else {
-      forms["past negative"] = dictionary_form.slice(0, -1) + "なかった";
-    }
-  
-    return forms;
+  function kanjiForm(word) {
+    return word.split(/(.)\[[^\]]*\]/).join("");
   }
 
-  var word_form = word["word"].split(/(.)\[[^\]]*\]/).join("");
-  var kana_form = word["word"].split(/.\[([^\]]*)\]/).join("");
-
-  return {
-    "word": word["word"],
-    "kanji": aux(word_form, kana_form),
-    "hiragana": aux(kana_form, kana_form),
-    "furigana": aux(word["word"], kana_form)
+  var result = {
+    "kanji": { },
+    "hiragana": { },
+    "furigana": { }
   };
+
+  Object.keys(conjugations[entry]).forEach(function (key) {
+    result["kanji"][key] = kanjiForm(conjugations[entry][key]);
+    result["hiragana"][key] = kanaForm(conjugations[entry][key]);
+    result["furigana"][key] = conjugations[entry][key];
+  });
+
+  return result;
 }
 
-function getAdjectiveForms(dictionary_form) {
+function getAdjectiveForms(plain_form) {
 
   var result = new Object();
 
   // past affirmative form (adjectives)
 
-  if (dictionary_form == "いい") {
+  if (plain_form == "いい") {
     result["past affirmative adj"] = "よかったです";
-  } else if (dictionary_form.slice(-1) == "い") {
-    result["past affirmative adj"] = dictionary_form.slice(0, -1) + "かったです";
-  } else if (dictionary_form.slice(-1) == "な") {
-    result["past affirmative adj"] = dictionary_form.slice(0, -1) + "でした";
+  } else if (plain_form.slice(-1) == "い") {
+    result["past affirmative adj"] = plain_form.slice(0, -1) + "かったです";
+  } else if (plain_form.slice(-1) == "な") {
+    result["past affirmative adj"] = plain_form.slice(0, -1) + "でした";
   }
 
   // present negative form (adjectives)
 
-  if (dictionary_form == "いい") {
+  if (plain_form == "いい") {
     result["present negative adj"] = "よくないです";
-  } else if (dictionary_form.slice(-1) == "い") {
-    result["present negative adj"] = dictionary_form.slice(0, -1) + "くないです";
-  } else if (dictionary_form.slice(-1) == "な") {
-    result["present negative adj"] = dictionary_form.slice(0, -1) + "じゃないです";
+  } else if (plain_form.slice(-1) == "い") {
+    result["present negative adj"] = plain_form.slice(0, -1) + "くないです";
+  } else if (plain_form.slice(-1) == "な") {
+    result["present negative adj"] = plain_form.slice(0, -1) + "じゃないです";
   }
 }
 
 var verb_relative_form = {
 
-  "dictionary" : {
+  "plain" : {
 
     "negative": "affirmative",
     "past": "present",
@@ -421,7 +381,7 @@ var verb_relative_form = {
 
   "negative": {
 
-    "dictionary": "negative",
+    "plain": "negative",
     "past negative": "present",
     "polite negative": "plain",
  //   "te-form": "negative",
@@ -429,7 +389,7 @@ var verb_relative_form = {
 
   "past" : {
 
-    "dictionary": "past",
+    "plain": "past",
     "past negative" : "affirmative",
     "polite past": "plain",
 //    "te-form": "past",
@@ -445,7 +405,7 @@ var verb_relative_form = {
 
   "polite": {
 
-    "dictionary": "polite",
+    "plain": "polite",
     "polite past": "present",
     "polite negative": "affirmative",
 //    "te-form": "polite",
@@ -616,7 +576,7 @@ function processAnswerKey() {
 
 function generateVerbQuestion() {
   
-  var entry = words.randomElement();
+  var entry = Object.keys(conjugations).randomElement();
 
   var forms = getVerbForms(entry);
 
@@ -631,11 +591,6 @@ function generateVerbQuestion() {
   var question = "What is the " + verb_relative_form[to_form][from_form] + " form of " + wordWithFurigana(furiganaForms[from_form]) + "?";
   var answer = kanjiForms[to_form];
   var answer2 = kanaForms[to_form];
-
-  console.log("From form = " + from_form);
-  console.log("To form = " + to_form);
-  console.log("Question = " + question);
-  console.log("Answer = " + answer);
 
   $('#question').html(question);
 
@@ -752,288 +707,9 @@ function updateHistoryView(log) {
 
 function proceed() {
   if (log.history.length == 10) {
-    console.log("終わり。");
   } else {
     generateVerbQuestion();
   }
-}
-
-function tests() {
-
-  function assertEqual(expected, actual) {
-    if (expected != actual) {
-      throw "Expected: " + expected + ", actual " + actual;
-    }
-
-  }
-
-// Group 1 tests::::
-//
-//   "飲む"
-//   "作る"
-//   "買い戻す"
-//
-// Group 2 tests
-//
-//   "見る"
-//   "食べる"
-//   "起きる"
-//   "買い換える"
-//
-// // Special case tests
-//
-//   "行く"
-
-  var ikuForms = getVerbForms( { "word" : "行[い]く" } );
-  var nomuForms = getVerbForms( { "word" : "飲[の]む" } );
-  var tsukuruForms = getVerbForms( { "word" : "作[つく]る" } );
-  var kaimodosuForms = getVerbForms( { "word" : "買[か]い戻[もど]す" } );
-  var miruForms = getVerbForms( { "word" : "見[み]る" } );
-  var taberuForms = getVerbForms( { "word" : "食[た]べる" } );
-  var okiruForms = getVerbForms( { "word" : "起[お]きる" } );
-  var kaikaeruForms = getVerbForms( { "word" : "買[か]い換[か]える" } );
-
-  assertEqual("行く", ikuForms["kanji"]["dictionary"]);
-  assertEqual("行きます", ikuForms["kanji"]["polite"]);
-  assertEqual("行かない", ikuForms["kanji"]["negative"]);
-  assertEqual("行きません", ikuForms["kanji"]["polite negative"]);
-  assertEqual("行った", ikuForms["kanji"]["past"]);
-  assertEqual("行って", ikuForms["kanji"]["te-form"]);
-  assertEqual("行きました", ikuForms["kanji"]["polite past"]);
-  assertEqual("行かなかった", ikuForms["kanji"]["past negative"]);
-  assertEqual("行きませんでした", ikuForms["kanji"]["polite past negative"]);
-  // assertEqual("行ける", ikuForms["kanji"]["Potential, -ru"]);
-  // assertEqual("行かれる", ikuForms["kanji"]["Passive, -reru"]);
-  // assertEqual("行かせる", ikuForms["kanji"]["Causative, -seru"]);
-  // assertEqual("行かせられる", ikuForms["kanji"]["Passive causative, -serareru"]);
-  // assertEqual("行け", ikuForms["kanji"]["Imperative"]);
-
-  assertEqual("いく", ikuForms["hiragana"]["dictionary"]);
-  assertEqual("いきます", ikuForms["hiragana"]["polite"]);
-  assertEqual("いかない", ikuForms["hiragana"]["negative"]);
-  assertEqual("いきません", ikuForms["hiragana"]["polite negative"]);
-  assertEqual("いった", ikuForms["hiragana"]["past"]);
-  assertEqual("いって", ikuForms["hiragana"]["te-form"]);
-  assertEqual("いきました", ikuForms["hiragana"]["polite past"]);
-  assertEqual("いかなかった", ikuForms["hiragana"]["past negative"]);
-  assertEqual("いきませんでした", ikuForms["hiragana"]["polite past negative"]);
-  // assertEqual("いける", ikuForms["hiragana"]["Potential, -ru"]);
-  // assertEqual("いかれる", ikuForms["hiragana"]["Passive, -reru"]);
-  // assertEqual("いかせる", ikuForms["hiragana"]["Causative, -seru"]);
-  // assertEqual("いかせられる", ikuForms["hiragana"]["Passive causative, -serareru"]);
-  // assertEqual("いけ", ikuForms["hiragana"]["Imperative"]);
-
-  assertEqual("飲む", nomuForms["kanji"]["dictionary"]);
-  assertEqual("飲みます", nomuForms["kanji"]["polite"]);
-  assertEqual("飲まない", nomuForms["kanji"]["negative"]);
-  assertEqual("飲みません", nomuForms["kanji"]["polite negative"]);
-  assertEqual("飲んだ", nomuForms["kanji"]["past"]);
-  assertEqual("飲んで", nomuForms["kanji"]["te-form"]);
-  assertEqual("飲みました", nomuForms["kanji"]["polite past"]);
-  assertEqual("飲まなかった", nomuForms["kanji"]["past negative"]);
-  assertEqual("飲みませんでした", nomuForms["kanji"]["polite past negative"]);
-  // assertEqual("飲める", nomuForms["kanji"]["Potential, -ru"]);
-  // assertEqual("飲まれる", nomuForms["kanji"]["Passive, -reru"]);
-  // assertEqual("飲ませる", nomuForms["kanji"]["Causative, -seru"]);
-  // assertEqual("飲ませられる", nomuForms["kanji"]["Passive causative, -serareru"]);
-  // assertEqual("飲め", nomuForms["kanji"]["Imperative"]);
-
-  assertEqual("のむ", nomuForms["hiragana"]["dictionary"]);
-  assertEqual("のみます", nomuForms["hiragana"]["polite"]);
-  assertEqual("のまない", nomuForms["hiragana"]["negative"]);
-  assertEqual("のみません", nomuForms["hiragana"]["polite negative"]);
-  assertEqual("のんだ", nomuForms["hiragana"]["past"]);
-  assertEqual("のんで", nomuForms["hiragana"]["te-form"]);
-  assertEqual("のみました", nomuForms["hiragana"]["polite past"]);
-  assertEqual("のまなかった", nomuForms["hiragana"]["past negative"]);
-  assertEqual("のみませんでした", nomuForms["hiragana"]["polite past negative"]);
-  // assertEqual("のめる", nomuForms["hiragana"]["Potential, -ru"]);
-  // assertEqual("のまれる", nomuForms["hiragana"]["Passive, -reru"]);
-  // assertEqual("のませる", nomuForms["hiragana"]["Causative, -seru"]);
-  // assertEqual("のませられる", nomuForms["hiragana"]["Passive causative, -serareru"]);
-  // assertEqual("のめ", nomuForms["hiragana"]["Imperative"]);
-
-  assertEqual("作る", tsukuruForms["kanji"]["dictionary"]);
-  assertEqual("作ります", tsukuruForms["kanji"]["polite"]);
-  assertEqual("作らない", tsukuruForms["kanji"]["negative"]);
-  assertEqual("作りません", tsukuruForms["kanji"]["polite negative"]);
-  assertEqual("作った", tsukuruForms["kanji"]["past"]);
-  assertEqual("作って", tsukuruForms["kanji"]["te-form"]);
-  assertEqual("作りました", tsukuruForms["kanji"]["polite past"]);
-  assertEqual("作らなかった", tsukuruForms["kanji"]["past negative"]);
-  assertEqual("作りませんでした", tsukuruForms["kanji"]["polite past negative"]);
-  // assertEqual("作れる", tsukuruForms["kanji"]["Potential, -ru"]);
-  // assertEqual("作られる", tsukuruForms["kanji"]["Passive, -reru"]);
-  // assertEqual("作らせる", tsukuruForms["kanji"]["Causative, -seru"]);
-  // assertEqual("作らせられる", tsukuruForms["kanji"]["Passive causative, -serareru"]);
-  // assertEqual("作れ", tsukuruForms["kanji"]["Imperative"]);
-
-  assertEqual("つくる", tsukuruForms["hiragana"]["dictionary"]);
-  assertEqual("つくります", tsukuruForms["hiragana"]["polite"]);
-  assertEqual("つくらない", tsukuruForms["hiragana"]["negative"]);
-  assertEqual("つくりません", tsukuruForms["hiragana"]["polite negative"]);
-  assertEqual("つくった", tsukuruForms["hiragana"]["past"]);
-  assertEqual("つくって", tsukuruForms["hiragana"]["te-form"]);
-  assertEqual("つくりました", tsukuruForms["hiragana"]["polite past"]);
-  assertEqual("つくらなかった", tsukuruForms["hiragana"]["past negative"]);
-  assertEqual("つくりませんでした", tsukuruForms["hiragana"]["polite past negative"]);
-  // assertEqual("つくれる", tsukuruForms["hiragana"]["Potential, -ru"]);
-  // assertEqual("つくられる", tsukuruForms["hiragana"]["Passive, -reru"]);
-  // assertEqual("つくらせる", tsukuruForms["hiragana"]["Causative, -seru"]);
-  // assertEqual("つくらせられる", tsukuruForms["hiragana"]["Passive causative, -serareru"]);
-  // assertEqual("つくれ", tsukuruForms["hiragana"]["Imperative"]);
-
-  assertEqual("買い戻す", kaimodosuForms["kanji"]["dictionary"]);
-  assertEqual("買い戻します", kaimodosuForms["kanji"]["polite"]);
-  assertEqual("買い戻さない", kaimodosuForms["kanji"]["negative"]);
-  assertEqual("買い戻しません", kaimodosuForms["kanji"]["polite negative"]);
-  assertEqual("買い戻した", kaimodosuForms["kanji"]["past"]);
-  assertEqual("買い戻して", kaimodosuForms["kanji"]["te-form"]);
-  assertEqual("買い戻しました", kaimodosuForms["kanji"]["polite past"]);
-  assertEqual("買い戻さなかった", kaimodosuForms["kanji"]["past negative"]);
-  assertEqual("買い戻しませんでした", kaimodosuForms["kanji"]["polite past negative"]);
-  // assertEqual("買い戻せる", kaimodosuForms["kanji"]["Potential, -ru"]);
-  // assertEqual("買い戻される", kaimodosuForms["kanji"]["Passive, -reru"]);
-  // assertEqual("買い戻させる", kaimodosuForms["kanji"]["Causative, -seru"]);
-  // assertEqual("買い戻させられる", kaimodosuForms["kanji"]["Passive causative, -serareru"]);
-  // assertEqual("買い戻せ", kaimodosuForms["kanji"]["Imperative"]);
-
-  assertEqual("かいもどす", kaimodosuForms["hiragana"]["dictionary"]);
-  assertEqual("かいもどします", kaimodosuForms["hiragana"]["polite"]);
-  assertEqual("かいもどさない", kaimodosuForms["hiragana"]["negative"]);
-  assertEqual("かいもどしません", kaimodosuForms["hiragana"]["polite negative"]);
-  assertEqual("かいもどした", kaimodosuForms["hiragana"]["past"]);
-  assertEqual("かいもどして", kaimodosuForms["hiragana"]["te-form"]);
-  assertEqual("かいもどしました", kaimodosuForms["hiragana"]["polite past"]);
-  assertEqual("かいもどさなかった", kaimodosuForms["hiragana"]["past negative"]);
-  assertEqual("かいもどしませんでした", kaimodosuForms["hiragana"]["polite past negative"]);
-  // assertEqual("かいもどせる", kaimodosuForms["hiragana"]["Potential, -ru"]);
-  // assertEqual("かいもどされる", kaimodosuForms["hiragana"]["Passive, -reru"]);
-  // assertEqual("かいもどさせる", kaimodosuForms["hiragana"]["Causative, -seru"]);
-  // assertEqual("かいもどさせられる", kaimodosuForms["hiragana"]["Passive causative, -serareru"]);
-  // assertEqual("かいもどせ", kaimodosuForms["hiragana"]["Imperative"]);
-
-  assertEqual("見る", miruForms["kanji"]["dictionary"]);
-  assertEqual("見ます", miruForms["kanji"]["polite"]);
-  assertEqual("見ない", miruForms["kanji"]["negative"]);
-  assertEqual("見ません", miruForms["kanji"]["polite negative"]);
-  assertEqual("見た", miruForms["kanji"]["past"]);
-  assertEqual("見て", miruForms["kanji"]["te-form"]);
-  assertEqual("見ました", miruForms["kanji"]["polite past"]);
-  assertEqual("見なかった", miruForms["kanji"]["past negative"]);
-  assertEqual("見ませんでした", miruForms["kanji"]["polite past negative"]);
-  // assertEqual("見られる", miruForms["kanji"]["Potential, -rareru"]);
-  // assertEqual("見られる", miruForms["kanji"]["Passive, -rareru"]);
-  // assertEqual("見させる", miruForms["kanji"]["Causative, -saseru"]);
-  // assertEqual("見させられる", miruForms["kanji"]["Passive causative, -saserareru"]);
-  // assertEqual("見ろ", miruForms["kanji"]["Imperative, -ro"]);
-
-  assertEqual("みる", miruForms["hiragana"]["dictionary"]);
-  assertEqual("みます", miruForms["hiragana"]["polite"]);
-  assertEqual("みない", miruForms["hiragana"]["negative"]);
-  assertEqual("みません", miruForms["hiragana"]["polite negative"]);
-  assertEqual("みた", miruForms["hiragana"]["past"]);
-  assertEqual("みて", miruForms["hiragana"]["te-form"]);
-  assertEqual("みました", miruForms["hiragana"]["polite past"]);
-  assertEqual("みなかった", miruForms["hiragana"]["past negative"]);
-  assertEqual("みませんでした", miruForms["hiragana"]["polite past negative"]);
-  // assertEqual("みられる", miruForms["hiragana"]["Potential, -rareru"]);
-  // assertEqual("みられる", miruForms["hiragana"]["Passive, -rareru"]);
-  // assertEqual("みさせる", miruForms["hiragana"]["Causative, -saseru"]);
-  // assertEqual("みさせられる", miruForms["hiragana"]["Passive causative, -saserareru"]);
-  // assertEqual("みろ", miruForms["hiragana"]["Imperative, -ro"]);
-
-  assertEqual("食べる", taberuForms["kanji"]["dictionary"]);
-  assertEqual("食べます", taberuForms["kanji"]["polite"]);
-  assertEqual("食べない", taberuForms["kanji"]["negative"]);
-  assertEqual("食べません", taberuForms["kanji"]["polite negative"]);
-  assertEqual("食べた", taberuForms["kanji"]["past"]);
-  assertEqual("食べて", taberuForms["kanji"]["te-form"]);
-  assertEqual("食べました", taberuForms["kanji"]["polite past"]);
-  assertEqual("食べなかった", taberuForms["kanji"]["past negative"]);
-  assertEqual("食べませんでした", taberuForms["kanji"]["polite past negative"]);
-  // assertEqual("食べられる", taberuForms["kanji"]["Potential, -rareru"]);
-  // assertEqual("食べられる", taberuForms["kanji"]["Passive, -rareru"]);
-  // assertEqual("食べさせる", taberuForms["kanji"]["Causative, -saseru"]);
-  // assertEqual("食べさせられる", taberuForms["kanji"]["Passive causative, -saserareru"]);
-  // assertEqual("食べろ", taberuForms["kanji"]["Imperative, -ro"]);
-
-  assertEqual("たべる", taberuForms["hiragana"]["dictionary"]);
-  assertEqual("たべます", taberuForms["hiragana"]["polite"]);
-  assertEqual("たべない", taberuForms["hiragana"]["negative"]);
-  assertEqual("たべません", taberuForms["hiragana"]["polite negative"]);
-  assertEqual("たべた", taberuForms["hiragana"]["past"]);
-  assertEqual("たべて", taberuForms["hiragana"]["te-form"]);
-  assertEqual("たべました", taberuForms["hiragana"]["polite past"]);
-  assertEqual("たべなかった", taberuForms["hiragana"]["past negative"]);
-  assertEqual("たべませんでした", taberuForms["hiragana"]["polite past negative"]);
-  // assertEqual("たべられる", taberuForms["hiragana"]["Potential, -rareru"]);
-  // assertEqual("たべられる", taberuForms["hiragana"]["Passive, -rareru"]);
-  // assertEqual("たべさせる", taberuForms["hiragana"]["Causative, -saseru"]);
-  // assertEqual("たべさせられる", taberuForms["hiragana"]["Passive causative, -saserareru"]);
-  // assertEqual("たべろ", taberuForms["hiragana"]["Imperative, -ro"]);
-
-  assertEqual("起きる", okiruForms["kanji"]["dictionary"]);
-  assertEqual("起きます", okiruForms["kanji"]["polite"]);
-  assertEqual("起きない", okiruForms["kanji"]["negative"]);
-  assertEqual("起きません", okiruForms["kanji"]["polite negative"]);
-  assertEqual("起きた", okiruForms["kanji"]["past"]);
-  assertEqual("起きて", okiruForms["kanji"]["te-form"]);
-  assertEqual("起きました", okiruForms["kanji"]["polite past"]);
-  assertEqual("起きなかった", okiruForms["kanji"]["past negative"]);
-  assertEqual("起きませんでした", okiruForms["kanji"]["polite past negative"]);
-  // assertEqual("起きられる", okiruForms["kanji"]["Potential, -rareru"]);
-  // assertEqual("起きられる", okiruForms["kanji"]["Passive, -rareru"]);
-  // assertEqual("起きさせる", okiruForms["kanji"]["Causative, -saseru"]);
-  // assertEqual("起きさせられる", okiruForms["kanji"]["Passive causative, -saserareru"]);
-  // assertEqual("起きろ", okiruForms["kanji"]["Imperative, -ro"]);
-
-  assertEqual("おきる", okiruForms["hiragana"]["dictionary"]);
-  assertEqual("おきます", okiruForms["hiragana"]["polite"]);
-  assertEqual("おきない", okiruForms["hiragana"]["negative"]);
-  assertEqual("おきません", okiruForms["hiragana"]["polite negative"]);
-  assertEqual("おきた", okiruForms["hiragana"]["past"]);
-  assertEqual("おきて", okiruForms["hiragana"]["te-form"]);
-  assertEqual("おきました", okiruForms["hiragana"]["polite past"]);
-  assertEqual("おきなかった", okiruForms["hiragana"]["past negative"]);
-  assertEqual("おきませんでした", okiruForms["hiragana"]["polite past negative"]);
-  // assertEqual("おきられる", okiruForms["hiragana"]["Potential, -rareru"]);
-  // assertEqual("おきられる", okiruForms["hiragana"]["Passive, -rareru"]);
-  // assertEqual("おきさせる", okiruForms["hiragana"]["Causative, -saseru"]);
-  // assertEqual("おきさせられる", okiruForms["hiragana"]["Passive causative, -saserareru"]);
-  // assertEqual("おきろ", okiruForms["hiragana"]["Imperative, -ro"]);
-
-  assertEqual("買い換える", kaikaeruForms["kanji"]["dictionary"]);
-  assertEqual("買い換えます", kaikaeruForms["kanji"]["polite"]);
-  assertEqual("買い換えない", kaikaeruForms["kanji"]["negative"]);
-  assertEqual("買い換えません", kaikaeruForms["kanji"]["polite negative"]);
-  assertEqual("買い換えた", kaikaeruForms["kanji"]["past"]);
-  assertEqual("買い換えて", kaikaeruForms["kanji"]["te-form"]);
-  assertEqual("買い換えました", kaikaeruForms["kanji"]["polite past"]);
-  assertEqual("買い換えなかった", kaikaeruForms["kanji"]["past negative"]);
-  assertEqual("買い換えませんでした", kaikaeruForms["kanji"]["polite past negative"]);
-  // assertEqual("買い換えられる", kaikaeruForms["kanji"]["Potential, -rareru"]);
-  // assertEqual("買い換えられる", kaikaeruForms["kanji"]["Passive, -rareru"]);
-  // assertEqual("買い換えさせる", kaikaeruForms["kanji"]["Causative, -saseru"]);
-  // assertEqual("買い換えさせられる", kaikaeruForms["kanji"]["Passive causative, -saserareru"]);
-  // assertEqual("買い換えろ", kaikaeruForms["kanji"]["Imperative, -ro"]);
-
-  assertEqual("かいかえる", kaikaeruForms["hiragana"]["dictionary"]);
-  assertEqual("かいかえます", kaikaeruForms["hiragana"]["polite"]);
-  assertEqual("かいかえない", kaikaeruForms["hiragana"]["negative"]);
-  assertEqual("かいかえません", kaikaeruForms["hiragana"]["polite negative"]);
-  assertEqual("かいかえた", kaikaeruForms["hiragana"]["past"]);
-  assertEqual("かいかえて", kaikaeruForms["hiragana"]["te-form"]);
-  assertEqual("かいかえました", kaikaeruForms["hiragana"]["polite past"]);
-  assertEqual("かいかえなかった", kaikaeruForms["hiragana"]["past negative"]);
-  assertEqual("かいかえませんでした", kaikaeruForms["hiragana"]["polite past negative"]);
-  // assertEqual("かいかえられる", kaikaeruForms["hiragana"]["Potential, -rareru"]);
-  // assertEqual("かいかえられる", kaikaeruForms["hiragana"]["Passive, -rareru"]);
-  // assertEqual("かいかえさせる", kaikaeruForms["hiragana"]["Causative, -saseru"]);
-  // assertEqual("かいかえさせられる", kaikaeruForms["hiragana"]["Passive causative, -saserareru"]);
-  // assertEqual("かいかえろ", kaikaeruForms["hiragana"]["Imperative, -ro"]);
-
-  console.log("Complete.");
 }
 
 $('window').ready(function() {
