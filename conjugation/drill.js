@@ -274,7 +274,7 @@ var conjugations = {
   },
 };
 
-var log = { "history": [] };
+var log;
 
 Array.prototype.randomElement = function () {
   return this[Math.floor(Math.random() * this.length)]
@@ -318,6 +318,10 @@ new function($) {
     }
   }
 }(jQuery);
+
+function resetLog() {
+  log = { "history": [] };
+}
 
 function getVerbForms(entry) {
 
@@ -706,12 +710,42 @@ function updateHistoryView(log) {
 }
 
 function proceed() {
-  if (log.history.length == 10) {
+  if (log.history.length == $('#numQuestions').val()) {
+    endQuiz();
   } else {
     generateVerbQuestion();
   }
 }
 
-$('window').ready(function() {
+function showSplash() {
+  $('#splash').show();
+  $('#quizSection').hide();
+  $('#scoreSection').hide();
+
+  $('#go').focus();
+}
+
+function startQuiz() {
+  $('#splash').hide();
+  $('#quizSection').show();
+  $('#scoreSection').hide();
+
+  resetLog();
   generateVerbQuestion();
+}
+
+function endQuiz() {
+  $('#splash').hide();
+  $('#quizSection').hide();
+  $('#scoreSection').show();
+
+  $('#backToStart').focus();
+}
+
+$('window').ready(function() {
+
+  $('#go').click(startQuiz);
+  $('#backToStart').click(showSplash);
+
+  showSplash();
 });
