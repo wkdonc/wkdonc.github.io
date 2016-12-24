@@ -69,6 +69,8 @@ var conjugations = {
     "polite past negative" : "行[い]きませんでした",
     "te-form" : "行[い]って",
     "te-form negative" : "行[い]かなくて",
+    "potential" : "行[い]ける",
+    "potential negative" : "行[い]けない",
   },
 
   "飲む" : {
@@ -83,6 +85,8 @@ var conjugations = {
     "polite past negative" : "飲[の]みませんでした",
     "te-form" : "飲[の]んで",
     "te-form negative" : "飲[の]まなくて",
+    "potential" : "飲[の]める",
+    "potential negative" : "飲[の]めない",
   },
 
   "作る" : {
@@ -97,6 +101,8 @@ var conjugations = {
     "polite past negative" : "作[つく]りませんでした",
     "te-form" : "作[つく]って",
     "te-form negative" : "作[つく]らなくて",
+    "potential" : "作[つく]れる",
+    "potential negative" : "作[つく]れない",
   },
 
   "買い戻す" : {
@@ -111,6 +117,8 @@ var conjugations = {
     "polite past negative" : "買[か]い戻[もど]しませんでした",
     "te-form" : "買[か]い戻[もど]して",
     "te-form negative" : "買[か]い戻[もど]さなくて",
+    "potential" : "買[か]い戻[もど]せる",
+    "potential negative" : "買[か]い戻[もど]せない",
   },
 
   "見る" : {
@@ -125,6 +133,8 @@ var conjugations = {
     "polite past negative" : "見[み]ませんでした",
     "te-form" : "見[み]て",
     "te-form negative" : "見[み]なくて",
+    "potential" : "見[み]られる",
+    "potential negative" : "見[み]られない",
   },
 
   "食べる" : {
@@ -139,6 +149,8 @@ var conjugations = {
     "polite past negative" : "食[た]べませんでした",
     "te-form" : "食[た]べて",
     "te-form negative" : "食[た]べなくて",
+    "potential" : "食[た]べられる",
+    "potential negative" : "食[た]べられない",
   },
 
   "起きる" : {
@@ -153,6 +165,8 @@ var conjugations = {
     "polite past negative" : "起[お]きませんでした",
     "te-form" : "起[お]きて",
     "te-form negative" : "起[お]きなくて",
+    "potential" : "起[お]きられる",
+    "potential negative" : "起[お]きられない",
   },
 
   "買い換える" : {
@@ -167,6 +181,8 @@ var conjugations = {
     "polite past negative" : "買[か]い換[か]えませんでした",
     "te-form" : "買[か]い換[か]えて",
     "te-form negative" : "買[か]い換[か]えなくて",
+    "potential" : "買[か]い換[か]えられる",
+    "potential negative" : "買[か]い換[か]えられない",
   },
 
   "来る" : {
@@ -181,6 +197,8 @@ var conjugations = {
     "polite past negative" : "来[き]ませんでした",
     "te-form" : "来[き]て",
     "te-form negative" : "来[こ]なくて",
+    "potential" : "来[こ]られる",
+    "potential negative" : "来[こ]られない",
   },
 
   "勉強する" : {
@@ -219,6 +237,8 @@ var conjugations = {
     "polite past negative" : "読[よ]みませんでした",
     "te-form" : "読[よ]んで",
     "te-form negative" : "読[よ]まなくて",
+    "potential" : "読[よ]める",
+    "potential negative" : "読[よ]めない",
   },
 
   "思う" : {
@@ -233,6 +253,8 @@ var conjugations = {
     "polite past negative" : "思[おも]いませんでした",
     "te-form" : "思[おも]って",
     "te-form negative" : "思[おも]わなくて",
+    "potential" : "思[おも]える",
+    "potential negative" : "思[おも]えない",
   },
 
   "買い与える" : {
@@ -247,6 +269,8 @@ var conjugations = {
     "polite past negative" : "買[か]い与[あた]えませんでした",
     "te-form" : "買[か]い与[あた]えて",
     "te-form negative" : "買[か]い与[あた]えなくて",
+    "potential" : "買[か]い与[あた]えられる",
+    "potential negative" : "買[か]い与[あた]えられない",
   },
 
   "座る" : {
@@ -261,6 +285,8 @@ var conjugations = {
     "polite past negative" : "座[すわ]りませんでした",
     "te-form" : "座[すわ]って",
     "te-form negative" : "座[すわ]らなくて",
+    "potential" : "座[すわ]れる",
+    "potential negative" : "座[すわ]れない",
   },
 
   "休む" : {
@@ -275,6 +301,8 @@ var conjugations = {
     "polite past negative" : "休[やす]みませんでした",
     "te-form" : "休[やす]んで",
     "te-form negative" : "休[やす]まなくて",
+    "potential" : "休[やす]める",
+    "potential negative" : "休[やす]めない",
   },
 
   "足す" : {
@@ -289,6 +317,8 @@ var conjugations = {
     "polite past negative" : "足[た]しませんでした",
     "te-form" : "足[た]して",
     "te-form negative" : "足[た]さなくて",
+    "potential" : "足[た]せる",
+    "potential negative" : "足[た]せない",
   },
 
   "歌う" : {
@@ -303,6 +333,8 @@ var conjugations = {
     "polite past negative" : "歌[うた]いませんでした",
     "te-form" : "歌[うた]って",
     "te-form negative" : "歌[うた]わなくて",
+    "potential" : "歌[うた]える",
+    "potential negative" : "歌[うた]えない",
   },
 };
 
@@ -413,6 +445,7 @@ var verb_relative_form = {
     "past": "present",
     "polite": "plain",
     "te-form": "plain",
+    "potential": "plain",
   },
 
   "negative": {
@@ -421,6 +454,7 @@ var verb_relative_form = {
     "past negative": "present",
     "polite negative": "plain",
     "te-form negative": "plain",
+    "potential negative": "plain",
   },
 
   "past" : {
@@ -475,6 +509,18 @@ var verb_relative_form = {
 
     "te-form" : "negative",
     "negative" : "て",
+  },
+
+  "potential" : {
+
+    "plain" : "potential",
+    "potential negative" : "affirmative",
+  },
+
+  "potential negative" : {
+
+    "potential" : "negative",
+    "negative" : "potential",
   },
 };
 
