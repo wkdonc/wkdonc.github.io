@@ -73,6 +73,12 @@ var conjugations = {
     "potential negative" : "行[い]けない",
     "imperative" : "行[い]け",
     "imperative negative" : "行[い]くな",
+    "passive" : "行[い]かれる",
+    "passive negative" : "行[い]かれない",
+    "causative" : "行[い]かせる",
+    "causative negative" : "行[い]かせない",
+    "causative passive" : "行[い]かせられる",
+    "causative passive negative" : "行[い]かせられない",
   },
 
   "飲む" : {
@@ -91,6 +97,12 @@ var conjugations = {
     "potential negative" : "飲[の]めない",
     "imperative" : "飲[の]め",
     "imperative negative" : "飲[の]むな",
+    "passive" : "飲[の]まれる",
+    "passive negative" : "飲[の]まれない",
+    "causative" : "飲[の]ませる",
+    "causative negative" : "飲[の]ませない",
+    "causative passive" : "飲[の]ませられる",
+    "causative passive negative" : "飲[の]ませられない",
   },
 
   "作る" : {
@@ -109,6 +121,12 @@ var conjugations = {
     "potential negative" : "作[つく]れない",
     "imperative" : "作[つく]れ",
     "imperative negative" : "作[つく]るな",
+    "passive" : "作[つく]られる",
+    "passive negative" : "作[つく]られない",
+    "causative" : "作[つく]らせる",
+    "causative negative" : "作[つく]らせない",
+    "causative passive" : "作[つく]らせられる",
+    "causative passive negative" : "作[つく]らせられない",
   },
 
   "買い戻す" : {
@@ -127,6 +145,12 @@ var conjugations = {
     "potential negative" : "買[か]い戻[もど]せない",
     "imperative" : "買[か]い戻[もど]せ",
     "imperative negative" : "買[か]い戻[もど]すな",
+    "passive" : "買[か]い戻[もど]される",
+    "passive negative" : "買[か]い戻[もど]されない",
+    "causative" : "買[か]い戻[もど]させる",
+    "causative negative" : "買[か]い戻[もど]させない",
+    "causative passive" : "買[か]い戻[もど]させられる",
+    "causative passive negative" : "買[か]い戻[もど]させられない",
   },
 
   "見る" : {
@@ -145,6 +169,12 @@ var conjugations = {
     "potential negative" : "見[み]られない",
     "imperative" : "見[み]ろ",
     "imperative negative" : "見[み]るな",
+    "passive" : "見[み]られる",
+    "passive negative" : "見[み]られない",
+    "causative" : "見[み]させる",
+    "causative negative" : "見[み]させない",
+    "causative passive" : "見[み]させられる",
+    "causative passive negative" : "見[み]させられない",
   },
 
   "食べる" : {
@@ -163,6 +193,12 @@ var conjugations = {
     "potential negative" : "食[た]べられない",
     "imperative" : "食[た]べろ",
     "imperative negative" : "食[た]べるな",
+    "passive" : "食[た]べられる",
+    "passive negative" : "食[た]べられない",
+    "causative" : "食[た]べさせる",
+    "causative negative" : "食[た]べさせない",
+    "causative passive" : "食[た]べさせられる",
+    "causative passive negative" : "食[た]べさせられない",
   },
 
   "起きる" : {
@@ -181,6 +217,12 @@ var conjugations = {
     "potential negative" : "起[お]きられない",
     "imperative" : "起[お]きろ",
     "imperative negative" : "起[お]きるな",
+    "passive" : "起[お]きられる",
+    "passive negative" : "起[お]きられない",
+    "causative" : "起[お]きさせる",
+    "causative negative" : "起[お]きさせない",
+    "causative passive" : "起[お]きさせられる",
+    "causative passive negative" : "起[お]きさせられない",
   },
 
   "買い換える" : {
@@ -199,6 +241,12 @@ var conjugations = {
     "potential negative" : "買[か]い換[か]えられない",
     "imperative" : "買[か]い換[か]えろ",
     "imperative negative" : "買[か]い換[か]えるな",
+    "passive" : "買[か]い換[か]えられる",
+    "passive negative" : "買[か]い換[か]えられない",
+    "causative" : "買[か]い換[か]えさせる",
+    "causative negative" : "買[か]い換[か]えさせない",
+    "causative passive" : "買[か]い換[か]えさせられる",
+    "causative passive negative" : "買[か]い換[か]えさせられない",
   },
 
   "来る" : {
@@ -217,6 +265,12 @@ var conjugations = {
     "potential negative" : "来[こ]られない",
     "imperative" : "来[こ]い",
     "imperative negative" : "来[く]るな",
+    "passive" : "来[こ]られる",
+    "passive negative" : "来[こ]られない",
+    "causative" : "来[こ]させる",
+    "causative negative" : "来[こ]させない",
+    "causative passive" : "来[こ]させられる",
+    "causative passive negative" : "来[こ]させられない",
   },
 
   "勉強する" : {
@@ -263,6 +317,12 @@ var conjugations = {
     "potential negative" : "読[よ]めない",
     "imperative" : "読[よ]め",
     "imperative negative" : "読[よ]むな",
+    "passive" : "読[よ]まれる",
+    "passive negative" : "読[よ]まれない",
+    "causative" : "読[よ]ませる",
+    "causative negative" : "読[よ]ませない",
+    "causative passive" : "読[よ]ませられる",
+    "causative passive negative" : "読[よ]ませられない",
   },
 
   "思う" : {
@@ -281,6 +341,12 @@ var conjugations = {
     "potential negative" : "思[おも]えない",
     "imperative" : "思[おも]え",
     "imperative negative" : "思[おも]うな",
+    "passive" : "思[おも]われる",
+    "passive negative" : "思[おも]われない",
+    "causative" : "思[おも]わせる",
+    "causative negative" : "思[おも]わせない",
+    "causative passive" : "思[おも]わせられる",
+    "causative passive negative" : "思[おも]わせられない",
   },
 
   "買い与える" : {
@@ -299,6 +365,12 @@ var conjugations = {
     "potential negative" : "買[か]い与[あた]えられない",
     "imperative" : "買[か]い与[あた]えろ",
     "imperative negative" : "買[か]い与[あた]えるな",
+    "passive" : "買[か]い与[あた]えられる",
+    "passive negative" : "買[か]い与[あた]えられない",
+    "causative" : "買[か]い与[あた]えさせる",
+    "causative negative" : "買[か]い与[あた]えさせない",
+    "causative passive" : "買[か]い与[あた]えさせられる",
+    "causative passive negative" : "買[か]い与[あた]えさせられない",
   },
 
   "座る" : {
@@ -317,6 +389,12 @@ var conjugations = {
     "potential negative" : "座[すわ]れない",
     "imperative" : "座[すわ]れ",
     "imperative negative" : "座[すわ]るな",
+    "passive" : "座[すわ]られる",
+    "passive negative" : "座[すわ]られない",
+    "causative" : "座[すわ]らせる",
+    "causative negative" : "座[すわ]らせない",
+    "causative passive" : "座[すわ]らせられる",
+    "causative passive negative" : "座[すわ]らせられない",
   },
 
   "休む" : {
@@ -335,6 +413,12 @@ var conjugations = {
     "potential negative" : "休[やす]めない",
     "imperative" : "休[やす]め",
     "imperative negative" : "休[やす]むな",
+    "passive" : "休[やす]まれる",
+    "passive negative" : "休[やす]まれない",
+    "causative" : "休[やす]ませる",
+    "causative negative" : "休[やす]ませない",
+    "causative passive" : "休[やす]ませられる",
+    "causative passive negative" : "休[やす]ませられない",
   },
 
   "足す" : {
@@ -353,6 +437,12 @@ var conjugations = {
     "potential negative" : "足[た]せない",
     "imperative" : "足[た]せ",
     "imperative negative" : "足[た]すな",
+    "passive" : "足[た]される",
+    "passive negative" : "足[た]されない",
+    "causative" : "足[た]させる",
+    "causative negative" : "足[た]させない",
+    "causative passive" : "足[た]させられる",
+    "causative passive negative" : "足[た]させられない",
   },
 
   "歌う" : {
@@ -371,6 +461,12 @@ var conjugations = {
     "potential negative" : "歌[うた]えない",
     "imperative" : "歌[うた]え",
     "imperative negative" : "歌[うた]うな",
+    "passive" : "歌[うた]われる",
+    "passive negative" : "歌[うた]われない",
+    "causative" : "歌[うた]わせる",
+    "causative negative" : "歌[うた]わせない",
+    "causative passive" : "歌[うた]わせられる",
+    "causative passive negative" : "歌[うた]わせられない",
   },
 };
 
@@ -483,6 +579,8 @@ var verb_relative_form = {
     "te-form": "plain",
     "potential": "plain",
     "imperative": "plain",
+    "causative": "plain",
+    "passive": "plain",
   },
 
   "negative": {
@@ -493,6 +591,8 @@ var verb_relative_form = {
     "te-form negative": "plain",
     "potential negative": "plain",
     "imperative negative": "plain",
+    "causative negative": "plain",
+    "passive negative": "plain",
   },
 
   "past" : {
@@ -571,6 +671,48 @@ var verb_relative_form = {
 
     "imperative" : "negative",
     "negative" : "imperative",
+  },
+
+  "causative" : {
+
+    "plain" : "causative",
+    "causative negative" : "affirmative",
+    "causative passive" : "active",
+  },
+
+  "causative negative" : {
+
+    "causative" : "negative",
+    "negative" : "causative",
+    "causative passive negative" : "active",
+  },
+
+  "passive" : {
+
+    "plain" : "passive",
+    "passive negative" : "affirmative",
+    "causative passive" : "non-causative",
+  },
+
+  "passive negative" : {
+
+    "passive" : "negative",
+    "negative" : "passive",
+    "causative passive negative" : "non-causative"
+  },
+
+  "causative passive" : {
+
+    "causative" : "passive",
+    "passive" : "causative",
+    "causative passive negative" : "affirmative",
+  },
+
+  "causative passive negative" : {
+
+    "causative negative" : "passive",
+    "passive negative" : "causative",
+    "causative passive" : "negative",
   },
 };
 
