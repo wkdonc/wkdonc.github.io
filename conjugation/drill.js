@@ -71,6 +71,8 @@ var conjugations = {
     "te-form negative" : "行[い]かなくて",
     "potential" : "行[い]ける",
     "potential negative" : "行[い]けない",
+    "imperative" : "行[い]け",
+    "imperative negative" : "行[い]くな",
   },
 
   "飲む" : {
@@ -87,6 +89,8 @@ var conjugations = {
     "te-form negative" : "飲[の]まなくて",
     "potential" : "飲[の]める",
     "potential negative" : "飲[の]めない",
+    "imperative" : "飲[の]め",
+    "imperative negative" : "飲[の]むな",
   },
 
   "作る" : {
@@ -103,6 +107,8 @@ var conjugations = {
     "te-form negative" : "作[つく]らなくて",
     "potential" : "作[つく]れる",
     "potential negative" : "作[つく]れない",
+    "imperative" : "作[つく]れ",
+    "imperative negative" : "作[つく]るな",
   },
 
   "買い戻す" : {
@@ -119,6 +125,8 @@ var conjugations = {
     "te-form negative" : "買[か]い戻[もど]さなくて",
     "potential" : "買[か]い戻[もど]せる",
     "potential negative" : "買[か]い戻[もど]せない",
+    "imperative" : "買[か]い戻[もど]せ",
+    "imperative negative" : "買[か]い戻[もど]すな",
   },
 
   "見る" : {
@@ -135,6 +143,8 @@ var conjugations = {
     "te-form negative" : "見[み]なくて",
     "potential" : "見[み]られる",
     "potential negative" : "見[み]られない",
+    "imperative" : "見[み]ろ",
+    "imperative negative" : "見[み]るな",
   },
 
   "食べる" : {
@@ -151,6 +161,8 @@ var conjugations = {
     "te-form negative" : "食[た]べなくて",
     "potential" : "食[た]べられる",
     "potential negative" : "食[た]べられない",
+    "imperative" : "食[た]べろ",
+    "imperative negative" : "食[た]べるな",
   },
 
   "起きる" : {
@@ -167,6 +179,8 @@ var conjugations = {
     "te-form negative" : "起[お]きなくて",
     "potential" : "起[お]きられる",
     "potential negative" : "起[お]きられない",
+    "imperative" : "起[お]きろ",
+    "imperative negative" : "起[お]きるな",
   },
 
   "買い換える" : {
@@ -183,6 +197,8 @@ var conjugations = {
     "te-form negative" : "買[か]い換[か]えなくて",
     "potential" : "買[か]い換[か]えられる",
     "potential negative" : "買[か]い換[か]えられない",
+    "imperative" : "買[か]い換[か]えろ",
+    "imperative negative" : "買[か]い換[か]えるな",
   },
 
   "来る" : {
@@ -199,6 +215,8 @@ var conjugations = {
     "te-form negative" : "来[こ]なくて",
     "potential" : "来[こ]られる",
     "potential negative" : "来[こ]られない",
+    "imperative" : "来[こ]い",
+    "imperative negative" : "来[く]るな",
   },
 
   "勉強する" : {
@@ -211,6 +229,8 @@ var conjugations = {
     "past negative" : "勉[べん]強[きょう]しなかった",
     "polite past" : "勉[べん]強[きょう]しました",
     "polite past negative" : "勉[べん]強[きょう]しませんでした",
+    "imperative" : "勉[べん]強[きょう]しろ",
+    "imperative negative" : "勉[べん]強[きょう]さるな",
   },
 
   "電話する" : {
@@ -223,6 +243,8 @@ var conjugations = {
     "past negative" : "電[でん]話[わ]しなかった",
     "polite past" : "電[でん]話[わ]しました",
     "polite past negative" : "電[でん]話[わ]しませんでした",
+    "imperative" : "電[でん]話[わ]しろ",
+    "imperative negative" : "電[でん]話[わ]さるな",
   },
 
   "読む" : {
@@ -239,6 +261,8 @@ var conjugations = {
     "te-form negative" : "読[よ]まなくて",
     "potential" : "読[よ]める",
     "potential negative" : "読[よ]めない",
+    "imperative" : "読[よ]め",
+    "imperative negative" : "読[よ]むな",
   },
 
   "思う" : {
@@ -255,6 +279,8 @@ var conjugations = {
     "te-form negative" : "思[おも]わなくて",
     "potential" : "思[おも]える",
     "potential negative" : "思[おも]えない",
+    "imperative" : "思[おも]え",
+    "imperative negative" : "思[おも]うな",
   },
 
   "買い与える" : {
@@ -271,6 +297,8 @@ var conjugations = {
     "te-form negative" : "買[か]い与[あた]えなくて",
     "potential" : "買[か]い与[あた]えられる",
     "potential negative" : "買[か]い与[あた]えられない",
+    "imperative" : "買[か]い与[あた]えろ",
+    "imperative negative" : "買[か]い与[あた]えるな",
   },
 
   "座る" : {
@@ -287,6 +315,8 @@ var conjugations = {
     "te-form negative" : "座[すわ]らなくて",
     "potential" : "座[すわ]れる",
     "potential negative" : "座[すわ]れない",
+    "imperative" : "座[すわ]れ",
+    "imperative negative" : "座[すわ]るな",
   },
 
   "休む" : {
@@ -303,6 +333,8 @@ var conjugations = {
     "te-form negative" : "休[やす]まなくて",
     "potential" : "休[やす]める",
     "potential negative" : "休[やす]めない",
+    "imperative" : "休[やす]め",
+    "imperative negative" : "休[やす]むな",
   },
 
   "足す" : {
@@ -319,6 +351,8 @@ var conjugations = {
     "te-form negative" : "足[た]さなくて",
     "potential" : "足[た]せる",
     "potential negative" : "足[た]せない",
+    "imperative" : "足[た]せ",
+    "imperative negative" : "足[た]すな",
   },
 
   "歌う" : {
@@ -335,6 +369,8 @@ var conjugations = {
     "te-form negative" : "歌[うた]わなくて",
     "potential" : "歌[うた]える",
     "potential negative" : "歌[うた]えない",
+    "imperative" : "歌[うた]え",
+    "imperative negative" : "歌[うた]うな",
   },
 };
 
@@ -446,6 +482,7 @@ var verb_relative_form = {
     "polite": "plain",
     "te-form": "plain",
     "potential": "plain",
+    "imperative": "plain",
   },
 
   "negative": {
@@ -455,6 +492,7 @@ var verb_relative_form = {
     "polite negative": "plain",
     "te-form negative": "plain",
     "potential negative": "plain",
+    "imperative negative": "plain",
   },
 
   "past" : {
@@ -521,6 +559,18 @@ var verb_relative_form = {
 
     "potential" : "negative",
     "negative" : "potential",
+  },
+
+  "imperative" : {
+
+    "plain" : "imperative",
+    "imperative negative" : "affirmative",
+  },
+
+  "imperative negative" : {
+
+    "imperative" : "negative",
+    "negative" : "imperative",
   },
 };
 
