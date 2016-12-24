@@ -67,6 +67,8 @@ var conjugations = {
     "past negative" : "行[い]かなかった",
     "polite past" : "行[い]きました",
     "polite past negative" : "行[い]きませんでした",
+    "te-form" : "行[い]って",
+    "te-form negative" : "行[い]かなくて",
   },
 
   "飲む" : {
@@ -79,6 +81,8 @@ var conjugations = {
     "past negative" : "飲[の]まなかった",
     "polite past" : "飲[の]みました",
     "polite past negative" : "飲[の]みませんでした",
+    "te-form" : "飲[の]んで",
+    "te-form negative" : "飲[の]まなくて",
   },
 
   "作る" : {
@@ -91,6 +95,8 @@ var conjugations = {
     "past negative" : "作[つく]らなかった",
     "polite past" : "作[つく]りました",
     "polite past negative" : "作[つく]りませんでした",
+    "te-form" : "作[つく]って",
+    "te-form negative" : "作[つく]らなくて",
   },
 
   "買い戻す" : {
@@ -103,6 +109,8 @@ var conjugations = {
     "past negative" : "買[か]い戻[もど]さなかった",
     "polite past" : "買[か]い戻[もど]しました",
     "polite past negative" : "買[か]い戻[もど]しませんでした",
+    "te-form" : "買[か]い戻[もど]して",
+    "te-form negative" : "買[か]い戻[もど]さなくて",
   },
 
   "見る" : {
@@ -115,6 +123,8 @@ var conjugations = {
     "past negative" : "見[み]なかった",
     "polite past" : "見[み]ました",
     "polite past negative" : "見[み]ませんでした",
+    "te-form" : "見[み]て",
+    "te-form negative" : "見[み]なくて",
   },
 
   "食べる" : {
@@ -127,6 +137,8 @@ var conjugations = {
     "past negative" : "食[た]べなかった",
     "polite past" : "食[た]べました",
     "polite past negative" : "食[た]べませんでした",
+    "te-form" : "食[た]べて",
+    "te-form negative" : "食[た]べなくて",
   },
 
   "起きる" : {
@@ -139,6 +151,8 @@ var conjugations = {
     "past negative" : "起[お]きなかった",
     "polite past" : "起[お]きました",
     "polite past negative" : "起[お]きませんでした",
+    "te-form" : "起[お]きて",
+    "te-form negative" : "起[お]きなくて",
   },
 
   "買い換える" : {
@@ -151,6 +165,8 @@ var conjugations = {
     "past negative" : "買[か]い換[か]えなかった",
     "polite past" : "買[か]い換[か]えました",
     "polite past negative" : "買[か]い換[か]えませんでした",
+    "te-form" : "買[か]い換[か]えて",
+    "te-form negative" : "買[か]い換[か]えなくて",
   },
 
   "来る" : {
@@ -163,6 +179,8 @@ var conjugations = {
     "past negative" : "来[こ]なかった",
     "polite past" : "来[き]ました",
     "polite past negative" : "来[き]ませんでした",
+    "te-form" : "来[き]て",
+    "te-form negative" : "来[こ]なくて",
   },
 
   "勉強する" : {
@@ -199,6 +217,8 @@ var conjugations = {
     "past negative" : "読[よ]まなかった",
     "polite past" : "読[よ]みました",
     "polite past negative" : "読[よ]みませんでした",
+    "te-form" : "読[よ]んで",
+    "te-form negative" : "読[よ]まなくて",
   },
 
   "思う" : {
@@ -211,6 +231,8 @@ var conjugations = {
     "past negative" : "思[おも]わなかった",
     "polite past" : "思[おも]いました",
     "polite past negative" : "思[おも]いませんでした",
+    "te-form" : "思[おも]って",
+    "te-form negative" : "思[おも]わなくて",
   },
 
   "買い与える" : {
@@ -223,6 +245,8 @@ var conjugations = {
     "past negative" : "買[か]い与[あた]えなかった",
     "polite past" : "買[か]い与[あた]えました",
     "polite past negative" : "買[か]い与[あた]えませんでした",
+    "te-form" : "買[か]い与[あた]えて",
+    "te-form negative" : "買[か]い与[あた]えなくて",
   },
 
   "座る" : {
@@ -235,6 +259,8 @@ var conjugations = {
     "past negative" : "座[すわ]らなかった",
     "polite past" : "座[すわ]りました",
     "polite past negative" : "座[すわ]りませんでした",
+    "te-form" : "座[すわ]って",
+    "te-form negative" : "座[すわ]らなくて",
   },
 
   "休む" : {
@@ -247,6 +273,8 @@ var conjugations = {
     "past negative" : "休[やす]まなかった",
     "polite past" : "休[やす]みました",
     "polite past negative" : "休[やす]みませんでした",
+    "te-form" : "休[やす]んで",
+    "te-form negative" : "休[やす]まなくて",
   },
 
   "足す" : {
@@ -259,6 +287,8 @@ var conjugations = {
     "past negative" : "足[た]さなかった",
     "polite past" : "足[た]しました",
     "polite past negative" : "足[た]しませんでした",
+    "te-form" : "足[た]して",
+    "te-form negative" : "足[た]さなくて",
   },
 
   "歌う" : {
@@ -271,6 +301,8 @@ var conjugations = {
     "past negative" : "歌[うた]わなかった",
     "polite past" : "歌[うた]いました",
     "polite past negative" : "歌[うた]いませんでした",
+    "te-form" : "歌[うた]って",
+    "te-form negative" : "歌[うた]わなくて",
   },
 };
 
@@ -380,7 +412,7 @@ var verb_relative_form = {
     "negative": "affirmative",
     "past": "present",
     "polite": "plain",
-//    "te-form": "plain",
+    "te-form": "plain",
   },
 
   "negative": {
@@ -388,7 +420,7 @@ var verb_relative_form = {
     "plain": "negative",
     "past negative": "present",
     "polite negative": "plain",
- //   "te-form": "negative",
+    "te-form negative": "plain",
   },
 
   "past" : {
@@ -396,7 +428,6 @@ var verb_relative_form = {
     "plain": "past",
     "past negative" : "affirmative",
     "polite past": "plain",
-//    "te-form": "past",
   },
 
   "past negative" : {
@@ -404,7 +435,6 @@ var verb_relative_form = {
     "negative": "past",
     "past": "negative",
     "polite past negative": "plain",
-//    "te-form": "past negative",
   },
 
   "polite": {
@@ -412,7 +442,6 @@ var verb_relative_form = {
     "plain": "polite",
     "polite past": "present",
     "polite negative": "affirmative",
-//    "te-form": "polite",
   },
 
   "polite past": {
@@ -420,7 +449,6 @@ var verb_relative_form = {
     "past": "polite",
     "polite": "past",
     "polite past negative": "affirmative",
-//    "te-form": "polite past",
   },
 
   "polite negative": {
@@ -428,7 +456,6 @@ var verb_relative_form = {
     "negative": "polite",
     "polite": "negative",
     "polite past negative": "present",
- //   "te-form": "polite negative",
   },
 
   "polite past negative": {
@@ -436,7 +463,18 @@ var verb_relative_form = {
     "past negative": "polite",
     "polite past": "negative",
     "polite negative": "past",
-//    "te-form": "polite past negative",
+  },
+
+  "te-form" : {
+
+    "plain" : "て",
+    "te-form negative" : "affirmative",
+  },
+
+  "te-form negative" : {
+
+    "te-form" : "negative",
+    "negative" : "て",
   },
 };
 
@@ -580,17 +618,28 @@ function processAnswerKey() {
 
 function generateVerbQuestion() {
   
-  var entry = Object.keys(conjugations).randomElement();
+  var entry;
+  var to_form;
+  var from_form;
+  var forms;
 
-  var forms = getVerbForms(entry);
+  while (true) {
+
+    entry = Object.keys(conjugations).randomElement();
+    to_form = Object.keys(verb_relative_form).randomElement();
+    from_form = Object.keys(verb_relative_form[to_form]).randomElement();
+
+    forms = getVerbForms(entry);
+
+    if ((forms["furigana"][from_form]) && (forms["furigana"][to_form])) {
+      break;
+    }
+  }
 
   var word = forms["word"];
   var kanjiForms = forms["kanji"];
   var kanaForms = forms["hiragana"];
   var furiganaForms = forms["furigana"];
-
-  var to_form = Object.keys(verb_relative_form).randomElement();
-  var from_form = Object.keys(verb_relative_form[to_form]).randomElement();
 
   var question = "What is the " + verb_relative_form[to_form][from_form] + " form of " + wordWithFurigana(furiganaForms[from_form]) + "?";
   var answer = kanjiForms[to_form];
