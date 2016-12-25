@@ -560,6 +560,63 @@ var conjugations = {
     "polite past" : "良[よ]かったです",
     "polite past negative" : "良[よ]くなかったです",
   },
+
+  "有名な" : {
+
+    "group" : "na-adjective",
+
+    "plain" : "有名[ゆうめい]だ",
+    "negative" : "有名[ゆうめい]ではない",
+    "polite" : "有名[ゆうめい]です",
+    "polite negative" : "有名[ゆうめい]ではありません",
+    "past" : "有名[ゆうめい]だった",
+    "past negative" : "有名[ゆうめい]ではなかった",
+    "polite past" : "有名[ゆうめい]でした",
+    "polite past negative" : "有名[ゆうめい]ではありませんでした",
+  },
+
+  "好きな" : {
+
+    "group" : "na-adjective",
+
+    "plain" : "好[き]だ",
+    "negative" : "好[き]ではない",
+    "polite" : "好[き]です",
+    "polite negative" : "好[き]ではありません",
+    "past" : "好[き]だった",
+    "past negative" : "好[き]ではなかった",
+    "polite past" : "好[き]でした",
+    "polite past negative" : "好[き]ではありませんでした",
+  },
+
+  "元気な" : {
+
+    "group" : "na-adjective",
+
+    "plain" : "元[げん]気[き]だ",
+    "negative" : "元[げん]気[き]ではない",
+    "polite" : "元[げん]気[き]です",
+    "polite negative" : "元[げん]気[き]ではありません",
+    "past" : "元[げん]気[き]だった",
+    "past negative" : "元[げん]気[き]ではなかった",
+    "polite past" : "元[げん]気[き]でした",
+    "polite past negative" : "元[げん]気[き]ではありませんでした",
+  },
+
+  "意地悪な" : {
+
+    "group" : "na-adjective",
+
+    "plain" : "意[い]地[じ]悪[わる]だ",
+    "negative" : "意[い]地[じ]悪[わる]ではない",
+    "polite" : "意[い]地[じ]悪[わる]です",
+    "polite negative" : "意[い]地[じ]悪[わる]ではありません",
+    "past" : "意[い]地[じ]悪[わる]だった",
+    "past negative" : "意[い]地[じ]悪[わる]ではなかった",
+    "polite past" : "意[い]地[じ]悪[わる]でした",
+    "polite past negative" : "意[い]地[じ]悪[わる]ではありませんでした",
+  },
+
 };
 
 var log;
