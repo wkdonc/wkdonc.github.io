@@ -577,10 +577,10 @@ var verb_relative_form = {
     "past": "present",
     "polite": "plain",
     "te-form": "plain",
-    "potential": "plain",
-    "imperative": "plain",
-    "causative": "plain",
-    "passive": "plain",
+//    "potential": "plain",
+//    "imperative": "plain",
+//    "causative": "plain",
+//    "passive": "plain",
   },
 
   "negative": {
@@ -589,10 +589,10 @@ var verb_relative_form = {
     "past negative": "present",
     "polite negative": "plain",
     "te-form negative": "plain",
-    "potential negative": "plain",
-    "imperative negative": "plain",
-    "causative negative": "plain",
-    "passive negative": "plain",
+//    "potential negative": "plain",
+//    "imperative negative": "plain",
+//    "causative negative": "plain",
+//    "passive negative": "plain",
   },
 
   "past" : {
@@ -649,71 +649,71 @@ var verb_relative_form = {
     "negative" : "て",
   },
 
-  "potential" : {
-
-    "plain" : "potential",
-    "potential negative" : "affirmative",
-  },
-
-  "potential negative" : {
-
-    "potential" : "negative",
-    "negative" : "potential",
-  },
-
-  "imperative" : {
-
-    "plain" : "imperative",
-    "imperative negative" : "affirmative",
-  },
-
-  "imperative negative" : {
-
-    "imperative" : "negative",
-    "negative" : "imperative",
-  },
-
-  "causative" : {
-
-    "plain" : "causative",
-    "causative negative" : "affirmative",
-    "causative passive" : "active",
-  },
-
-  "causative negative" : {
-
-    "causative" : "negative",
-    "negative" : "causative",
-    "causative passive negative" : "active",
-  },
-
-  "passive" : {
-
-    "plain" : "passive",
-    "passive negative" : "affirmative",
-    "causative passive" : "non-causative",
-  },
-
-  "passive negative" : {
-
-    "passive" : "negative",
-    "negative" : "passive",
-    "causative passive negative" : "non-causative"
-  },
-
-  "causative passive" : {
-
-    "causative" : "passive",
-    "passive" : "causative",
-    "causative passive negative" : "affirmative",
-  },
-
-  "causative passive negative" : {
-
-    "causative negative" : "passive",
-    "passive negative" : "causative",
-    "causative passive" : "negative",
-  },
+//  "potential" : {
+//
+//    "plain" : "potential",
+//    "potential negative" : "affirmative",
+//  },
+//
+//  "potential negative" : {
+//
+//    "potential" : "negative",
+//    "negative" : "potential",
+//  },
+//
+//  "imperative" : {
+//
+//    "plain" : "imperative",
+//    "imperative negative" : "affirmative",
+//  },
+//
+//  "imperative negative" : {
+//
+//    "imperative" : "negative",
+//    "negative" : "imperative",
+//  },
+//
+//  "causative" : {
+//
+//    "plain" : "causative",
+//    "causative negative" : "affirmative",
+//    "causative passive" : "active",
+//  },
+//
+//  "causative negative" : {
+//
+//    "causative" : "negative",
+//    "negative" : "causative",
+//    "causative passive negative" : "active",
+//  },
+//
+//  "passive" : {
+//
+//    "plain" : "passive",
+//    "passive negative" : "affirmative",
+//    "causative passive" : "non-causative",
+//  },
+//
+//  "passive negative" : {
+//
+//    "passive" : "negative",
+//    "negative" : "passive",
+//    "causative passive negative" : "non-causative"
+//  },
+//
+//  "causative passive" : {
+//
+//    "causative" : "passive",
+//    "passive" : "causative",
+//    "causative passive negative" : "affirmative",
+//  },
+//
+//  "causative passive negative" : {
+//
+//    "causative negative" : "passive",
+//    "passive negative" : "causative",
+//    "causative passive" : "negative",
+//  },
 };
 
 function wordWithFurigana(word) {
