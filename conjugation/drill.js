@@ -505,47 +505,47 @@ var conjugations = {
     "causative passive negative" : "歌[うた]わせられない",
   },
 
-//  "高い" : {
-//
-//    "group" : "i-adjective",
-//
-//    "plain" : "高[たか]い",
-//    "negative" : "高[たか]くない",
-//    "polite" : "高[たか]いです",
-//    "polite negative" : "高[たか]くないです",
-//    "past" : "高[たか]かった",
-//    "past negative" : "高[たか]くなかった",
-//    "polite past" : "高[たか]かったです",
-//    "polite past negative" : "高[たか]くなかったです",
-//  },
-//
-//  "面白い" : {
-//
-//    "group" : "i-adjective",
-//
-//    "plain" : "面白[おもしろ]い",
-//    "negative" : "面白[おもしろ]くない",
-//    "polite" : "面白[おもしろ]いです",
-//    "polite negative" : "面白[おもしろ]くないです",
-//    "past" : "面白[おもしろ]かった",
-//    "past negative" : "面白[おもしろ]くなかった",
-//    "polite past" : "面白[おもしろ]かったです",
-//    "polite past negative" : "面白[おもしろ]くなかったです",
-//  },
-//
-//  "暗い" : {
-//
-//    "group" : "i-adjective",
-//
-//    "plain" : "暗[くら]い",
-//    "negative" : "暗[くら]くない",
-//    "polite" : "暗[くら]いです",
-//    "polite negative" : "暗[くら]くないです",
-//    "past" : "暗[くら]かった",
-//    "past negative" : "暗[くら]くなかった",
-//    "polite past" : "暗[くら]かったです",
-//    "polite past negative" : "暗[くら]くなかったです",
-//  },
+  "高い" : {
+
+    "group" : "i-adjective",
+
+    "plain" : "高[たか]い",
+    "negative" : "高[たか]くない",
+    "polite" : "高[たか]いです",
+    "polite negative" : "高[たか]くないです",
+    "past" : "高[たか]かった",
+    "past negative" : "高[たか]くなかった",
+    "polite past" : "高[たか]かったです",
+    "polite past negative" : "高[たか]くなかったです",
+  },
+
+  "面白い" : {
+
+    "group" : "i-adjective",
+
+    "plain" : "面白[おもしろ]い",
+    "negative" : "面白[おもしろ]くない",
+    "polite" : "面白[おもしろ]いです",
+    "polite negative" : "面白[おもしろ]くないです",
+    "past" : "面白[おもしろ]かった",
+    "past negative" : "面白[おもしろ]くなかった",
+    "polite past" : "面白[おもしろ]かったです",
+    "polite past negative" : "面白[おもしろ]くなかったです",
+  },
+
+  "暗い" : {
+
+    "group" : "i-adjective",
+
+    "plain" : "暗[くら]い",
+    "negative" : "暗[くら]くない",
+    "polite" : "暗[くら]いです",
+    "polite negative" : "暗[くら]くないです",
+    "past" : "暗[くら]かった",
+    "past negative" : "暗[くら]くなかった",
+    "polite past" : "暗[くら]かったです",
+    "polite past negative" : "暗[くら]くなかったです",
+  },
 
   "いい" : {
 
