@@ -470,6 +470,8 @@ var conjugations = {
   },
 };
 
+
+
 var log;
 
 Array.prototype.randomElement = function () {
@@ -649,71 +651,71 @@ var verb_relative_form = {
     "negative" : "て",
   },
 
-//  "potential" : {
-//
-//    "plain" : "potential",
-//    "potential negative" : "affirmative",
-//  },
-//
-//  "potential negative" : {
-//
-//    "potential" : "negative",
-//    "negative" : "potential",
-//  },
-//
-//  "imperative" : {
-//
-//    "plain" : "imperative",
-//    "imperative negative" : "affirmative",
-//  },
-//
-//  "imperative negative" : {
-//
-//    "imperative" : "negative",
-//    "negative" : "imperative",
-//  },
-//
-//  "causative" : {
-//
-//    "plain" : "causative",
-//    "causative negative" : "affirmative",
-//    "causative passive" : "active",
-//  },
-//
-//  "causative negative" : {
-//
-//    "causative" : "negative",
-//    "negative" : "causative",
-//    "causative passive negative" : "active",
-//  },
-//
-//  "passive" : {
-//
-//    "plain" : "passive",
-//    "passive negative" : "affirmative",
-//    "causative passive" : "non-causative",
-//  },
-//
-//  "passive negative" : {
-//
-//    "passive" : "negative",
-//    "negative" : "passive",
-//    "causative passive negative" : "non-causative"
-//  },
-//
-//  "causative passive" : {
-//
-//    "causative" : "passive",
-//    "passive" : "causative",
-//    "causative passive negative" : "affirmative",
-//  },
-//
-//  "causative passive negative" : {
-//
-//    "causative negative" : "passive",
-//    "passive negative" : "causative",
-//    "causative passive" : "negative",
-//  },
+  "potential" : {
+
+    "plain" : "potential",
+    "potential negative" : "affirmative",
+  },
+
+  "potential negative" : {
+
+    "potential" : "negative",
+    "negative" : "potential",
+  },
+
+  "imperative" : {
+
+    "plain" : "imperative",
+    "imperative negative" : "affirmative",
+  },
+
+  "imperative negative" : {
+
+    "imperative" : "negative",
+    "negative" : "imperative",
+  },
+
+  "causative" : {
+
+    "plain" : "causative",
+    "causative negative" : "affirmative",
+    "causative passive" : "active",
+  },
+
+  "causative negative" : {
+
+    "causative" : "negative",
+    "negative" : "causative",
+    "causative passive negative" : "active",
+  },
+
+  "passive" : {
+
+    "plain" : "passive",
+    "passive negative" : "affirmative",
+    "causative passive" : "non-causative",
+  },
+
+  "passive negative" : {
+
+    "passive" : "negative",
+    "negative" : "passive",
+    "causative passive negative" : "non-causative"
+  },
+
+  "causative passive" : {
+
+    "causative" : "passive",
+    "passive" : "causative",
+    "causative passive negative" : "affirmative",
+  },
+
+  "causative passive negative" : {
+
+    "causative negative" : "passive",
+    "passive negative" : "causative",
+    "causative passive" : "negative",
+  },
 };
 
 function wordWithFurigana(word) {
@@ -861,15 +863,39 @@ function generateVerbQuestion() {
   var from_form;
   var forms;
 
+  var count = 0;
+
   while (true) {
 
+    if (count++ == 100) {
+      showSplash();
+      return;
+    }
+     
     entry = Object.keys(conjugations).randomElement();
     to_form = Object.keys(verb_relative_form).randomElement();
     from_form = Object.keys(verb_relative_form[to_form]).randomElement();
 
     forms = getVerbForms(entry);
 
-    if ((forms["furigana"][from_form]) && (forms["furigana"][to_form])) {
+    var valid = true;
+    var types = from_form.split(" ").concat(to_form.split(" "));
+
+    types.forEach(function (type) {
+      if (type != 'plain') {
+        if ($('#' + type).is(':checked') == false) {
+          valid = false;
+        }
+      }
+    });
+
+    if (!forms["furigana"][from_form])
+      valid = false;
+
+    if (!forms["furigana"][to_form])
+      valid = false;
+
+    if (valid) {
       break;
     }
   }

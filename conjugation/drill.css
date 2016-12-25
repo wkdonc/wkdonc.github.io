@@ -139,6 +139,22 @@ div#history table th {
   text-align: left;
 }
 
+div.options > * {
+  display: inline-block;
+  vertical-align: top;
+  margin: 20px;
+}
+
+div#splash > * {
+  margin-left: auto;
+  margin-right: auto;
+  display: table;
+}
+
+input#numQuestions {
+  width: 60px;
+}
+
 /* Tooltip from http://jsfiddle.net/AndreaLigios/jtLbpy62/ */
 
 [tooltip]:before {

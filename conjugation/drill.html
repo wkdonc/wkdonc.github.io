@@ -10,45 +10,44 @@
   <body>
 
     <div id="splash">
+
       <h1>Don's Japanese Conjugation Drill</h1>
+
       <div>
         <span>Number of Questions</span>
         <input id="numQuestions" value="10">
+        <button id="go">Go</button>
       </div>
 
-      <div>
-        <h2>Conjugation types</h2>
-        <ul>
-          <li><label><input type="checkbox" id="polite" checked="true"> Polite</label></li>
-          <li><label><input type="checkbox" id="negative" checked="true"> Negative</label></li>
-          <li><label><input type="checkbox" id="te-form"> て form</label></li>
-<!--
-          <li><label><input type="checkbox" id="potential"> Potential</label></li>
-          <li><label><input type="checkbox" id="imperative"> Imperative</label></li>
-          <li><label><input type="checkbox" id="passive"> Passive</label></li>
-          <li><label><input type="checkbox" id="causative"> Causative</label></li>
--->
-        </ul>
+      <div class="options">
+        <div>
+          <h2>Conjugation types</h2>
+          <ul>
+            <li><label><input type="checkbox" id="polite" checked> Polite</label></li>
+            <li><label><input type="checkbox" id="negative" checked> Negative</label></li>
+            <li><label><input type="checkbox" id="past" checked> Past</label></li>
+            <li><label><input type="checkbox" id="te-form" checked> て form</label></li>
+            <li><label><input type="checkbox" id="potential"> Potential</label></li>
+            <li><label><input type="checkbox" id="imperative"> Imperative</label></li>
+            <li><label><input type="checkbox" id="passive"> Passive</label></li>
+            <li><label><input type="checkbox" id="causative"> Causative</label></li>
+          </ul>
+        </div>
+  
+        <div>
+          <h2>Verb classes</h2>
+          <ul>
+            <li><label><input type="checkbox" id="godan" checked> Group 1 verbs</label></li>
+            <li><label><input type="checkbox" id="ichidan" checked> Group 2 verbs</label></li>
+            <li><label><input type="checkbox" id="iku" checked> いく verb</label></li>
+            <li><label><input type="checkbox" id="kuru" checked> くる verb</label></li>
+            <li><label><input type="checkbox" id="suru" checked> する verbs</label></li>
+          </ul>
+        </div>
       </div>
-
-      <div>
-        <h2>Verb classes</h2>
-        <ul>
-          <li><label><input type="checkbox" id="godan" checked="true"> Godan verbs</label></li>
-          <li><label><input type="checkbox" id="godan-mu" checked="true"> Godan verbs with a mu ending</label></li>
-          <li><label><input type="checkbox" id="godan-ru" checked="true"> Godan verbs with a ru ending</label></li>
-          <li><label><input type="checkbox" id="godan-u" checked="true"> Godan verbs with an u ending</label></li>
-          <li><label><input type="checkbox" id="ichidan" checked="true"> Ichidan verbs</label></li>
-          <li><label><input type="checkbox" id="kuru" checked="true"> Kuru verb</label></li>
-          <li><label><input type="checkbox" id="iku" checked="true"> Iku verb</label></li>
-          <li><label><input type="checkbox" id="suru" checked="true"> Suru verbs</label></li>
-        </ul>
-      </div>
-
-      <button id="go">Go</button>
 
       <div><small>
-        The quiz refers to negative て forms. In this test, they are assumed to be ～なくて  and not  ～ないで .
+        When the test refers to negative て forms, they are assumed to be ～なくて  and not  ～ないで .
       </small></div>
 
     </div>
