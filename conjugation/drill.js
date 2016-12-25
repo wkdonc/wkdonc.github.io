@@ -59,6 +59,8 @@ var conjugations = {
 
   "行く" : {
 
+    "group" : "iku",
+
     "plain" : "行[い]く",
     "negative" : "行[い]かない",
     "polite" : "行[い]きます",
@@ -82,6 +84,8 @@ var conjugations = {
   },
 
   "飲む" : {
+
+    "group" : "godan",
 
     "plain" : "飲[の]む",
     "negative" : "飲[の]まない",
@@ -107,6 +111,8 @@ var conjugations = {
 
   "作る" : {
 
+    "group" : "godan",
+
     "plain" : "作[つく]る",
     "negative" : "作[つく]らない",
     "polite" : "作[つく]ります",
@@ -130,6 +136,8 @@ var conjugations = {
   },
 
   "買い戻す" : {
+
+    "group" : "godan",
 
     "plain" : "買[か]い戻[もど]す",
     "negative" : "買[か]い戻[もど]さない",
@@ -155,6 +163,8 @@ var conjugations = {
 
   "見る" : {
 
+    "group" : "ichidan",
+
     "plain" : "見[み]る",
     "negative" : "見[み]ない",
     "polite" : "見[み]ます",
@@ -178,6 +188,8 @@ var conjugations = {
   },
 
   "食べる" : {
+
+    "group" : "ichidan",
 
     "plain" : "食[た]べる",
     "negative" : "食[た]べない",
@@ -203,6 +215,8 @@ var conjugations = {
 
   "起きる" : {
 
+    "group" : "ichidan",
+
     "plain" : "起[お]きる",
     "negative" : "起[お]きない",
     "polite" : "起[お]きます",
@@ -226,6 +240,8 @@ var conjugations = {
   },
 
   "買い換える" : {
+
+    "group" : "ichidan",
 
     "plain" : "買[か]い換[か]える",
     "negative" : "買[か]い換[か]えない",
@@ -251,6 +267,8 @@ var conjugations = {
 
   "来る" : {
 
+    "group" : "kuru",
+
     "plain" : "来[く]る",
     "negative" : "来[こ]ない",
     "polite" : "来[き]ます",
@@ -275,6 +293,8 @@ var conjugations = {
 
   "勉強する" : {
 
+    "group" : "suru",
+
     "plain" : "勉[べん]強[きょう]する",
     "negative" : "勉[べん]強[きょう]しない",
     "polite" : "勉[べん]強[きょう]します",
@@ -289,6 +309,8 @@ var conjugations = {
 
   "電話する" : {
 
+    "group" : "suru",
+
     "plain" : "電[でん]話[わ]する",
     "negative" : "電[でん]話[わ]しない",
     "polite" : "電[でん]話[わ]します",
@@ -302,6 +324,8 @@ var conjugations = {
   },
 
   "読む" : {
+
+    "group" : "godan",
 
     "plain" : "読[よ]む",
     "negative" : "読[よ]まない",
@@ -327,6 +351,8 @@ var conjugations = {
 
   "思う" : {
 
+    "group" : "godan",
+
     "plain" : "思[おも]う",
     "negative" : "思[おも]わない",
     "polite" : "思[おも]います",
@@ -350,6 +376,8 @@ var conjugations = {
   },
 
   "買い与える" : {
+
+    "group" : "ichidan",
 
     "plain" : "買[か]い与[あた]える",
     "negative" : "買[か]い与[あた]えない",
@@ -375,6 +403,8 @@ var conjugations = {
 
   "座る" : {
 
+    "group" : "godan",
+
     "plain" : "座[すわ]る",
     "negative" : "座[すわ]らない",
     "polite" : "座[すわ]ります",
@@ -398,6 +428,8 @@ var conjugations = {
   },
 
   "休む" : {
+
+    "group" : "godan",
 
     "plain" : "休[やす]む",
     "negative" : "休[やす]まない",
@@ -423,6 +455,8 @@ var conjugations = {
 
   "足す" : {
 
+    "group" : "godan",
+
     "plain" : "足[た]す",
     "negative" : "足[た]さない",
     "polite" : "足[た]します",
@@ -447,6 +481,8 @@ var conjugations = {
 
   "歌う" : {
 
+    "group" : "godan",
+
     "plain" : "歌[うた]う",
     "negative" : "歌[うた]わない",
     "polite" : "歌[うた]います",
@@ -469,8 +505,6 @@ var conjugations = {
     "causative passive negative" : "歌[うた]わせられない",
   },
 };
-
-
 
 var log;
 
@@ -888,6 +922,10 @@ function generateVerbQuestion() {
         }
       }
     });
+
+    if ($('#' + conjugations[entry].group).is(':checked') == false) {
+      valid = false;
+    }
 
     if (!forms["furigana"][from_form])
       valid = false;

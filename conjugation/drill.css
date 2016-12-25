@@ -155,6 +155,12 @@ input#numQuestions {
   width: 60px;
 }
 
+div.options ul {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 16px;
+}
+
 /* Tooltip from http://jsfiddle.net/AndreaLigios/jtLbpy62/ */
 
 [tooltip]:before {
