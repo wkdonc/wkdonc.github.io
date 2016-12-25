@@ -613,10 +613,10 @@ var verb_relative_form = {
     "past": "present",
     "polite": "plain",
     "te-form": "plain",
-//    "potential": "plain",
-//    "imperative": "plain",
-//    "causative": "plain",
-//    "passive": "plain",
+    "potential": "plain",
+    "imperative": "plain",
+    "causative": "plain",
+    "passive": "plain",
   },
 
   "negative": {
@@ -625,10 +625,10 @@ var verb_relative_form = {
     "past negative": "present",
     "polite negative": "plain",
     "te-form negative": "plain",
-//    "potential negative": "plain",
-//    "imperative negative": "plain",
-//    "causative negative": "plain",
-//    "passive negative": "plain",
+    "potential negative": "plain",
+    "imperative negative": "plain",
+    "causative negative": "plain",
+    "passive negative": "plain",
   },
 
   "past" : {
