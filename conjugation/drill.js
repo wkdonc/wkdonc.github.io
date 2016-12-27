@@ -1,60 +1,5 @@
 // drill.js
 
-var vowelPart = {
-  "あ": "あ", "い": "い", "う": "う", "え": "え", "お": "お",
-  "か": "あ", "き": "い", "く": "う", "け": "え", "こ": "お",
-  "さ": "あ", "し": "い", "す": "う", "せ": "え", "そ": "お",
-  "た": "あ", "ち": "い", "つ": "う", "て": "え", "と": "お",
-  "な": "あ", "に": "い", "ぬ": "う", "ね": "え", "の": "お",
-  "は": "あ", "ひ": "い", "ふ": "う", "へ": "え", "ほ": "お",
-  "ま": "あ", "み": "い", "む": "う", "め": "え", "も": "お",
-  "や": "あ", "ゆ": "う", "よ": "お",
-  "ら": "あ", "り": "い", "る": "う", "れ": "え", "ろ": "お",
-  "わ": "あ", "を": "お",
-  "が": "あ", "ぎ": "い", "ぐ": "う", "げ": "え", "ご": "お",
-  "ざ": "あ", "じ": "い", "ず": "う", "ぜ": "え", "ぞ": "お",
-  "だ": "あ", "ぢ": "い", "づ": "う", "で": "え", "ど": "お",
-  "ば": "あ", "び": "い", "ぶ": "う", "べ": "え", "ぼ": "お",
-  "ぱ": "あ", "ぴ": "い", "ぷ": "う", "ぺ": "え", "ぽ": "お"
-};
-
-var consonantPart = {
-  "あ": "あ", "い": "あ", "う": "あ", "え": "あ", "お": "あ",
-  "か": "か", "き": "か", "く": "か", "け": "か", "こ": "か",
-  "さ": "さ", "し": "さ", "す": "さ", "せ": "さ", "そ": "さ",
-  "た": "た", "ち": "た", "つ": "た", "て": "た", "と": "た",
-  "な": "な", "に": "な", "ぬ": "な", "ね": "な", "の": "な",
-  "は": "は", "ひ": "は", "ふ": "は", "へ": "は", "ほ": "は",
-  "ま": "ま", "み": "ま", "む": "ま", "め": "ま", "も": "ま",
-  "や": "や", "ゆ": "や", "よ": "や",
-  "ら": "ら", "り": "ら", "る": "ら", "れ": "ら", "ろ": "ら",
-  "わ": "わ", "を": "わ",
-  "ん": "ん",
-  "が": "が", "ぎ": "が", "ぐ": "が", "げ": "が", "ご": "が",
-  "ざ": "ざ", "じ": "ざ", "ず": "ざ", "ぜ": "ざ", "ぞ": "ざ",
-  "だ": "だ", "ぢ": "だ", "づ": "だ", "で": "だ", "ど": "だ",
-  "ば": "ば", "び": "ば", "ぶ": "ば", "べ": "ば", "ぼ": "ば",
-  "ぱ": "ぱ", "ぴ": "ぱ", "ぷ": "ぱ", "ぺ": "ぱ", "ぽ": "ぱ"
-};
-
-var combineParts = {
-  "ああ": "あ", "あい": "い", "あう": "う", "あえ": "え", "あお": "お",
-  "かあ": "か", "かい": "き", "かう": "く", "かえ": "け", "かお": "こ",
-  "さあ": "さ", "さい": "し", "さう": "す", "さえ": "せ", "さお": "そ",
-  "たあ": "た", "たい": "ち", "たう": "つ", "たえ": "て", "たお": "と",
-  "なあ": "な", "ない": "に", "なう": "ぬ", "なえ": "ね", "なお": "の",
-  "はあ": "は", "はい": "ひ", "はう": "ふ", "はえ": "へ", "はお": "ほ",
-  "まあ": "ま", "まい": "み", "まう": "む", "まえ": "め", "まお": "も",
-  "やあ": "や", "やう": "ゆ", "やお": "よ",
-  "らあ": "ら", "らい": "り", "らう": "る", "らえ": "れ", "らお": "ろ",
-  "わあ": "わ", "わお": "を",
-  "があ": "が", "がい": "ぎ", "がう": "ぐ", "がえ": "げ", "がお": "ご",
-  "ざあ": "ざ", "ざい": "じ", "ざう": "ず", "ざえ": "ぜ", "ざお": "ぞ",
-  "だあ": "だ", "だい": "ぢ", "だう": "づ", "だえ": "で", "だお": "ど",
-  "ばあ": "ば", "ばい": "び", "ばう": "ぶ", "ばえ": "べ", "ばお": "ぼ",
-  "ぱあ": "ぱ", "ぱい": "ぴ", "ぱう": "ぷ", "ぱえ": "ぺ", "ぱお": "ぽ"
-};
-
 var conjugations = {
 
   "行く" : {
@@ -711,106 +656,7 @@ var conjugations = {
 
 };
 
-var log;
-
-Array.prototype.randomElement = function () {
-  return this[Math.floor(Math.random() * this.length)]
-}
-
-// From: http://stackoverflow.com/a/2897510
-
-new function($) {
-    $.fn.getCursorPosition = function() {
-        var input = this.get(0);
-        if (!input) return; // No (input) element found
-        if ('selectionStart' in input) {
-            // Standard-compliant browsers
-            return input.selectionStart;
-        } else if (document.selection) {
-            // IE
-            input.fmcus();
-            var sel = document.selection.createRange();
-            var selLen = document.selection.createRange().text.length;
-            sel.moveStart('character', -input.value.length);
-            return sel.text.length - selLen;
-        }
-    }
-}(jQuery);
-
-// From: http://stackoverflow.com/questions/499126/jquery-set-cursor-position-in-text-area
-
-new function($) {
-  $.fn.setCursorPosition = function(pos) {
-    if (this.setSelectionRange) {
-      this.setSelectionRange(pos, pos);
-    } else if (this.createTextRange) {
-      var range = this.createTextRange();
-      range.collapse(true);
-      if(pos < 0) {
-        pos = $(this).val().length + pos;
-      }
-      range.moveEnd('character', pos);
-      range.moveStart('character', pos);
-      range.select();
-    }
-  }
-}(jQuery);
-
-function resetLog() {
-  log = { "history": [] };
-}
-
-function getVerbForms(entry) {
-
-  function kanaForm(word) {
-    return word.split(/.\[([^\]]*)\]/).join("");
-  }
-  
-  function kanjiForm(word) {
-    return word.split(/(.)\[[^\]]*\]/).join("");
-  }
-
-  var result = {
-    "kanji": { },
-    "hiragana": { },
-    "furigana": { }
-  };
-
-  Object.keys(conjugations[entry]).forEach(function (key) {
-    result["kanji"][key] = kanjiForm(conjugations[entry][key]);
-    result["hiragana"][key] = kanaForm(conjugations[entry][key]);
-    result["furigana"][key] = conjugations[entry][key];
-  });
-
-  return result;
-}
-
-function getAdjectiveForms(plain_form) {
-
-  var result = new Object();
-
-  // past affirmative form (adjectives)
-
-  if (plain_form == "いい") {
-    result["past affirmative adj"] = "よかったです";
-  } else if (plain_form.slice(-1) == "い") {
-    result["past affirmative adj"] = plain_form.slice(0, -1) + "かったです";
-  } else if (plain_form.slice(-1) == "な") {
-    result["past affirmative adj"] = plain_form.slice(0, -1) + "でした";
-  }
-
-  // present negative form (adjectives)
-
-  if (plain_form == "いい") {
-    result["present negative adj"] = "よくないです";
-  } else if (plain_form.slice(-1) == "い") {
-    result["present negative adj"] = plain_form.slice(0, -1) + "くないです";
-  } else if (plain_form.slice(-1) == "な") {
-    result["present negative adj"] = plain_form.slice(0, -1) + "じゃないです";
-  }
-}
-
-var verb_relative_form = {
+var transformations = {
 
   "plain" : {
 
@@ -990,6 +836,80 @@ var verb_relative_form = {
 
 };
 
+var log;
+
+Array.prototype.randomElement = function () {
+  return this[Math.floor(Math.random() * this.length)]
+}
+
+// From: http://stackoverflow.com/a/2897510
+
+new function($) {
+    $.fn.getCursorPosition = function() {
+        var input = this.get(0);
+        if (!input) return; // No (input) element found
+        if ('selectionStart' in input) {
+            // Standard-compliant browsers
+            return input.selectionStart;
+        } else if (document.selection) {
+            // IE
+            input.fmcus();
+            var sel = document.selection.createRange();
+            var selLen = document.selection.createRange().text.length;
+            sel.moveStart('character', -input.value.length);
+            return sel.text.length - selLen;
+        }
+    }
+}(jQuery);
+
+// From: http://stackoverflow.com/questions/499126/jquery-set-cursor-position-in-text-area
+
+new function($) {
+  $.fn.setCursorPosition = function(pos) {
+    if (this.setSelectionRange) {
+      this.setSelectionRange(pos, pos);
+    } else if (this.createTextRange) {
+      var range = this.createTextRange();
+      range.collapse(true);
+      if(pos < 0) {
+        pos = $(this).val().length + pos;
+      }
+      range.moveEnd('character', pos);
+      range.moveStart('character', pos);
+      range.select();
+    }
+  }
+}(jQuery);
+
+function resetLog() {
+  log = { "history": [] };
+}
+
+function getVerbForms(entry) {
+
+  function kanaForm(word) {
+    return word.split(/.\[([^\]]*)\]/).join("");
+  }
+  
+  function kanjiForm(word) {
+    return word.split(/(.)\[[^\]]*\]/).join("");
+  }
+
+  var result = {
+    "kanji": { },
+    "hiragana": { },
+    "furigana": { }
+  };
+
+  Object.keys(conjugations[entry]).forEach(function (key) {
+    result["kanji"][key] = kanjiForm(conjugations[entry][key]);
+    result["hiragana"][key] = kanaForm(conjugations[entry][key]);
+    result["furigana"][key] = conjugations[entry][key];
+  });
+
+  return result;
+}
+
 function wordWithFurigana(word) {
 
   var bits = word.split(/(.)\[([^\]]*)\]/);
@@ -1045,54 +965,18 @@ function processAnswerKey() {
 
     "lu" : "っ",
 
-    "nn" : "ん",
-    "n'" : "ん",
+    "nn" : "ん", "n'" : "ん",
 
-    "nb" : "んb",
-    "nc" : "んc",
-    "nd" : "んd",
-    "nf" : "んf",
-    "ng" : "んg",
-    "nh" : "んh",
-    "nj" : "んj",
-    "nk" : "んk",
-    "nl" : "んl",
-    "nm" : "んm",
-    "np" : "んp",
-    "nq" : "んq",
-    "nr" : "んr",
-    "ns" : "んs",
-    "nt" : "んt",
-    "nv" : "んv",
-    "nw" : "んw",
-    "nx" : "んx",
-    "nz" : "んz",
+    "nb" : "んb", "nc" : "んc", "nd" : "んd", "nf" : "んf", "ng" : "んg",
+    "nh" : "んh", "nj" : "んj", "nk" : "んk", "nl" : "んl", "nm" : "んm",
+    "np" : "んp", "nq" : "んq", "nr" : "んr", "ns" : "んs", "nt" : "んt",
+    "nv" : "んv", "nw" : "んw", "nx" : "んx", "nz" : "んz", 
 
-    "aa" : "っa",
-    "bb" : "っb",
-    "cc" : "っc",
-    "dd" : "っd",
-    "ee" : "っe",
-    "ff" : "っf",
-    "gg" : "っg",
-    "hh" : "っh",
-    "ii" : "っi",
-    "jj" : "っj",
-    "kk" : "っk",
-    "ll" : "っl",
-    "mm" : "っm",
-    "oo" : "っo",
-    "pp" : "っp",
-    "qq" : "っq",
-    "rr" : "っr",
-    "ss" : "っs",
-    "tt" : "っt",
-    "uu" : "っu",
-    "vv" : "っv",
-    "ww" : "っw",
-    "xx" : "っx",
-    "yy" : "っy",
-    "zz" : "っz",
+    "aa" : "っa", "bb" : "っb", "cc" : "っc", "dd" : "っd", "ee" : "っe",
+    "ff" : "っf", "gg" : "っg", "hh" : "っh", "ii" : "っi", "jj" : "っj",
+    "kk" : "っk", "ll" : "っl", "mm" : "っm", "oo" : "っo", "pp" : "っp",
+    "qq" : "っq", "rr" : "っr", "ss" : "っs", "tt" : "っt", "uu" : "っu",
+    "vv" : "っv", "ww" : "っw", "xx" : "っx", "yy" : "っy", "zz" : "っz",
   };
 
   var replace3 = {
@@ -1129,7 +1013,7 @@ function processAnswerKey() {
   }
 }
 
-function generateVerbQuestion() {
+function generateQuestion() {
   
   var entry;
   var to_form;
@@ -1146,8 +1030,8 @@ function generateVerbQuestion() {
     }
      
     entry = Object.keys(conjugations).randomElement();
-    to_form = Object.keys(verb_relative_form).randomElement();
-    from_form = Object.keys(verb_relative_form[to_form]).randomElement();
+    to_form = Object.keys(transformations).randomElement();
+    from_form = Object.keys(transformations[to_form]).randomElement();
 
     forms = getVerbForms(entry);
 
@@ -1182,7 +1066,7 @@ function generateVerbQuestion() {
   var kanaForms = forms["hiragana"];
   var furiganaForms = forms["furigana"];
 
-  var question = "What is the " + verb_relative_form[to_form][from_form] + " form of " + wordWithFurigana(furiganaForms[from_form]) + "?";
+  var question = "What is the " + transformations[to_form][from_form] + " form of " + wordWithFurigana(furiganaForms[from_form]) + "?";
   var answer = kanjiForms[to_form];
   var answer2 = kanaForms[to_form];
 
@@ -1303,7 +1187,7 @@ function proceed() {
   if (log.history.length == $('#numQuestions').val()) {
     endQuiz();
   } else {
-    generateVerbQuestion();
+    generateQuestion();
   }
 }
 
@@ -1321,7 +1205,7 @@ function startQuiz() {
   $('#scoreSection').hide();
 
   resetLog();
-  generateVerbQuestion();
+  generateQuestion();
 }
 
 function endQuiz() {
