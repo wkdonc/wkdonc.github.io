@@ -81,6 +81,10 @@ var conjugations = {
     "causative negative" : "行[い]かせない",
     "causative passive" : "行[い]かせられる",
     "causative passive negative" : "行[い]かせられない",
+    "progressive" : "行[い]っている",
+    "progressive negative" : "行[い]っていない",
+    "polite progressive" : "行[い]っています",
+    "polite progressive negative" : "行[い]っていません",
   },
 
   "飲む" : {
@@ -107,6 +111,10 @@ var conjugations = {
     "causative negative" : "飲[の]ませない",
     "causative passive" : "飲[の]ませられる",
     "causative passive negative" : "飲[の]ませられない",
+    "progressive" : "飲[の]んでいる",
+    "progressive negative" : "飲[の]んでいない",
+    "polite progressive" : "飲[の]んでいます",
+    "polite progressive negative" : "飲[の]んでいません",
   },
 
   "作る" : {
@@ -133,6 +141,10 @@ var conjugations = {
     "causative negative" : "作[つく]らせない",
     "causative passive" : "作[つく]らせられる",
     "causative passive negative" : "作[つく]らせられない",
+    "progressive" : "作[つく]っている",
+    "progressive negative" : "作[つく]っていない",
+    "polite progressive" : "作[つく]っています",
+    "polite progressive negative" : "作[つく]っていません",
   },
 
   "買い戻す" : {
@@ -159,6 +171,10 @@ var conjugations = {
     "causative negative" : "買[か]い戻[もど]させない",
     "causative passive" : "買[か]い戻[もど]させられる",
     "causative passive negative" : "買[か]い戻[もど]させられない",
+    "progressive" : "買[か]い戻[もど]している",
+    "progressive negative" : "買[か]い戻[もど]していない",
+    "polite progressive" : "買[か]い戻[もど]しています",
+    "polite progressive negative" : "買[か]い戻[もど]していません",
   },
 
   "見る" : {
@@ -185,6 +201,10 @@ var conjugations = {
     "causative negative" : "見[み]させない",
     "causative passive" : "見[み]させられる",
     "causative passive negative" : "見[み]させられない",
+    "progressive" : "見[み]ている",
+    "progressive negative" : "見[み]ていない",
+    "polite progressive" : "見[み]ています",
+    "polite progressive negative" : "見[み]ていません",
   },
 
   "食べる" : {
@@ -211,6 +231,10 @@ var conjugations = {
     "causative negative" : "食[た]べさせない",
     "causative passive" : "食[た]べさせられる",
     "causative passive negative" : "食[た]べさせられない",
+    "progressive" : "食[た]べている",
+    "progressive negative" : "食[た]べていない",
+    "polite progressive" : "食[た]べています",
+    "polite progressive negative" : "食[た]べていません",
   },
 
   "起きる" : {
@@ -237,6 +261,10 @@ var conjugations = {
     "causative negative" : "起[お]きさせない",
     "causative passive" : "起[お]きさせられる",
     "causative passive negative" : "起[お]きさせられない",
+    "progressive" : "起[お]きている",
+    "progressive negative" : "起[お]きていない",
+    "polite progressive" : "起[お]きています",
+    "polite progressive negative" : "起[お]きていません",
   },
 
   "買い換える" : {
@@ -263,6 +291,10 @@ var conjugations = {
     "causative negative" : "買[か]い換[か]えさせない",
     "causative passive" : "買[か]い換[か]えさせられる",
     "causative passive negative" : "買[か]い換[か]えさせられない",
+    "progressive" : "買[か]い換[か]えている",
+    "progressive negative" : "買[か]い換[か]えていない",
+    "polite progressive" : "買[か]い換[か]えています",
+    "polite progressive negative" : "買[か]い換[か]えていません",
   },
 
   "来る" : {
@@ -289,6 +321,10 @@ var conjugations = {
     "causative negative" : "来[こ]させない",
     "causative passive" : "来[こ]させられる",
     "causative passive negative" : "来[こ]させられない",
+    "progressive" : "来[き]ている",
+    "progressive negative" : "来[き]ていない",
+    "polite progressive" : "来[き]ています",
+    "polite progressive negative" : "来[き]ていません",
   },
 
   "勉強する" : {
@@ -305,6 +341,10 @@ var conjugations = {
     "polite past negative" : "勉[べん]強[きょう]しませんでした",
     "imperative" : "勉[べん]強[きょう]しろ",
     "imperative negative" : "勉[べん]強[きょう]さるな",
+    "progressive" : "勉[べん]強[きょう]している",
+    "progressive negative" : "勉[べん]強[きょう]していない",
+    "polite progressive" : "勉[べん]強[きょう]しています",
+    "polite progressive negative" : "勉[べん]強[きょう]していません",
   },
 
   "電話する" : {
@@ -321,6 +361,10 @@ var conjugations = {
     "polite past negative" : "電[でん]話[わ]しませんでした",
     "imperative" : "電[でん]話[わ]しろ",
     "imperative negative" : "電[でん]話[わ]さるな",
+    "progressive" : "電[でん]話[わ]している",
+    "progressive negative" : "電[でん]話[わ]していない",
+    "polite progressive" : "電[でん]話[わ]しています",
+    "polite progressive negative" : "電[でん]話[わ]していません",
   },
 
   "読む" : {
@@ -347,6 +391,10 @@ var conjugations = {
     "causative negative" : "読[よ]ませない",
     "causative passive" : "読[よ]ませられる",
     "causative passive negative" : "読[よ]ませられない",
+    "progressive" : "読[よ]んでいる",
+    "progressive negative" : "読[よ]んでいない",
+    "polite progressive" : "読[よ]んでいます",
+    "polite progressive negative" : "読[よ]んでいません",
   },
 
   "思う" : {
@@ -373,6 +421,10 @@ var conjugations = {
     "causative negative" : "思[おも]わせない",
     "causative passive" : "思[おも]わせられる",
     "causative passive negative" : "思[おも]わせられない",
+    "progressive" : "思[おも]っている",
+    "progressive negative" : "思[おも]っていない",
+    "polite progressive" : "思[おも]っています",
+    "polite progressive negative" : "思[おも]っていません",
   },
 
   "買い与える" : {
@@ -399,6 +451,10 @@ var conjugations = {
     "causative negative" : "買[か]い与[あた]えさせない",
     "causative passive" : "買[か]い与[あた]えさせられる",
     "causative passive negative" : "買[か]い与[あた]えさせられない",
+    "progressive" : "買[か]い与[あた]えている",
+    "progressive negative" : "買[か]い与[あた]えていない",
+    "polite progressive" : "買[か]い与[あた]えています",
+    "polite progressive negative" : "買[か]い与[あた]えていません",
   },
 
   "座る" : {
@@ -425,6 +481,10 @@ var conjugations = {
     "causative negative" : "座[すわ]らせない",
     "causative passive" : "座[すわ]らせられる",
     "causative passive negative" : "座[すわ]らせられない",
+    "progressive" : "座[すわ]っている",
+    "progressive negative" : "座[すわ]っていない",
+    "polite progressive" : "座[すわ]っています",
+    "polite progressive negative" : "座[すわ]っていません",
   },
 
   "休む" : {
@@ -451,6 +511,10 @@ var conjugations = {
     "causative negative" : "休[やす]ませない",
     "causative passive" : "休[やす]ませられる",
     "causative passive negative" : "休[やす]ませられない",
+    "progressive" : "休[やす]んでいる",
+    "progressive negative" : "休[やす]んでいない",
+    "polite progressive" : "休[やす]んでいます",
+    "polite progressive negative" : "休[やす]んでいません",
   },
 
   "足す" : {
@@ -477,6 +541,10 @@ var conjugations = {
     "causative negative" : "足[た]させない",
     "causative passive" : "足[た]させられる",
     "causative passive negative" : "足[た]させられない",
+    "progressive" : "足[た]している",
+    "progressive negative" : "足[た]していない",
+    "polite progressive" : "足[た]しています",
+    "polite progressive negative" : "足[た]していません",
   },
 
   "歌う" : {
@@ -503,6 +571,10 @@ var conjugations = {
     "causative negative" : "歌[うた]わせない",
     "causative passive" : "歌[うた]わせられる",
     "causative passive negative" : "歌[うた]わせられない",
+    "progressive" : "歌[うた]っている",
+    "progressive negative" : "歌[うた]っていない",
+    "polite progressive" : "歌[うた]っています",
+    "polite progressive negative" : "歌[うた]っていません",
   },
 
   "高い" : {
@@ -730,6 +802,7 @@ var verb_relative_form = {
     "imperative": "plain",
     "causative": "plain",
     "passive": "plain",
+    "progressive" : "non-progressive",
   },
 
   "negative": {
@@ -742,6 +815,7 @@ var verb_relative_form = {
     "imperative negative": "plain",
     "causative negative": "plain",
     "passive negative": "plain",
+    "progressive negative": "non-progressive",
   },
 
   "past" : {
@@ -763,6 +837,7 @@ var verb_relative_form = {
     "plain": "polite",
     "polite past": "present",
     "polite negative": "affirmative",
+    "polite progressive": "non-progressive",
   },
 
   "polite past": {
@@ -777,6 +852,7 @@ var verb_relative_form = {
     "negative": "polite",
     "polite": "negative",
     "polite past negative": "present",
+    "polite progressive negative": "non-progressive",
   },
 
   "polite past negative": {
@@ -863,6 +939,35 @@ var verb_relative_form = {
     "passive negative" : "causative",
     "causative passive" : "negative",
   },
+
+  "progressive" : {
+
+    "plain": "progressive",
+    "polite progressive": "plain",
+    "progressive negative": "affirmative",
+  },
+
+  "progressive negative" : {
+
+    "progressive": "negative",
+    "negative": "progressive",
+    "polite progressive negative": "plain",
+  },
+
+  "polite progressive" : {
+
+    "progressive": "polite",
+    "polite": "progressive",
+    "polite progressive negative": "affirmative",
+  },
+
+  "polite progressive negative" : {
+
+    "polite progressive": "negative",
+    "polite negative": "progressive",
+    "progressive negative": "polite",
+  },
+
 };
 
 function wordWithFurigana(word) {
