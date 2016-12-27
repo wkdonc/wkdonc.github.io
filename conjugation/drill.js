@@ -327,6 +327,26 @@ var conjugations = {
     "polite progressive negative" : "来[き]ていません",
   },
 
+  "する" : {
+
+    "group" : "suru",
+
+    "plain" : "する",
+    "negative" : "しない",
+    "polite" : "します",
+    "polite negative" : "しません",
+    "past" : "した",
+    "past negative" : "しなかった",
+    "polite past" : "しました",
+    "polite past negative" : "しませんでした",
+    "imperative" : "しろ",
+    "imperative negative" : "さるな",
+    "progressive" : "している",
+    "progressive negative" : "していない",
+    "polite progressive" : "しています",
+    "polite progressive negative" : "していません",
+  },
+
   "勉強する" : {
 
     "group" : "suru",
