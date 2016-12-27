@@ -1046,6 +1046,7 @@ function processAnswerKey() {
     "lu" : "っ",
 
     "nn" : "ん",
+    "n'" : "ん",
 
     "nb" : "んb",
     "nc" : "んc",
