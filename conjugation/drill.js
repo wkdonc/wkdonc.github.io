@@ -33,7 +33,9 @@ var words = {
       "polite progressive" : "行[い]っています",
       "polite progressive negative" : "行[い]っていません",
       "progressive past" : "行[い]っていた",
+      "progressive past negative" : "行[い]っていなかった",
       "polite progressive past" : "行[い]っていました",
+      "polite progressive past negative" : "行[い]っていませんでした",
     },
   },
 
@@ -68,7 +70,9 @@ var words = {
       "polite progressive" : "飲[の]んでいます",
       "polite progressive negative" : "飲[の]んでいません",
       "progressive past" : "飲[の]んでいた",
+      "progressive past negative" : "飲[の]んでいなかった",
       "polite progressive past" : "飲[の]んでいました",
+      "polite progressive past negative" : "飲[の]んでいませんでした",
     },
   },
 
@@ -103,7 +107,9 @@ var words = {
       "polite progressive" : "作[つく]っています",
       "polite progressive negative" : "作[つく]っていません",
       "progressive past" : "作[つく]っていた",
+      "progressive past negative" : "作[つく]っていなかった",
       "polite progressive past" : "作[つく]っていました",
+      "polite progressive past negative" : "作[つく]っていませんでした",
     },
   },
 
@@ -138,7 +144,9 @@ var words = {
       "polite progressive" : "買[か]い戻[もど]しています",
       "polite progressive negative" : "買[か]い戻[もど]していません",
       "progressive past" : "買[か]い戻[もど]していた",
+      "progressive past negative" : "買[か]い戻[もど]していなかった",
       "polite progressive past" : "買[か]い戻[もど]していました",
+      "polite progressive past negative" : "買[か]い戻[もど]していませんでした",
     },
   },
 
@@ -173,7 +181,9 @@ var words = {
       "polite progressive" : "見[み]ています",
       "polite progressive negative" : "見[み]ていません",
       "progressive past" : "見[み]ていた",
+      "progressive past negative" : "見[み]ていなかった",
       "polite progressive past" : "見[み]ていました",
+      "polite progressive past negative" : "見[み]ていませんでした",
     },
   },
 
@@ -208,7 +218,9 @@ var words = {
       "polite progressive" : "食[た]べています",
       "polite progressive negative" : "食[た]べていません",
       "progressive past" : "食[た]べていた",
+      "progressive past negative" : "食[た]べていなかった",
       "polite progressive past" : "食[た]べていました",
+      "polite progressive past negative" : "食[た]べていませんでした",
     },
   },
 
@@ -243,7 +255,9 @@ var words = {
       "polite progressive" : "起[お]きています",
       "polite progressive negative" : "起[お]きていません",
       "progressive past" : "起[お]きていた",
+      "progressive past negative" : "起[お]きていなかった",
       "polite progressive past" : "起[お]きていました",
+      "polite progressive past negative" : "起[お]きていませんでした",
     },
   },
 
@@ -278,7 +292,9 @@ var words = {
       "polite progressive" : "買[か]い換[か]えています",
       "polite progressive negative" : "買[か]い換[か]えていません",
       "progressive past" : "買[か]い換[か]えていた",
+      "progressive past negative" : "買[か]い換[か]えていなかった",
       "polite progressive past" : "買[か]い換[か]えていました",
+      "polite progressive past negative" : "買[か]い換[か]えていませんでした",
     },
   },
 
@@ -313,7 +329,9 @@ var words = {
       "polite progressive" : "来[き]ています",
       "polite progressive negative" : "来[き]ていません",
       "progressive past" : "来[き]ていた",
+      "progressive past negative" : "来[き]ていなかった",
       "polite progressive past" : "来[き]ていました",
+      "polite progressive past negative" : "来[き]ていませんでした",
     },
   },
 
@@ -338,7 +356,9 @@ var words = {
       "polite progressive" : "しています",
       "polite progressive negative" : "していません",
       "progressive past" : "していた",
+      "progressive past negative" : "していなかった",
       "polite progressive past" : "していました",
+      "polite progressive past negative" : "していませんでした",
     },
   },
 
@@ -363,7 +383,9 @@ var words = {
       "polite progressive" : "勉[べん]強[きょう]しています",
       "polite progressive negative" : "勉[べん]強[きょう]していません",
       "progressive past" : "勉[べん]強[きょう]していた",
+      "progressive past negative" : "勉[べん]強[きょう]していなかった",
       "polite progressive past" : "勉[べん]強[きょう]していました",
+      "polite progressive past negative" : "勉[べん]強[きょう]していませんでした",
     },
   },
 
@@ -388,7 +410,9 @@ var words = {
       "polite progressive" : "電[でん]話[わ]しています",
       "polite progressive negative" : "電[でん]話[わ]していません",
       "progressive past" : "電[でん]話[わ]していた",
+      "progressive past negative" : "電[でん]話[わ]していなかった",
       "polite progressive past" : "電[でん]話[わ]していました",
+      "polite progressive past negative" : "電[でん]話[わ]していませんでした",
     },
   },
 
@@ -423,7 +447,9 @@ var words = {
       "polite progressive" : "読[よ]んでいます",
       "polite progressive negative" : "読[よ]んでいません",
       "progressive past" : "読[よ]んでいた",
+      "progressive past negative" : "読[よ]んでいなかった",
       "polite progressive past" : "読[よ]んでいました",
+      "polite progressive past negative" : "読[よ]んでいませんでした",
     },
   },
 
@@ -458,7 +484,9 @@ var words = {
       "polite progressive" : "思[おも]っています",
       "polite progressive negative" : "思[おも]っていません",
       "progressive past" : "思[おも]っていた",
+      "progressive past negative" : "思[おも]っていなかった",
       "polite progressive past" : "思[おも]っていました",
+      "polite progressive past negative" : "思[おも]っていませんでした",
     },
   },
 
@@ -493,7 +521,9 @@ var words = {
       "polite progressive" : "買[か]い与[あた]えています",
       "polite progressive negative" : "買[か]い与[あた]えていません",
       "progressive past" : "買[か]い与[あた]えていた",
+      "progressive past negative" : "買[か]い与[あた]えていなかった",
       "polite progressive past" : "買[か]い与[あた]えていました",
+      "polite progressive past negative" : "買[か]い与[あた]えていませんでした",
     },
   },
 
@@ -528,7 +558,9 @@ var words = {
       "polite progressive" : "座[すわ]っています",
       "polite progressive negative" : "座[すわ]っていません",
       "progressive past" : "座[すわ]っていた",
+      "progressive past negative" : "座[すわ]っていなかった",
       "polite progressive past" : "座[すわ]っていました",
+      "polite progressive past negative" : "座[すわ]っていませんでした",
     },
   },
 
@@ -563,7 +595,9 @@ var words = {
       "polite progressive" : "休[やす]んでいます",
       "polite progressive negative" : "休[やす]んでいません",
       "progressive past" : "休[やす]んでいた",
+      "progressive past negative" : "休[やす]んでいなかった",
       "polite progressive past" : "休[やす]んでいました",
+      "polite progressive past negative" : "休[やす]んでいませんでした",
     },
   },
 
@@ -598,7 +632,9 @@ var words = {
       "polite progressive" : "足[た]しています",
       "polite progressive negative" : "足[た]していません",
       "progressive past" : "足[た]していた",
+      "progressive past negative" : "足[た]していなかった",
       "polite progressive past" : "足[た]していました",
+      "polite progressive past negative" : "足[た]していませんでした",
     },
   },
 
@@ -633,7 +669,9 @@ var words = {
       "polite progressive" : "歌[うた]っています",
       "polite progressive negative" : "歌[うた]っていません",
       "progressive past" : "歌[うた]っていた",
+      "progressive past negative" : "歌[うた]っていなかった",
       "polite progressive past" : "歌[うた]っていました",
+      "polite progressive past negative" : "歌[うた]っていませんでした",
     },
   },
 
@@ -815,6 +853,7 @@ var transformations = {
     "negative": "past",
     "past": "negative",
     "polite past negative": "plain",
+    "progressive past negative": "non-progressive",
   },
 
   "polite": {
@@ -846,6 +885,7 @@ var transformations = {
     "past negative": "polite",
     "polite past": "negative",
     "polite negative": "past",
+    "polite progressive past negative": "non-progressive",
   },
 
   "te-form" : {
@@ -938,6 +978,7 @@ var transformations = {
 
     "progressive": "negative",
     "negative": "progressive",
+    "progressive past negative": "present",
     "polite progressive negative": "plain",
   },
 
@@ -954,18 +995,39 @@ var transformations = {
     "polite progressive": "negative",
     "polite negative": "progressive",
     "progressive negative": "polite",
+    "polite progressive past negative": "present",
   },
 
   "progressive past" : {
 
+    "past": "progressive",
     "progressive": "past",
+    "progressive past negative": "affirmative",
     "polite progressive past": "plain",
+  },
+
+  "progressive past negative" : {
+
+    "past negative": "progressive",
+    "progressive negative": "past",
+    "progressive past": "negative",
+    "polite progressive past negative": "plain",
   },
 
   "polite progressive past" : {
 
+    "polite past": "progressive",
     "polite progressive" : "past",
     "progressive past": "polite",
+    "polite progressive past negative": "affirmative",
+  },
+
+  "polite progressive past negative" : {
+
+    "polite past negative": "progressive",
+    "progressive past negative": "polite",
+    "polite progressive past": "negative",
+    "polite progressive negative": "past",
   },
 };
 
