@@ -2210,8 +2210,8 @@ function processAnswerKey() {
   var replace3 = {
 
     "kya" : "きゃ", "kyi" : "きぃ", "kyu" : "きゅ", "kye" : "きぇ", "kyo" : "きょ",
-    "sya" : "しゃ", "syi" : "しぃ", "syu" : "しゅ", "sye" : "しぇ", "syo" : "しょ",
-    "tya" : "ちゃ", "tyi" : "ちぃ", "tyu" : "ちゅ", "tye" : "ちぇ", "tyo" : "ちょ",
+    "sha" : "しゃ", "shi" : "し",  "shu" : "しゅ", "she" : "しぇ", "sho" : "しょ",
+    "cha" : "ちゃ", "chi" : "ち", "chu" : "ちゅ", "che" : "ちぇ", "cho" : "ちょ",
     "nya" : "にゃ", "nyi" : "にぃ", "nyu" : "にゅ", "nye" : "にぇ", "nyo" : "にょ",
     "hya" : "ひゃ", "hyi" : "ひぃ", "hyu" : "ひゅ", "hye" : "ひぇ", "hyo" : "ひょ",
     "mya" : "みゃ", "myi" : "みぃ", "myu" : "みゅ", "mye" : "みぇ", "myo" : "みょ",
