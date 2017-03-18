@@ -820,8 +820,8 @@ var transformations = [
     phrase: "affirmative"
   },
 
-  {
-    from: "negative",
+  { // trick
+    from: "plain",
     to: "plain",
     phrase: "affirmative"
   },
@@ -832,8 +832,20 @@ var transformations = [
     phrase: "present"
   },
 
+  { // trick
+    from: "plain",
+    to: "plain",
+    phrase: "present"
+  },
+
   {
     from: "polite",
+    to: "plain",
+    phrase: "plain"
+  },
+
+  { // trick
+    from: "plain",
     to: "plain",
     phrase: "plain"
   },
@@ -844,8 +856,20 @@ var transformations = [
     phrase: "plain"
   },
 
+  { // trick
+    from: "plain",
+    to: "plain",
+    phrase: "plain"
+  },
+
   {
     from: "potential",
+    to: "plain",
+    phrase: "plain"
+  },
+
+  { // trick
+    from: "plain",
     to: "plain",
     phrase: "plain"
   },
@@ -856,8 +880,20 @@ var transformations = [
     phrase: "plain"
   },
 
+  { // trick
+    from: "plain",
+    to: "plain",
+    phrase: "plain"
+  },
+
   {
     from: "causative",
+    to: "plain",
+    phrase: "plain"
+  },
+
+  { // trick
+    from: "plain",
     to: "plain",
     phrase: "plain"
   },
@@ -868,8 +904,20 @@ var transformations = [
     phrase: "plain"
   },
 
+  { // trick
+    from: "plain",
+    to: "plain",
+    phrase: "plain"
+  },
+
   {
     from: "progressive" ,
+    to: "plain",
+    phrase: "non-progressive"
+  },
+
+  { // trick
+    from: "plain",
     to: "plain",
     phrase: "non-progressive"
   },
@@ -880,14 +928,32 @@ var transformations = [
     phrase: "negative"
   },
 
+  { // trick
+    from: "negative",
+    to: "negative",
+    phrase: "negative"
+  },
+
   {
     from: "past negative",
     to: "negative",
     phrase: "present"
   },
 
+  { // trick
+    from: "negative",
+    to: "negative",
+    phrase: "present"
+  },
+
   {
     from: "polite negative",
+    to: "negative",
+    phrase: "plain"
+  },
+
+  { // trick
+    from: "negative",
     to: "negative",
     phrase: "plain"
   },
@@ -898,8 +964,20 @@ var transformations = [
     phrase: "plain"
   },
 
+  { // trick
+    from: "negative",
+    to: "negative",
+    phrase: "plain"
+  },
+
   {
     from: "potential negative",
+    to: "negative",
+    phrase: "plain"
+  },
+
+  { // trick
+    from: "negative",
     to: "negative",
     phrase: "plain"
   },
@@ -910,8 +988,20 @@ var transformations = [
     phrase: "plain"
   },
 
+  { // trick
+    from: "negative",
+    to: "negative",
+    phrase: "plain"
+  },
+
   {
     from: "causative negative",
+    to: "negative",
+    phrase: "plain"
+  },
+
+  { // trick
+    from: "negative",
     to: "negative",
     phrase: "plain"
   },
@@ -922,8 +1012,20 @@ var transformations = [
     phrase: "plain"
   },
 
+  { // trick
+    from: "negative",
+    to: "negative",
+    phrase: "plain"
+  },
+
   {
     from: "progressive negative",
+    to: "negative",
+    phrase: "non-progressive"
+  },
+
+  { // trick
+    from: "negative",
     to: "negative",
     phrase: "non-progressive"
   },
@@ -934,14 +1036,32 @@ var transformations = [
     phrase: "past"
   },
 
+  { // trick
+    from: "past",
+    to: "past",
+    phrase: "past"
+  },
+
   {
     from: "past negative" ,
     to: "past",
     phrase: "affirmative"
   },
 
+  { // trick
+    from: "past",
+    to: "past",
+    phrase: "affirmative"
+  },
+
   {
     from: "polite past",
+    to: "past",
+    phrase: "plain"
+  },
+
+  { // trick
+    from: "past",
     to: "past",
     phrase: "plain"
   },
@@ -952,14 +1072,32 @@ var transformations = [
     phrase: "non-progressive"
   },
 
+  { // trick
+    from: "past",
+    to: "past",
+    phrase: "non-progressive"
+  },
+
   {
     from: "negative",
     to: "past negative",
     phrase: "past"
   },
 
+  { // trick
+    from: "past negative",
+    to: "past negative",
+    phrase: "past"
+  },
+
   {
     from: "past",
+    to: "past negative",
+    phrase: "negative"
+  },
+
+  { // trick
+    from: "past negative",
     to: "past negative",
     phrase: "negative"
   },
@@ -970,8 +1108,20 @@ var transformations = [
     phrase: "plain"
   },
 
+  { // trick
+    from: "past negative",
+    to: "past negative",
+    phrase: "plain"
+  },
+
   {
     from: "progressive past negative",
+    to: "past negative",
+    phrase: "non-progressive"
+  },
+
+  { // trick
+    from: "past negative",
     to: "past negative",
     phrase: "non-progressive"
   },
@@ -982,14 +1132,32 @@ var transformations = [
     phrase: "polite"
   },
 
+  { // trick
+    from: "polite",
+    to: "polite",
+    phrase: "polite"
+  },
+
   {
     from: "polite past",
     to: "polite",
     phrase: "present"
   },
 
+  { // trick
+    from: "polite",
+    to: "polite",
+    phrase: "present"
+  },
+
   {
     from: "polite negative",
+    to: "polite",
+    phrase: "affirmative"
+  },
+
+  { // trick
+    from: "polite",
     to: "polite",
     phrase: "affirmative"
   },
@@ -1000,14 +1168,32 @@ var transformations = [
     phrase: "non-progressive"
   },
 
+  { // trick
+    from: "polite",
+    to: "polite",
+    phrase: "non-progressive"
+  },
+
   {
     from: "past",
     to: "polite past",
     phrase: "polite"
   },
 
+  { // trick
+    from: "polite past",
+    to: "polite past",
+    phrase: "polite"
+  },
+
   {
     from: "polite",
+    to: "polite past",
+    phrase: "past"
+  },
+
+  { // trick
+    from: "polite past",
     to: "polite past",
     phrase: "past"
   },
@@ -1018,8 +1204,20 @@ var transformations = [
     phrase: "affirmative"
   },
 
+  { // trick
+    from: "polite past",
+    to: "polite past",
+    phrase: "affirmative"
+  },
+
   {
     from: "polite progressive past",
+    to: "polite past",
+    phrase: "non-progressive"
+  },
+
+  { // trick
+    from: "polite past",
     to: "polite past",
     phrase: "non-progressive"
   },
@@ -1030,8 +1228,20 @@ var transformations = [
     phrase: "polite"
   },
 
+  { // trick
+    from: "polite negative",
+    to: "polite negative",
+    phrase: "polite"
+  },
+
   {
     from: "polite",
+    to: "polite negative",
+    phrase: "negative"
+  },
+
+  { // trick
+    from: "polite negative",
     to: "polite negative",
     phrase: "negative"
   },
@@ -1042,8 +1252,20 @@ var transformations = [
     phrase: "present"
   },
 
+  { // trick
+    from: "polite negative",
+    to: "polite negative",
+    phrase: "present"
+  },
+
   {
     from: "polite progressive negative",
+    to: "polite negative",
+    phrase: "non-progressive"
+  },
+
+  { // trick
+    from: "polite negative",
     to: "polite negative",
     phrase: "non-progressive"
   },
@@ -1054,8 +1276,20 @@ var transformations = [
     phrase: "polite"
   },
 
+  { // trick
+    from: "polite past negative",
+    to: "polite past negative",
+    phrase: "polite"
+  },
+
   {
     from: "polite past",
+    to: "polite past negative",
+    phrase: "negative"
+  },
+
+  { // trick
+    from: "polite past negative",
     to: "polite past negative",
     phrase: "negative"
   },
@@ -1066,14 +1300,32 @@ var transformations = [
     phrase: "past"
   },
 
+  { // trick
+    from: "polite past negative",
+    to: "polite past negative",
+    phrase: "past"
+  },
+
   {
     from: "polite progressive past negative",
     to: "polite past negative",
     phrase: "non-progressive"
   },
 
+  { // trick
+    from: "polite past negative",
+    to: "polite past negative",
+    phrase: "non-progressive"
+  },
+
   {
     from: "plain" ,
+    to: "te-form",
+    phrase: "て"
+  },
+
+  { // trick
+    from: "te-form",
     to: "te-form",
     phrase: "て"
   },
@@ -1084,8 +1336,20 @@ var transformations = [
     phrase: "affirmative"
   },
 
+  { // trick
+    from: "te-form",
+    to: "te-form",
+    phrase: "affirmative"
+  },
+
   {
     from: "te-form" ,
+    to: "te-form negative",
+    phrase: "negative"
+  },
+
+  { // trick
+    from: "te-form negative",
     to: "te-form negative",
     phrase: "negative"
   },
@@ -1096,8 +1360,20 @@ var transformations = [
     phrase: "て"
   },
 
+  { // trick
+    from: "te-form negative",
+    to: "te-form negative",
+    phrase: "て"
+  },
+
   {
     from: "plain" ,
+    to: "potential",
+    phrase: "potential"
+  },
+
+  { // trick
+    from: "potential",
     to: "potential",
     phrase: "potential"
   },
@@ -1108,8 +1384,20 @@ var transformations = [
     phrase: "affirmative"
   },
 
+  { // trick
+    from: "potential",
+    to: "potential",
+    phrase: "affirmative"
+  },
+
   {
     from: "potential" ,
+    to: "potential negative",
+    phrase: "negative"
+  },
+
+  { // trick
+    from: "potential negative",
     to: "potential negative",
     phrase: "negative"
   },
@@ -1120,8 +1408,20 @@ var transformations = [
     phrase: "potential"
   },
 
+  { // trick
+    from: "potential negative",
+    to: "potential negative",
+    phrase: "potential"
+  },
+
   {
     from: "plain" ,
+    to: "imperative",
+    phrase: "imperative"
+  },
+
+  { // trick
+    from: "imperative",
     to: "imperative",
     phrase: "imperative"
   },
@@ -1132,8 +1432,20 @@ var transformations = [
     phrase: "affirmative"
   },
 
+  { // trick
+    from: "imperative",
+    to: "imperative",
+    phrase: "affirmative"
+  },
+
   {
     from: "imperative" ,
+    to: "imperative negative",
+    phrase: "negative"
+  },
+
+  { // trick
+    from: "imperative negative",
     to: "imperative negative",
     phrase: "negative"
   },
@@ -1144,8 +1456,20 @@ var transformations = [
     phrase: "imperative"
   },
 
+  { // trick
+    from: "imperative negative",
+    to: "imperative negative",
+    phrase: "imperative"
+  },
+
   {
     from: "plain" ,
+    to: "causative",
+    phrase: "causative"
+  },
+
+  { // trick
+    from: "causative",
     to: "causative",
     phrase: "causative"
   },
@@ -1156,8 +1480,20 @@ var transformations = [
     phrase: "affirmative"
   },
 
+  { // trick
+    from: "causative",
+    to: "causative",
+    phrase: "affirmative"
+  },
+
   {
     from: "causative passive" ,
+    to: "causative",
+    phrase: "active"
+  },
+
+  { // trick
+    from: "causative",
     to: "causative",
     phrase: "active"
   },
@@ -1168,8 +1504,20 @@ var transformations = [
     phrase: "negative"
   },
 
+  { // trick
+    from: "causative negative",
+    to: "causative negative",
+    phrase: "negative"
+  },
+
   {
     from: "negative" ,
+    to: "causative negative",
+    phrase: "causative"
+  },
+
+  { // trick
+    from: "causative negative",
     to: "causative negative",
     phrase: "causative"
   },
@@ -1180,8 +1528,20 @@ var transformations = [
     phrase: "active"
   },
 
+  { // trick
+    from: "causative negative",
+    to: "causative negative",
+    phrase: "active"
+  },
+
   {
     from: "plain" ,
+    to: "passive",
+    phrase: "passive"
+  },
+
+  { // trick
+    from: "passive",
     to: "passive",
     phrase: "passive"
   },
@@ -1192,8 +1552,20 @@ var transformations = [
     phrase: "affirmative"
   },
 
+  { // trick
+    from: "passive",
+    to: "passive",
+    phrase: "affirmative"
+  },
+
   {
     from: "causative passive" ,
+    to: "passive",
+    phrase: "non-causative"
+  },
+
+  { // trick
+    from: "passive",
     to: "passive",
     phrase: "non-causative"
   },
@@ -1204,8 +1576,20 @@ var transformations = [
     phrase: "negative"
   },
 
+  { // trick
+    from: "passive negative",
+    to: "passive negative",
+    phrase: "negative"
+  },
+
   {
     from: "negative" ,
+    to: "passive negative",
+    phrase: "passive"
+  },
+
+  { // trick
+    from: "passive negative",
     to: "passive negative",
     phrase: "passive"
   },
@@ -1216,8 +1600,20 @@ var transformations = [
     phrase: "non-causative"
   },
 
+  { // trick
+    from: "passive negative",
+    to: "passive negative",
+    phrase: "non-causative"
+  },
+
   {
     from: "causative" ,
+    to: "causative passive",
+    phrase: "passive"
+  },
+
+  { // trick
+    from: "causative passive",
     to: "causative passive",
     phrase: "passive"
   },
@@ -1228,8 +1624,20 @@ var transformations = [
     phrase: "causative"
   },
 
+  { // trick
+    from: "causative passive",
+    to: "causative passive",
+    phrase: "causative"
+  },
+
   {
     from: "causative passive negative" ,
+    to: "causative passive",
+    phrase: "affirmative"
+  },
+
+  { // trick
+    from: "causative passive",
     to: "causative passive",
     phrase: "affirmative"
   },
@@ -1240,14 +1648,32 @@ var transformations = [
     phrase: "passive"
   },
 
+  { // trick
+    from: "causative passive negative",
+    to: "causative passive negative",
+    phrase: "passive"
+  },
+
   {
     from: "passive negative" ,
     to: "causative passive negative",
     phrase: "causative"
   },
 
+  { // trick
+    from: "causative passive negative",
+    to: "causative passive negative",
+    phrase: "causative"
+  },
+
   {
     from: "causative passive" ,
+    to: "causative passive negative",
+    phrase: "negative"
+  },
+
+  { // trick
+    from: "causative passive negative",
     to: "causative passive negative",
     phrase: "negative"
   },
@@ -1258,8 +1684,20 @@ var transformations = [
     phrase: "progressive"
   },
 
+  { // trick
+    from: "progressive",
+    to: "progressive",
+    phrase: "progressive"
+  },
+
   {
     from: "polite progressive",
+    to: "progressive",
+    phrase: "plain"
+  },
+
+  { // trick
+    from: "progressive",
     to: "progressive",
     phrase: "plain"
   },
@@ -1270,14 +1708,32 @@ var transformations = [
     phrase: "affirmative"
   },
 
+  { // trick
+    from: "progressive",
+    to: "progressive",
+    phrase: "affirmative"
+  },
+
   {
     from: "progressive past",
     to: "progressive",
     phrase: "present"
   },
 
+  { // trick
+    from: "progressive",
+    to: "progressive",
+    phrase: "present"
+  },
+
   {
     from: "progressive",
+    to: "progressive negative",
+    phrase: "negative"
+  },
+
+  { // trick
+    from: "progressive negative",
     to: "progressive negative",
     phrase: "negative"
   },
@@ -1288,8 +1744,20 @@ var transformations = [
     phrase: "progressive"
   },
 
+  { // trick
+    from: "progressive negative",
+    to: "progressive negative",
+    phrase: "progressive"
+  },
+
   {
     from: "progressive past negative",
+    to: "progressive negative",
+    phrase: "present"
+  },
+
+  { // trick
+    from: "progressive negative",
     to: "progressive negative",
     phrase: "present"
   },
@@ -1300,8 +1768,20 @@ var transformations = [
     phrase: "plain"
   },
 
+  { // trick
+    from: "progressive negative",
+    to: "progressive negative",
+    phrase: "plain"
+  },
+
   {
     from: "progressive",
+    to: "polite progressive",
+    phrase: "polite"
+  },
+
+  { // trick
+    from: "polite progressive",
     to: "polite progressive",
     phrase: "polite"
   },
@@ -1312,14 +1792,32 @@ var transformations = [
     phrase: "progressive"
   },
 
+  { // trick
+    from: "polite progressive",
+    to: "polite progressive",
+    phrase: "progressive"
+  },
+
   {
     from: "polite progressive negative",
     to: "polite progressive",
     phrase: "affirmative"
   },
 
+  { // trick
+    from: "polite progressive",
+    to: "polite progressive",
+    phrase: "affirmative"
+  },
+
   {
     from: "polite progressive past",
+    to: "polite progressive",
+    phrase: "present"
+  },
+
+  { // trick
+    from: "polite progressive",
     to: "polite progressive",
     phrase: "present"
   },
@@ -1330,14 +1828,32 @@ var transformations = [
     phrase: "negative"
   },
 
+  { // trick
+    from: "polite progressive negative",
+    to: "polite progressive negative",
+    phrase: "negative"
+  },
+
   {
     from: "polite negative",
     to: "polite progressive negative",
     phrase: "progressive"
   },
 
+  { // trick
+    from: "polite progressive negative",
+    to: "polite progressive negative",
+    phrase: "progressive"
+  },
+
   {
     from: "progressive negative",
+    to: "polite progressive negative",
+    phrase: "polite"
+  },
+
+  { // trick
+    from: "polite progressive negative",
     to: "polite progressive negative",
     phrase: "polite"
   },
@@ -1348,8 +1864,20 @@ var transformations = [
     phrase: "present"
   },
 
+  { // trick
+    from: "polite progressive negative",
+    to: "polite progressive negative",
+    phrase: "present"
+  },
+
   {
     from: "past",
+    to: "progressive past",
+    phrase: "progressive"
+  },
+
+  { // trick
+    from: "progressive past",
     to: "progressive past",
     phrase: "progressive"
   },
@@ -1360,14 +1888,32 @@ var transformations = [
     phrase: "past"
   },
 
+  { // trick
+    from: "progressive past",
+    to: "progressive past",
+    phrase: "past"
+  },
+
   {
     from: "progressive past negative",
     to: "progressive past",
     phrase: "affirmative"
   },
 
+  { // trick
+    from: "progressive past",
+    to: "progressive past",
+    phrase: "affirmative"
+  },
+
   {
     from: "polite progressive past",
+    to: "progressive past",
+    phrase: "plain"
+  },
+
+  { // trick
+    from: "progressive past",
     to: "progressive past",
     phrase: "plain"
   },
@@ -1378,14 +1924,32 @@ var transformations = [
     phrase: "progressive"
   },
 
+  { // trick
+    from: "progressive past negative",
+    to: "progressive past negative",
+    phrase: "progressive"
+  },
+
   {
     from: "progressive negative",
     to: "progressive past negative",
     phrase: "past"
   },
 
+  { // trick
+    from: "progressive past negative",
+    to: "progressive past negative",
+    phrase: "past"
+  },
+
   {
     from: "progressive past",
+    to: "progressive past negative",
+    phrase: "negative"
+  },
+
+  { // trick
+    from: "progressive past negative",
     to: "progressive past negative",
     phrase: "negative"
   },
@@ -1396,8 +1960,20 @@ var transformations = [
     phrase: "plain"
   },
 
+  { // trick
+    from: "progressive past negative",
+    to: "progressive past negative",
+    phrase: "plain"
+  },
+
   {
     from: "polite past",
+    to: "polite progressive past",
+    phrase: "progressive"
+  },
+
+  { // trick
+    from: "polite progressive past",
     to: "polite progressive past",
     phrase: "progressive"
   },
@@ -1408,8 +1984,20 @@ var transformations = [
     phrase: "past"
   },
 
+  { // trick
+    from: "polite progressive past",
+    to: "polite progressive past",
+    phrase: "past"
+  },
+
   {
     from: "progressive past",
+    to: "polite progressive past",
+    phrase: "polite"
+  },
+
+  { // trick
+    from: "polite progressive past",
     to: "polite progressive past",
     phrase: "polite"
   },
@@ -1420,8 +2008,20 @@ var transformations = [
     phrase: "affirmative"
   },
 
+  { // trick
+    from: "polite progressive past",
+    to: "polite progressive past",
+    phrase: "affirmative"
+  },
+
   {
     from: "polite past negative",
+    to: "polite progressive past negative",
+    phrase: "progressive"
+  },
+
+  { // trick
+    from: "polite progressive past negative",
     to: "polite progressive past negative",
     phrase: "progressive"
   },
@@ -1432,14 +2032,32 @@ var transformations = [
     phrase: "polite"
   },
 
+  { // trick
+    from: "polite progressive past negative",
+    to: "polite progressive past negative",
+    phrase: "polite"
+  },
+
   {
     from: "polite progressive past",
     to: "polite progressive past negative",
     phrase: "negative"
   },
 
+  { // trick
+    from: "polite progressive past negative",
+    to: "polite progressive past negative",
+    phrase: "negative"
+  },
+
   {
     from: "polite progressive negative",
+    to: "polite progressive past negative",
+    phrase: "past"
+  },
+
+  { // trick
+    from: "polite progressive past negative",
     to: "polite progressive past negative",
     phrase: "past"
   },
