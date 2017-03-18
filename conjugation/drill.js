@@ -812,224 +812,639 @@ var words = {
   },
 };
 
-var transformations = {
+var transformations = [
 
-  "plain" : {
-
-    "negative": "affirmative",
-    "past": "present",
-    "polite": "plain",
-    "te-form": "plain",
-    "potential": "plain",
-    "imperative": "plain",
-    "causative": "plain",
-    "passive": "plain",
-    "progressive" : "non-progressive",
+  {
+    from: "negative",
+    to: "plain",
+    phrase: "affirmative"
   },
 
-  "negative": {
-
-    "plain": "negative",
-    "past negative": "present",
-    "polite negative": "plain",
-    "te-form negative": "plain",
-    "potential negative": "plain",
-    "imperative negative": "plain",
-    "causative negative": "plain",
-    "passive negative": "plain",
-    "progressive negative": "non-progressive",
+  {
+    from: "negative",
+    to: "plain",
+    phrase: "affirmative"
   },
 
-  "past" : {
-
-    "plain": "past",
-    "past negative" : "affirmative",
-    "polite past": "plain",
-    "progressive past": "non-progressive",
+  {
+    from: "past",
+    to: "plain",
+    phrase: "present"
   },
 
-  "past negative" : {
-
-    "negative": "past",
-    "past": "negative",
-    "polite past negative": "plain",
-    "progressive past negative": "non-progressive",
+  {
+    from: "polite",
+    to: "plain",
+    phrase: "plain"
   },
 
-  "polite": {
-
-    "plain": "polite",
-    "polite past": "present",
-    "polite negative": "affirmative",
-    "polite progressive": "non-progressive",
+  {
+    from: "te-form",
+    to: "plain",
+    phrase: "plain"
   },
 
-  "polite past": {
-
-    "past": "polite",
-    "polite": "past",
-    "polite past negative": "affirmative",
-    "polite progressive past": "non-progressive",
+  {
+    from: "potential",
+    to: "plain",
+    phrase: "plain"
   },
 
-  "polite negative": {
-
-    "negative": "polite",
-    "polite": "negative",
-    "polite past negative": "present",
-    "polite progressive negative": "non-progressive",
+  {
+    from: "imperative",
+    to: "plain",
+    phrase: "plain"
   },
 
-  "polite past negative": {
-
-    "past negative": "polite",
-    "polite past": "negative",
-    "polite negative": "past",
-    "polite progressive past negative": "non-progressive",
+  {
+    from: "causative",
+    to: "plain",
+    phrase: "plain"
   },
 
-  "te-form" : {
-
-    "plain" : "て",
-    "te-form negative" : "affirmative",
+  {
+    from: "passive",
+    to: "plain",
+    phrase: "plain"
   },
 
-  "te-form negative" : {
-
-    "te-form" : "negative",
-    "negative" : "て",
+  {
+    from: "progressive" ,
+    to: "plain",
+    phrase: "non-progressive"
   },
 
-  "potential" : {
-
-    "plain" : "potential",
-    "potential negative" : "affirmative",
+  {
+    from: "plain",
+    to: "negative",
+    phrase: "negative"
   },
 
-  "potential negative" : {
-
-    "potential" : "negative",
-    "negative" : "potential",
+  {
+    from: "past negative",
+    to: "negative",
+    phrase: "present"
   },
 
-  "imperative" : {
-
-    "plain" : "imperative",
-    "imperative negative" : "affirmative",
+  {
+    from: "polite negative",
+    to: "negative",
+    phrase: "plain"
   },
 
-  "imperative negative" : {
-
-    "imperative" : "negative",
-    "negative" : "imperative",
+  {
+    from: "te-form negative",
+    to: "negative",
+    phrase: "plain"
   },
 
-  "causative" : {
-
-    "plain" : "causative",
-    "causative negative" : "affirmative",
-    "causative passive" : "active",
+  {
+    from: "potential negative",
+    to: "negative",
+    phrase: "plain"
   },
 
-  "causative negative" : {
-
-    "causative" : "negative",
-    "negative" : "causative",
-    "causative passive negative" : "active",
+  {
+    from: "imperative negative",
+    to: "negative",
+    phrase: "plain"
   },
 
-  "passive" : {
-
-    "plain" : "passive",
-    "passive negative" : "affirmative",
-    "causative passive" : "non-causative",
+  {
+    from: "causative negative",
+    to: "negative",
+    phrase: "plain"
   },
 
-  "passive negative" : {
-
-    "passive" : "negative",
-    "negative" : "passive",
-    "causative passive negative" : "non-causative"
+  {
+    from: "passive negative",
+    to: "negative",
+    phrase: "plain"
   },
 
-  "causative passive" : {
-
-    "causative" : "passive",
-    "passive" : "causative",
-    "causative passive negative" : "affirmative",
+  {
+    from: "progressive negative",
+    to: "negative",
+    phrase: "non-progressive"
   },
 
-  "causative passive negative" : {
-
-    "causative negative" : "passive",
-    "passive negative" : "causative",
-    "causative passive" : "negative",
+  {
+    from: "plain",
+    to: "past",
+    phrase: "past"
   },
 
-  "progressive" : {
-
-    "plain": "progressive",
-    "polite progressive": "plain",
-    "progressive negative": "affirmative",
-    "progressive past": "present",
+  {
+    from: "past negative" ,
+    to: "past",
+    phrase: "affirmative"
   },
 
-  "progressive negative" : {
-
-    "progressive": "negative",
-    "negative": "progressive",
-    "progressive past negative": "present",
-    "polite progressive negative": "plain",
+  {
+    from: "polite past",
+    to: "past",
+    phrase: "plain"
   },
 
-  "polite progressive" : {
-
-    "progressive": "polite",
-    "polite": "progressive",
-    "polite progressive negative": "affirmative",
-    "polite progressive past": "present",
+  {
+    from: "progressive past",
+    to: "past",
+    phrase: "non-progressive"
   },
 
-  "polite progressive negative" : {
-
-    "polite progressive": "negative",
-    "polite negative": "progressive",
-    "progressive negative": "polite",
-    "polite progressive past negative": "present",
+  {
+    from: "negative",
+    to: "past negative",
+    phrase: "past"
   },
 
-  "progressive past" : {
-
-    "past": "progressive",
-    "progressive": "past",
-    "progressive past negative": "affirmative",
-    "polite progressive past": "plain",
+  {
+    from: "past",
+    to: "past negative",
+    phrase: "negative"
   },
 
-  "progressive past negative" : {
-
-    "past negative": "progressive",
-    "progressive negative": "past",
-    "progressive past": "negative",
-    "polite progressive past negative": "plain",
+  {
+    from: "polite past negative",
+    to: "past negative",
+    phrase: "plain"
   },
 
-  "polite progressive past" : {
-
-    "polite past": "progressive",
-    "polite progressive" : "past",
-    "progressive past": "polite",
-    "polite progressive past negative": "affirmative",
+  {
+    from: "progressive past negative",
+    to: "past negative",
+    phrase: "non-progressive"
   },
 
-  "polite progressive past negative" : {
-
-    "polite past negative": "progressive",
-    "progressive past negative": "polite",
-    "polite progressive past": "negative",
-    "polite progressive negative": "past",
+  {
+    from: "plain",
+    to: "polite",
+    phrase: "polite"
   },
-};
+
+  {
+    from: "polite past",
+    to: "polite",
+    phrase: "present"
+  },
+
+  {
+    from: "polite negative",
+    to: "polite",
+    phrase: "affirmative"
+  },
+
+  {
+    from: "polite progressive",
+    to: "polite",
+    phrase: "non-progressive"
+  },
+
+  {
+    from: "past",
+    to: "polite past",
+    phrase: "polite"
+  },
+
+  {
+    from: "polite",
+    to: "polite past",
+    phrase: "past"
+  },
+
+  {
+    from: "polite past negative",
+    to: "polite past",
+    phrase: "affirmative"
+  },
+
+  {
+    from: "polite progressive past",
+    to: "polite past",
+    phrase: "non-progressive"
+  },
+
+  {
+    from: "negative",
+    to: "polite negative",
+    phrase: "polite"
+  },
+
+  {
+    from: "polite",
+    to: "polite negative",
+    phrase: "negative"
+  },
+
+  {
+    from: "polite past negative",
+    to: "polite negative",
+    phrase: "present"
+  },
+
+  {
+    from: "polite progressive negative",
+    to: "polite negative",
+    phrase: "non-progressive"
+  },
+
+  {
+    from: "past negative",
+    to: "polite past negative",
+    phrase: "polite"
+  },
+
+  {
+    from: "polite past",
+    to: "polite past negative",
+    phrase: "negative"
+  },
+
+  {
+    from: "polite negative",
+    to: "polite past negative",
+    phrase: "past"
+  },
+
+  {
+    from: "polite progressive past negative",
+    to: "polite past negative",
+    phrase: "non-progressive"
+  },
+
+  {
+    from: "plain" ,
+    to: "te-form",
+    phrase: "て"
+  },
+
+  {
+    from: "te-form negative" ,
+    to: "te-form",
+    phrase: "affirmative"
+  },
+
+  {
+    from: "te-form" ,
+    to: "te-form negative",
+    phrase: "negative"
+  },
+
+  {
+    from: "negative" ,
+    to: "te-form negative",
+    phrase: "て"
+  },
+
+  {
+    from: "plain" ,
+    to: "potential",
+    phrase: "potential"
+  },
+
+  {
+    from: "potential negative" ,
+    to: "potential",
+    phrase: "affirmative"
+  },
+
+  {
+    from: "potential" ,
+    to: "potential negative",
+    phrase: "negative"
+  },
+
+  {
+    from: "negative" ,
+    to: "potential negative",
+    phrase: "potential"
+  },
+
+  {
+    from: "plain" ,
+    to: "imperative",
+    phrase: "imperative"
+  },
+
+  {
+    from: "imperative negative" ,
+    to: "imperative",
+    phrase: "affirmative"
+  },
+
+  {
+    from: "imperative" ,
+    to: "imperative negative",
+    phrase: "negative"
+  },
+
+  {
+    from: "negative" ,
+    to: "imperative negative",
+    phrase: "imperative"
+  },
+
+  {
+    from: "plain" ,
+    to: "causative",
+    phrase: "causative"
+  },
+
+  {
+    from: "causative negative" ,
+    to: "causative",
+    phrase: "affirmative"
+  },
+
+  {
+    from: "causative passive" ,
+    to: "causative",
+    phrase: "active"
+  },
+
+  {
+    from: "causative" ,
+    to: "causative negative",
+    phrase: "negative"
+  },
+
+  {
+    from: "negative" ,
+    to: "causative negative",
+    phrase: "causative"
+  },
+
+  {
+    from: "causative passive negative" ,
+    to: "causative negative",
+    phrase: "active"
+  },
+
+  {
+    from: "plain" ,
+    to: "passive",
+    phrase: "passive"
+  },
+
+  {
+    from: "passive negative" ,
+    to: "passive",
+    phrase: "affirmative"
+  },
+
+  {
+    from: "causative passive" ,
+    to: "passive",
+    phrase: "non-causative"
+  },
+
+  {
+    from: "passive" ,
+    to: "passive negative",
+    phrase: "negative"
+  },
+
+  {
+    from: "negative" ,
+    to: "passive negative",
+    phrase: "passive"
+  },
+
+  {
+    from: "causative passive negative" ,
+    to: "passive negative",
+    phrase: "non-causative"
+  },
+
+  {
+    from: "causative" ,
+    to: "causative passive",
+    phrase: "passive"
+  },
+
+  {
+    from: "passive" ,
+    to: "causative passive",
+    phrase: "causative"
+  },
+
+  {
+    from: "causative passive negative" ,
+    to: "causative passive",
+    phrase: "affirmative"
+  },
+
+  {
+    from: "causative negative" ,
+    to: "causative passive negative",
+    phrase: "passive"
+  },
+
+  {
+    from: "passive negative" ,
+    to: "causative passive negative",
+    phrase: "causative"
+  },
+
+  {
+    from: "causative passive" ,
+    to: "causative passive negative",
+    phrase: "negative"
+  },
+
+  {
+    from: "plain",
+    to: "progressive",
+    phrase: "progressive"
+  },
+
+  {
+    from: "polite progressive",
+    to: "progressive",
+    phrase: "plain"
+  },
+
+  {
+    from: "progressive negative",
+    to: "progressive",
+    phrase: "affirmative"
+  },
+
+  {
+    from: "progressive past",
+    to: "progressive",
+    phrase: "present"
+  },
+
+  {
+    from: "progressive",
+    to: "progressive negative",
+    phrase: "negative"
+  },
+
+  {
+    from: "negative",
+    to: "progressive negative",
+    phrase: "progressive"
+  },
+
+  {
+    from: "progressive past negative",
+    to: "progressive negative",
+    phrase: "present"
+  },
+
+  {
+    from: "polite progressive negative",
+    to: "progressive negative",
+    phrase: "plain"
+  },
+
+  {
+    from: "progressive",
+    to: "polite progressive",
+    phrase: "polite"
+  },
+
+  {
+    from: "polite",
+    to: "polite progressive",
+    phrase: "progressive"
+  },
+
+  {
+    from: "polite progressive negative",
+    to: "polite progressive",
+    phrase: "affirmative"
+  },
+
+  {
+    from: "polite progressive past",
+    to: "polite progressive",
+    phrase: "present"
+  },
+
+  {
+    from: "polite progressive",
+    to: "polite progressive negative",
+    phrase: "negative"
+  },
+
+  {
+    from: "polite negative",
+    to: "polite progressive negative",
+    phrase: "progressive"
+  },
+
+  {
+    from: "progressive negative",
+    to: "polite progressive negative",
+    phrase: "polite"
+  },
+
+  {
+    from: "polite progressive past negative",
+    to: "polite progressive negative",
+    phrase: "present"
+  },
+
+  {
+    from: "past",
+    to: "progressive past",
+    phrase: "progressive"
+  },
+
+  {
+    from: "progressive",
+    to: "progressive past",
+    phrase: "past"
+  },
+
+  {
+    from: "progressive past negative",
+    to: "progressive past",
+    phrase: "affirmative"
+  },
+
+  {
+    from: "polite progressive past",
+    to: "progressive past",
+    phrase: "plain"
+  },
+
+  {
+    from: "past negative",
+    to: "progressive past negative",
+    phrase: "progressive"
+  },
+
+  {
+    from: "progressive negative",
+    to: "progressive past negative",
+    phrase: "past"
+  },
+
+  {
+    from: "progressive past",
+    to: "progressive past negative",
+    phrase: "negative"
+  },
+
+  {
+    from: "polite progressive past negative",
+    to: "progressive past negative",
+    phrase: "plain"
+  },
+
+  {
+    from: "polite past",
+    to: "polite progressive past",
+    phrase: "progressive"
+  },
+
+  {
+    from: "polite progressive" ,
+    to: "polite progressive past",
+    phrase: "past"
+  },
+
+  {
+    from: "progressive past",
+    to: "polite progressive past",
+    phrase: "polite"
+  },
+
+  {
+    from: "polite progressive past negative",
+    to: "polite progressive past",
+    phrase: "affirmative"
+  },
+
+  {
+    from: "polite past negative",
+    to: "polite progressive past negative",
+    phrase: "progressive"
+  },
+
+  {
+    from: "progressive past negative",
+    to: "polite progressive past negative",
+    phrase: "polite"
+  },
+
+  {
+    from: "polite progressive past",
+    to: "polite progressive past negative",
+    phrase: "negative"
+  },
+
+  {
+    from: "polite progressive negative",
+    to: "polite progressive past negative",
+    phrase: "past"
+  },
+
+];
 
 var log;
 
@@ -1225,8 +1640,10 @@ function generateQuestion() {
     }
      
     entry = Object.keys(words).randomElement();
-    to_form = Object.keys(transformations).randomElement();
-    from_form = Object.keys(transformations[to_form]).randomElement();
+    transformation = transformations.randomElement();
+
+    from_form = transformation.from;
+    to_form = transformation.to;
 
     forms = getVerbForms(entry);
 
@@ -1261,7 +1678,7 @@ function generateQuestion() {
   var kanaForms = forms["hiragana"];
   var furiganaForms = forms["furigana"];
 
-  var question = "What is the " + transformations[to_form][from_form] + " form of " + wordWithFurigana(furiganaForms[from_form]) + "?";
+  var question = "What is the " + transformation.phrase + " form of " + wordWithFurigana(furiganaForms[from_form]) + "?";
   var answer = kanjiForms[to_form];
   var answer2 = kanaForms[to_form];
 
