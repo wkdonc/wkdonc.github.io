@@ -149,6 +149,7 @@ div#splash > * {
   margin-left: auto;
   margin-right: auto;
   display: table;
+  margin-bottom: 12px;
 }
 
 input#numQuestions {

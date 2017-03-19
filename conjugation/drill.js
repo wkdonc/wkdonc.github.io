@@ -1301,6 +1301,14 @@ function endQuiz() {
   $('#backToStart').focus();
 }
 
+function updateTeNotice() {
+  if ($('#te-form').is(':checked')) {
+    $('#te-notice').show();
+  } else {
+    $('#te-notice').hide();
+  }
+}
+
 $('window').ready(function() {
 
   // Add trick forms
@@ -1320,6 +1328,9 @@ $('window').ready(function() {
 
   $('#go').click(startQuiz);
   $('#backToStart').click(showSplash);
+
+  $('#te-form').click(updateTeNotice);
+  updateTeNotice();
 
   showSplash();
 });
