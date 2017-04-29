@@ -8,7 +8,7 @@ var words = {
 
     "conjugations" : {
 
-      "plain" : "行[い]く",
+      "dictionary" : "行[い]く",
       "negative" : "行[い]かない",
       "polite" : "行[い]きます",
       "polite negative" : "行[い]きません",
@@ -45,7 +45,7 @@ var words = {
 
     "conjugations" : {
 
-      "plain" : "飲[の]む",
+      "dictionary" : "飲[の]む",
       "negative" : "飲[の]まない",
       "polite" : "飲[の]みます",
       "polite negative" : "飲[の]みません",
@@ -82,7 +82,7 @@ var words = {
 
     "conjugations" : {
 
-      "plain" : "作[つく]る",
+      "dictionary" : "作[つく]る",
       "negative" : "作[つく]らない",
       "polite" : "作[つく]ります",
       "polite negative" : "作[つく]りません",
@@ -119,7 +119,7 @@ var words = {
 
     "conjugations" : {
 
-      "plain" : "買[か]い戻[もど]す",
+      "dictionary" : "買[か]い戻[もど]す",
       "negative" : "買[か]い戻[もど]さない",
       "polite" : "買[か]い戻[もど]します",
       "polite negative" : "買[か]い戻[もど]しません",
@@ -156,7 +156,7 @@ var words = {
 
     "conjugations" : {
 
-      "plain" : "見[み]る",
+      "dictionary" : "見[み]る",
       "negative" : "見[み]ない",
       "polite" : "見[み]ます",
       "polite negative" : "見[み]ません",
@@ -193,7 +193,7 @@ var words = {
 
     "conjugations" : {
 
-      "plain" : "食[た]べる",
+      "dictionary" : "食[た]べる",
       "negative" : "食[た]べない",
       "polite" : "食[た]べます",
       "polite negative" : "食[た]べません",
@@ -230,7 +230,7 @@ var words = {
 
     "conjugations" : {
 
-      "plain" : "起[お]きる",
+      "dictionary" : "起[お]きる",
       "negative" : "起[お]きない",
       "polite" : "起[お]きます",
       "polite negative" : "起[お]きません",
@@ -267,7 +267,7 @@ var words = {
 
     "conjugations" : {
 
-      "plain" : "買[か]い換[か]える",
+      "dictionary" : "買[か]い換[か]える",
       "negative" : "買[か]い換[か]えない",
       "polite" : "買[か]い換[か]えます",
       "polite negative" : "買[か]い換[か]えません",
@@ -304,7 +304,7 @@ var words = {
 
     "conjugations" : {
 
-      "plain" : "来[く]る",
+      "dictionary" : "来[く]る",
       "negative" : "来[こ]ない",
       "polite" : "来[き]ます",
       "polite negative" : "来[き]ません",
@@ -341,7 +341,7 @@ var words = {
 
     "conjugations" : {
 
-      "plain" : "する",
+      "dictionary" : "する",
       "negative" : "しない",
       "polite" : "します",
       "polite negative" : "しません",
@@ -368,7 +368,7 @@ var words = {
 
     "conjugations" : {
 
-      "plain" : "勉[べん]強[きょう]する",
+      "dictionary" : "勉[べん]強[きょう]する",
       "negative" : "勉[べん]強[きょう]しない",
       "polite" : "勉[べん]強[きょう]します",
       "polite negative" : "勉[べん]強[きょう]しません",
@@ -395,7 +395,7 @@ var words = {
 
     "conjugations" : {
 
-      "plain" : "電[でん]話[わ]する",
+      "dictionary" : "電[でん]話[わ]する",
       "negative" : "電[でん]話[わ]しない",
       "polite" : "電[でん]話[わ]します",
       "polite negative" : "電[でん]話[わ]しません",
@@ -422,7 +422,7 @@ var words = {
 
     "conjugations" : {
 
-      "plain" : "読[よ]む",
+      "dictionary" : "読[よ]む",
       "negative" : "読[よ]まない",
       "polite" : "読[よ]みます",
       "polite negative" : "読[よ]みません",
@@ -459,7 +459,7 @@ var words = {
 
     "conjugations" : {
 
-      "plain" : "思[おも]う",
+      "dictionary" : "思[おも]う",
       "negative" : "思[おも]わない",
       "polite" : "思[おも]います",
       "polite negative" : "思[おも]いません",
@@ -496,7 +496,7 @@ var words = {
 
     "conjugations" : {
 
-      "plain" : "買[か]い与[あた]える",
+      "dictionary" : "買[か]い与[あた]える",
       "negative" : "買[か]い与[あた]えない",
       "polite" : "買[か]い与[あた]えます",
       "polite negative" : "買[か]い与[あた]えません",
@@ -533,7 +533,7 @@ var words = {
 
     "conjugations" : {
 
-      "plain" : "座[すわ]る",
+      "dictionary" : "座[すわ]る",
       "negative" : "座[すわ]らない",
       "polite" : "座[すわ]ります",
       "polite negative" : "座[すわ]りません",
@@ -570,7 +570,7 @@ var words = {
 
     "conjugations" : {
 
-      "plain" : "休[やす]む",
+      "dictionary" : "休[やす]む",
       "negative" : "休[やす]まない",
       "polite" : "休[やす]みます",
       "polite negative" : "休[やす]みません",
@@ -607,7 +607,7 @@ var words = {
 
     "conjugations" : {
 
-      "plain" : "足[た]す",
+      "dictionary" : "足[た]す",
       "negative" : "足[た]さない",
       "polite" : "足[た]します",
       "polite negative" : "足[た]しません",
@@ -644,7 +644,7 @@ var words = {
 
     "conjugations" : {
 
-      "plain" : "歌[うた]う",
+      "dictionary" : "歌[うた]う",
       "negative" : "歌[うた]わない",
       "polite" : "歌[うた]います",
       "polite negative" : "歌[うた]いません",
@@ -681,7 +681,7 @@ var words = {
 
     "conjugations" : {
 
-      "plain" : "高[たか]い",
+      "dictionary" : "高[たか]い",
       "negative" : "高[たか]くない",
       "polite" : "高[たか]いです",
       "polite negative" : "高[たか]くないです",
@@ -698,7 +698,7 @@ var words = {
 
     "conjugations" : {
 
-      "plain" : "面[おも]白[しろ]い",
+      "dictionary" : "面[おも]白[しろ]い",
       "negative" : "面[おも]白[しろ]くない",
       "polite" : "面[おも]白[しろ]いです",
       "polite negative" : "面[おも]白[しろ]くないです",
@@ -715,7 +715,7 @@ var words = {
 
     "conjugations" : {
 
-      "plain" : "暗[くら]い",
+      "dictionary" : "暗[くら]い",
       "negative" : "暗[くら]くない",
       "polite" : "暗[くら]いです",
       "polite negative" : "暗[くら]くないです",
@@ -732,7 +732,7 @@ var words = {
 
     "conjugations" : {
 
-      "plain" : "いい",
+      "dictionary" : "いい",
       "negative" : "良[よ]くない",
       "polite" : "いいです",
       "polite negative" : "良[よ]くないです",
@@ -749,7 +749,7 @@ var words = {
 
     "conjugations" : {
 
-      "plain" : "有[ゆう]名[めい]だ",
+      "dictionary" : "有[ゆう]名[めい]だ",
       "negative" : "有[ゆう]名[めい]ではない",
       "polite" : "有[ゆう]名[めい]です",
       "polite negative" : "有[ゆう]名[めい]ではありません",
@@ -766,7 +766,7 @@ var words = {
 
     "conjugations" : {
 
-      "plain" : "好[す]きだ",
+      "dictionary" : "好[す]きだ",
       "negative" : "好[す]きではない",
       "polite" : "好[す]きです",
       "polite negative" : "好[す]きではありません",
@@ -783,7 +783,7 @@ var words = {
 
     "conjugations" : {
 
-      "plain" : "元[げん]気[き]だ",
+      "dictionary" : "元[げん]気[き]だ",
       "negative" : "元[げん]気[き]ではない",
       "polite" : "元[げん]気[き]です",
       "polite negative" : "元[げん]気[き]ではありません",
@@ -800,7 +800,7 @@ var words = {
 
     "conjugations" : {
 
-      "plain" : "意[い]地[じ]悪[わる]だ",
+      "dictionary" : "意[い]地[じ]悪[わる]だ",
       "negative" : "意[い]地[じ]悪[わる]ではない",
       "polite" : "意[い]地[じ]悪[わる]です",
       "polite negative" : "意[い]地[じ]悪[わる]ではありません",
@@ -814,16 +814,16 @@ var words = {
 
 var transformations = [
 
-  { from: "negative", to: "plain", tags: ["plain", "negative"] },
-  { from: "past", to: "plain", tags: ["plain", "past"] },
-  { from: "polite", to: "plain", tags: ["plain", "polite"] },
-  { from: "te-form", to: "plain", tags: ["plain", "te-form"] },
-  { from: "potential", to: "plain", tags: ["plain", "potential"] },
-  { from: "imperative", to: "plain", tags: ["plain", "imperative"] },
-  { from: "causative", to: "plain", tags: ["plain", "causative"] },
-  { from: "passive", to: "plain", tags: ["plain", "passive"] },
-  { from: "progressive" , to: "plain", tags: ["plain", "progressive"] },
-  { from: "plain", to: "negative", tags: ["plain", "negative"] },
+  { from: "negative", to: "dictionary", tags: ["plain", "negative"] },
+  { from: "past", to: "dictionary", tags: ["plain", "past"] },
+  { from: "polite", to: "dictionary", tags: ["plain", "polite"] },
+  { from: "te-form", to: "dictionary", tags: ["plain", "te-form"] },
+  { from: "potential", to: "dictionary", tags: ["plain", "potential"] },
+  { from: "imperative", to: "dictionary", tags: ["plain", "imperative"] },
+  { from: "causative", to: "dictionary", tags: ["plain", "causative"] },
+  { from: "passive", to: "dictionary", tags: ["plain", "passive"] },
+  { from: "progressive" , to: "dictionary", tags: ["plain", "progressive"] },
+  { from: "dictionary", to: "negative", tags: ["plain", "negative"] },
   { from: "past negative", to: "negative", tags: ["plain", "past", "negative"] },
   { from: "polite negative", to: "negative", tags: ["plain", "polite", "negative"] },
   { from: "te-form negative", to: "negative", tags: ["plain", "te-form", "negative"] },
@@ -832,7 +832,7 @@ var transformations = [
   { from: "causative negative", to: "negative", tags: ["plain", "causative", "negative"] },
   { from: "passive negative", to: "negative", tags: ["plain", "passive", "negative"] },
   { from: "progressive negative", to: "negative", tags: ["plain", "progressive", "negative"] },
-  { from: "plain", to: "past", tags: ["plain", "past"] },
+  { from: "dictionary", to: "past", tags: ["plain", "past"] },
   { from: "past negative" , to: "past", tags: ["plain", "past", "negative"] },
   { from: "polite past", to: "past", tags: ["plain", "polite", "past"] },
   { from: "progressive past", to: "past", tags: ["plain", "progressive", "past"] },
@@ -840,7 +840,7 @@ var transformations = [
   { from: "past", to: "past negative", tags: ["plain", "past", "negative"] },
   { from: "polite past negative", to: "past negative", tags: ["plain", "polite", "past", "negative"] },
   { from: "progressive past negative", to: "past negative", tags: ["plain", "progressive", "past", "negative"] },
-  { from: "plain", to: "polite", tags: ["plain", "polite"] },
+  { from: "dictionary", to: "polite", tags: ["plain", "polite"] },
   { from: "polite past", to: "polite", tags: ["polite", "past"] },
   { from: "polite negative", to: "polite", tags: ["polite", "negative"] },
   { from: "polite progressive", to: "polite", tags: ["polite", "progressive"] },
@@ -856,25 +856,25 @@ var transformations = [
   { from: "polite past", to: "polite past negative", tags: ["polite", "past", "negative"] },
   { from: "polite negative", to: "polite past negative", tags: ["polite", "past", "negative"] },
   { from: "polite progressive past negative", to: "polite past negative", tags: ["polite", "progressive", "past", "negative"] },
-  { from: "plain" , to: "te-form", tags: ["plain", "te-form"] },
+  { from: "dictionary" , to: "te-form", tags: ["plain", "te-form"] },
   { from: "te-form negative" , to: "te-form", tags: ["plain", "te-form", "negative"] },
   { from: "te-form" , to: "te-form negative", tags: ["plain", "te-form", "negative"] },
   { from: "negative" , to: "te-form negative", tags: ["plain", "te-form", "negative"] },
-  { from: "plain" , to: "potential", tags: ["plain", "potential"] },
+  { from: "dictionary" , to: "potential", tags: ["plain", "potential"] },
   { from: "potential negative" , to: "potential", tags: ["plain", "potential", "negative"] },
   { from: "potential" , to: "potential negative", tags: ["plain", "potential", "negative"] },
   { from: "negative" , to: "potential negative", tags: ["plain", "potential", "negative"] },
-  { from: "plain" , to: "imperative", tags: ["plain", "imperative"] },
+  { from: "dictionary" , to: "imperative", tags: ["plain", "imperative"] },
   { from: "imperative negative" , to: "imperative", tags: ["plain", "imperative", "negative"] },
   { from: "imperative" , to: "imperative negative", tags: ["plain", "imperative", "negative"] },
   { from: "negative" , to: "imperative negative", tags: ["plain", "imperative", "negative"] },
-  { from: "plain" , to: "causative", tags: ["plain", "causative"] },
+  { from: "dictionary" , to: "causative", tags: ["plain", "causative"] },
   { from: "causative negative" , to: "causative", tags: ["plain", "causative", "negative"] },
   { from: "causative passive" , to: "causative", tags: ["plain", "causative", "passive"] },
   { from: "causative" , to: "causative negative", tags: ["plain", "causative", "negative"] },
   { from: "negative" , to: "causative negative", tags: ["plain", "causative", "negative"] },
   { from: "causative passive negative" , to: "causative negative", tags: ["plain", "causative", "passive", "negative"] },
-  { from: "plain" , to: "passive", tags: ["plain", "passive"] },
+  { from: "dictionary" , to: "passive", tags: ["plain", "passive"] },
   { from: "passive negative" , to: "passive", tags: ["plain", "passive", "negative"] },
   { from: "causative passive" , to: "passive", tags: ["plain", "causative", "passive"] },
   { from: "passive" , to: "passive negative", tags: ["plain", "passive", "negative"] },
@@ -886,7 +886,7 @@ var transformations = [
   { from: "causative negative" , to: "causative passive negative", tags: ["plain", "causative", "passive", "negative"] },
   { from: "passive negative" , to: "causative passive negative", tags: ["plain", "causative", "passive", "negative"] },
   { from: "causative passive" , to: "causative passive negative", tags: ["plain", "causative", "passive", "negative"] },
-  { from: "plain", to: "progressive", tags: ["plain", "progressive"] },
+  { from: "dictionary", to: "progressive", tags: ["plain", "progressive"] },
   { from: "polite progressive", to: "progressive", tags: ["plain", "polite", "progressive"] },
   { from: "progressive negative", to: "progressive", tags: ["plain", "progressive", "negative"] },
   { from: "progressive past", to: "progressive", tags: ["plain", "progressive", "past"] },
