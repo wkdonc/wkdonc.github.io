@@ -766,14 +766,14 @@ var words = {
 
     "conjugations" : {
 
-      "plain" : "好[き]だ",
-      "negative" : "好[き]ではない",
-      "polite" : "好[き]です",
-      "polite negative" : "好[き]ではありません",
-      "past" : "好[き]だった",
-      "past negative" : "好[き]ではなかった",
-      "polite past" : "好[き]でした",
-      "polite past negative" : "好[き]ではありませんでした",
+      "plain" : "好[す]きだ",
+      "negative" : "好[す]きではない",
+      "polite" : "好[す]きです",
+      "polite negative" : "好[す]きではありません",
+      "past" : "好[す]きだった",
+      "past negative" : "好[す]きではなかった",
+      "polite past" : "好[す]きでした",
+      "polite past negative" : "好[す]きではありませんでした",
     },
   },
 
