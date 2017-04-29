@@ -814,110 +814,110 @@ var words = {
 
 var transformations = [
 
-  { from: "negative", to: "plain", phrase: "affirmative", tags: ["plain", "negative"] },
-  { from: "past", to: "plain", phrase: "present", tags: ["plain", "past"] },
-  { from: "polite", to: "plain", phrase: "plain", tags: ["plain", "polite"] }, 
-  { from: "te-form", to: "plain", phrase: "plain", tags: ["plain", "te-form"] }, 
-  { from: "potential", to: "plain", phrase: "plain", tags: ["plain", "potential"] }, 
-  { from: "imperative", to: "plain", phrase: "plain", tags: ["plain", "imperative"] }, 
-  { from: "causative", to: "plain", phrase: "plain", tags: ["plain", "causative"] }, 
-  { from: "passive", to: "plain", phrase: "plain", tags: ["plain", "passive"] }, 
-  { from: "progressive" , to: "plain", phrase: "non-progressive", tags: ["plain", "progressive"] }, 
-  { from: "plain", to: "negative", phrase: "negative", tags: ["plain", "negative"] }, 
-  { from: "past negative", to: "negative", phrase: "present", tags: ["plain", "past", "negative"] }, 
-  { from: "polite negative", to: "negative", phrase: "plain", tags: ["plain", "polite", "negative"] }, 
-  { from: "te-form negative", to: "negative", phrase: "plain", tags: ["plain", "te-form", "negative"] }, 
-  { from: "potential negative", to: "negative", phrase: "plain", tags: ["plain", "potential", "negative"] }, 
-  { from: "imperative negative", to: "negative", phrase: "plain", tags: ["plain", "imperative", "negative"] }, 
-  { from: "causative negative", to: "negative", phrase: "plain", tags: ["plain", "causative", "negative"] }, 
-  { from: "passive negative", to: "negative", phrase: "plain", tags: ["plain", "passive", "negative"] }, 
-  { from: "progressive negative", to: "negative", phrase: "non-progressive", tags: ["plain", "progressive", "negative"] }, 
-  { from: "plain", to: "past", phrase: "past", tags: ["plain", "past"] }, 
-  { from: "past negative" , to: "past", phrase: "affirmative", tags: ["plain", "past", "negative"] }, 
-  { from: "polite past", to: "past", phrase: "plain", tags: ["plain", "polite", "past"] }, 
-  { from: "progressive past", to: "past", phrase: "non-progressive", tags: ["plain", "progressive", "past"] }, 
-  { from: "negative", to: "past negative", phrase: "past", tags: ["plain", "past", "negative"] }, 
-  { from: "past", to: "past negative", phrase: "negative", tags: ["plain", "past", "negative"] }, 
-  { from: "polite past negative", to: "past negative", phrase: "plain", tags: ["plain", "polite", "past", "negative"] }, 
-  { from: "progressive past negative", to: "past negative", phrase: "non-progressive", tags: ["plain", "progressive", "past", "negative"] }, 
-  { from: "plain", to: "polite", phrase: "polite", tags: ["plain", "polite"] }, 
-  { from: "polite past", to: "polite", phrase: "present", tags: ["polite", "past"] }, 
-  { from: "polite negative", to: "polite", phrase: "affirmative", tags: ["polite", "negative"] }, 
-  { from: "polite progressive", to: "polite", phrase: "non-progressive", tags: ["polite", "progressive"] }, 
-  { from: "past", to: "polite past", phrase: "polite", tags: ["plain", "past", "polite"] }, 
-  { from: "polite", to: "polite past", phrase: "past", tags: ["past", "polite"] }, 
-  { from: "polite past negative", to: "polite past", phrase: "affirmative", tags: ["polite", "past", "negative"] }, 
-  { from: "polite progressive past", to: "polite past", phrase: "non-progressive", tags: ["polite", "progressive", "past"] }, 
-  { from: "negative", to: "polite negative", phrase: "polite", tags: ["plain", "polite", "negative"] }, 
-  { from: "polite", to: "polite negative", phrase: "negative", tags: ["polite", "negative"] }, 
-  { from: "polite past negative", to: "polite negative", phrase: "present", tags: ["polite", "past", "negative"] }, 
-  { from: "polite progressive negative", to: "polite negative", phrase: "non-progressive", tags: ["polite", "progressive", "negative"] }, 
-  { from: "past negative", to: "polite past negative", phrase: "polite", tags: ["plain", "polite", "past", "negative"] }, 
-  { from: "polite past", to: "polite past negative", phrase: "negative", tags: ["polite", "past", "negative"] }, 
-  { from: "polite negative", to: "polite past negative", phrase: "past", tags: ["polite", "past", "negative"] }, 
-  { from: "polite progressive past negative", to: "polite past negative", phrase: "non-progressive", tags: ["polite", "progressive", "past", "negative"] }, 
-  { from: "plain" , to: "te-form", phrase: "て", tags: ["plain", "te-form"] }, 
-  { from: "te-form negative" , to: "te-form", phrase: "affirmative", tags: ["plain", "te-form", "negative"] }, 
-  { from: "te-form" , to: "te-form negative", phrase: "negative", tags: ["plain", "te-form", "negative"] }, 
-  { from: "negative" , to: "te-form negative", phrase: "て", tags: ["plain", "te-form", "negative"] }, 
-  { from: "plain" , to: "potential", phrase: "potential", tags: ["plain", "potential"] }, 
-  { from: "potential negative" , to: "potential", phrase: "affirmative", tags: ["plain", "potential", "negative"] }, 
-  { from: "potential" , to: "potential negative", phrase: "negative", tags: ["plain", "potential", "negative"] }, 
-  { from: "negative" , to: "potential negative", phrase: "potential", tags: ["plain", "potential", "negative"] }, 
-  { from: "plain" , to: "imperative", phrase: "imperative", tags: ["plain", "imperative"] }, 
-  { from: "imperative negative" , to: "imperative", phrase: "affirmative", tags: ["plain", "imperative", "negative"] }, 
-  { from: "imperative" , to: "imperative negative", phrase: "negative", tags: ["plain", "imperative", "negative"] }, 
-  { from: "negative" , to: "imperative negative", phrase: "imperative", tags: ["plain", "imperative", "negative"] }, 
-  { from: "plain" , to: "causative", phrase: "causative", tags: ["plain", "causative"] }, 
-  { from: "causative negative" , to: "causative", phrase: "affirmative", tags: ["plain", "causative", "negative"] }, 
-  { from: "causative passive" , to: "causative", phrase: "active", tags: ["plain", "causative", "passive"] }, 
-  { from: "causative" , to: "causative negative", phrase: "negative", tags: ["plain", "causative", "negative"] }, 
-  { from: "negative" , to: "causative negative", phrase: "causative", tags: ["plain", "causative", "negative"] }, 
-  { from: "causative passive negative" , to: "causative negative", phrase: "active", tags: ["plain", "causative", "passive", "negative"] }, 
-  { from: "plain" , to: "passive", phrase: "passive", tags: ["plain", "passive"] }, 
-  { from: "passive negative" , to: "passive", phrase: "affirmative", tags: ["plain", "passive", "negative"] }, 
-  { from: "causative passive" , to: "passive", phrase: "non-causative", tags: ["plain", "causative", "passive"] }, 
-  { from: "passive" , to: "passive negative", phrase: "negative", tags: ["plain", "passive", "negative"] }, 
-  { from: "negative" , to: "passive negative", phrase: "passive", tags: ["plain", "passive", "negative"] }, 
-  { from: "causative passive negative" , to: "passive negative", phrase: "non-causative", tags: ["plain", "causative", "passive", "negative"] }, 
-  { from: "causative" , to: "causative passive", phrase: "passive", tags: ["plain", "causative", "passive"] }, 
-  { from: "passive" , to: "causative passive", phrase: "causative", tags: ["plain", "causative", "passive"] }, 
-  { from: "causative passive negative" , to: "causative passive", phrase: "affirmative", tags: ["plain", "causative", "passive", "negative"] }, 
-  { from: "causative negative" , to: "causative passive negative", phrase: "passive", tags: ["plain", "causative", "passive", "negative"] }, 
-  { from: "passive negative" , to: "causative passive negative", phrase: "causative", tags: ["plain", "causative", "passive", "negative"] }, 
-  { from: "causative passive" , to: "causative passive negative", phrase: "negative", tags: ["plain", "causative", "passive", "negative"] }, 
-  { from: "plain", to: "progressive", phrase: "progressive", tags: ["plain", "progressive"] }, 
-  { from: "polite progressive", to: "progressive", phrase: "plain", tags: ["plain", "polite", "progressive"] }, 
-  { from: "progressive negative", to: "progressive", phrase: "affirmative", tags: ["plain", "progressive", "negative"] }, 
-  { from: "progressive past", to: "progressive", phrase: "present", tags: ["plain", "progressive", "past"] }, 
-  { from: "progressive", to: "progressive negative", phrase: "negative", tags: ["plain", "progressive", "negative"] }, 
-  { from: "negative", to: "progressive negative", phrase: "progressive", tags: ["plain", "negative", "progressive"] }, 
-  { from: "progressive past negative", to: "progressive negative", phrase: "present", tags: ["plain", "progressive", "past", "negative"] }, 
-  { from: "polite progressive negative", to: "progressive negative", phrase: "plain", tags: ["plain", "polite", "progressive", "negative"] }, 
-  { from: "progressive", to: "polite progressive", phrase: "polite", tags: ["plain", "progressive", "polite"] }, 
-  { from: "polite", to: "polite progressive", phrase: "progressive", tags: ["polite", "progressive"] }, 
-  { from: "polite progressive negative", to: "polite progressive", phrase: "affirmative", tags: ["polite", "progressive", "negative"] }, 
-  { from: "polite progressive past", to: "polite progressive", phrase: "present", tags: ["polite", "progressive", "past"] }, 
-  { from: "polite progressive", to: "polite progressive negative", phrase: "negative", tags: ["polite", "progressive", "negative"] }, 
-  { from: "polite negative", to: "polite progressive negative", phrase: "progressive", tags: ["polite", "progressive", "negative"] }, 
-  { from: "progressive negative", to: "polite progressive negative", phrase: "polite", tags: ["plain", "polite", "progressive", "negative"] }, 
-  { from: "polite progressive past negative", to: "polite progressive negative", phrase: "present", tags: ["polite", "past", "progressive", "negative"] }, 
-  { from: "past", to: "progressive past", phrase: "progressive", tags: ["plain", "past", "progressive"] }, 
-  { from: "progressive", to: "progressive past", phrase: "past", tags: ["plain", "past", "progressive"] }, 
-  { from: "progressive past negative", to: "progressive past", phrase: "affirmative", tags: ["plain", "progressive", "past", "negative"] }, 
-  { from: "polite progressive past", to: "progressive past", phrase: "plain", tags: ["plain", "polite", "progressive", "past"] }, 
-  { from: "past negative", to: "progressive past negative", phrase: "progressive", tags: ["plain", "progressive", "past", "negative"] }, 
-  { from: "progressive negative", to: "progressive past negative", phrase: "past", tags: ["plain", "progressive", "past", "negative"] }, 
-  { from: "progressive past", to: "progressive past negative", phrase: "negative", tags: ["plain", "progressive", "past", "negative"] }, 
-  { from: "polite progressive past negative", to: "progressive past negative", phrase: "plain", tags: ["plain", "polite", "progressive", "past", "negative"] }, 
-  { from: "polite past", to: "polite progressive past", phrase: "progressive", tags: ["polite", "progressive", "past"] }, 
-  { from: "polite progressive" , to: "polite progressive past", phrase: "past", tags: ["polite", "progressive", "past"] }, 
-  { from: "progressive past", to: "polite progressive past", phrase: "polite", tags: ["plain", "polite", "progressive", "past"] }, 
-  { from: "polite progressive past negative", to: "polite progressive past", phrase: "affirmative", tags: ["polite", "progressive", "past", "negative"] }, 
-  { from: "polite past negative", to: "polite progressive past negative", phrase: "progressive", tags: ["polite", "progressive", "past", "negative"] }, 
-  { from: "progressive past negative", to: "polite progressive past negative", phrase: "polite", tags: ["plain", "polite", "progressive", "past", "negative"] }, 
-  { from: "polite progressive past", to: "polite progressive past negative", phrase: "negative", tags: ["polite", "progressive", "past", "negative"] }, 
-  { from: "polite progressive negative", to: "polite progressive past negative", phrase: "past", tags: ["polite", "progressive", "past", "negative"] }, 
+  { from: "negative", to: "plain", tags: ["plain", "negative"] },
+  { from: "past", to: "plain", tags: ["plain", "past"] },
+  { from: "polite", to: "plain", tags: ["plain", "polite"] },
+  { from: "te-form", to: "plain", tags: ["plain", "te-form"] },
+  { from: "potential", to: "plain", tags: ["plain", "potential"] },
+  { from: "imperative", to: "plain", tags: ["plain", "imperative"] },
+  { from: "causative", to: "plain", tags: ["plain", "causative"] },
+  { from: "passive", to: "plain", tags: ["plain", "passive"] },
+  { from: "progressive" , to: "plain", tags: ["plain", "progressive"] },
+  { from: "plain", to: "negative", tags: ["plain", "negative"] },
+  { from: "past negative", to: "negative", tags: ["plain", "past", "negative"] },
+  { from: "polite negative", to: "negative", tags: ["plain", "polite", "negative"] },
+  { from: "te-form negative", to: "negative", tags: ["plain", "te-form", "negative"] },
+  { from: "potential negative", to: "negative", tags: ["plain", "potential", "negative"] },
+  { from: "imperative negative", to: "negative", tags: ["plain", "imperative", "negative"] },
+  { from: "causative negative", to: "negative", tags: ["plain", "causative", "negative"] },
+  { from: "passive negative", to: "negative", tags: ["plain", "passive", "negative"] },
+  { from: "progressive negative", to: "negative", tags: ["plain", "progressive", "negative"] },
+  { from: "plain", to: "past", tags: ["plain", "past"] },
+  { from: "past negative" , to: "past", tags: ["plain", "past", "negative"] },
+  { from: "polite past", to: "past", tags: ["plain", "polite", "past"] },
+  { from: "progressive past", to: "past", tags: ["plain", "progressive", "past"] },
+  { from: "negative", to: "past negative", tags: ["plain", "past", "negative"] },
+  { from: "past", to: "past negative", tags: ["plain", "past", "negative"] },
+  { from: "polite past negative", to: "past negative", tags: ["plain", "polite", "past", "negative"] },
+  { from: "progressive past negative", to: "past negative", tags: ["plain", "progressive", "past", "negative"] },
+  { from: "plain", to: "polite", tags: ["plain", "polite"] },
+  { from: "polite past", to: "polite", tags: ["polite", "past"] },
+  { from: "polite negative", to: "polite", tags: ["polite", "negative"] },
+  { from: "polite progressive", to: "polite", tags: ["polite", "progressive"] },
+  { from: "past", to: "polite past", tags: ["plain", "past", "polite"] },
+  { from: "polite", to: "polite past", tags: ["past", "polite"] },
+  { from: "polite past negative", to: "polite past", tags: ["polite", "past", "negative"] },
+  { from: "polite progressive past", to: "polite past", tags: ["polite", "progressive", "past"] },
+  { from: "negative", to: "polite negative", tags: ["plain", "polite", "negative"] },
+  { from: "polite", to: "polite negative", tags: ["polite", "negative"] },
+  { from: "polite past negative", to: "polite negative", tags: ["polite", "past", "negative"] },
+  { from: "polite progressive negative", to: "polite negative", tags: ["polite", "progressive", "negative"] },
+  { from: "past negative", to: "polite past negative", tags: ["plain", "polite", "past", "negative"] },
+  { from: "polite past", to: "polite past negative", tags: ["polite", "past", "negative"] },
+  { from: "polite negative", to: "polite past negative", tags: ["polite", "past", "negative"] },
+  { from: "polite progressive past negative", to: "polite past negative", tags: ["polite", "progressive", "past", "negative"] },
+  { from: "plain" , to: "te-form", tags: ["plain", "te-form"] },
+  { from: "te-form negative" , to: "te-form", tags: ["plain", "te-form", "negative"] },
+  { from: "te-form" , to: "te-form negative", tags: ["plain", "te-form", "negative"] },
+  { from: "negative" , to: "te-form negative", tags: ["plain", "te-form", "negative"] },
+  { from: "plain" , to: "potential", tags: ["plain", "potential"] },
+  { from: "potential negative" , to: "potential", tags: ["plain", "potential", "negative"] },
+  { from: "potential" , to: "potential negative", tags: ["plain", "potential", "negative"] },
+  { from: "negative" , to: "potential negative", tags: ["plain", "potential", "negative"] },
+  { from: "plain" , to: "imperative", tags: ["plain", "imperative"] },
+  { from: "imperative negative" , to: "imperative", tags: ["plain", "imperative", "negative"] },
+  { from: "imperative" , to: "imperative negative", tags: ["plain", "imperative", "negative"] },
+  { from: "negative" , to: "imperative negative", tags: ["plain", "imperative", "negative"] },
+  { from: "plain" , to: "causative", tags: ["plain", "causative"] },
+  { from: "causative negative" , to: "causative", tags: ["plain", "causative", "negative"] },
+  { from: "causative passive" , to: "causative", tags: ["plain", "causative", "passive"] },
+  { from: "causative" , to: "causative negative", tags: ["plain", "causative", "negative"] },
+  { from: "negative" , to: "causative negative", tags: ["plain", "causative", "negative"] },
+  { from: "causative passive negative" , to: "causative negative", tags: ["plain", "causative", "passive", "negative"] },
+  { from: "plain" , to: "passive", tags: ["plain", "passive"] },
+  { from: "passive negative" , to: "passive", tags: ["plain", "passive", "negative"] },
+  { from: "causative passive" , to: "passive", tags: ["plain", "causative", "passive"] },
+  { from: "passive" , to: "passive negative", tags: ["plain", "passive", "negative"] },
+  { from: "negative" , to: "passive negative", tags: ["plain", "passive", "negative"] },
+  { from: "causative passive negative" , to: "passive negative", tags: ["plain", "causative", "passive", "negative"] },
+  { from: "causative" , to: "causative passive", tags: ["plain", "causative", "passive"] },
+  { from: "passive" , to: "causative passive", tags: ["plain", "causative", "passive"] },
+  { from: "causative passive negative" , to: "causative passive", tags: ["plain", "causative", "passive", "negative"] },
+  { from: "causative negative" , to: "causative passive negative", tags: ["plain", "causative", "passive", "negative"] },
+  { from: "passive negative" , to: "causative passive negative", tags: ["plain", "causative", "passive", "negative"] },
+  { from: "causative passive" , to: "causative passive negative", tags: ["plain", "causative", "passive", "negative"] },
+  { from: "plain", to: "progressive", tags: ["plain", "progressive"] },
+  { from: "polite progressive", to: "progressive", tags: ["plain", "polite", "progressive"] },
+  { from: "progressive negative", to: "progressive", tags: ["plain", "progressive", "negative"] },
+  { from: "progressive past", to: "progressive", tags: ["plain", "progressive", "past"] },
+  { from: "progressive", to: "progressive negative", tags: ["plain", "progressive", "negative"] },
+  { from: "negative", to: "progressive negative", tags: ["plain", "negative", "progressive"] },
+  { from: "progressive past negative", to: "progressive negative", tags: ["plain", "progressive", "past", "negative"] },
+  { from: "polite progressive negative", to: "progressive negative", tags: ["plain", "polite", "progressive", "negative"] },
+  { from: "progressive", to: "polite progressive", tags: ["plain", "progressive", "polite"] },
+  { from: "polite", to: "polite progressive", tags: ["polite", "progressive"] },
+  { from: "polite progressive negative", to: "polite progressive", tags: ["polite", "progressive", "negative"] },
+  { from: "polite progressive past", to: "polite progressive", tags: ["polite", "progressive", "past"] },
+  { from: "polite progressive", to: "polite progressive negative", tags: ["polite", "progressive", "negative"] },
+  { from: "polite negative", to: "polite progressive negative", tags: ["polite", "progressive", "negative"] },
+  { from: "progressive negative", to: "polite progressive negative", tags: ["plain", "polite", "progressive", "negative"] },
+  { from: "polite progressive past negative", to: "polite progressive negative", tags: ["polite", "past", "progressive", "negative"] },
+  { from: "past", to: "progressive past", tags: ["plain", "past", "progressive"] },
+  { from: "progressive", to: "progressive past", tags: ["plain", "past", "progressive"] },
+  { from: "progressive past negative", to: "progressive past", tags: ["plain", "progressive", "past", "negative"] },
+  { from: "polite progressive past", to: "progressive past", tags: ["plain", "polite", "progressive", "past"] },
+  { from: "past negative", to: "progressive past negative", tags: ["plain", "progressive", "past", "negative"] },
+  { from: "progressive negative", to: "progressive past negative", tags: ["plain", "progressive", "past", "negative"] },
+  { from: "progressive past", to: "progressive past negative", tags: ["plain", "progressive", "past", "negative"] },
+  { from: "polite progressive past negative", to: "progressive past negative", tags: ["plain", "polite", "progressive", "past", "negative"] },
+  { from: "polite past", to: "polite progressive past", tags: ["polite", "progressive", "past"] },
+  { from: "polite progressive" , to: "polite progressive past", tags: ["polite", "progressive", "past"] },
+  { from: "progressive past", to: "polite progressive past", tags: ["plain", "polite", "progressive", "past"] },
+  { from: "polite progressive past negative", to: "polite progressive past", tags: ["polite", "progressive", "past", "negative"] },
+  { from: "polite past negative", to: "polite progressive past negative", tags: ["polite", "progressive", "past", "negative"] },
+  { from: "progressive past negative", to: "polite progressive past negative", tags: ["plain", "polite", "progressive", "past", "negative"] },
+  { from: "polite progressive past", to: "polite progressive past negative", tags: ["polite", "progressive", "past", "negative"] },
+  { from: "polite progressive negative", to: "polite progressive past negative", tags: ["polite", "progressive", "past", "negative"] },
 ];
 
 var log;
@@ -974,7 +974,7 @@ function getVerbForms(entry) {
   function kanaForm(word) {
     return word.split(/.\[([^\]]*)\]/).join("");
   }
-  
+
   function kanjiForm(word) {
     return word.split(/(.)\[[^\]]*\]/).join("");
   }
@@ -1054,7 +1054,7 @@ function processAnswerKey() {
     "nb" : "んb", "nc" : "んc", "nd" : "んd", "nf" : "んf", "ng" : "んg",
     "nh" : "んh", "nj" : "んj", "nk" : "んk", "nl" : "んl", "nm" : "んm",
     "np" : "んp", "nq" : "んq", "nr" : "んr", "ns" : "んs", "nt" : "んt",
-    "nv" : "んv", "nw" : "んw", "nx" : "んx", "nz" : "んz", 
+    "nv" : "んv", "nw" : "んw", "nx" : "んx", "nz" : "んz",
 
     "aa" : "っa", "bb" : "っb", "cc" : "っc", "dd" : "っd", "ee" : "っe",
     "ff" : "っf", "gg" : "っg", "hh" : "っh", "ii" : "っi", "jj" : "っj",
@@ -1098,7 +1098,7 @@ function processAnswerKey() {
 }
 
 function generateQuestion() {
-  
+
   var entry;
   var to_form;
   var from_form;
@@ -1112,7 +1112,7 @@ function generateQuestion() {
       showSplash();
       return;
     }
-     
+
     entry = Object.keys(words).randomElement();
     transformation = transformations.randomElement();
 
@@ -1197,7 +1197,7 @@ function processAnswer() {
   $('#answer').val("");
   $('#response').prop('class', klass).text(response);
   $('#next').prop('disabled', false);
-  
+
   if ((response == window.answer) || (response == window.answer2)) {
     $('#message').html("");
   } else {
@@ -1224,9 +1224,9 @@ function updateHistoryView(log) {
 
   var header_tr = $('<tr>');
 
-  header_tr.append($('<th>Question</th>')); 
-  header_tr.append($('<th>Answer</th>')); 
-  header_tr.append($('<th>Response</th>')); 
+  header_tr.append($('<th>Question</th>'));
+  header_tr.append($('<th>Answer</th>'));
+  header_tr.append($('<th>Response</th>'));
 
   review.append(header_tr);
 
@@ -1240,9 +1240,9 @@ function updateHistoryView(log) {
 
     var tr = $('<tr>');
 
-    var td1 = $('<td>'); 
-    var td2 = $('<td>'); 
-    var td3 = $('<td>'); 
+    var td1 = $('<td>');
+    var td2 = $('<td>');
+    var td3 = $('<td>');
 
     td1.html(entry.question);
     td2.html(entry.answer);
@@ -1307,7 +1307,64 @@ function updateTeNotice() {
   }
 }
 
-$('window').ready(function() {
+function arrayDifference(a, b) {
+  // From http://stackoverflow.com/a/1723220
+  return a.filter(function(x) { return b.indexOf(x) < 0 });
+}
+
+function calculateTransitions() {
+
+  function getTags(str) {
+
+    var tags = str.split(" ");
+
+    if ((tags.length == 1) && (tags[0] == "plain")) {
+      tags = [];
+    }
+
+    return tags;
+  }
+
+  transformations.forEach(function (transformation) {
+
+    var from = getTags(transformation.from);
+    var to = getTags(transformation.to);
+
+    var from_extra = {
+      "negative": "affirmative",
+      "past": "present",
+      "polite": "plain",
+      "te-form": "non-て",
+      "potential": "non-potential",
+      "imperative": "non-imperative",
+      "causative": "non-causative",
+      "passive": "active",
+      "progressive": "non-progressive",
+    };
+
+    var to_extra = {
+      "negative": "negative",
+      "past": "past",
+      "polite": "polite",
+      "te-form": "て",
+      "potential": "potential",
+      "imperative": "imperative",
+      "causative": "causative",
+      "passive": "passive",
+      "progressive": "progressive",
+    };
+
+    var phrase;
+
+    phrase = phrase || from_extra[arrayDifference(from, to)[0]];
+    phrase = phrase || to_extra[arrayDifference(to, from)[0]];
+
+    if (phrase == undefined) {
+      throw "wobbly";
+    }
+
+    transformation.phrase = phrase;
+  });
 
   // Add trick forms
 
@@ -1329,6 +1386,11 @@ $('window').ready(function() {
   });
 
   transformations = transformations.concat(trick_forms);
+}
+
+$('window').ready(function() {
+
+  calculateTransitions();
 
   $('#go').click(startQuiz);
   $('#backToStart').click(showSplash);
