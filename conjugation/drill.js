@@ -1320,6 +1320,12 @@ $('window').ready(function() {
       phrase: transformation.phrase,
       tags: transformation.tags.concat(["trick"])
     });
+
+    // Cheap trick to make trick questions appear on average 25% of the time
+    // instead of 50%. I'll fix this later *cough*.
+
+    trick_forms.push(transformation);
+    trick_forms.push(transformation);
   });
 
   transformations = transformations.concat(trick_forms);
