@@ -698,14 +698,14 @@ var words = {
 
     "conjugations" : {
 
-      "plain" : "面白[おもしろ]い",
-      "negative" : "面白[おもしろ]くない",
-      "polite" : "面白[おもしろ]いです",
-      "polite negative" : "面白[おもしろ]くないです",
-      "past" : "面白[おもしろ]かった",
-      "past negative" : "面白[おもしろ]くなかった",
-      "polite past" : "面白[おもしろ]かったです",
-      "polite past negative" : "面白[おもしろ]くなかったです",
+      "plain" : "面[おも]白[しろ]い",
+      "negative" : "面[おも]白[しろ]くない",
+      "polite" : "面[おも]白[しろ]いです",
+      "polite negative" : "面[おも]白[しろ]くないです",
+      "past" : "面[おも]白[しろ]かった",
+      "past negative" : "面[おも]白[しろ]くなかった",
+      "polite past" : "面[おも]白[しろ]かったです",
+      "polite past negative" : "面[おも]白[しろ]くなかったです",
     },
   },
 
@@ -749,14 +749,14 @@ var words = {
 
     "conjugations" : {
 
-      "plain" : "有名[ゆうめい]だ",
-      "negative" : "有名[ゆうめい]ではない",
-      "polite" : "有名[ゆうめい]です",
-      "polite negative" : "有名[ゆうめい]ではありません",
-      "past" : "有名[ゆうめい]だった",
-      "past negative" : "有名[ゆうめい]ではなかった",
-      "polite past" : "有名[ゆうめい]でした",
-      "polite past negative" : "有名[ゆうめい]ではありませんでした",
+      "plain" : "有[ゆう]名[めい]だ",
+      "negative" : "有[ゆう]名[めい]ではない",
+      "polite" : "有[ゆう]名[めい]です",
+      "polite negative" : "有[ゆう]名[めい]ではありません",
+      "past" : "有[ゆう]名[めい]だった",
+      "past negative" : "有[ゆう]名[めい]ではなかった",
+      "polite past" : "有[ゆう]名[めい]でした",
+      "polite past negative" : "有[ゆう]名[めい]ではありませんでした",
     },
   },
 
