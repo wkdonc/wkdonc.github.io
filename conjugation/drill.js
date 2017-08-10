@@ -2,6 +2,746 @@
 
 var words = {
 
+  "走る": {
+
+    "group": "godan",
+
+    "conjugations": {
+
+      "dictionary": "走[はし]る",
+      "negative": "走[はし]らない",
+      "polite": "走[はし]ります",
+      "polite negative": "走[はし]りません",
+      "past": "走[はし]った",
+      "past negative": "走[はし]らなかった",
+      "polite past": "走[はし]りました",
+      "polite past negative": "走[はし]りませんでした",
+      "te-form": "走[はし]って",
+      "te-form negative": "走[はし]らなくて",
+      "potential": "走[はし]れる",
+      "potential negative": "走[はし]れない",
+      "passive": "走[はし]られる",
+      "passive negative": "走[はし]られない",
+      "causative": "走[はし]らせる",
+      "causative negative": "走[はし]らせない",
+      "causative passive": "走[はし]らせられる",
+      "causative passive negative": "走[はし]らせられない",
+      "imperative": "走[はし]れ",
+      "imperative negative": "走[はし]るな",
+      "progressive": "走[はし]っている",
+      "progressive negative": "走[はし]っていない",
+      "polite progressive": "走[はし]っています",
+      "polite progressive negative": "走[はし]っていません",
+      "progressive past": "走[はし]っていた",
+      "progressive past negative": "走[はし]っていなかった",
+      "polite progressive past": "走[はし]っていました",
+      "polite progressive past negative": "走[はし]っていませんでした",
+    },
+  },
+
+  "死ぬ": {
+
+    "group": "godan",
+
+    "conjugations": {
+
+      "dictionary": "死[し]ぬ",
+      "negative": "死[し]なない",
+      "polite": "死[し]にます",
+      "polite negative": "死[し]にません",
+      "past": "死[し]んだ",
+      "past negative": "死[し]ななかった",
+      "polite past": "死[し]にました",
+      "polite past negative": "死[し]にませんでした",
+      "te-form": "死[し]んで",
+      "te-form negative": "死[し]ななくて",
+      "potential": "死[し]ねる",
+      "potential negative": "死[し]ねない",
+      "passive": "死[し]なれる",
+      "passive negative": "死[し]なれない",
+      "causative": "死[し]なせる",
+      "causative negative": "死[し]なせない",
+      "causative passive": "死[し]なせられる",
+      "causative passive negative": "死[し]なせられない",
+      "imperative": "死[し]ね",
+      "imperative negative": "死[し]ぬな",
+      "progressive": "死[し]んでいる",
+      "progressive negative": "死[し]んでいない",
+      "polite progressive": "死[し]んでいます",
+      "polite progressive negative": "死[し]んでいません",
+      "progressive past": "死[し]んでいた",
+      "progressive past negative": "死[し]んでいなかった",
+      "polite progressive past": "死[し]んでいました",
+      "polite progressive past negative": "死[し]んでいませんでした",
+    },
+  },
+
+  "上げる": {
+
+    "group": "ichidan",
+
+    "conjugations": {
+
+      "dictionary": "上[あ]げる",
+      "negative": "上[あ]げない",
+      "polite": "上[あ]げます",
+      "polite negative": "上[あ]げません",
+      "past": "上[あ]げた",
+      "past negative": "上[あ]げなかった",
+      "polite past": "上[あ]げました",
+      "polite past negative": "上[あ]げませんでした",
+      "te-form": "上[あ]げて",
+      "te-form negative": "上[あ]げなくて",
+      "potential": "上[あ]げられる",
+      "potential negative": "上[あ]げられない",
+      "passive": "上[あ]げられる",
+      "passive negative": "上[あ]げられない",
+      "causative": "上[あ]げさせる",
+      "causative negative": "上[あ]げさせない",
+      "causative passive": "上[あ]げさせられる",
+      "causative passive negative": "上[あ]げさせられない",
+      "imperative": "上[あ]げろ",
+      "imperative negative": "上[あ]げるな",
+      "progressive": "上[あ]げている",
+      "progressive negative": "上[あ]げていない",
+      "polite progressive": "上[あ]げています",
+      "polite progressive negative": "上[あ]げていません",
+      "progressive past": "上[あ]げていた",
+      "progressive past negative": "上[あ]げていなかった",
+      "polite progressive past": "上[あ]げていました",
+      "polite progressive past negative": "上[あ]げていませんでした",
+    },
+  },
+
+  "上る": {
+
+    "group": "godan",
+
+    "conjugations": {
+
+      "dictionary": "上[のぼ]る",
+      "negative": "上[のぼ]らない",
+      "polite": "上[のぼ]ります",
+      "polite negative": "上[のぼ]りません",
+      "past": "上[のぼ]った",
+      "past negative": "上[のぼ]らなかった",
+      "polite past": "上[のぼ]りました",
+      "polite past negative": "上[のぼ]りませんでした",
+      "te-form": "上[のぼ]って",
+      "te-form negative": "上[のぼ]らなくて",
+      "potential": "上[のぼ]れる",
+      "potential negative": "上[のぼ]れない",
+      "passive": "上[のぼ]られる",
+      "passive negative": "上[のぼ]られない",
+      "causative": "上[のぼ]らせる",
+      "causative negative": "上[のぼ]らせない",
+      "causative passive": "上[のぼ]らせられる",
+      "causative passive negative": "上[のぼ]らせられない",
+      "imperative": "上[のぼ]れ",
+      "imperative negative": "上[のぼ]るな",
+      "progressive": "上[のぼ]っている",
+      "progressive negative": "上[のぼ]っていない",
+      "polite progressive": "上[のぼ]っています",
+      "polite progressive negative": "上[のぼ]っていません",
+      "progressive past": "上[のぼ]っていた",
+      "progressive past negative": "上[のぼ]っていなかった",
+      "polite progressive past": "上[のぼ]っていました",
+      "polite progressive past negative": "上[のぼ]っていませんでした",
+    },
+  },
+
+  "聞く": {
+
+    "group": "godan",
+
+    "conjugations": {
+
+      "dictionary": "聞[き]く",
+      "negative": "聞[き]かない",
+      "polite": "聞[き]きます",
+      "polite negative": "聞[き]きません",
+      "past": "聞[き]いた",
+      "past negative": "聞[き]かなかった",
+      "polite past": "聞[き]きました",
+      "polite past negative": "聞[き]きませんでした",
+      "te-form": "聞[き]いて",
+      "te-form negative": "聞[き]かなくて",
+      "potential": "聞[き]ける",
+      "potential negative": "聞[き]けない",
+      "passive": "聞[き]かれる",
+      "passive negative": "聞[き]かれない",
+      "causative": "聞[き]かせる",
+      "causative negative": "聞[き]かせない",
+      "causative passive": "聞[き]かせられる",
+      "causative passive negative": "聞[き]かせられない",
+      "imperative": "聞[き]け",
+      "imperative negative": "聞[き]くな",
+      "progressive": "聞[き]いている",
+      "progressive negative": "聞[き]いていない",
+      "polite progressive": "聞[き]いています",
+      "polite progressive negative": "聞[き]いていません",
+      "progressive past": "聞[き]いていた",
+      "progressive past negative": "聞[き]いていなかった",
+      "polite progressive past": "聞[き]いていました",
+      "polite progressive past negative": "聞[き]いていませんでした",
+    },
+  },
+
+  "書く": {
+
+    "group": "godan",
+
+    "conjugations": {
+
+      "dictionary": "書[か]く",
+      "negative": "書[か]かない",
+      "polite": "書[か]きます",
+      "polite negative": "書[か]きません",
+      "past": "書[か]いた",
+      "past negative": "書[か]かなかった",
+      "polite past": "書[か]きました",
+      "polite past negative": "書[か]きませんでした",
+      "te-form": "書[か]いて",
+      "te-form negative": "書[か]かなくて",
+      "potential": "書[か]ける",
+      "potential negative": "書[か]けない",
+      "passive": "書[か]かれる",
+      "passive negative": "書[か]かれない",
+      "causative": "書[か]かせる",
+      "causative negative": "書[か]かせない",
+      "causative passive": "書[か]かせられる",
+      "causative passive negative": "書[か]かせられない",
+      "imperative": "書[か]け",
+      "imperative negative": "書[か]くな",
+      "progressive": "書[か]いている",
+      "progressive negative": "書[か]いていない",
+      "polite progressive": "書[か]いています",
+      "polite progressive negative": "書[か]いていません",
+      "progressive past": "書[か]いていた",
+      "progressive past negative": "書[か]いていなかった",
+      "polite progressive past": "書[か]いていました",
+      "polite progressive past negative": "書[か]いていませんでした",
+    },
+  },
+
+  "消す": {
+
+    "group": "godan",
+
+    "conjugations": {
+
+      "dictionary": "消[け]す",
+      "negative": "消[け]さない",
+      "polite": "消[け]します",
+      "polite negative": "消[け]しません",
+      "past": "消[け]した",
+      "past negative": "消[け]さなかった",
+      "polite past": "消[け]しました",
+      "polite past negative": "消[け]しませんでした",
+      "te-form": "消[け]して",
+      "te-form negative": "消[け]さなくて",
+      "potential": "消[け]せる",
+      "potential negative": "消[け]せない",
+      "passive": "消[け]される",
+      "passive negative": "消[け]されない",
+      "causative": "消[け]させる",
+      "causative negative": "消[け]させない",
+      "causative passive": "消[け]させられる",
+      "causative passive negative": "消[け]させられない",
+      "imperative": "消[け]せ",
+      "imperative negative": "消[け]すな",
+      "progressive": "消[け]している",
+      "progressive negative": "消[け]していない",
+      "polite progressive": "消[け]しています",
+      "polite progressive negative": "消[け]していません",
+      "progressive past": "消[け]していた",
+      "progressive past negative": "消[け]していなかった",
+      "polite progressive past": "消[け]していました",
+      "polite progressive past negative": "消[け]していませんでした",
+    },
+  },
+
+  "着る": {
+
+    "group": "ichidan",
+
+    "conjugations": {
+
+      "dictionary": "着[き]る",
+      "negative": "着[き]ない",
+      "polite": "着[き]ます",
+      "polite negative": "着[き]ません",
+      "past": "着[き]た",
+      "past negative": "着[き]なかった",
+      "polite past": "着[き]ました",
+      "polite past negative": "着[き]ませんでした",
+      "te-form": "着[き]て",
+      "te-form negative": "着[き]なくて",
+      "potential": "着[き]られる",
+      "potential negative": "着[き]られない",
+      "passive": "着[き]られる",
+      "passive negative": "着[き]られない",
+      "causative": "着[き]させる",
+      "causative negative": "着[き]させない",
+      "causative passive": "着[き]させられる",
+      "causative passive negative": "着[き]させられない",
+      "imperative": "着[き]ろ",
+      "imperative negative": "着[き]るな",
+      "progressive": "着[き]ている",
+      "progressive negative": "着[き]ていない",
+      "polite progressive": "着[き]ています",
+      "polite progressive negative": "着[き]ていません",
+      "progressive past": "着[き]ていた",
+      "progressive past negative": "着[き]ていなかった",
+      "polite progressive past": "着[き]ていました",
+      "polite progressive past negative": "着[き]ていませんでした",
+    },
+  },
+
+  "育てる": {
+
+    "group": "ichidan",
+
+    "conjugations": {
+
+      "dictionary": "育[そだ]てる",
+      "negative": "育[そだ]てない",
+      "polite": "育[そだ]てます",
+      "polite negative": "育[そだ]てません",
+      "past": "育[そだ]てた",
+      "past negative": "育[そだ]てなかった",
+      "polite past": "育[そだ]てました",
+      "polite past negative": "育[そだ]てませんでした",
+      "te-form": "育[そだ]てて",
+      "te-form negative": "育[そだ]てなくて",
+      "potential": "育[そだ]てられる",
+      "potential negative": "育[そだ]てられない",
+      "passive": "育[そだ]てられる",
+      "passive negative": "育[そだ]てられない",
+      "causative": "育[そだ]てさせる",
+      "causative negative": "育[そだ]てさせない",
+      "causative passive": "育[そだ]てさせられる",
+      "causative passive negative": "育[そだ]てさせられない",
+      "imperative": "育[そだ]てろ",
+      "imperative negative": "育[そだ]てるな",
+      "progressive": "育[そだ]てている",
+      "progressive negative": "育[そだ]てていない",
+      "polite progressive": "育[そだ]てています",
+      "polite progressive negative": "育[そだ]てていません",
+      "progressive past": "育[そだ]てていた",
+      "progressive past negative": "育[そだ]てていなかった",
+      "polite progressive past": "育[そだ]てていました",
+      "polite progressive past negative": "育[そだ]てていませんでした",
+    },
+  },
+
+  "遊ぶ": {
+
+    "group": "godan",
+
+    "conjugations": {
+
+      "dictionary": "遊[あそ]ぶ",
+      "negative": "遊[あそ]ばない",
+      "polite": "遊[あそ]びます",
+      "polite negative": "遊[あそ]びません",
+      "past": "遊[あそ]んだ",
+      "past negative": "遊[あそ]ばなかった",
+      "polite past": "遊[あそ]びました",
+      "polite past negative": "遊[あそ]びませんでした",
+      "te-form": "遊[あそ]んで",
+      "te-form negative": "遊[あそ]ばなくて",
+      "potential": "遊[あそ]べる",
+      "potential negative": "遊[あそ]べない",
+      "passive": "遊[あそ]ばれる",
+      "passive negative": "遊[あそ]ばれない",
+      "causative": "遊[あそ]ばせる",
+      "causative negative": "遊[あそ]ばせない",
+      "causative passive": "遊[あそ]ばせられる",
+      "causative passive negative": "遊[あそ]ばせられない",
+      "imperative": "遊[あそ]べ",
+      "imperative negative": "遊[あそ]ぶな",
+      "progressive": "遊[あそ]んでいる",
+      "progressive negative": "遊[あそ]んでいない",
+      "polite progressive": "遊[あそ]んでいます",
+      "polite progressive negative": "遊[あそ]んでいません",
+      "progressive past": "遊[あそ]んでいた",
+      "progressive past negative": "遊[あそ]んでいなかった",
+      "polite progressive past": "遊[あそ]んでいました",
+      "polite progressive past negative": "遊[あそ]んでいませんでした",
+    },
+  },
+
+  "褒める": {
+
+    "group": "ichidan",
+
+    "conjugations": {
+
+      "dictionary": "褒[ほ]める",
+      "negative": "褒[ほ]めない",
+      "polite": "褒[ほ]めます",
+      "polite negative": "褒[ほ]めません",
+      "past": "褒[ほ]めた",
+      "past negative": "褒[ほ]めなかった",
+      "polite past": "褒[ほ]めました",
+      "polite past negative": "褒[ほ]めませんでした",
+      "te-form": "褒[ほ]めて",
+      "te-form negative": "褒[ほ]めなくて",
+      "potential": "褒[ほ]められる",
+      "potential negative": "褒[ほ]められない",
+      "passive": "褒[ほ]められる",
+      "passive negative": "褒[ほ]められない",
+      "causative": "褒[ほ]めさせる",
+      "causative negative": "褒[ほ]めさせない",
+      "causative passive": "褒[ほ]めさせられる",
+      "causative passive negative": "褒[ほ]めさせられない",
+      "imperative": "褒[ほ]めろ",
+      "imperative negative": "褒[ほ]めるな",
+      "progressive": "褒[ほ]めている",
+      "progressive negative": "褒[ほ]めていない",
+      "polite progressive": "褒[ほ]めています",
+      "polite progressive negative": "褒[ほ]めていません",
+      "progressive past": "褒[ほ]めていた",
+      "progressive past negative": "褒[ほ]めていなかった",
+      "polite progressive past": "褒[ほ]めていました",
+      "polite progressive past negative": "褒[ほ]めていませんでした",
+    },
+  },
+
+  "学ぶ": {
+
+    "group": "godan",
+
+    "conjugations": {
+
+      "dictionary": "学[まな]ぶ",
+      "negative": "学[まな]ばない",
+      "polite": "学[まな]びます",
+      "polite negative": "学[まな]びません",
+      "past": "学[まな]んだ",
+      "past negative": "学[まな]ばなかった",
+      "polite past": "学[まな]びました",
+      "polite past negative": "学[まな]びませんでした",
+      "te-form": "学[まな]んで",
+      "te-form negative": "学[まな]ばなくて",
+      "potential": "学[まな]べる",
+      "potential negative": "学[まな]べない",
+      "passive": "学[まな]ばれる",
+      "passive negative": "学[まな]ばれない",
+      "causative": "学[まな]ばせる",
+      "causative negative": "学[まな]ばせない",
+      "causative passive": "学[まな]ばせられる",
+      "causative passive negative": "学[まな]ばせられない",
+      "imperative": "学[まな]べ",
+      "imperative negative": "学[まな]ぶな",
+      "progressive": "学[まな]んでいる",
+      "progressive negative": "学[まな]んでいない",
+      "polite progressive": "学[まな]んでいます",
+      "polite progressive negative": "学[まな]んでいません",
+      "progressive past": "学[まな]んでいた",
+      "progressive past negative": "学[まな]んでいなかった",
+      "polite progressive past": "学[まな]んでいました",
+      "polite progressive past negative": "学[まな]んでいませんでした",
+    },
+  },
+
+  "喜ぶ": {
+
+    "group": "godan",
+
+    "conjugations": {
+
+      "dictionary": "喜[よころ]ぶ",
+      "negative": "喜[よころ]ばない",
+      "polite": "喜[よころ]びます",
+      "polite negative": "喜[よころ]びません",
+      "past": "喜[よころ]んだ",
+      "past negative": "喜[よころ]ばなかった",
+      "polite past": "喜[よころ]びました",
+      "polite past negative": "喜[よころ]びませんでした",
+      "te-form": "喜[よころ]んで",
+      "te-form negative": "喜[よころ]ばなくて",
+      "potential": "喜[よころ]べる",
+      "potential negative": "喜[よころ]べない",
+      "passive": "喜[よころ]ばれる",
+      "passive negative": "喜[よころ]ばれない",
+      "causative": "喜[よころ]ばせる",
+      "causative negative": "喜[よころ]ばせない",
+      "causative passive": "喜[よころ]ばせられる",
+      "causative passive negative": "喜[よころ]ばせられない",
+      "imperative": "喜[よころ]べ",
+      "imperative negative": "喜[よころ]ぶな",
+      "progressive": "喜[よころ]んでいる",
+      "progressive negative": "喜[よころ]んでいない",
+      "polite progressive": "喜[よころ]んでいます",
+      "polite progressive negative": "喜[よころ]んでいません",
+      "progressive past": "喜[よころ]んでいた",
+      "progressive past negative": "喜[よころ]んでいなかった",
+      "polite progressive past": "喜[よころ]んでいました",
+      "polite progressive past negative": "喜[よころ]んでいませんでした",
+    },
+  },
+
+  "泳ぐ": {
+
+    "group": "godan",
+
+    "conjugations": {
+
+      "dictionary": "泳[およ]ぐ",
+      "negative": "泳[およ]がない",
+      "polite": "泳[およ]ぎます",
+      "polite negative": "泳[およ]ぎません",
+      "past": "泳[およ]いだ",
+      "past negative": "泳[およ]がなかった",
+      "polite past": "泳[およ]ぎました",
+      "polite past negative": "泳[およ]ぎませんでした",
+      "te-form": "泳[およ]いで",
+      "te-form negative": "泳[およ]がなくて",
+      "potential": "泳[およ]げる",
+      "potential negative": "泳[およ]げない",
+      "passive": "泳[およ]がれる",
+      "passive negative": "泳[およ]がれない",
+      "causative": "泳[およ]がせる",
+      "causative negative": "泳[およ]がせない",
+      "causative passive": "泳[およ]がせられる",
+      "causative passive negative": "泳[およ]がせられない",
+      "imperative": "泳[およ]げ",
+      "imperative negative": "泳[およ]ぐな",
+      "progressive": "泳[およ]いでいる",
+      "progressive negative": "泳[およ]いでいない",
+      "polite progressive": "泳[およ]いでいます",
+      "polite progressive negative": "泳[およ]いでいません",
+      "progressive past": "泳[およ]いでいた",
+      "progressive past negative": "泳[およ]いでいなかった",
+      "polite progressive past": "泳[およ]いでいました",
+      "polite progressive past negative": "泳[およ]いでいませんでした",
+    },
+  },
+
+  "注ぐ": {
+
+    "group": "godan",
+
+    "conjugations": {
+
+      "dictionary": "注[そそ]ぐ",
+      "negative": "注[そそ]がない",
+      "polite": "注[そそ]ぎます",
+      "polite negative": "注[そそ]ぎません",
+      "past": "注[そそ]いだ",
+      "past negative": "注[そそ]がなかった",
+      "polite past": "注[そそ]ぎました",
+      "polite past negative": "注[そそ]ぎませんでした",
+      "te-form": "注[そそ]いで",
+      "te-form negative": "注[そそ]がなくて",
+      "potential": "注[そそ]げる",
+      "potential negative": "注[そそ]げない",
+      "passive": "注[そそ]がれる",
+      "passive negative": "注[そそ]がれない",
+      "causative": "注[そそ]がせる",
+      "causative negative": "注[そそ]がせない",
+      "causative passive": "注[そそ]がせられる",
+      "causative passive negative": "注[そそ]がせられない",
+      "imperative": "注[そそ]げ",
+      "imperative negative": "注[そそ]ぐな",
+      "progressive": "注[そそ]いでいる",
+      "progressive negative": "注[そそ]いでいない",
+      "polite progressive": "注[そそ]いでいます",
+      "polite progressive negative": "注[そそ]いでいません",
+      "progressive past": "注[そそ]いでいた",
+      "progressive past negative": "注[そそ]いでいなかった",
+      "polite progressive past": "注[そそ]いでいました",
+      "polite progressive past negative": "注[そそ]いでいませんでした",
+    },
+  },
+
+  "急ぐ": {
+
+    "group": "godan",
+
+    "conjugations": {
+
+      "dictionary": "急[いそ]ぐ",
+      "negative": "急[いそ]がない",
+      "polite": "急[いそ]ぎます",
+      "polite negative": "急[いそ]ぎません",
+      "past": "急[いそ]いだ",
+      "past negative": "急[いそ]がなかった",
+      "polite past": "急[いそ]ぎました",
+      "polite past negative": "急[いそ]ぎませんでした",
+      "te-form": "急[いそ]いで",
+      "te-form negative": "急[いそ]がなくて",
+      "potential": "急[いそ]げる",
+      "potential negative": "急[いそ]げない",
+      "passive": "急[いそ]がれる",
+      "passive negative": "急[いそ]がれない",
+      "causative": "急[いそ]がせる",
+      "causative negative": "急[いそ]がせない",
+      "causative passive": "急[いそ]がせられる",
+      "causative passive negative": "急[いそ]がせられない",
+      "imperative": "急[いそ]げ",
+      "imperative negative": "急[いそ]ぐな",
+      "progressive": "急[いそ]いでいる",
+      "progressive negative": "急[いそ]いでいない",
+      "polite progressive": "急[いそ]いでいます",
+      "polite progressive negative": "急[いそ]いでいません",
+      "progressive past": "急[いそ]いでいた",
+      "progressive past negative": "急[いそ]いでいなかった",
+      "polite progressive past": "急[いそ]いでいました",
+      "polite progressive past negative": "急[いそ]いでいませんでした",
+    },
+  },
+
+  "立つ": {
+
+    "group": "godan",
+
+    "conjugations": {
+
+      "dictionary": "立[た]つ",
+      "negative": "立[た]たない",
+      "polite": "立[た]ちます",
+      "polite negative": "立[た]ちません",
+      "past": "立[た]った",
+      "past negative": "立[た]たなかった",
+      "polite past": "立[た]ちました",
+      "polite past negative": "立[た]ちませんでした",
+      "te-form": "立[た]って",
+      "te-form negative": "立[た]たなくて",
+      "potential": "立[た]てる",
+      "potential negative": "立[た]てない",
+      "passive": "立[た]たれる",
+      "passive negative": "立[た]たれない",
+      "causative": "立[た]たせる",
+      "causative negative": "立[た]たせない",
+      "causative passive": "立[た]たせられる",
+      "causative passive negative": "立[た]たせられない",
+      "imperative": "立[た]て",
+      "imperative negative": "立[た]つな",
+      "progressive": "立[た]っている",
+      "progressive negative": "立[た]っていない",
+      "polite progressive": "立[た]っています",
+      "polite progressive negative": "立[た]っていません",
+      "progressive past": "立[た]っていた",
+      "progressive past negative": "立[た]っていなかった",
+      "polite progressive past": "立[た]っていました",
+      "polite progressive past negative": "立[た]っていませんでした",
+    },
+  },
+
+  "打つ": {
+
+    "group": "godan",
+
+    "conjugations": {
+
+      "dictionary": "打[う]つ",
+      "negative": "打[う]たない",
+      "polite": "打[う]ちます",
+      "polite negative": "打[う]ちません",
+      "past": "打[う]った",
+      "past negative": "打[う]たなかった",
+      "polite past": "打[う]ちました",
+      "polite past negative": "打[う]ちませんでした",
+      "te-form": "打[う]って",
+      "te-form negative": "打[う]たなくて",
+      "potential": "打[う]てる",
+      "potential negative": "打[う]てない",
+      "passive": "打[う]たれる",
+      "passive negative": "打[う]たれない",
+      "causative": "打[う]たせる",
+      "causative negative": "打[う]たせない",
+      "causative passive": "打[う]たせられる",
+      "causative passive negative": "打[う]たせられない",
+      "imperative": "打[う]て",
+      "imperative negative": "打[う]つな",
+      "progressive": "打[う]っている",
+      "progressive negative": "打[う]っていない",
+      "polite progressive": "打[う]っています",
+      "polite progressive negative": "打[う]っていません",
+      "progressive past": "打[う]っていた",
+      "progressive past negative": "打[う]っていなかった",
+      "polite progressive past": "打[う]っていました",
+      "polite progressive past negative": "打[う]っていませんでした",
+    },
+  },
+
+  "待つ": {
+
+    "group": "godan",
+
+    "conjugations": {
+
+      "dictionary": "待[ま]つ",
+      "negative": "待[ま]たない",
+      "polite": "待[ま]ちます",
+      "polite negative": "待[ま]ちません",
+      "past": "待[ま]った",
+      "past negative": "待[ま]たなかった",
+      "polite past": "待[ま]ちました",
+      "polite past negative": "待[ま]ちませんでした",
+      "te-form": "待[ま]って",
+      "te-form negative": "待[ま]たなくて",
+      "potential": "待[ま]てる",
+      "potential negative": "待[ま]てない",
+      "passive": "待[ま]たれる",
+      "passive negative": "待[ま]たれない",
+      "causative": "待[ま]たせる",
+      "causative negative": "待[ま]たせない",
+      "causative passive": "待[ま]たせられる",
+      "causative passive negative": "待[ま]たせられない",
+      "imperative": "待[ま]て",
+      "imperative negative": "待[ま]つな",
+      "progressive": "待[ま]っている",
+      "progressive negative": "待[ま]っていない",
+      "polite progressive": "待[ま]っています",
+      "polite progressive negative": "待[ま]っていません",
+      "progressive past": "待[ま]っていた",
+      "progressive past negative": "待[ま]っていなかった",
+      "polite progressive past": "待[ま]っていました",
+      "polite progressive past negative": "待[ま]っていませんでした",
+    },
+  },
+
+  "持つ": {
+
+    "group": "godan",
+
+    "conjugations": {
+
+      "dictionary": "持[も]つ",
+      "negative": "持[も]たない",
+      "polite": "持[も]ちます",
+      "polite negative": "持[も]ちません",
+      "past": "持[も]った",
+      "past negative": "持[も]たなかった",
+      "polite past": "持[も]ちました",
+      "polite past negative": "持[も]ちませんでした",
+      "te-form": "持[も]って",
+      "te-form negative": "持[も]たなくて",
+      "potential": "持[も]てる",
+      "potential negative": "持[も]てない",
+      "passive": "持[も]たれる",
+      "passive negative": "持[も]たれない",
+      "causative": "持[も]たせる",
+      "causative negative": "持[も]たせない",
+      "causative passive": "持[も]たせられる",
+      "causative passive negative": "持[も]たせられない",
+      "imperative": "持[も]て",
+      "imperative negative": "持[も]つな",
+      "progressive": "持[も]っている",
+      "progressive negative": "持[も]っていない",
+      "polite progressive": "持[も]っています",
+      "polite progressive negative": "持[も]っていません",
+      "progressive past": "持[も]っていた",
+      "progressive past negative": "持[も]っていなかった",
+      "polite progressive past": "持[も]っていました",
+      "polite progressive past negative": "持[も]っていませんでした",
+    },
+  },
+
   "行く": {
 
     "group": "iku",
@@ -349,6 +1089,8 @@ var words = {
       "past negative": "しなかった",
       "polite past": "しました",
       "polite past negative": "しませんでした",
+      "te-form": "して",
+      "te-form negative": "しなくて",
       "imperative": "しろ",
       "imperative negative": "さるな",
       "progressive": "している",
@@ -376,6 +1118,8 @@ var words = {
       "past negative": "勉[べん]強[きょう]しなかった",
       "polite past": "勉[べん]強[きょう]しました",
       "polite past negative": "勉[べん]強[きょう]しませんでした",
+      "te-form": "勉[べん]強[きょう]して",
+      "te-form negative": "勉[べん]強[きょう]しなくて",
       "imperative": "勉[べん]強[きょう]しろ",
       "imperative negative": "勉[べん]強[きょう]さるな",
       "progressive": "勉[べん]強[きょう]している",
@@ -403,6 +1147,8 @@ var words = {
       "past negative": "電[でん]話[わ]しなかった",
       "polite past": "電[でん]話[わ]しました",
       "polite past negative": "電[でん]話[わ]しませんでした",
+      "te-form": "電[でん]話[わ]して",
+      "te-form negative": "電[でん]話[わ]しなくて",
       "imperative": "電[でん]話[わ]しろ",
       "imperative negative": "電[でん]話[わ]さるな",
       "progressive": "電[でん]話[わ]している",
@@ -743,7 +1489,75 @@ var words = {
     },
   },
 
-  "有名な": {
+  "暖かい": {
+
+    "group": "i-adjective",
+
+    "conjugations": {
+
+      "dictionary": "暖[あたた]かい",
+      "negative": "暖[あたた]かくない",
+      "polite": "暖[あたた]かいです",
+      "polite negative": "暖[あたた]かくないです",
+      "past": "暖[あたた]かかった",
+      "past negative": "暖[あたた]かくなかった",
+      "polite past": "暖[あたた]かかったです",
+      "polite past negative": "暖[あたた]かくなかったです",
+    },
+  },
+
+  "華々しい": {
+
+    "group": "i-adjective",
+
+    "conjugations": {
+
+      "dictionary": "華[はな]々[ばな]しい",
+      "negative": "華[はな]々[ばな]しくない",
+      "polite": "華[はな]々[ばな]しいです",
+      "polite negative": "華[はな]々[ばな]しくないです",
+      "past": "華[はな]々[ばな]しかった",
+      "past negative": "華[はな]々[ばな]しくなかった",
+      "polite past": "華[はな]々[ばな]しかったです",
+      "polite past negative": "華[はな]々[ばな]しくなかったです",
+    },
+  },
+
+  "怖い": {
+
+    "group": "i-adjective",
+
+    "conjugations": {
+
+      "dictionary": "怖[こわ]い",
+      "negative": "怖[こわ]くない",
+      "polite": "怖[こわ]いです",
+      "polite negative": "怖[こわ]くないです",
+      "past": "怖[こわ]かった",
+      "past negative": "怖[こわ]くなかった",
+      "polite past": "怖[こわ]かったです",
+      "polite past negative": "怖[こわ]くなかったです",
+    },
+  },
+
+  "硬い": {
+
+    "group": "i-adjective",
+
+    "conjugations": {
+
+      "dictionary": "硬[かた]い",
+      "negative": "硬[かた]くない",
+      "polite": "硬[かた]いです",
+      "polite negative": "硬[かた]くないです",
+      "past": "硬[かた]かった",
+      "past negative": "硬[かた]くなかった",
+      "polite past": "硬[かた]かったです",
+      "polite past negative": "硬[かた]くなかったです",
+    },
+  },
+
+  "有名": {
 
     "group": "na-adjective",
 
@@ -760,7 +1574,7 @@ var words = {
     },
   },
 
-  "好きな": {
+  "好き": {
 
     "group": "na-adjective",
 
@@ -777,7 +1591,7 @@ var words = {
     },
   },
 
-  "元気な": {
+  "元気": {
 
     "group": "na-adjective",
 
@@ -794,7 +1608,7 @@ var words = {
     },
   },
 
-  "意地悪な": {
+  "意地悪": {
 
     "group": "na-adjective",
 
@@ -808,6 +1622,74 @@ var words = {
       "past negative": "意[い]地[じ]悪[わる]ではなかった",
       "polite past": "意[い]地[じ]悪[わる]でした",
       "polite past negative": "意[い]地[じ]悪[わる]ではありませんでした",
+    },
+  },
+
+  "静": {
+
+    "group": "na-adjective",
+
+    "conjugations": {
+
+      "dictionary": "静[しず]かだ",
+      "negative": "静[しず]かではない",
+      "polite": "静[しず]かです",
+      "polite negative": "静[しず]かではありません",
+      "past": "静[しず]かだった",
+      "past negative": "静[しず]かではなかった",
+      "polite past": "静[しず]かでした",
+      "polite past negative": "静[しず]かではありませんでした",
+    },
+  },
+
+  "便利": {
+
+    "group": "na-adjective",
+
+    "conjugations": {
+
+      "dictionary": "便[べん]利[り]だ",
+      "negative": "便[べん]利[り]ではない",
+      "polite": "便[べん]利[り]です",
+      "polite negative": "便[べん]利[り]ではありません",
+      "past": "便[べん]利[り]だった",
+      "past negative": "便[べん]利[り]ではなかった",
+      "polite past": "便[べん]利[り]でした",
+      "polite past negative": "便[べん]利[り]ではありませんでした",
+    },
+  },
+
+  "上手": {
+
+    "group": "na-adjective",
+
+    "conjugations": {
+
+      "dictionary": "上[じょう]手[ず]だ",
+      "negative": "上[じょう]手[ず]ではない",
+      "polite": "上[じょう]手[ず]です",
+      "polite negative": "上[じょう]手[ず]ではありません",
+      "past": "上[じょう]手[ず]だった",
+      "past negative": "上[じょう]手[ず]ではなかった",
+      "polite past": "上[じょう]手[ず]でした",
+      "polite past negative": "上[じょう]手[ず]ではありませんでした",
+    },
+  },
+
+  "幸い": {
+
+    "group": "na-adjective",
+
+    "conjugations": {
+
+      "dictionary": "幸[さいわ]いだ",
+      "negative": "幸[さいわ]いではない",
+      "polite": "幸[さいわ]いです",
+      "polite negative": "幸[さいわ]いではありません",
+      "past": "幸[さいわ]いだった",
+      "past negative": "幸[さいわ]いではなかった",
+      "polite past": "幸[さいわ]いでした",
+      "polite past negative": "幸[さいわ]いではありませんでした",
     },
   },
 };
