@@ -1162,6 +1162,64 @@ var words = {
     },
   },
 
+  "開発する": {
+
+    "group": "suru",
+
+    "conjugations": {
+
+      "dictionary": "開[かい]発[はつ]する",
+      "negative": "開[かい]発[はつ]しない",
+      "polite": "開[かい]発[はつ]します",
+      "polite negative": "開[かい]発[はつ]しません",
+      "past": "開[かい]発[はつ]した",
+      "past negative": "開[かい]発[はつ]しなかった",
+      "polite past": "開[かい]発[はつ]しました",
+      "polite past negative": "開[かい]発[はつ]しませんでした",
+      "te-form": "開[かい]発[はつ]して",
+      "te-form negative": "開[かい]発[はつ]しなくて",
+      "imperative": "開[かい]発[はつ]しろ",
+      "imperative negative": "開[かい]発[はつ]さるな",
+      "progressive": "開[かい]発[はつ]している",
+      "progressive negative": "開[かい]発[はつ]していない",
+      "polite progressive": "開[かい]発[はつ]しています",
+      "polite progressive negative": "開[かい]発[はつ]していません",
+      "progressive past": "開[かい]発[はつ]していた",
+      "progressive past negative": "開[かい]発[はつ]していなかった",
+      "polite progressive past": "開[かい]発[はつ]していました",
+      "polite progressive past negative": "開[かい]発[はつ]していませんでした",
+    },
+  },
+
+  "計算する": {
+
+    "group": "suru",
+
+    "conjugations": {
+
+      "dictionary": "計[けい]算[さん]する",
+      "negative": "計[けい]算[さん]しない",
+      "polite": "計[けい]算[さん]します",
+      "polite negative": "計[けい]算[さん]しません",
+      "past": "計[けい]算[さん]した",
+      "past negative": "計[けい]算[さん]しなかった",
+      "polite past": "計[けい]算[さん]しました",
+      "polite past negative": "計[けい]算[さん]しませんでした",
+      "te-form": "計[けい]算[さん]して",
+      "te-form negative": "計[けい]算[さん]しなくて",
+      "imperative": "計[けい]算[さん]しろ",
+      "imperative negative": "計[けい]算[さん]さるな",
+      "progressive": "計[けい]算[さん]している",
+      "progressive negative": "計[けい]算[さん]していない",
+      "polite progressive": "計[けい]算[さん]しています",
+      "polite progressive negative": "計[けい]算[さん]していません",
+      "progressive past": "計[けい]算[さん]していた",
+      "progressive past negative": "計[けい]算[さん]していなかった",
+      "polite progressive past": "計[けい]算[さん]していました",
+      "polite progressive past negative": "計[けい]算[さん]していませんでした",
+    },
+  },
+
   "読む": {
 
     "group": "godan",
