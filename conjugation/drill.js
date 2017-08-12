@@ -153,18 +153,51 @@ new function ($) {
   }
 }(jQuery);
 
+function commaList(items, conjunction) {
+
+  if (conjunction == undefined) {
+    conjunction = "and";
+  }
+
+  var result = "";
+
+  for (var i = 0; i < items.length; i++) {
+    result = result + items[i];
+
+    if (i < (items.length - 2)) {
+      result += ", ";
+    }
+
+    if (i == (items.length - 2)) {
+      result += " " + conjunction + " ";
+    }
+  }
+
+  return result;
+}
+
 function resetLog() {
   log = { "history": [] };
 }
 
 function getVerbForms(entry) {
 
-  function kanaForm(word) {
-    return word.split(/.\[([^\]]*)\]/).join("");
+  function kanaForm(words) {
+
+    if (words.constructor !== Array) {
+      words = [words];
+    }
+
+    return words.map(function (word) { return word.split(/.\[([^\]]*)\]/).join(""); } );
   }
 
-  function kanjiForm(word) {
-    return word.split(/(.)\[[^\]]*\]/).join("");
+  function kanjiForm(words) {
+
+    if (words.constructor !== Array) {
+      words = [words];
+    }
+
+    return words.map(function (word) { return word.split(/(.)\[[^\]]*\]/).join(""); } );
   }
 
   var result = {
@@ -182,16 +215,23 @@ function getVerbForms(entry) {
   return result;
 }
 
-function wordWithFurigana(word) {
+function wordWithFurigana(words) {
 
-  var bits = word.split(/(.)\[([^\]]*)\]/);
-
-  while (bits.length > 1) {
-    bits[0] = bits[0] + "<span tooltip='" + bits[2] + "'>" + bits[1] + "</span>" + bits[3];
-    bits.splice(1, 3);
+  if (words.constructor !== Array) {
+    words = [words];
   }
 
-  return bits[0];
+  return words.map(function (word) {
+
+    var bits = word.split(/(.)\[([^\]]*)\]/);
+  
+    while (bits.length > 1) {
+      bits[0] = bits[0] + "<span tooltip='" + bits[2] + "'>" + bits[1] + "</span>" + bits[3];
+      bits.splice(1, 3);
+    }
+  
+    return bits[0];
+  });
 }
 
 function processAnswerKey() {
@@ -285,6 +325,29 @@ function processAnswerKey() {
   }
 }
 
+function validQuestion(entry, forms, transformation, options) {
+
+  var valid = true;
+
+  transformation.tags.forEach(function (type) {
+    if (options[type] == false) {
+      valid = false;
+    }
+  });
+
+  if (options[words[entry].group] == false) {
+    valid = false;
+  }
+
+  if (!forms["furigana"][transformation.from])
+    valid = false;
+
+  if (!forms["furigana"][transformation.to])
+    valid = false;
+
+  return valid;
+}
+
 function generateQuestion() {
 
   var entry;
@@ -309,42 +372,38 @@ function generateQuestion() {
 
     forms = getVerbForms(entry);
 
-    var valid = true;
+    var valid = validQuestion(entry, forms, transformation, getOptions());
 
-    transformation.tags.forEach(function (type) {
-      if ($('#' + type).is(':checked') == false) {
+    // Modify the chance of trick questions so that they appear on average 25%
+    // of the time. When trick questions are active then 50% of the
+    // transformation structure are trick questions and so a 33% filter here
+    // will achieve the 25% because this test is only performed when a trick
+    // question has been selected.
+
+    if (transformation.tags.indexOf('trick') != -1) {
+      if (Math.random() > 0.333) {
         valid = false;
       }
-    });
-
-    if ($('#' + words[entry].group).is(':checked') == false) {
-      valid = false;
     }
-
-    if (!forms["furigana"][from_form])
-      valid = false;
-
-    if (!forms["furigana"][to_form])
-      valid = false;
 
     if (valid) {
       break;
     }
   }
 
-  var word = forms["word"];
   var kanjiForms = forms["kanji"];
   var kanaForms = forms["hiragana"];
   var furiganaForms = forms["furigana"];
 
-  var question = "What is the " + transformation.phrase + " form of " + wordWithFurigana(furiganaForms[from_form]) + "?";
+  var question = "What is the " + transformation.phrase + " form of " +
+    wordWithFurigana(furiganaForms[from_form]).randomElement() + "?";
+
   var answer = kanjiForms[to_form];
   var answer2 = kanaForms[to_form];
 
   $('#question').html(question);
 
   window.question = question;
-  window.word = word;
   window.answer = kanjiForms[to_form];
   window.answerWithFurigana = wordWithFurigana(furiganaForms[to_form]);
   window.answer2 = answer2;
@@ -358,10 +417,6 @@ function generateQuestion() {
   $('#answer').focus();
 
   $('#answer').on('input', processAnswerKey);
-
-  if (log.start == undefined) {
-    log.start = Date.now();
-  }
 }
 
 function processAnswer() {
@@ -371,7 +426,8 @@ function processAnswer() {
   if (response == "")
     return;
 
-  var correct = ((response == window.answer) || (response == window.answer2));
+  var correct = ((window.answer.indexOf(response) != -1) || (window.answer2.indexOf(response) != -1));
+
   var klass = correct ? "correct" : "incorrect";
 
   log.history.push({
@@ -386,19 +442,15 @@ function processAnswer() {
   $('#response').prop('class', klass).text(response);
   $('#next').prop('disabled', false);
 
-  if ((response == window.answer) || (response == window.answer2)) {
+  if (correct) {
     $('#message').html("");
   } else {
-    $('#message').html("<div>The correct answer is " + window.answerWithFurigana + "</div>");
+    $('#message').html("<div>The correct answer was " + commaList(window.answerWithFurigana, "or") + "</div>");
   }
 
   $('#input').hide();
   $('#proceed').show();
   $('#proceed button').focus();
-
-  if (log.end == undefined) {
-    log.end = Date.now();
-  }
 
   updateHistoryView(log);
 }
@@ -433,7 +485,7 @@ function updateHistoryView(log) {
     var td3 = $('<td>');
 
     td1.html(entry.question);
-    td2.html(entry.answer);
+    td2.html(commaList(entry.answer, "or"));
     td3.text(entry.response);
 
     tr.append(td1);
@@ -451,7 +503,6 @@ function updateHistoryView(log) {
   $('#history').empty().append(review);
 
   $('#history').append("<p>" + correct + " of " + total + " correct.</p>");
-  $('#history').append("<p>" + ((log.end - log.start) / 1000.0) + " seconds.</p>");
 }
 
 function proceed() {
@@ -485,14 +536,6 @@ function endQuiz() {
   $('#scoreSection').show();
 
   $('#backToStart').focus();
-}
-
-function updateTeNotice() {
-  if ($('#te-form').is(':checked')) {
-    $('#te-notice').show();
-  } else {
-    $('#te-notice').hide();
-  }
 }
 
 function arrayDifference(a, b) {
@@ -585,15 +628,47 @@ function calculateTransitions() {
       phrase: transformation.phrase,
       tags: transformation.tags.concat(["trick"])
     });
-
-    // Cheap trick to make trick questions appear on average 25% of the time
-    // instead of 50%. I'll fix this later *cough*.
-
-    trick_forms.push(transformation);
-    trick_forms.push(transformation);
   });
 
   transformations = transformations.concat(trick_forms);
+}
+
+function updateOptionSummary() {
+
+  // Calculate how many questions will apply
+
+  var options = getOptions();
+  var applicable = 0;
+
+  Object.keys(words).forEach(function (word) {
+
+    var forms = getVerbForms(word);
+
+    transformations.forEach(function (transformation) {
+
+      if (validQuestion(word, forms, transformation, options)) {
+        applicable++;
+      }
+    });
+  });
+
+  $("#questionCount").text(applicable);
+}
+
+function getOptions() {
+
+  var options = ["plain", "polite", "negative", "past", "te-form",
+    "progressive", "potential", "imperative", "passive", "causative",
+    "godan", "ichidan", "iku", "kuru", "suru", "i-adjective", "na-adjective",
+    "trick"];
+
+  var result = {};
+
+  options.forEach(function (option) {
+    result[option] = $('#' + option).is(':checked') != false;
+  });
+
+  return result;
 }
 
 $('window').ready(function () {
@@ -603,8 +678,10 @@ $('window').ready(function () {
   $('#go').click(startQuiz);
   $('#backToStart').click(showSplash);
 
-  $('#te-form').click(updateTeNotice);
-  updateTeNotice();
+  $('div.options input').click(updateOptionSummary);
+  $('input#trick').click(updateOptionSummary);
+
+  updateOptionSummary();
 
   showSplash();
 });
