@@ -461,7 +461,7 @@ var words = {
       "polite past": "喜[よろこ]びました",
       "polite past negative": "喜[よろこ]びませんでした",
       "te-form": "喜[よろこ]んで",
-      "te-form negative": ["喜[こころ]ばなくて", "喜[よころ]ばないで"],
+      "te-form negative": ["喜[よろこ]ばなくて", "喜[よろこ]ばないで"],
       "potential": "喜[よろこ]べる",
       "potential negative": "喜[よろこ]べない",
       "passive": "喜[よろこ]ばれる",
