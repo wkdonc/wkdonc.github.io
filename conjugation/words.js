@@ -1532,7 +1532,7 @@ var words = {
 
   "いい": {
 
-    "group": "i-adjective",
+    "group": "ii",
 
     "conjugations": {
 
