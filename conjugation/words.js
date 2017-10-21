@@ -1492,7 +1492,7 @@ var words = {
       "past": "高[たか]かった",
       "past negative": "高[たか]くなかった",
       "polite past": "高[たか]かったです",
-      "polite past negative": "高[たか]くありませんでした",
+      "polite past negative": ["高くなかったです", "高[たか]くありませんでした"],
     },
   },
 
