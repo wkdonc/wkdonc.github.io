@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="drill.css" type="text/css" media="screen"/>
+    <link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet">
+    <script type="text/ecmascript" src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/ecmascript" src="polv_words.js"></script>
+    <script type="text/ecmascript" src="polv.js"></script>
+    <title>Don's Japanese Conjugation Drill</title>
+  </head>
+  <body>
+
+    <div id="splash">
+
+      <h1>Don's Japanese Conjugation Drill</h1>
+
+      <div>
+        <span>Number of Questions</span>
+        <input id="numQuestions" value="10">
+        <button id="go">Go</button>
+      </div>
+
+      <div>Question pool size: <span id="questionCount">...</span></div>
+
+      <div class="options">
+        <div>
+          <h2>Conjugation types</h2>
+          <ul>
+            <li><label><input type="checkbox" id="plain" checked> Plain</label></li>
+            <li><label><input type="checkbox" id="polite" checked> Polite</label></li>
+            <li><label><input type="checkbox" id="negative" checked> Negative</label></li>
+            <li><label><input type="checkbox" id="past" checked> Past</label></li>
+            <li><label><input type="checkbox" id="te-form"> て form</label></li>
+            <li><label><input type="checkbox" id="progressive"> Progressive</label></li>
+            <li><label><input type="checkbox" id="potential"> Potential</label></li>
+            <li><label><input type="checkbox" id="imperative"> Imperative</label></li>
+            <li><label><input type="checkbox" id="passive"> Passive</label></li>
+            <li><label><input type="checkbox" id="causative"> Causative</label></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2>Verb classes</h2>
+          <ul>
+            <li><label><input type="checkbox" id="godan" checked> Group 1 verbs</label></li>
+            <li><label><input type="checkbox" id="ichidan" checked> Group 2 verbs</label></li>
+            <li><label><input type="checkbox" id="iku" checked> 行く verb</label></li>
+            <li><label><input type="checkbox" id="kuru" checked> 来る verb</label></li>
+            <li><label><input type="checkbox" id="suru" checked> する verbs</label></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2>Adjective classes</h2>
+          <ul>
+            <li><label><input type="checkbox" id="i-adjective"> い adjectives</label></li>
+            <li><label><input type="checkbox" id="na-adjective"> な adjectives</label></li>
+            <li><label><input type="checkbox" id="ii"> いい adjective</label></li>
+          </ul>
+        </div>
+      </div>
+
+      <!--
+      <div>
+        <label><input type="checkbox" id="trick" checked> Trick questions (answers may be the same as the given form)</label>
+      </div>
+      -->
+
+    </div>
+
+    <div id="scoreSection">
+
+      <div id="history">
+      </div>
+
+      <button id="backToStart">Back to Start</button>
+
+    </div>
+
+    <div id="quizSection">
+
+      <div class="questionOuter">
+        <div id="question"></div>
+      </div>
+
+      <div id="input">
+        <form action="javascript:processAnswer()">
+          <input placeholder="答え" autocomplete="off" id="answer">
+        </form>
+      </div>
+
+      <div id="proceed">
+
+        <form style="float: right" action="javascript:proceed()">
+          <button>
+
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 48 48">
+              <metadata> Svg Vector Icons : http://www.onlinewebfonts.com/icon </metadata>
+              <g transform="scale(0.03)"><path d="M762.1,441.8L354.4,34.1C322.2,2,270.1,2,237.9,34.1c-32.2,32.2-32.2,84.3,0,116.5L587.4,500L237.9,849.4c-32.2,32.2-32.2,84.3,0,116.5s84.3,32.2,116.5,0l407.6-407.6c16.1-16.1,24.1-37.2,24.1-58.2S778.1,457.8,762.1,441.8z"></path></g>
+            </svg>
+          </button>
+        </form>
+
+        <div id="response">
+        </div>
+
+        <div id="message">
+        </div>
+
+      </div>
+
+<!--
+      <div id="explanation">
+        <h2>Conjugations for group 1 verbs (godan)</h2>
+	<p>Group 1 (godan) verbs are those that, with a few exceptions, do not
+        end with an いる or える sound.</p>
+
+        <table class="syllabary">
+
+          <tr class="あ">
+            <td><div>ぱ</div><div>pa</div></td>
+            <td><div>ば</div><div>ba</div></td>
+            <td><div>だ</div><div>da</div></td>
+            <td><div>ざ</div><div>za</div></td>
+            <td><div>が</div><div>ga</div></td>
+            <td class="empty"></td>
+            <td><div>ん</div><div>n</div></td>
+            <td><div>わ</div><div>wa</div></td>
+            <td><div>ら</div><div>ra</div></td>
+            <td><div>や</div><div>ya</div></td>
+            <td><div>ま</div><div>ma</div></td>
+            <td><div>は</div><div>ha</div></td>
+            <td><div>な</div><div>na</div></td>
+            <td><div>た</div><div>ta</div></td>
+            <td><div>さ</div><div>sa</div></td>
+            <td><div>か</div><div>ka</div></td>
+            <td><div>あ</div><div>a</div></td>
+          </tr>
+
+          <tr class="い">
+            <td><div>ぴ</div><div>pi</div></td>
+            <td><div>び</div><div>bi</div></td>
+            <td><div>ぢ</div><div>ji</div></td>
+            <td><div>じ</div><div>ji</div></td>
+            <td><div>ぎ</div><div>gi</div></td>
+            <td class="empty"></td>
+            <td class="empty"></td>
+            <td class="empty"></td>
+            <td><div>り</div><div>ri</div></td>
+            <td class="empty"></td>
+            <td><div>み</div><div>mi</div></td>
+            <td><div>ひ</div><div>hi</div></td>
+            <td><div>に</div><div>ni</div></td>
+            <td><div>ち</div><div>chi</div></td>
+            <td><div>し</div><div>shi</div></td>
+            <td><div>き</div><div>ki</div></td>
+            <td><div>い</div><div>i</div></td>
+          </tr>
+
+          <tr class="う">
+            <td><div>ぷ</div><div>pu</div></td>
+            <td><div>ぶ</div><div>bu</div></td>
+            <td><div>づ</div><div>zu</div></td>
+            <td><div>ず</div><div>zu</div></td>
+            <td><div>ぐ</div><div>gu</div></td>
+            <td class="empty"></td>
+            <td class="empty"></td>
+            <td class="empty"></td>
+            <td><div>る</div><div>ru</div></td>
+            <td><div>ゆ</div><div>yu</div></td>
+            <td><div>む</div><div>mu</div></td>
+            <td><div>ふ</div><div>fu</div></td>
+            <td><div>ぬ</div><div>nu</div></td>
+            <td><div>つ</div><div>tsu</div></td>
+            <td><div>す</div><div>su</div></td>
+            <td><div>く</div><div>ku</div></td>
+            <td><div>う</div><div>u</div></td>
+          </tr>
+
+          <tr class="え">
+            <td><div>ぺ</div><div>pe</div></td>
+            <td><div>べ</div><div>be</div></td>
+            <td><div>で</div><div>de</div></td>
+            <td><div>ぜ</div><div>ze</div></td>
+            <td><div>げ</div><div>ge</div></td>
+            <td class="empty"></td>
+            <td class="empty"></td>
+            <td class="empty"></td>
+            <td><div>れ</div><div>re</div></td>
+            <td class="empty"></td>
+            <td><div>め</div><div>me</div></td>
+            <td><div>へ</div><div>he</div></td>
+            <td><div>ね</div><div>ne</div></td>
+            <td><div>て</div><div>te</div></td>
+            <td><div>せ</div><div>se</div></td>
+            <td><div>け</div><div>ke</div></td>
+            <td><div>え</div><div>e</div></td>
+          </tr>
+
+          <tr class="お">
+            <td><div>ぽ</div><div>po</div></td>
+            <td><div>ぼ</div><div>bo</div></td>
+            <td><div>ど</div><div>do</div></td>
+            <td><div>ぞ</div><div>zo</div></td>
+            <td><div>ご</div><div>go</div></td>
+            <td class="empty"></td>
+            <td class="empty"></td>
+            <td><div>を</div><div>o</div></td>
+            <td><div>ろ</div><div>ro</div></td>
+            <td><div>よ</div><div>yo</div></td>
+            <td><div>も</div><div>mo</div></td>
+            <td><div>ほ</div><div>ho</div></td>
+            <td><div>の</div><div>no</div></td>
+            <td><div>と</div><div>to</div></td>
+            <td><div>そ</div><div>so</div></td>
+            <td><div>こ</div><div>ko</div></td>
+            <td><div>お</div><div>o</div></td>
+          </tr>
+
+        </table>
+
+      </div>
+
+-->
+    </div>
+  </body>
+</html>
