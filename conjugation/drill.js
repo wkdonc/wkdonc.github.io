@@ -731,6 +731,7 @@ function updateOptionSummary() {
 
 function explain() {
   $('#explanation').show();
+  $('#explain-proceed-button').focus();
 }
 
 function getOptions() {

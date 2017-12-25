@@ -3,7 +3,7 @@ body {
 }
 
 body, input {
-  font-family: Yu Gothic, Amaranth, sans-serif; 
+  font-family: Amaranth, sans-serif; 
 }
 
 #proceed svg {
@@ -363,4 +363,9 @@ div.horiz > * {
 
 .explain-answer-as-list {
   padding-left: 24px;
+}
+
+.centre {
+  display: table;
+  margin: 0 auto;
 }
