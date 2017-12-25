@@ -180,25 +180,25 @@ function resetLog() {
   log = { "history": [] };
 }
 
+function kanaForm(words) {
+
+  if (words.constructor !== Array) {
+    words = [words];
+  }
+
+  return words.map(function (word) { return word.split(/.\[([^\]]*)\]/).join(""); } );
+}
+
+function kanjiForm(words) {
+
+  if (words.constructor !== Array) {
+    words = [words];
+  }
+
+  return words.map(function (word) { return word.split(/(.)\[[^\]]*\]/).join(""); } );
+}
+
 function getVerbForms(entry) {
-
-  function kanaForm(words) {
-
-    if (words.constructor !== Array) {
-      words = [words];
-    }
-
-    return words.map(function (word) { return word.split(/.\[([^\]]*)\]/).join(""); } );
-  }
-
-  function kanjiForm(words) {
-
-    if (words.constructor !== Array) {
-      words = [words];
-    }
-
-    return words.map(function (word) { return word.split(/(.)\[[^\]]*\]/).join(""); } );
-  }
 
   var result = {
     "kanji": {},
@@ -395,24 +395,93 @@ function generateQuestion() {
   var kanaForms = forms["hiragana"];
   var furiganaForms = forms["furigana"];
 
-  var question = "What is the " + transformation.phrase + " form of " +
-    wordWithFurigana(furiganaForms[from_form]).randomElement() + "?";
+  var givenWord = wordWithFurigana(furiganaForms[from_form]).randomElement();
+
+  var question = "What is the " + transformation.phrase + " version of " +
+    givenWord + "?";
 
   var answer = kanjiForms[to_form];
   var answer2 = kanaForms[to_form];
 
   $('#question').html(question);
 
-  window.question = question;
-  window.answer = kanjiForms[to_form];
-  window.answerWithFurigana = wordWithFurigana(furiganaForms[to_form]);
-  window.answer2 = answer2;
+  window.questionData = {
+    entry:              entry,
+    transformation:     transformation,
+    question:           question,
+    answer:             kanjiForms[to_form],
+    answer2:            answer2,
+    answerWithFurigana: wordWithFurigana(furiganaForms[to_form]),
+    givenWord:          givenWord,
+  };
+
+  // Construct the explanation page.
+
+  var data = window.questionData;
+
+  var groupLabels = {
+    "godan" : "godan verb",
+    "ichidan" : "ichidan verb",
+    "iku" : "godan verb",
+    "suru" : "suru verb",
+    "kuru" : "special verb",
+    "i-adjective" : "い adjective",
+    "ii" : "i-adjective",
+    "na-adjective" : "な adjective",
+  };
+
+  var dictionary = words[data.entry].conjugations["dictionary"]
+
+  if (words[data.entry].group == "na-adjective") {
+    dictionary = dictionary.replace(/だ$/, '')
+  }
+
+  dictionary = wordWithFurigana(dictionary);
+
+  $('#explain-given').html(givenWord);
+  $('#explain-given-tags').html(data.transformation.from_tags.map(function (tag) { return "<span class='tag'>" + tag + "</span>"; }).join(" "));
+  $('.explain-given-dictionary').html(dictionary);
+  $('#explain-group').html(groupLabels[words[data.entry].group]);
+  $('.explain-transform').html(data.transformation.phrase);
+  $('.explain-answer-tags').html(data.transformation.to_tags.map(function (tag) { return "<span class='tag'>" + tag + "</span>"; }).join(" "));
+  $('.explain-answer-tags2').html(data.transformation.to_tags.join(" "));
+  $('.explain-answer').html(commaList(questionData.answerWithFurigana, "or"));
+
+  $('.explain-answer-as-list').empty();
+
+  questionData.answerWithFurigana.forEach(function (answer) {
+    console.log("Doing answer");
+    $('.explain-answer-as-list').append("<li>" + answer);
+  });
+
+  if (window.questionData.transformation.tags.indexOf("trick") != -1) {
+    $('.explain-trick').show();
+    $('.explain-no-trick').hide();
+  } else {
+    $('.explain-trick').hide();
+    $('.explain-no-trick').show();
+  }
+  
+  if (data.transformation.to == "dictionary") {
+    $('.explain-hide-end').hide();
+  } else {
+    $('.explain-hide-end').show();
+  }
+
+  if (data.answer.length == 1) {
+    $('.explain-answer-single').show();
+    $('.explain-answer-multiple').hide();
+  } else {
+    $('.explain-answer-single').hide();
+    $('.explain-answer-multiple').show();
+  }
 
   $('#next').prop('disabled', true);
   $('#response').html("");
   $('#message').html("");
 
   $('#proceed').hide();
+  $('#explanation').hide();
   $('#input').show();
   $('#answer').focus();
 
@@ -421,20 +490,21 @@ function generateQuestion() {
 
 function processAnswer() {
 
+  var questionData = window.questionData;
   var response = $('#answer').val().trim();
 
   if (response == "")
     return;
 
-  var correct = ((window.answer.indexOf(response) != -1) || (window.answer2.indexOf(response) != -1));
+  var correct = ((questionData.answer.indexOf(response) != -1) || (questionData.answer2.indexOf(response) != -1));
 
   var klass = correct ? "correct" : "incorrect";
 
   log.history.push({
-    "question": window.question,
+    "question": questionData.question,
     "response": response,
-    "answer": window.answerWithFurigana,
-    "kana": window.answer2,
+    "answer": questionData.answerWithFurigana,
+    "kana": questionData.answer2,
     "correct": correct
   });
 
@@ -445,11 +515,12 @@ function processAnswer() {
   if (correct) {
     $('#message').html("");
   } else {
-    $('#message').html("<div>The correct answer was " + commaList(window.answerWithFurigana, "or") + "</div>");
+    $('#message').html("<div>The correct answer was " + commaList(questionData.answerWithFurigana, "or") + " <input type='button' value='Explain' onclick='explain()'></div>");
   }
 
   $('#input').hide();
   $('#proceed').show();
+  $('#explanation').hide();
   $('#proceed button').focus();
 
   updateHistoryView(log);
@@ -567,7 +638,7 @@ function calculateTransitions() {
     tags = tags.split(" ");
 
     if (tags.indexOf("polite") == -1) {
-      tags.push("plain");
+      tags.splice(0, 0, "plain");
     }
 
     if (tags.indexOf("dictionary") != -1) {
@@ -613,8 +684,9 @@ function calculateTransitions() {
 
     transformation.phrase = phrase;
 
+    transformation.from_tags = calculateTags(transformation.from);
+    transformation.to_tags = calculateTags(transformation.to);
     transformation.tags = arrayUnique(calculateTags(transformation.from).concat(calculateTags(transformation.to)));
-
   });
 
   // Add trick forms
@@ -626,6 +698,8 @@ function calculateTransitions() {
       from: transformation.to,
       to: transformation.to,
       phrase: transformation.phrase,
+      from_tags: transformation.to_tags,
+      to_tags: transformation.to_tags,
       tags: transformation.tags.concat(["trick"])
     });
   });
@@ -653,6 +727,10 @@ function updateOptionSummary() {
   });
 
   $("#questionCount").text(applicable);
+}
+
+function explain() {
+  $('#explanation').show();
 }
 
 function getOptions() {
