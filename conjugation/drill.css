@@ -198,7 +198,6 @@ div.options ul {
   transition: all 0.15s ease;
   color: #333;
   font-size: 12px;
-background: yellow;
 }
 
 [tooltip]:hover:before {
@@ -206,12 +205,30 @@ background: yellow;
   opacity: 1;
   
   /* customizable */
-  margin-top: -20px;
+  margin-top: -12px;
 }
 
 [tooltip]:not([tooltip-persistent]):before {
   pointer-events: none;
 }
+
+/* Custom positions for furigana */
+
+.tooltip-w1[tooltip]:before { font-size: 8px;  margin-left: 4px; } 
+.tooltip-w2[tooltip]:before { font-size: 8px;  margin-left: 0px;  } 
+.tooltip-w3[tooltip]:before { font-size: 8px;  margin-left: -4px;  } 
+
+.tooltip-w1[tooltip]:hover:before,
+.tooltip-w2[tooltip]:hover:before,
+.tooltip-w3[tooltip]:hover:before { margin-top: -10px;  } 
+
+#question .tooltip-w1[tooltip]:before { font-size: 12px; margin-left: 14px; } 
+#question .tooltip-w2[tooltip]:before { font-size: 12px; margin-left: 8px;  } 
+#question .tooltip-w3[tooltip]:before { font-size: 12px; margin-left: 2px;  } 
+
+#question .tooltip-w1[tooltip]:hover:before,
+#question .tooltip-w2[tooltip]:hover:before,
+#question .tooltip-w3[tooltip]:hover:before { margin-top: -12px;  } 
 
 div#explanation p span {
 }

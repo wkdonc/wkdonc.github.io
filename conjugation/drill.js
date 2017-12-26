@@ -226,7 +226,7 @@ function wordWithFurigana(words) {
     var bits = word.split(/(.)\[([^\]]*)\]/);
   
     while (bits.length > 1) {
-      bits[0] = bits[0] + "<span tooltip='" + bits[2] + "'>" + bits[1] + "</span>" + bits[3];
+      bits[0] = bits[0] + "<span class='tooltip-w" + bits[2].length + "' tooltip='" + bits[2] + "'>" + bits[1] + "</span>" + bits[3];
       bits.splice(1, 3);
     }
   
