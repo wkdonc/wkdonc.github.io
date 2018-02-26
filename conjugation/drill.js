@@ -354,6 +354,7 @@ function generateQuestion() {
   var to_form;
   var from_form;
   var forms;
+  var options = getOptions();
 
   var count = 0;
 
@@ -395,13 +396,25 @@ function generateQuestion() {
   var kanaForms = forms["hiragana"];
   var furiganaForms = forms["furigana"];
 
-  var givenWord = wordWithFurigana(furiganaForms[from_form]).randomElement();
+  var givenWord;
+
+  if (options["kana"]) {
+    givenWord = kanaForms[from_form].randomElement();
+  } else {
+    givenWord = wordWithFurigana(furiganaForms[from_form]).randomElement();
+  }
 
   var question = "What is the " + transformation.phrase + " version of " +
     givenWord + "?";
 
   var answer = kanjiForms[to_form];
   var answer2 = kanaForms[to_form];
+  var answerWithFurigana = wordWithFurigana(furiganaForms[to_form]);
+
+  if (options["kana"]) {
+    answer = answer2;
+    answerWithFurigana = kanaForms[to_form];
+  }
 
   $('#question').html(question);
 
@@ -409,9 +422,9 @@ function generateQuestion() {
     entry:              entry,
     transformation:     transformation,
     question:           question,
-    answer:             kanjiForms[to_form],
+    answer:             answer,
     answer2:            answer2,
-    answerWithFurigana: wordWithFurigana(furiganaForms[to_form]),
+    answerWithFurigana: answerWithFurigana,
     givenWord:          givenWord,
   };
 
@@ -436,7 +449,11 @@ function generateQuestion() {
     dictionary = dictionary.replace(/だ$/, '')
   }
 
-  dictionary = wordWithFurigana(dictionary);
+  if (!options["kana"]) {
+    dictionary = wordWithFurigana(dictionary);
+  } else {
+    dictionary = kanaForm(dictionary);
+  }
 
   $('#explain-given').html(givenWord);
   $('#explain-given-tags').html(data.transformation.from_tags.map(function (tag) { return "<span class='tag'>" + tag + "</span>"; }).join(" "));
@@ -739,7 +756,7 @@ function getOptions() {
   var options = ["plain", "polite", "negative", "past", "te-form",
     "progressive", "potential", "imperative", "passive", "causative",
     "godan", "ichidan", "iku", "kuru", "suru", "i-adjective", "na-adjective",
-    "ii", "trick"];
+    "ii", "trick", "kana"];
 
   var result = {};
 
