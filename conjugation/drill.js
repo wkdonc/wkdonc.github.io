@@ -770,6 +770,7 @@ function getOptions() {
 $('window').ready(function () {
 
   calculateTransitions();
+  calculateAllConjugations();
 
   $('#go').click(startQuiz);
   $('#backToStart').click(showSplash);
