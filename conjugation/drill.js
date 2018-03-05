@@ -106,6 +106,23 @@ var transformations = [
   { from: "progressive past negative", to: "polite progressive past negative" },
   { from: "polite progressive past", to: "polite progressive past negative" },
   { from: "polite progressive negative", to: "polite progressive past negative" },
+  { from: "dictionary", to: "desire" },
+  { from: "polite", to: "desire polite" },
+  { from: "negative", to: "desire negative" },
+  { from: "polite negative", to: "desire polite negative" },
+  { from: "desire", to: "dictionary" },
+  { from: "desire polite", to: "polite" },
+  { from: "desire negative", to: "negative" },
+  { from: "desire polite negative", to: "polite negative" },
+  { from: "desire", to: "desire polite" },
+  { from: "desire", to: "desire negative" },
+  { from: "desire polite", to: "desire" },
+  { from: "desire polite", to: "desire polite negative" },
+  { from: "desire negative", to: "desire" },
+  { from: "desire negative", to: "desire polite negative" },
+  { from: "desire polite negative", to: "desire polite" },
+  { from: "desire polite negative", to: "desire negative" },
+
 ];
 
 var log;
@@ -680,6 +697,7 @@ function calculateTransitions() {
       "causative": "non-causative",
       "passive": "active",
       "progressive": "non-progressive",
+      "desire": "&apos;non-desire&apos;",
     };
 
     var to_extra = {
@@ -692,6 +710,7 @@ function calculateTransitions() {
       "causative": "causative",
       "passive": "passive",
       "progressive": "progressive",
+      "desire": "&apos;desire&apos;",
     };
 
     var phrase;
@@ -756,7 +775,7 @@ function getOptions() {
   var options = ["plain", "polite", "negative", "past", "te-form",
     "progressive", "potential", "imperative", "passive", "causative",
     "godan", "ichidan", "iku", "kuru", "suru", "i-adjective", "na-adjective",
-    "ii", "trick", "kana"];
+    "ii", "desire", "trick", "kana"];
 
   var result = {};
 

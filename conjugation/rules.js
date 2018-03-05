@@ -443,6 +443,54 @@ var rules = {
       { "before": "ぶ", "after": "んでいませんでした" },
       { "before": "む", "after": "んでいませんでした" },
     ],
+
+    "desire" : [
+      { "before": "る", "after": "りたい" },
+      { "before": "つ", "after": "ちたい" },
+      { "before": "う", "after": "いたい" },
+      { "before": "く", "after": "きたい" },
+      { "before": "ぐ", "after": "ぎたい" },
+      { "before": "す", "after": "したい" },
+      { "before": "ぬ", "after": "にたい" },
+      { "before": "ぶ", "after": "びたい" },
+      { "before": "む", "after": "みたい" },
+    ],
+
+    "desire negative" : [
+      { "before": "る", "after": "りたくない" },
+      { "before": "つ", "after": "ちたくない" },
+      { "before": "う", "after": "いたくない" },
+      { "before": "く", "after": "きたくない" },
+      { "before": "ぐ", "after": "ぎたくない" },
+      { "before": "す", "after": "したくない" },
+      { "before": "ぬ", "after": "にたくない" },
+      { "before": "ぶ", "after": "びたくない" },
+      { "before": "む", "after": "みたくない" },
+    ],
+
+    "desire polite" : [
+      { "before": "る", "after": "りたいです" },
+      { "before": "つ", "after": "ちたいです" },
+      { "before": "う", "after": "いたいです" },
+      { "before": "く", "after": "きたいです" },
+      { "before": "ぐ", "after": "ぎたいです" },
+      { "before": "す", "after": "したいです" },
+      { "before": "ぬ", "after": "にたいです" },
+      { "before": "ぶ", "after": "びたいです" },
+      { "before": "む", "after": "みたいです" },
+    ],
+
+    "desire polite negative" : [
+      { "before": "る", "after": "りたくないです" },
+      { "before": "つ", "after": "ちたくないです" },
+      { "before": "う", "after": "いたくないです" },
+      { "before": "く", "after": "きたくないです" },
+      { "before": "ぐ", "after": "ぎたくないです" },
+      { "before": "す", "after": "したくないです" },
+      { "before": "ぬ", "after": "にたくないです" },
+      { "before": "ぶ", "after": "びたくないです" },
+      { "before": "む", "after": "みたくないです" },
+    ],
   },
 
   "ichidan" : {
@@ -478,6 +526,10 @@ var rules = {
     "progressive past negative": [ { "before": "る", "after": "ていなかった" } ],
     "polite progressive past": [ { "before": "る", "after": "ていました" } ],
     "polite progressive past negative": [ { "before": "る", "after": "ていませんでした" } ],
+    "desire" : [ { "before": "る", "after": "たい" }, ],
+    "desire negative" : [ { "before": "る", "after": "たくない" }, ],
+    "desire polite" : [ { "before": "る", "after": "たいです" }, ],
+    "desire polite negative" : [ { "before": "る", "after": "たくないです" }, ],
   },
 
   "iku" : {
@@ -512,6 +564,10 @@ var rules = {
     "progressive past negative": [ { "result": "行[い]っていなかった" } ],
     "polite progressive past": [ { "result": "行[い]っていました" } ],
     "polite progressive past negative": [ { "result": "行[い]っていませんでした" } ],
+    "desire" : [ { "result": "行[い]きたい" }, ],
+    "desire negative" : [ { "result": "行[い]きたくない" }, ],
+    "desire polite" : [ { "result": "行[い]きたいです" }, ],
+    "desire polite negative" : [ { "result": "行[い]きたくないです" }, ],
   },
 
   "kuru" : {
@@ -542,6 +598,10 @@ var rules = {
     "progressive past negative": [ { "result": "来[き]ていなかった" } ],
     "polite progressive past": [ { "result": "来[き]ていました" } ],
     "polite progressive past negative": [ { "result": "来[き]ていませんでした" } ],
+    "desire" : [ { "result": "来[き]たい" }, ],
+    "desire negative" : [ { "result": "来[き]たくない" }, ],
+    "desire polite" : [ { "result": "来[き]たいです" }, ],
+    "desire polite negative" : [ { "result": "来[き]たくないです" }, ],
   },
 
   "suru" : {
@@ -564,6 +624,10 @@ var rules = {
     "progressive past negative": [ { "before": "する", "after": "していなかった" } ],
     "polite progressive past": [ { "before": "する", "after": "していました" } ],
     "polite progressive past negative": [ { "before": "する", "after": "していませんでした" } ],
+    "desire" : [ { "before": "する", "after": "したい" }, ],
+    "desire negative" : [ { "before": "する", "after": "したくない" }, ],
+    "desire polite" : [ { "before": "する", "after": "したいです" }, ],
+    "desire polite negative" : [ { "before": "する", "after": "したくないです" }, ],
   },
 
   "i-adjective" : {
