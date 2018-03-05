@@ -617,6 +617,7 @@ function calculateTransitions() {
       "passive": "active",
       "progressive": "non-progressive",
       "desire": "&apos;non-desire&apos;",
+      "volitional": "non-volitional",
     };
 
     var to_extra = {
@@ -630,6 +631,7 @@ function calculateTransitions() {
       "passive": "passive",
       "progressive": "progressive",
       "desire": "&apos;desire&apos;",
+      "volitional": "volitional",
     };
 
     var phrase;
@@ -694,7 +696,7 @@ function getOptions() {
   var options = ["plain", "polite", "negative", "past", "te-form",
     "progressive", "potential", "imperative", "passive", "causative",
     "godan", "ichidan", "iku", "kuru", "suru", "i-adjective", "na-adjective",
-    "ii", "desire", "trick", "kana"];
+    "ii", "desire", "volitional", "trick", "kana"];
 
   var result = {};
 

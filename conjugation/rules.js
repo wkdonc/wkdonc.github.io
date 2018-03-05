@@ -491,6 +491,30 @@ var rules = {
       { "before": "ぶ", "after": "びたくないです" },
       { "before": "む", "after": "みたくないです" },
     ],
+
+    "volitional" : [
+      { "before": "る", "after": "ろう" },
+      { "before": "つ", "after": "とう" },
+      { "before": "う", "after": "おう" },
+      { "before": "く", "after": "こう" },
+      { "before": "ぐ", "after": "ごう" },
+      { "before": "す", "after": "そう" },
+      { "before": "ぬ", "after": "のう" },
+      { "before": "ぶ", "after": "ぼう" },
+      { "before": "む", "after": "もう" },
+    ],
+
+    "polite volitional" : [
+      { "before": "る", "after": "りましょう" },
+      { "before": "つ", "after": "ちましょう" },
+      { "before": "う", "after": "いましょう" },
+      { "before": "く", "after": "きましょう" },
+      { "before": "ぐ", "after": "ぎましょう" },
+      { "before": "す", "after": "しましょう" },
+      { "before": "ぬ", "after": "にましょう" },
+      { "before": "ぶ", "after": "びましょう" },
+      { "before": "む", "after": "みましょう" },
+    ],
   },
 
   "ichidan" : {
@@ -530,6 +554,8 @@ var rules = {
     "desire negative" : [ { "before": "る", "after": "たくない" }, ],
     "desire polite" : [ { "before": "る", "after": "たいです" }, ],
     "desire polite negative" : [ { "before": "る", "after": "たくないです" }, ],
+    "volitional" : [ { "before": "る", "after": "よう" }, ],
+    "polite volitional" : [ { "before": "る", "after": "ましょう" }, ],
   },
 
   "iku" : {
@@ -568,6 +594,8 @@ var rules = {
     "desire negative" : [ { "result": "行[い]きたくない" }, ],
     "desire polite" : [ { "result": "行[い]きたいです" }, ],
     "desire polite negative" : [ { "result": "行[い]きたくないです" }, ],
+    "volitional" : [ { "result": "行[い]こう" }, ],
+    "polite volitional" : [ { "result": "行[い]きましょう" }, ],
   },
 
   "kuru" : {
@@ -602,6 +630,8 @@ var rules = {
     "desire negative" : [ { "result": "来[き]たくない" }, ],
     "desire polite" : [ { "result": "来[き]たいです" }, ],
     "desire polite negative" : [ { "result": "来[き]たくないです" }, ],
+    "volitional" : [ { "result": "来[こ]よう" }, ],
+    "polite volitional" : [ { "result": "来[き]ましょう" }, ],
   },
 
   "suru" : {
@@ -628,6 +658,8 @@ var rules = {
     "desire negative" : [ { "before": "する", "after": "したくない" }, ],
     "desire polite" : [ { "before": "する", "after": "したいです" }, ],
     "desire polite negative" : [ { "before": "する", "after": "したくないです" }, ],
+    "volitional" : [ { "before": "する", "after": "しよう" }, ],
+    "polite volitional" : [ { "before": "する", "after": "しましょう" }, ],
   },
 
   "i-adjective" : {
