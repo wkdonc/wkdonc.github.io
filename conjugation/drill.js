@@ -1,129 +1,6 @@
 // drill.js
 
-var transformations = [
-
-  { from: "negative", to: "dictionary" },
-  { from: "past", to: "dictionary" },
-  { from: "polite", to: "dictionary" },
-  { from: "te-form", to: "dictionary" },
-  { from: "potential", to: "dictionary" },
-  { from: "imperative", to: "dictionary" },
-  { from: "causative", to: "dictionary" },
-  { from: "passive", to: "dictionary" },
-  { from: "progressive", to: "dictionary" },
-  { from: "dictionary", to: "negative" },
-  { from: "past negative", to: "negative" },
-  { from: "polite negative", to: "negative" },
-  { from: "te-form negative", to: "negative" },
-  { from: "potential negative", to: "negative" },
-  { from: "imperative negative", to: "negative" },
-  { from: "causative negative", to: "negative" },
-  { from: "passive negative", to: "negative" },
-  { from: "progressive negative", to: "negative" },
-  { from: "dictionary", to: "past" },
-  { from: "past negative", to: "past" },
-  { from: "polite past", to: "past" },
-  { from: "progressive past", to: "past" },
-  { from: "negative", to: "past negative" },
-  { from: "past", to: "past negative" },
-  { from: "polite past negative", to: "past negative" },
-  { from: "progressive past negative", to: "past negative" },
-  { from: "dictionary", to: "polite" },
-  { from: "polite past", to: "polite" },
-  { from: "polite negative", to: "polite" },
-  { from: "polite progressive", to: "polite" },
-  { from: "past", to: "polite past" },
-  { from: "polite", to: "polite past" },
-  { from: "polite past negative", to: "polite past" },
-  { from: "polite progressive past", to: "polite past" },
-  { from: "negative", to: "polite negative" },
-  { from: "polite", to: "polite negative" },
-  { from: "polite past negative", to: "polite negative" },
-  { from: "polite progressive negative", to: "polite negative" },
-  { from: "past negative", to: "polite past negative" },
-  { from: "polite past", to: "polite past negative" },
-  { from: "polite negative", to: "polite past negative" },
-  { from: "polite progressive past negative", to: "polite past negative" },
-  { from: "dictionary", to: "te-form" },
-  { from: "te-form negative", to: "te-form" },
-  { from: "te-form", to: "te-form negative" },
-  { from: "negative", to: "te-form negative" },
-  { from: "dictionary", to: "potential" },
-  { from: "potential negative", to: "potential" },
-  { from: "potential", to: "potential negative" },
-  { from: "negative", to: "potential negative" },
-  { from: "dictionary", to: "imperative" },
-  { from: "imperative negative", to: "imperative" },
-  { from: "imperative", to: "imperative negative" },
-  { from: "negative", to: "imperative negative" },
-  { from: "dictionary", to: "causative" },
-  { from: "causative negative", to: "causative" },
-  { from: "causative passive", to: "causative" },
-  { from: "causative", to: "causative negative" },
-  { from: "negative", to: "causative negative" },
-  { from: "causative passive negative", to: "causative negative" },
-  { from: "dictionary", to: "passive" },
-  { from: "passive negative", to: "passive" },
-  { from: "causative passive", to: "passive" },
-  { from: "passive", to: "passive negative" },
-  { from: "negative", to: "passive negative" },
-  { from: "causative passive negative", to: "passive negative" },
-  { from: "causative", to: "causative passive" },
-  { from: "passive", to: "causative passive" },
-  { from: "causative passive negative", to: "causative passive" },
-  { from: "causative negative", to: "causative passive negative" },
-  { from: "passive negative", to: "causative passive negative" },
-  { from: "causative passive", to: "causative passive negative" },
-  { from: "dictionary", to: "progressive" },
-  { from: "polite progressive", to: "progressive" },
-  { from: "progressive negative", to: "progressive" },
-  { from: "progressive past", to: "progressive" },
-  { from: "progressive", to: "progressive negative" },
-  { from: "negative", to: "progressive negative" },
-  { from: "progressive past negative", to: "progressive negative" },
-  { from: "polite progressive negative", to: "progressive negative" },
-  { from: "progressive", to: "polite progressive" },
-  { from: "polite", to: "polite progressive" },
-  { from: "polite progressive negative", to: "polite progressive" },
-  { from: "polite progressive past", to: "polite progressive" },
-  { from: "polite progressive", to: "polite progressive negative" },
-  { from: "polite negative", to: "polite progressive negative" },
-  { from: "progressive negative", to: "polite progressive negative" },
-  { from: "polite progressive past negative", to: "polite progressive negative" },
-  { from: "past", to: "progressive past" },
-  { from: "progressive", to: "progressive past" },
-  { from: "progressive past negative", to: "progressive past" },
-  { from: "polite progressive past", to: "progressive past" },
-  { from: "past negative", to: "progressive past negative" },
-  { from: "progressive negative", to: "progressive past negative" },
-  { from: "progressive past", to: "progressive past negative" },
-  { from: "polite progressive past negative", to: "progressive past negative" },
-  { from: "polite past", to: "polite progressive past" },
-  { from: "polite progressive", to: "polite progressive past" },
-  { from: "progressive past", to: "polite progressive past" },
-  { from: "polite progressive past negative", to: "polite progressive past" },
-  { from: "polite past negative", to: "polite progressive past negative" },
-  { from: "progressive past negative", to: "polite progressive past negative" },
-  { from: "polite progressive past", to: "polite progressive past negative" },
-  { from: "polite progressive negative", to: "polite progressive past negative" },
-  { from: "dictionary", to: "desire" },
-  { from: "polite", to: "desire polite" },
-  { from: "negative", to: "desire negative" },
-  { from: "polite negative", to: "desire polite negative" },
-  { from: "desire", to: "dictionary" },
-  { from: "desire polite", to: "polite" },
-  { from: "desire negative", to: "negative" },
-  { from: "desire polite negative", to: "polite negative" },
-  { from: "desire", to: "desire polite" },
-  { from: "desire", to: "desire negative" },
-  { from: "desire polite", to: "desire" },
-  { from: "desire polite", to: "desire polite negative" },
-  { from: "desire negative", to: "desire" },
-  { from: "desire negative", to: "desire polite negative" },
-  { from: "desire polite negative", to: "desire polite" },
-  { from: "desire polite negative", to: "desire negative" },
-
-];
+var transformations = [];
 
 var log;
 
@@ -132,7 +9,6 @@ Array.prototype.randomElement = function () {
 }
 
 // From: http://stackoverflow.com/a/2897510
-
 new function ($) {
   $.fn.getCursorPosition = function () {
     var input = this.get(0);
@@ -241,12 +117,12 @@ function wordWithFurigana(words) {
   return words.map(function (word) {
 
     var bits = word.split(/(.)\[([^\]]*)\]/);
-  
+
     while (bits.length > 1) {
       bits[0] = bits[0] + "<span class='tooltip-w" + bits[2].length + "' tooltip='" + bits[2] + "'>" + bits[1] + "</span>" + bits[3];
       bits.splice(1, 3);
     }
-  
+
     return bits[0];
   });
 }
@@ -495,7 +371,7 @@ function generateQuestion() {
     $('.explain-trick').hide();
     $('.explain-no-trick').show();
   }
-  
+
   if (data.transformation.to == "dictionary") {
     $('.explain-hide-end').hide();
   } else {
@@ -682,6 +558,49 @@ function calculateTransitions() {
     return tags;
   }
 
+  var allTags = {};
+
+  Object.keys(words).forEach(function(word) {
+
+    Object.keys(words[word].conjugations).forEach(function (conjugation) {
+
+      if (conjugation == "dictionary") {
+        conjugation = "";
+      }
+
+      allTags[conjugation] = conjugation.split(" ");
+    });
+  });
+
+  Object.keys(allTags).forEach(function (srcTag) {
+
+    if (srcTag != "") {
+
+      for (var i = 0; i < allTags[srcTag].length; i++) {
+
+        var tagWithDrop = allTags[srcTag].slice();
+
+        tagWithDrop.splice(i, 1);
+
+        var dstTag = tagWithDrop.join(" ");
+
+        if (allTags[dstTag]) {
+
+          if (srcTag == "") {
+            srcTag = "dictionary";
+          }
+
+          if (dstTag == "") {
+            dstTag = "dictionary";
+          }
+
+          transformations.push({ from: srcTag, to: dstTag });
+          transformations.push({ from: dstTag, to: srcTag });
+        }
+      }
+    }
+  });
+
   transformations.forEach(function (transformation) {
 
     var from = getTags(transformation.from);
@@ -788,8 +707,8 @@ function getOptions() {
 
 $('window').ready(function () {
 
-  calculateTransitions();
   calculateAllConjugations();
+  calculateTransitions();
 
   $('#go').click(startQuiz);
   $('#backToStart').click(showSplash);
