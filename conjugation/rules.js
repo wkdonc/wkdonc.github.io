@@ -645,7 +645,7 @@ var rules = {
     "te-form" : [ { "before": "する", "after": "して" }, ],
     "te-form negative": [ { "before": "する", "after": "しなくて" }, { "before": "する", "after": "しないで" } ],
     "imperative": [ { "before": "する", "after": "しろ" } ],
-    "imperative negative": [ { "before": "する", "after": "さるな" } ],
+    "imperative negative": [ { "before": "する", "after": "するな" } ],
     "progressive": [ { "before": "する", "after": "している" } ],
     "progressive negative": [ { "before": "する", "after": "していない" } ],
     "polite progressive": [ { "before": "する", "after": "しています" } ],
