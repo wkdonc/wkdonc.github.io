@@ -67,6 +67,7 @@ body, input {
 }
 
 #message {
+  margin-top: 10px;
   width: 100%;
 }
 
@@ -155,7 +156,7 @@ div#history table {
 
 div#history table th,
 div#history table td {
-  padding: 8px;
+  padding: 10px 16px 10px 16px;
   border: 1px solid gray;
 }:
 
@@ -169,7 +170,8 @@ div.options > * {
   margin: 20px;
 }
 
-div#splash > * {
+div#splash > *,
+div#scoreSection > * {
   margin-left: auto;
   margin-right: auto;
   display: table;
@@ -200,7 +202,8 @@ div.options ul {
   font-size: 12px;
 }
 
-[tooltip]:hover:before {
+[tooltip]:hover:before,
+.furiganaAlways #question [tooltip]:before {
   /* needed - do not touch */
   opacity: 1;
   
@@ -226,9 +229,9 @@ div.options ul {
 #question .tooltip-w2[tooltip]:before { font-size: 12px; margin-left: 8px;  } 
 #question .tooltip-w3[tooltip]:before { font-size: 12px; margin-left: 2px;  } 
 
-#question .tooltip-w1[tooltip]:hover:before,
-#question .tooltip-w2[tooltip]:hover:before,
-#question .tooltip-w3[tooltip]:hover:before { margin-top: -12px;  } 
+#question .tooltip-w1[tooltip]:hover:before, .furiganaAlways #question .tooltip-w1[tooltip]:before,
+#question .tooltip-w2[tooltip]:hover:before, .furiganaAlways #question .tooltip-w2[tooltip]:before,
+#question .tooltip-w3[tooltip]:hover:before, .furiganaAlways #question .tooltip-w3[tooltip]:before { margin-top: -12px;  } 
 
 div#explanation p span {
 }

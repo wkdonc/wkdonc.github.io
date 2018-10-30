@@ -483,7 +483,15 @@ function updateHistoryView(log) {
 
   $('#history').empty().append(review);
 
-  $('#history').append("<p>" + correct + " of " + total + " correct.</p>");
+  var resultString;
+
+  if (correct == total) {
+    resultString = "All correct";
+  } else {
+    resultString = correct + " of " + total + " correct";
+  }
+
+  $('#scoreSectionTitle').html("<h1>Result: " + resultString + "</h1>");
 }
 
 function proceed() {
@@ -506,6 +514,14 @@ function startQuiz() {
   $('#splash').hide();
   $('#quizSection').show();
   $('#scoreSection').hide();
+
+  var options = getOptions();
+
+  if (options.furigana_always) {
+    $('body').addClass("furiganaAlways");
+  } else {
+    $('body').removeClass("furiganaAlways");
+  }
 
   resetLog();
   generateQuestion();
@@ -696,7 +712,7 @@ function getOptions() {
   var options = ["plain", "polite", "negative", "past", "te-form",
     "progressive", "potential", "imperative", "passive", "causative",
     "godan", "ichidan", "iku", "kuru", "suru", "i-adjective", "na-adjective",
-    "ii", "desire", "volitional", "trick", "kana"];
+    "ii", "desire", "volitional", "trick", "kana", "furigana_always"];
 
   var result = {};
 
