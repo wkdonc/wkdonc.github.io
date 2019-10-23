@@ -1,5 +1,7 @@
 // Calculate conjugated forms using a rule set
 
+// Should add ある and いる.
+
 var words = {
 
   "走る":       { "group": "godan",        "dictionary": "走[はし]る", },
@@ -610,6 +612,8 @@ var rules = {
     "te-form negative": [ { "result": "来[こ]なくて" }, { "result": "来[こ]ないで" } ],
     "potential": [ { "result": "来[こ]られる" } ],
     "potential negative": [ { "result": "来[こ]られない" } ],
+    "polite potential": [ { "result": "来[こ]られます" } ],
+    "polite potential negative": [ { "result": "来[こ]られません" } ],
     "imperative": [ { "result": "来[こ]い" } ],
     "imperative negative": [ { "result": "来[く]るな" } ],
     "passive": [ { "result": "来[こ]られる" } ],
@@ -644,6 +648,10 @@ var rules = {
     "polite past negative" : [ { "before": "する", "after": "しませんでした" }, ],
     "te-form" : [ { "before": "する", "after": "して" }, ],
     "te-form negative": [ { "before": "する", "after": "しなくて" }, { "before": "する", "after": "しないで" } ],
+    "potential": [ { "before": "する", "after": "できる" } ],
+    "potential negative": [ { "before": "する", "after": "できない" } ],
+    "polite potential": [ { "before": "する", "after": "できます" } ],
+    "polite potential negative": [ { "before": "する", "after": "できません" } ],
     "imperative": [ { "before": "する", "after": "しろ" } ],
     "imperative negative": [ { "before": "する", "after": "するな" } ],
     "progressive": [ { "before": "する", "after": "している" } ],
