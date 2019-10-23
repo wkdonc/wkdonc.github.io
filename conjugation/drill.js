@@ -474,7 +474,7 @@ function updateHistoryView(log) {
     tr.append(td3);
 
     if (entry.correct) {
-      td3.append("<span class='answer-correct'> ○</span>");
+      td3.append("<span class='answer-correct'> 〇</span>");
     } else {
       td3.append("<span class='answer-wrong'> ×</span>");
     }
