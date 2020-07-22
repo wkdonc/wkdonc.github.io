@@ -1,70 +1,91 @@
-body {
-  margin: 0;
-}
-
 body, input {
   font-family: Amaranth, sans-serif; 
+  background: #eee;
+
+  --other: #4A2067;
+  --neutral-dark: #441f00;
+  --incorrect: #992a2a;
+  --correct: #217b21;
+  --neutral: #995c2a;
+  --question-furigana: white;
+  --input-background: white;
+  --input-shadow: #888;
+  --input-color: white;
 }
 
 #proceed svg {
+
   display: inline-block;
   width: 48px;
   height: 48px;
 }
 
 #proceed button {
+  color: var(--input-color);
+  outline-width: 0;
   border: none;
   padding: 12px;
   background: none;
 }
 
 .questionOuter {
-  background: #a0c0a0;
-  width: 100%;
+  background: var(--other);
 }
 
 #question {
   padding-top: 40px;
   font-size: 40px;
-  text-shadow: 2px 2px 4px #808080;
+  text-shadow: 2px 2px 4px var(--neutral-dark);
   padding-bottom: 40px;
   margin-left: auto;
   margin-right: auto;
   display: table;
+  color: white;
 }
 
+/*
 #explanation {
   width: 960px;
   margin-left: auto;
   margin-right: auto;
 }
+*/
 
-#input {
-  background: #eee;
-  width: 100%;
+#inputArea {
+  background: var(--input-background);
+}
+
+#inputArea, .correct, .incorrect {
+  box-shadow: 2px 2px 4px 0px var(--input-shadow);
+  width: calc(100vw - 32px);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
 #answer {
+  background: var(--input-background);
   width: 100%;
-  height: 34px;
-  background: #eee;
   border: 0;
   padding-top: 12px;
   padding-bottom: 12px;
   font-size: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  display: table;
   text-align: center;
 }
 
-#response {
-  width: 100%;
-  font-size: 30px;
-  height: 34px;
-  padding-top: 12px;
-  padding-bottom: 12px;
+#answer, .correct, .incorrect {
+  height: 54px;
 }
+
+#answer:focus {
+  outline-width: 0;
+}
+
+#response {
+  font-size: 30px;
+}
+/*
 
 #message {
   margin-top: 10px;
@@ -77,23 +98,25 @@ body, input {
   text-align: center;
 }
 
+*/
 .correct,
 .incorrect {
   padding-top: 12px;
   padding-bottom: 12px;
   font-size: 30px;
-  width: 100%;
   text-align: center;
+  color: var(--input-color);
 }
 
 .correct {
-  background: #8f8;
+  background: var(--correct);
 }
 
 .incorrect {
-  background: #f88;
+  background: var(--incorrect);
 }
 
+/*
 div#history,
 div#explanation {
   margin-left: auto;
@@ -177,6 +200,7 @@ div#scoreSection > * {
   display: table;
   margin-bottom: 12px;
 }
+*/
 
 input#numQuestions {
   width: 60px;
@@ -187,6 +211,10 @@ div.options ul {
   margin: 0;
   padding-left: 16px;
 }
+
+
+
+
 
 /* Tooltip from http://jsfiddle.net/AndreaLigios/jtLbpy62/ */
 
@@ -225,14 +253,18 @@ div.options ul {
 .tooltip-w2[tooltip]:hover:before,
 .tooltip-w3[tooltip]:hover:before { margin-top: -10px;  } 
 
-#question .tooltip-w1[tooltip]:before { font-size: 12px; margin-left: 14px; } 
-#question .tooltip-w2[tooltip]:before { font-size: 12px; margin-left: 8px;  } 
-#question .tooltip-w3[tooltip]:before { font-size: 12px; margin-left: 2px;  } 
+#question .tooltip-w1[tooltip]:before { color: var(--question-furigana); font-size: 12px; margin-left: 14px; } 
+#question .tooltip-w2[tooltip]:before { color: var(--question-furigana); font-size: 12px; margin-left: 8px;  } 
+#question .tooltip-w3[tooltip]:before { color: var(--question-furigana); font-size: 12px; margin-left: 2px;  } 
 
 #question .tooltip-w1[tooltip]:hover:before, .furiganaAlways #question .tooltip-w1[tooltip]:before,
 #question .tooltip-w2[tooltip]:hover:before, .furiganaAlways #question .tooltip-w2[tooltip]:before,
-#question .tooltip-w3[tooltip]:hover:before, .furiganaAlways #question .tooltip-w3[tooltip]:before { margin-top: -12px;  } 
+#question .tooltip-w3[tooltip]:hover:before, .furiganaAlways #question .tooltip-w3[tooltip]:before {
+  color: var(--question-furigana);
+  margin-top: -12px;
+} 
 
+/*
 div#explanation p span {
 }
 
@@ -357,6 +389,7 @@ div.horiz > * {
   margin-right: 16px;
 }
 
+*/
 .tag {
   display: inline-block;
   border-radius: 3px;
@@ -366,10 +399,13 @@ div.horiz > * {
   padding-top: 2px;
   padding-bottom: 2px;
 }
+/*
 
 .options li {
   height: 24px; 
 }
+
+*/
 
 .specials {
   font-weight: bold;
@@ -377,6 +413,13 @@ div.horiz > * {
   margin-bottom: 10px;
 }
 
+h2, h4 {
+  font-weight: bold;
+}
+
+.options h4 {
+}
+/*
 .explain-answer-as-list li {
   list-style-type: none;
 }
@@ -388,4 +431,14 @@ div.horiz > * {
 .centre {
   display: table;
   margin: 0 auto;
+}
+
+*/
+
+@media (max-width: 420px) {
+
+  #splash h2 {
+    font-size: 1.3em;
+    margin-bottom: 1.0em
+  } 
 }

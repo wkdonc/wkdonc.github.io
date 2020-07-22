@@ -392,7 +392,7 @@ function generateQuestion() {
 
   $('#proceed').hide();
   $('#explanation').hide();
-  $('#input').show();
+  $('#inputArea').show();
   $('#answer').focus();
 
   $('#answer').on('input', processAnswerKey);
@@ -425,10 +425,10 @@ function processAnswer() {
   if (correct) {
     $('#message').html("");
   } else {
-    $('#message').html("<div>The correct answer was " + commaList(questionData.answerWithFurigana, "or") + " <input type='button' value='Explain' onclick='explain()'></div>");
+    $('#message').html("<div>The correct answer was " + commaList(questionData.answerWithFurigana, "or") + " <button class='btn btn-outline-secondary mb-2 mr-sm-2' onclick='explain()'>Explain</button></div>");
   }
 
-  $('#input').hide();
+  $('#inputArea').hide();
   $('#proceed').show();
   $('#explanation').hide();
   $('#proceed button').focus();
@@ -438,16 +438,16 @@ function processAnswer() {
 
 function updateHistoryView(log) {
 
-  var review = $('<table>');
+  var review = $('<div>');
 
   var total = 0;
   var correct = 0;
 
-  var header_tr = $('<tr>');
+  var header_tr = $('<div class="row d-none d-md-flex">');
 
-  header_tr.append($('<th>Question</th>'));
-  header_tr.append($('<th>Answer</th>'));
-  header_tr.append($('<th>Response</th>'));
+  header_tr.append($('<div class="col-md-6">Question</div>'));
+  header_tr.append($('<div class="col-md-3">Answer</div>'));
+  header_tr.append($('<div class="col-md-3">Response</div>'));
 
   review.append(header_tr);
 
@@ -459,11 +459,11 @@ function updateHistoryView(log) {
       correct++;
     }
 
-    var tr = $('<tr>');
+    var tr = $('<div class="row">');
 
-    var td1 = $('<td>');
-    var td2 = $('<td>');
-    var td3 = $('<td>');
+    var td1 = $('<div class="col-md-6">');
+    var td2 = $('<div class="col-md-3">');
+    var td3 = $('<div class="col-md-3">');
 
     td1.html(entry.question);
     td2.html(commaList(entry.answer, "or"));
@@ -733,6 +733,7 @@ $('window').ready(function () {
 
   $('div.options input').click(updateOptionSummary);
   $('input#trick').click(updateOptionSummary);
+  $('input#focus_mode').click(updateOptionSummary);
 
   updateOptionSummary();
 
