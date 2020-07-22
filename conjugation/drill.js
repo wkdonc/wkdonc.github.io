@@ -238,6 +238,12 @@ function validQuestion(entry, forms, transformation, options) {
   if (!forms["furigana"][transformation.to])
     valid = false;
 
+  if (options.questionFocus != "none") {
+    if (transformation.type != options.questionFocus) {
+      valid = false;
+    }
+  }
+
   return valid;
 }
 
@@ -660,6 +666,20 @@ function calculateTransitions() {
     transformation.from_tags = calculateTags(transformation.from);
     transformation.to_tags = calculateTags(transformation.to);
     transformation.tags = arrayUnique(calculateTags(transformation.from).concat(calculateTags(transformation.to)));
+
+    var diffFromTo = arrayDifference(transformation.from_tags, transformation.to_tags);
+
+    if (diffFromTo.length > 0) {
+      type = diffFromTo[0];
+    } else {
+      type = arrayDifference(transformation.to_tags, transformation.from_tags)[0];
+    }
+
+    if ((type == "plain") || (type == "polite")) {
+      type = "politeness";
+    }
+
+    transformation.type = type;
   });
 
   // Add trick forms
@@ -670,6 +690,7 @@ function calculateTransitions() {
     trick_forms.push({
       from: transformation.to,
       to: transformation.to,
+      type: transformation.type,
       phrase: transformation.phrase,
       from_tags: transformation.to_tags,
       to_tags: transformation.to_tags,
@@ -714,10 +735,16 @@ function getOptions() {
     "godan", "ichidan", "iku", "kuru", "suru", "i-adjective", "na-adjective",
     "ii", "desire", "volitional", "trick", "kana", "furigana_always"];
 
+  var selects = ["questionFocus"];
+
   var result = {};
 
   options.forEach(function (option) {
     result[option] = $('#' + option).is(':checked') != false;
+  });
+
+  selects.forEach(function (select) {
+    result[select] = $('#' + select).val();
   });
 
   return result;
@@ -732,6 +759,7 @@ $('window').ready(function () {
   $('#backToStart').click(showSplash);
 
   $('div.options input').click(updateOptionSummary);
+  $('select#questionFocus').on('change', updateOptionSummary);
   $('input#trick').click(updateOptionSummary);
   $('input#focus_mode').click(updateOptionSummary);
 
