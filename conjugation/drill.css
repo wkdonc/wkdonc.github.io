@@ -11,9 +11,10 @@ body, input {
   --input-background: white;
   --input-shadow: #888;
   --input-color: white;
+  --shake-level: 6px;
 }
 
-#proceed svg {
+/* #proceed svg {
 
   display: inline-block;
   width: 48px;
@@ -26,7 +27,7 @@ body, input {
   border: none;
   padding: 12px;
   background: none;
-}
+} */
 
 .questionOuter {
   background: var(--other);
@@ -34,13 +35,93 @@ body, input {
 
 #question {
   padding-top: 40px;
-  font-size: 40px;
-  text-shadow: 2px 2px 4px var(--neutral-dark);
   padding-bottom: 40px;
+  font-size: 20px;
+  text-shadow: 2px 2px 4px var(--neutral-dark);
+  color: white;
+}
+
+#questionFirstHalf,
+#questionSecondHalf {
   margin-left: auto;
   margin-right: auto;
   display: table;
-  color: white;
+}
+
+#answer {
+  font-size: 16px;
+}
+
+#responseButton {
+  font-size: 16px;
+  line-height: 16px;
+}
+
+/* Responsive text size */
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  #question {
+    font-size: 32px;
+  }
+
+  #answer, .correct, .incorrect {
+    font-size: 24px;
+  }
+
+  #responseButton {
+    font-size: 24px;
+    line-height: 24px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  #question {
+    font-size: 40px;
+  }
+
+  #answer, .correct, .incorrect {
+    font-size: 30px;
+  }
+
+  #responseButton {
+    font-size: 30px;
+    line-height: 30px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #question {
+    font-size: 40px;
+  }
+
+  #answer, .correct, .incorrect {
+    font-size: 30px;
+  }
+
+  #responseButton {
+    font-size: 30px;
+    line-height: 30px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  #question {
+    font-size: 40px;
+  }
+
+  #answer, .correct, .incorrect {
+    font-size: 30px;
+  }
+
+  #responseButton {
+    font-size: 30px;
+    line-height: 30px;
+  }
 }
 
 /*
@@ -70,7 +151,6 @@ body, input {
   border: 0;
   padding-top: 12px;
   padding-bottom: 12px;
-  font-size: 30px;
   text-align: center;
 }
 
@@ -82,9 +162,6 @@ body, input {
   outline-width: 0;
 }
 
-#response {
-  font-size: 30px;
-}
 /*
 
 #message {
@@ -103,17 +180,31 @@ body, input {
 .incorrect {
   padding-top: 12px;
   padding-bottom: 12px;
-  font-size: 30px;
   text-align: center;
   color: var(--input-color);
 }
 
 .correct {
-  background: var(--correct);
+  background-color: var(--correct);
 }
 
 .incorrect {
-  background: var(--incorrect);
+  background-color: var(--incorrect);
+}
+
+#responseButton {
+
+  border: none;
+  box-shadow: 2px 2px 4px 0px var(--input-shadow);
+  width: calc(100vw - 32px);
+  margin-left: auto;
+  margin-right: auto;
+
+  padding-top: 12px;
+  padding-bottom: 12px;
+  display: table;
+
+  color: var(--input-color);
 }
 
 /*
@@ -441,4 +532,21 @@ h2, h4 {
     font-size: 1.3em;
     margin-bottom: 1.0em
   } 
+}
+
+@keyframes shake {
+  0% { transform: translate(0px, 0px); }
+  12.5% { transform: translate(calc(0px - var(--shake-level)), 0px); }
+  25% { transform: translate(var(--shake-level), 0px); }
+  37.5% { transform: translate(calc(0px - var(--shake-level)), 0px); }
+  50% { transform: translate(var(--shake-level), 0px); }
+  62.5% { transform: translate(calc(0px - var(--shake-level)), 0px); }
+  75% { transform: translate(var(--shake-level), 0px); }
+  87.5% { transform: translate(calc(0px - var(--shake-level)), 0px); }
+  100% { transform: translate(0px, 0px); }
+}
+
+.shakeIt {
+  animation: shake 0.75s;
+  animation-iteration-count: 1;
 }

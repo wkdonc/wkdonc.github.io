@@ -46,6 +46,10 @@ new function ($) {
   }
 }(jQuery);
 
+// Waaaayy overkill here but these ranges were taken from http://www.unicode.org/charts/ and I kinda got carried away.
+
+var japaneseTextPattern = /^[\u{3040}-\u{309f}\u{30a0}-\u{30ff}\u{3190}-\u{319f}\u{31f0}-\u{31ff}\u{3400}-\u{4dbf}\u{4e00}-\u{9ffc}\u{f900}-\u{faff}\u{ff00}-\u{ffef}\u{1b000}-\u{1b0ff}\u{1b100}-\u{1b12f}\u{1b130}-\u{1b16f}\u{20000}-\u{2a6dd}\u{2a700}-\u{2b734}\u{2b740}-\u{2b81d}\u{2b820}-\u{2cea1}\u{2ceb0}-\u{2ebe0}\u{2f800}-\u{2fa1f}\u{30000}-\u{3134a}]*$/u;
+
 function commaList(items, conjunction) {
 
   if (conjunction == undefined) {
@@ -110,6 +114,8 @@ function getVerbForms(entry) {
 
 function wordWithFurigana(words) {
 
+  var options = getOptions();
+
   if (words.constructor !== Array) {
     words = [words];
   }
@@ -119,7 +125,13 @@ function wordWithFurigana(words) {
     var bits = word.split(/(.)\[([^\]]*)\]/);
 
     while (bits.length > 1) {
-      bits[0] = bits[0] + "<span class='tooltip-w" + bits[2].length + "' tooltip='" + bits[2] + "'>" + bits[1] + "</span>" + bits[3];
+      if (options["kana"]) {
+        bits[0] = bits[0] + bits[2] + bits[3];
+      } else if (options["furigana_always"]) {
+        bits[0] = bits[0] + "<ruby>" + bits[1] + "<rp>(</rp><rt>" + bits[2] + "</rt><rp>)</rp></ruby>" + bits[3];
+      } else {
+        bits[0] = bits[0] + bits[1] + bits[3];
+      }
       bits.splice(1, 3);
     }
 
@@ -303,8 +315,10 @@ function generateQuestion() {
     givenWord = wordWithFurigana(furiganaForms[from_form]).randomElement();
   }
 
-  var question = "What is the " + transformation.phrase + " version of " +
-    givenWord + "?";
+  var questionFirstHalf = "What is the " + transformation.phrase + " version of";
+  var questionSecondHalf = givenWord + "?";
+
+  var question = questionFirstHalf + questionSecondHalf;
 
   var answer = kanjiForms[to_form];
   var answer2 = kanaForms[to_form];
@@ -315,7 +329,8 @@ function generateQuestion() {
     answerWithFurigana = kanaForms[to_form];
   }
 
-  $('#question').html(question);
+  $('#questionFirstHalf').html(questionFirstHalf);
+  $('#questionSecondHalf').html(questionSecondHalf);
 
   window.questionData = {
     entry:              entry,
@@ -366,7 +381,6 @@ function generateQuestion() {
   $('.explain-answer-as-list').empty();
 
   questionData.answerWithFurigana.forEach(function (answer) {
-    console.log("Doing answer");
     $('.explain-answer-as-list').append("<li>" + answer);
   });
 
@@ -409,8 +423,18 @@ function processAnswer() {
   var questionData = window.questionData;
   var response = $('#answer').val().trim();
 
+  var shakeIt = false;
+
   if (response == "")
+    shakeIt = true;
+  
+  if (!response.match(japaneseTextPattern))
+    shakeIt = true;
+
+  if (shakeIt) {
+    shakeInputArea();
     return;
+  }
 
   var correct = ((questionData.answer.indexOf(response) != -1) || (questionData.answer2.indexOf(response) != -1));
 
@@ -425,13 +449,14 @@ function processAnswer() {
   });
 
   $('#answer').val("");
-  $('#response').prop('class', klass).text(response);
+  $('#responseButton').prop('class', klass).text(response);
   $('#next').prop('disabled', false);
 
   if (correct) {
     $('#message').html("");
   } else {
-    $('#message').html("<div>The correct answer was " + commaList(questionData.answerWithFurigana, "or") + " <button class='btn btn-outline-secondary mb-2 mr-sm-2' onclick='explain()'>Explain</button></div>");
+    $('#message').show();
+    $('#message').html("<div>The correct answer was " + commaList(questionData.answerWithFurigana, "or") + " <button class='btn btn-primary mb-2 mr-sm-2' onclick='explain()'>Explain</button></div>");
   }
 
   $('#inputArea').hide();
@@ -440,6 +465,18 @@ function processAnswer() {
   $('#proceed button').focus();
 
   updateHistoryView(log);
+}
+
+function shakeInputArea() {
+
+  var inputArea = $('#inputArea');
+  var shakeClass = "shakeIt";
+
+  inputArea.addClass(shakeClass);
+  
+  setTimeout(function () {
+    inputArea.removeClass(shakeClass)
+  }, 1000);
 }
 
 function updateHistoryView(log) {
@@ -725,6 +762,7 @@ function updateOptionSummary() {
 
 function explain() {
   $('#explanation').show();
+  $('#message').hide();
   $('#explain-proceed-button').focus();
 }
 
