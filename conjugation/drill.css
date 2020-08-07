@@ -59,9 +59,15 @@ body, input {
 
 /* Responsive text size */
 
+@media (max-width: 575px) {
+  .navbar-brand {
+    font-size: 1.15rem;
+  }
+}
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
+
   #question {
     font-size: 32px;
   }
@@ -78,6 +84,7 @@ body, input {
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+
   #question {
     font-size: 40px;
   }
@@ -94,6 +101,7 @@ body, input {
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+
   #question {
     font-size: 40px;
   }
@@ -110,6 +118,7 @@ body, input {
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+
   #question {
     font-size: 40px;
   }
@@ -255,6 +264,7 @@ table.chart span.change,
 table.word span.change {
   color: #f06060;
 }
+*/
 
 .answer-correct {
   color: red;
@@ -264,6 +274,7 @@ table.word span.change {
   color: blue;
 }
 
+/*
 div#history table {
   border-collapse: collapse;
 }
@@ -508,8 +519,8 @@ h2, h4 {
   font-weight: bold;
 }
 
-.options h4 {
-}
+/* .options h4 {
+} */
 /*
 .explain-answer-as-list li {
   list-style-type: none;
@@ -546,7 +557,24 @@ h2, h4 {
   100% { transform: translate(0px, 0px); }
 }
 
-.shakeIt {
+.shake {
   animation: shake 0.75s;
   animation-iteration-count: 1;
+}
+
+dl.questionOptions {
+  display: table;
+}
+
+dl.questionOptions > div {
+  display: table-row;
+}
+
+dl.questionOptions dt {
+  font-weight: 400;
+  display: table-cell;
+}
+
+dl.questionOptions dd {
+  display: table-cell;
 }

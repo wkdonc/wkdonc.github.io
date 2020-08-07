@@ -104,9 +104,9 @@ function getVerbForms(entry) {
   };
 
   Object.keys(words[entry].conjugations).forEach(function (key) {
-    result["kanji"][key] = kanjiForm(words[entry].conjugations[key]);
-    result["hiragana"][key] = kanaForm(words[entry].conjugations[key]);
-    result["furigana"][key] = words[entry].conjugations[key];
+    result["kanji"][key] = kanjiForm(words[entry].conjugations[key].forms);
+    result["hiragana"][key] = kanaForm(words[entry].conjugations[key].forms);
+    result["furigana"][key] = words[entry].conjugations[key].forms;
   });
 
   return result;
@@ -250,9 +250,18 @@ function validQuestion(entry, forms, transformation, options) {
   if (!forms["furigana"][transformation.to])
     valid = false;
 
-  if (options.questionFocus != "none") {
-    if (transformation.type != options.questionFocus) {
-      valid = false;
+  if (valid) {
+
+    if (options.questionFocus != "none") {
+
+      if (options.questionFocus == 'tetakei') {
+        // console.log("tetakei", words[entry].conjugations[transformation.from].tetakei, words[entry].conjugations[transformation.to].tetakei)
+        if (words[entry].conjugations[transformation.from].tetakei == words[entry].conjugations[transformation.to].tetakei) {
+          valid = false;
+        }
+      } else if (transformation.type != options.questionFocus) {
+        valid = false;
+      }
     }
   }
 
@@ -260,6 +269,31 @@ function validQuestion(entry, forms, transformation, options) {
 }
 
 function generateQuestion() {
+
+  var questionText = {
+    "affirmative": "What is the affirmative form of",
+    "negative": "What is the negative form of",
+    "present": "What is the present form of",
+    "past": "What is the past form of",
+    "plain": "What is the plain form of",
+    "polite": "What is the polite form of",
+    "て": "What is the て form of",
+    "non-て": "What is the non-て form of",
+    "potential": "What is the potential form of",
+    "non-potential": "What is the non-potential form of",
+    "imperative": "What is the imperative form of",
+    "non-imperative": "What is the non-imperative form of",
+    "causative": "What is the causative form of",
+    "non-causative": "What is the non-causative form of",
+    "passive": "What is the passive form of",
+    "active": "What is the active form of",
+    "progressive": "What is the progressive form of",
+    "non-progressive": "What is the non-progressive form of",
+    "&apos;desire&apos;": "What is the &apos;desire&apos; form of",
+    "&apos;non-desire&apos;": "What is the &apos;non-desire&apos; form of",
+    "volitional": "What is the volitional form of",
+    "non-volitional": "What is the non-volitional form of"
+  };
 
   var entry;
   var to_form;
@@ -315,7 +349,7 @@ function generateQuestion() {
     givenWord = wordWithFurigana(furiganaForms[from_form]).randomElement();
   }
 
-  var questionFirstHalf = "What is the " + transformation.phrase + " version of";
+  var questionFirstHalf = questionText[transformation.phrase];
   var questionSecondHalf = givenWord + "?";
 
   var question = questionFirstHalf + questionSecondHalf;
@@ -357,7 +391,7 @@ function generateQuestion() {
     "na-adjective" : "な adjective",
   };
 
-  var dictionary = words[data.entry].conjugations["dictionary"]
+  var dictionary = words[data.entry].conjugations["dictionary"].forms;
 
   if (words[data.entry].group == "na-adjective") {
     dictionary = dictionary.replace(/だ$/, '')
@@ -423,15 +457,15 @@ function processAnswer() {
   var questionData = window.questionData;
   var response = $('#answer').val().trim();
 
-  var shakeIt = false;
+  var shake = false;
 
   if (response == "")
-    shakeIt = true;
+    shake = true;
   
   if (!response.match(japaneseTextPattern))
-    shakeIt = true;
+    shake = true;
 
-  if (shakeIt) {
+  if (shake) {
     shakeInputArea();
     return;
   }
@@ -470,7 +504,7 @@ function processAnswer() {
 function shakeInputArea() {
 
   var inputArea = $('#inputArea');
-  var shakeClass = "shakeIt";
+  var shakeClass = "shake";
 
   inputArea.addClass(shakeClass);
   
