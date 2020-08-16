@@ -468,6 +468,36 @@ var rules = {
       ],
     },
 
+    "causative passive past": {
+      
+      forms: [
+        { "before": "る", "after": "らせられた" },
+        { "before": "つ", "after": "たせられた" },
+        { "before": "う", "after": "わせられた" },
+        { "before": "く", "after": "かせられた" },
+        { "before": "ぐ", "after": "がせられた" },
+        { "before": "す", "after": "させられた" },
+        { "before": "ぬ", "after": "なせられた" },
+        { "before": "ぶ", "after": "ばせられた" },
+        { "before": "む", "after": "ませられた" },
+      ],
+    },
+
+    "causative passive negative past": {
+      
+      forms: [
+        { "before": "る", "after": "らせられなかった" },
+        { "before": "つ", "after": "たせられなかった" },
+        { "before": "う", "after": "わせられなかった" },
+        { "before": "く", "after": "かせられなかった" },
+        { "before": "ぐ", "after": "がせられなかった" },
+        { "before": "す", "after": "させられなかった" },
+        { "before": "ぬ", "after": "なせられなかった" },
+        { "before": "ぶ", "after": "ばせられなかった" },
+        { "before": "む", "after": "ませられなかった" },
+      ],
+    },
+
     "imperative": {
       
       forms: [
@@ -755,6 +785,8 @@ var rules = {
     "causative negative": { forms: [ { "before": "る", "after": "させない" } ], },
     "causative passive": { forms: [ { "before": "る", "after": "させられる" } ], },
     "causative passive negative": { forms: [ { "before": "る", "after": "させられない" } ], },
+    "causative passive past": { forms: [ { "before": "る", "after": "させられた" } ], },
+    "causative passive past negative": { forms: [ { "before": "る", "after": "させられなかった" } ], },
     "progressive": { forms: [ { "before": "る", "after": "ている" } ], },
     "progressive negative": { forms: [ { "before": "る", "after": "ていない" } ], },
     "polite progressive": { forms: [ { "before": "る", "after": "ています" } ], },
@@ -800,6 +832,8 @@ var rules = {
     "causative negative": { forms: [ { "result": "行[い]かせない" } ], },
     "causative passive": { forms: [ { "result": "行[い]かせられる" } ], },
     "causative passive negative": { forms: [ { "result": "行[い]かせられない" } ], },
+    "causative passive past": { forms: [ { "result": "行[い]かせられた" } ], },
+    "causative passive past negative": { forms: [ { "result": "行[い]かせられなかった" } ], },
     "progressive": { forms: [ { "result": "行[い]っている" } ], },
     "progressive negative": { forms: [ { "result": "行[い]っていない" } ], },
     "polite progressive": { forms: [ { "result": "行[い]っています" } ], },
@@ -845,6 +879,8 @@ var rules = {
     "causative negative": { forms: [ { "result": "来[こ]させない" } ], },
     "causative passive": { forms: [ { "result": "来[こ]させられる" } ], },
     "causative passive negative": { forms: [ { "result": "来[こ]させられない" } ], },
+    "causative passive past": { forms: [ { "result": "来[こ]させられた" } ], },
+    "causative passive past negative": { forms: [ { "result": "来[こ]させられなかった" } ], },
     "progressive": { forms: [ { "result": "来[き]ている" } ], },
     "progressive negative": { forms: [ { "result": "来[き]ていない" } ], },
     "polite progressive": { forms: [ { "result": "来[き]ています" } ], },
@@ -886,6 +922,12 @@ var rules = {
     "polite passive negative": { forms: [ { "before": "する", "after": "されません" } ], },
     "polite passive past": { forms: [ { "before": "する", "after": "されました" } ], },
     "polite passive past negative": { forms: [ { "before": "する", "after": "されませんでした" } ], },
+    "causative": { forms: [ { "before": "する", "after": "させる" } ], },
+    "causative negative": { forms: [ { "before": "する", "after": "させない" } ], },
+    "causative passive": { forms: [ { "before": "する", "after": "させられる" } ], },
+    "causative passive negative": { forms: [ { "before": "する", "after": "させられない" } ], },
+    "causative passive past": { forms: [ { "before": "する", "after": "させられた" } ], },
+    "causative passive past negative": { forms: [ { "before": "する", "after": "させられなかった" } ], },
     "progressive": { forms: [ { "before": "する", "after": "している" } ], },
     "progressive negative": { forms: [ { "before": "する", "after": "していない" } ], },
     "polite progressive": { forms: [ { "before": "する", "after": "しています" } ], },
