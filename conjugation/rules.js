@@ -34,7 +34,7 @@ var words = {
   "着る":       { "group": "ichidan",      "dictionary": "着[き]る", },
   "育てる":     { "group": "ichidan",      "dictionary": "育[そだ]てる", },
   "褒める":     { "group": "ichidan",      "dictionary": "褒[ほ]める", },
-  "見る":       { "group": "ichidan",      "dictionary": "見[み]る", },
+  "出る":       { "group": "ichidan",      "dictionary": "出[で]る", },
   "食べる":     { "group": "ichidan",      "dictionary": "食[た]べる", },
   "起きる":     { "group": "ichidan",      "dictionary": "起[お]きる", },
   "買い換える": { "group": "ichidan",      "dictionary": "買[か]い換[か]える", },
