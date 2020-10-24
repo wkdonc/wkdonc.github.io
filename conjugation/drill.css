@@ -14,21 +14,6 @@ body, input {
   --shake-level: 6px;
 }
 
-/* #proceed svg {
-
-  display: inline-block;
-  width: 48px;
-  height: 48px;
-}
-
-#proceed button {
-  color: var(--input-color);
-  outline-width: 0;
-  border: none;
-  padding: 12px;
-  background: none;
-} */
-
 .questionOuter {
   background: var(--other);
 }
@@ -36,7 +21,7 @@ body, input {
 #question {
   padding-top: 40px;
   padding-bottom: 40px;
-  font-size: 20px;
+  font-size: 16px;
   text-shadow: 2px 2px 4px var(--neutral-dark);
   color: white;
 }
@@ -69,7 +54,7 @@ body, input {
 @media (min-width: 576px) {
 
   #question {
-    font-size: 32px;
+    font-size: 24px;
   }
 
   #answer, .correct, .incorrect {
@@ -86,7 +71,7 @@ body, input {
 @media (min-width: 768px) {
 
   #question {
-    font-size: 40px;
+    font-size: 32px;
   }
 
   #answer, .correct, .incorrect {
@@ -133,14 +118,6 @@ body, input {
   }
 }
 
-/*
-#explanation {
-  width: 960px;
-  margin-left: auto;
-  margin-right: auto;
-}
-*/
-
 #inputArea {
   background: var(--input-background);
 }
@@ -171,20 +148,6 @@ body, input {
   outline-width: 0;
 }
 
-/*
-
-#message {
-  margin-top: 10px;
-  width: 100%;
-}
-
-#message > div {
-  padding-top: 4px;
-  padding-bottom: 4px;
-  text-align: center;
-}
-
-*/
 .correct,
 .incorrect {
   padding-top: 12px;
@@ -216,56 +179,6 @@ body, input {
   color: var(--input-color);
 }
 
-/*
-div#history,
-div#explanation {
-  margin-left: auto;
-  margin-right: auto;
-  display: table;
-}
-
-table.syllabary {
-  border-collapse: collapse;
-}
-
-table.syllabary td {
-  padding: 12px;
-  font-size: 14px;
-  color: gray;
-  border: 1px solid gray;
-  text-align: center;
-  width: 32px;
-  height: 32px;
-}
-
-table.syllabary td div:first-child {
-  color: black;
-  font-size: 24px;
-}
-
-table.syllabary td.empty {
-  background: #eee;
-}
-
-table.word td {
-  font-size: 36px;
-  color: black;
-  text-align: center;
-}
-
-table.word td div:first-child {
-  margin: 0;
-  color: #aaa;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-table.chart span.change,
-table.word span.change {
-  color: #f06060;
-}
-*/
-
 .answer-correct {
   color: red;
 }
@@ -273,36 +186,6 @@ table.word span.change {
 .answer-wrong {
   color: blue;
 }
-
-/*
-div#history table {
-  border-collapse: collapse;
-}
-
-div#history table th,
-div#history table td {
-  padding: 10px 16px 10px 16px;
-  border: 1px solid gray;
-}:
-
-div#history table th {
-  text-align: left;
-}
-
-div.options > * {
-  display: inline-block;
-  vertical-align: top;
-  margin: 20px;
-}
-
-div#splash > *,
-div#scoreSection > * {
-  margin-left: auto;
-  margin-right: auto;
-  display: table;
-  margin-bottom: 12px;
-}
-*/
 
 input#numQuestions {
   width: 60px;
@@ -314,184 +197,6 @@ div.options ul {
   padding-left: 16px;
 }
 
-
-
-
-
-/* Tooltip from http://jsfiddle.net/AndreaLigios/jtLbpy62/ */
-
-[tooltip]:before {
-  /* needed - do not touch */
-  content: attr(tooltip);
-  position: absolute;
-  opacity: 0;
-  
-  /* customizable */
-  transition: all 0.15s ease;
-  color: #333;
-  font-size: 12px;
-}
-
-[tooltip]:hover:before,
-.furiganaAlways #question [tooltip]:before {
-  /* needed - do not touch */
-  opacity: 1;
-  
-  /* customizable */
-  margin-top: -12px;
-}
-
-[tooltip]:not([tooltip-persistent]):before {
-  pointer-events: none;
-}
-
-/* Custom positions for furigana */
-
-.tooltip-w1[tooltip]:before { font-size: 8px;  margin-left: 4px; } 
-.tooltip-w2[tooltip]:before { font-size: 8px;  margin-left: 0px;  } 
-.tooltip-w3[tooltip]:before { font-size: 8px;  margin-left: -4px;  } 
-
-.tooltip-w1[tooltip]:hover:before,
-.tooltip-w2[tooltip]:hover:before,
-.tooltip-w3[tooltip]:hover:before { margin-top: -10px;  } 
-
-#question .tooltip-w1[tooltip]:before { color: var(--question-furigana); font-size: 12px; margin-left: 14px; } 
-#question .tooltip-w2[tooltip]:before { color: var(--question-furigana); font-size: 12px; margin-left: 8px;  } 
-#question .tooltip-w3[tooltip]:before { color: var(--question-furigana); font-size: 12px; margin-left: 2px;  } 
-
-#question .tooltip-w1[tooltip]:hover:before, .furiganaAlways #question .tooltip-w1[tooltip]:before,
-#question .tooltip-w2[tooltip]:hover:before, .furiganaAlways #question .tooltip-w2[tooltip]:before,
-#question .tooltip-w3[tooltip]:hover:before, .furiganaAlways #question .tooltip-w3[tooltip]:before {
-  color: var(--question-furigana);
-  margin-top: -12px;
-} 
-
-/*
-div#explanation p span {
-}
-
-
-.highlight {
-  font-style: italic;
-}
-
-.horizontal-transform {
-  text-align: center;
-}
-
-.horizontal-transform > * {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.transform-arrow {
-  font-size: 32px;
-  color: #888;
-  margin: 16px;
-}
-
-
-div.conjugation-chart {
-  border: 2px solid gray;
-  border-radius: 32px;
-  padding: 24px;
-  background: #fff8f0;
-
-  margin-left: auto;
-  margin-right: auto;
-  display: table;
-}
-
-div.conjugation-chart h2 {
-  font-size: 28px;
-}
-
-div.conjugation-chart > * {
-  text-align: center;
-}
-
-table.chart + table.chart {
-  margin-left: 32px;
-}
-
-table.chart {
-  border-collapse: collapse;
-}
-
-table.chart td {
-  border: 1px solid gray;
-  padding-left: 16px;
-  padding-right: 16px;
-  background: white;
-  text-align: left;
-}
-
-table.chart td.break {
-  height: 1em;
-  border: 0;
-  background: inherit;
-}
-
-table.chart th {
-  border: 1px solid gray;
-  background: gray;
-  color: white;
-}
-
-table.chart td.title {
-  border: 0;
-  background: inherit;
-  font-size: 22px;
-  text-align: center;
-}
-
-div.horiz > * {
-  display: inline-block;
-  vertical-align: top;
-}
-
-.rules table.word td {
-  font-size: 24px;
-  color: black;
-  text-align: center;
-}
-
-.rules table.word td div:first-child {
-  margin: 0;
-  color: #aaa;
-  font-size: 12px;
-}
-
-.rules table.chart span.change {
-  color: black;
-}
-
-.rules table.word span.change {
-  color: #f06060;
-}
-
-.rules .transform-arrow {
-  font-size: 16px;
-  color: #888;
-  margin: 16px;
-}
-
-.brace {
-  fill: none;
-  fill-rule: evenodd;
-  stroke: #ccc;
-  stroke-width: 0.5px;
-  stroke-linecap: butt;
-  stroke-linejoin: miter;
-  stroke-opacity: 1;
-}
-
-.arrow {
-  margin-left: 16px;
-  margin-right: 16px;
-}
-
-*/
 .tag {
   display: inline-block;
   border-radius: 3px;
@@ -501,13 +206,6 @@ div.horiz > * {
   padding-top: 2px;
   padding-bottom: 2px;
 }
-/*
-
-.options li {
-  height: 24px; 
-}
-
-*/
 
 .specials {
   font-weight: bold;
@@ -518,24 +216,6 @@ div.horiz > * {
 h2, h4 {
   font-weight: bold;
 }
-
-/* .options h4 {
-} */
-/*
-.explain-answer-as-list li {
-  list-style-type: none;
-}
-
-.explain-answer-as-list {
-  padding-left: 24px;
-}
-
-.centre {
-  display: table;
-  margin: 0 auto;
-}
-
-*/
 
 @media (max-width: 420px) {
 
@@ -577,4 +257,13 @@ dl.questionOptions dt {
 
 dl.questionOptions dd {
   display: table-cell;
+}
+
+#quizSection span.emphasis {
+  color: #c0c0ff;
+}
+
+#quizSection span.first,
+#scoreSection span.first {
+  text-transform: capitalize;
 }

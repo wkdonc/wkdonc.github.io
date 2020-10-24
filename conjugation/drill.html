@@ -4,7 +4,8 @@
 <head lang="en">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="drill.css" type="text/css" media="screen">
   <link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet">
   <script type="text/ecmascript" src="//code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -15,66 +16,10 @@
 
 <body>
 
-  <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/conjugation/drill.html">
-      Don's Japanese Conjugation Drill
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="/conjugation/drill.html">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Verbs
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Plain</a>
-            <a class="dropdown-item" href="#">Polite</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Negative</a>
-            <a class="dropdown-item" href="#">Past</a>
-            <a class="dropdown-item" href="#">て form</a>
-            <a class="dropdown-item" href="#">Progressive</a>
-            <a class="dropdown-item" href="#">Desire</a>
-            <a class="dropdown-item" href="#">Volitional</a>
-            <a class="dropdown-item" href="#">Potential</a>
-            <a class="dropdown-item" href="#">Imperative</a>
-            <a class="dropdown-item" href="#">Passive</a>
-            <a class="dropdown-item" href="#">Causative</a>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Tests
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Godan verb te/ta form</a>
-            <a class="dropdown-item" href="#">来る drill</a>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Help
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">How the drill works</a>
-            <a class="dropdown-item" href="#">Choice of verbs</a>
-            <a class="dropdown-item" href="#">Map of conjugations</a>
-            <a class="dropdown-item" href="#">Contact / Support</a>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </nav> -->
 
   <div id="splash" class="container mt-4">
 
-    <h2 class="text-center mb-md-4">Don's Japanese Conjugation Drill</h2>
+    <h2 class="text-center mb-4">Don's Japanese Conjugation Drill</h2>
 
     <div class="row">
       <dl class="questionOptions mx-auto mb-0">
@@ -83,7 +28,8 @@
             <label for="numQuestions" class="col-form-label">Number of Questions</label>
           </dt>
           <dd>
-            <input class="mb-2 ml-2 form-control" style="width: 100%" type="number" placeholder="Questions" aria-label="Number of Questions" aria-describedby="basic-addon2" id="numQuestions" value="2">
+            <input class="mb-2 ml-2 form-control" style="width: 100%" type="number" placeholder="Questions"
+              aria-label="Number of Questions" aria-describedby="basic-addon2" id="numQuestions" value="10">
           </dd>
         </div>
         <div class="form-group">
@@ -110,7 +56,7 @@
         </div>
       </dl>
     </div>
-    
+
     <div class="row">
       <div class="col-4 mb-4 mt-4 mx-auto">
         <button class="btn btn-primary col-12" type="button" id="go">Go</button>
@@ -125,18 +71,30 @@
           <div class="form-group">
             <div style="display: inline-block">
               <h4 class="text-left mt-2 mb-4">Forms</h4>
-              <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox" id="plain" checked><label for="plain" class="form-check-label">Plain</label></div>
-              <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox" id="polite" checked><label for="polite" class="form-check-label">Polite</label></div>
-              <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox" id="negative" checked><label for="negative" class="form-check-label">Negative</label></div>
-              <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox" id="past" checked><label for="past" class="form-check-label">Past</label></div>
-              <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox" id="te-form"><label for="te-form" class="form-check-label">て form</label></div>
-              <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox" id="progressive"><label for="progressive" class="form-check-label">Progressive</label></div>
-              <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox" id="desire"><label for="desire" class="form-check-label">Desire</label></div>
-              <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox" id="volitional"><label for="volitional" class="form-check-label">Volitional</label></div>
-              <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox" id="potential"><label for="potential" class="form-check-label">Potential</label></div>
-              <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox" id="imperative"><label for="imperative" class="form-check-label">Imperative</label></div>
-              <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox" id="passive"><label for="passive" class="form-check-label">Passive</label></div>
-              <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox" id="causative"><label for="causative" class="form-check-label">Causative</label></div>
+              <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox" id="plain"
+                  checked><label for="plain" class="form-check-label">Plain</label></div>
+              <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox" id="polite"
+                  checked><label for="polite" class="form-check-label">Polite</label></div>
+              <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox" id="negative"
+                  checked><label for="negative" class="form-check-label">Negative</label></div>
+              <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox" id="past"
+                  checked><label for="past" class="form-check-label">Past</label></div>
+              <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox" id="te-form"><label
+                  for="te-form" class="form-check-label">て form</label></div>
+              <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox"
+                  id="progressive"><label for="progressive" class="form-check-label">Progressive</label></div>
+              <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox" id="desire"><label
+                  for="desire" class="form-check-label">Desire</label></div>
+              <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox"
+                  id="volitional"><label for="volitional" class="form-check-label">Volitional</label></div>
+              <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox"
+                  id="potential"><label for="potential" class="form-check-label">Potential</label></div>
+              <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox"
+                  id="imperative"><label for="imperative" class="form-check-label">Imperative</label></div>
+              <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox" id="passive"><label
+                  for="passive" class="form-check-label">Passive</label></div>
+              <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox"
+                  id="causative"><label for="causative" class="form-check-label">Causative</label></div>
             </div>
           </div>
         </div>
@@ -149,24 +107,32 @@
               <div class="form-group">
                 <div style="display: inline-block">
                   <h4 class="text-left mt-2 mb-4">Verbs</h4>
-                  <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox" id="godan" checked><label for="godan" class="form-check-label">Godan verbs</label></div>
-                  <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox" id="ichidan" checked><label for="ichidan" class="form-check-label">Ichidan verbs</label></div>
+                  <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox" id="godan"
+                      checked><label for="godan" class="form-check-label">Godan verbs</label></div>
+                  <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox" id="ichidan"
+                      checked><label for="ichidan" class="form-check-label">Ichidan verbs</label></div>
                   <div class="text-left ml-1 specials">Special cases</div>
-                  <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox" id="iku" checked><label for="iku" class="form-check-label">行く verb</label></div>
-                  <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox" id="kuru" checked><label for="kuru" class="form-check-label">来る verb</label></div>
-                  <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox" id="suru" checked><label for="suru" class="form-check-label">する verbs</label></div>
+                  <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox" id="iku"
+                      checked><label for="iku" class="form-check-label">行く verb</label></div>
+                  <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox" id="kuru"
+                      checked><label for="kuru" class="form-check-label">来る verb</label></div>
+                  <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox" id="suru"
+                      checked><label for="suru" class="form-check-label">する verbs</label></div>
                 </div>
               </div>
             </div>
-      
+
             <div class="col-md-6 text-center">
               <div class="form-group">
                 <div style="display: inline-block">
                   <h4 class="text-left mt-2 mb-4">Adjectives</h4>
-                  <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox" id="i-adjective"><label for="i-adjective" class="form-check-label">い adjectives</label></div>
-                  <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox" id="na-adjective"><label for="na-adjective" class="form-check-label">な adjectives</label></div>
+                  <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox"
+                      id="i-adjective"><label for="i-adjective" class="form-check-label">い adjectives</label></div>
+                  <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox"
+                      id="na-adjective"><label for="na-adjective" class="form-check-label">な adjectives</label></div>
                   <div class="text-left ml-1 specials">Special cases</div>
-                  <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox" id="ii"><label for="ii" class="form-check-label">いい adjective</label></div>
+                  <div class="text-left ml-1 form-check"><input class="form-check-input" type="checkbox" id="ii"><label
+                      for="ii" class="form-check-label">いい adjective</label></div>
                 </div>
               </div>
             </div>
@@ -179,9 +145,13 @@
 
     <div class="row justify-content-center mt-3 ml-2 mr-2">
       <div class="form-group">
-        <div class="form-check"><input class="form-check-input" type="checkbox" id="trick" checked><label class="form-check-label" for="trick">Trick questions (answers may be the same as the given form)</label></div>
-        <div class="form-check"><input class="form-check-input" type="checkbox" id="kana"><label class="form-check-label" for="kana">Use hiragana throughout the test (no kanji)</label></div>
-        <div class="form-check"><input class="form-check-input" type="checkbox" id="furigana_always" checked><label class="form-check-label" for="furigana_always">Show furigana on questions</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" id="trick" checked><label
+            class="form-check-label" for="trick">Trick questions (answers may be the same as the given form)</label>
+        </div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" id="kana"><label
+            class="form-check-label" for="kana">Use hiragana throughout the test (no kanji)</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" id="furigana_always" checked><label
+            class="form-check-label" for="furigana_always">Show furigana on questions</label></div>
       </div>
     </div>
 
@@ -189,33 +159,34 @@
 
   <div id="scoreSection" class="mt-4 ml-4 mr-4">
 
-    <div class="row">
-      <div class="col-12">
-        <div id="scoreSectionTitle" class="text-center"></div>
+    <div>
+
+      <div class="row">
+        <div class="col-12">
+          <h1 class="text-center">
+            Result:<br><span id="scoreSectionTitleNarrow"></span>
+          </h1>
+          <div id="scoreSectionTitle" class="text-center"></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <div id="history"></div>
+        </div>
       </div>
     </div>
 
-    <div class="row">
+    <div class="row mt-4">
       <div class="col-12">
-        <div class="d-md-none">
-          <div id="history"></div>
-        </div>
-        <div class="d-none d-md-block">
-          <div id="history"></div>
-        </div>
-      </div>
-    </div>
-        
-    <div class="row">
-      <div class="col-12">
-        <div class="text-center">         
+        <div class="text-center">
           <button class="btn btn-primary mb-2" id="backToStart">Back to Start</button>
         </div>
       </div>
     </div>
 
     <div class="row col-12 mt-4 mx-auto">
-        
+
     </div>
 
   </div>
@@ -253,18 +224,27 @@
 
         <h3>1. Recognise the given form</h3>
 
-        <p><span id="explain-given"></span> is the <span id="explain-given-tags"></span> form of the <span id="explain-group"></span> <span class="explain-given-dictionary"></span>.</p>
+        <p><span id="explain-given"></span> is the <span id="explain-given-tags"></span> form of the <span
+            id="explain-group"></span> <span class="explain-given-dictionary"></span>.</p>
 
         <h3>2. Change the form</h3>
 
         <div class="explain-answer-single">
-          <p class="explain-no-trick">The answer is the <span class="explain-answer-tags"></span> form of the word because the question asked for the <span class="highlight"><span class="explain-transform"></span></span> version.</p>
-          <p class="explain-trick">The question asked for the <span class="highlight"><span class="explain-transform"></span></span> version. However, this was already the case and so it was a trick question.</p>
+          <p class="explain-no-trick">The answer is the <span class="explain-answer-tags"></span> form of the word
+            because the question asked for the <span class="highlight"><span class="explain-transform"></span></span>
+            version.</p>
+          <p class="explain-trick">The question asked for the <span class="highlight"><span
+                class="explain-transform"></span></span> version. However, this was already the case and so it was a
+            trick question.</p>
         </div>
 
         <div class="explain-answer-multiple">
-          <p class="explain-no-trick">The answers are the <span class="explain-answer-tags"></span> forms of the word because the question asked for a <span class="highlight"><span class="explain-transform"></span></span> version.</p>
-          <p class="explain-trick">The question asked for a <span class="highlight"><span class="explain-transform"></span></span> form of the word. However, this was already the case and so it was a trick question.</p>
+          <p class="explain-no-trick">The answers are the <span class="explain-answer-tags"></span> forms of the word
+            because the question asked for a <span class="highlight"><span class="explain-transform"></span></span>
+            version.</p>
+          <p class="explain-trick">The question asked for a <span class="highlight"><span
+                class="explain-transform"></span></span> form of the word. However, this was already the case and so it
+            was a trick question.</p>
         </div>
 
         <h3>3. Produce the required form</h3>
@@ -281,7 +261,8 @@
         </div>
 
         <div class="row col-12 mt-4">
-          <button id="explain-proceed-button" class="centre btn btn-primary mb-2 mx-auto" onclick="javascript:proceed()">OK, next question</button>
+          <button id="explain-proceed-button" class="centre btn btn-primary mb-2 mx-auto"
+            onclick="javascript:proceed()">OK, next question</button>
         </div>
 
       </div>
@@ -290,7 +271,9 @@
 
   </div>
 
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 
 </body>
 
