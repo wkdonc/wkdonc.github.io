@@ -83,7 +83,7 @@ function kanaForm(words) {
     words = [words];
   }
 
-  return words.map(function (word) { return word.split(/.\[([^\]]*)\]/).join(""); } );
+  return words.map(function (word) { return word.split(/.\[([^\]]*)\]/).join(""); });
 }
 
 function kanjiForm(words) {
@@ -92,7 +92,7 @@ function kanjiForm(words) {
     words = [words];
   }
 
-  return words.map(function (word) { return word.split(/(.)\[[^\]]*\]/).join(""); } );
+  return words.map(function (word) { return word.split(/(.)\[[^\]]*\]/).join(""); });
 }
 
 function getVerbForms(entry) {
@@ -271,28 +271,28 @@ function validQuestion(entry, forms, transformation, options) {
 function generateQuestion() {
 
   var questionText = {
-    "affirmative": "What is the affirmative form of",
-    "negative": "What is the negative form of",
-    "present": "What is the present form of",
-    "past": "What is the past form of",
-    "plain": "What is the plain form of",
-    "polite": "What is the polite form of",
-    "て": "What is the て form of",
-    "non-て": "What is the non-て form of",
-    "potential": "What is the potential form of",
-    "non-potential": "What is the non-potential form of",
-    "imperative": "What is the imperative form of",
-    "non-imperative": "What is the non-imperative form of",
-    "causative": "What is the causative form of",
-    "non-causative": "What is the non-causative form of",
-    "passive": "What is the passive form of",
-    "active": "What is the active form of",
-    "progressive": "What is the progressive form of",
-    "non-progressive": "What is the non-progressive form of",
-    "&apos;desire&apos;": "What is the &apos;desire&apos; form of",
-    "&apos;non-desire&apos;": "What is the &apos;non-desire&apos; form of",
-    "volitional": "What is the volitional form of",
-    "non-volitional": "What is the non-volitional form of"
+    "affirmative": "<span class='first'>make</span> the following <span class='emphasis'>affirmative</span>",
+    "negative": "<span class='first'>make</span> the following <span class='emphasis'>negative</span>",
+    "present": "<span class='first'>convert</span> the following to the <span class='emphasis'>present tense</span>",
+    "past": "<span class='first'>convert</span> the following to the <span class='emphasis'>past tense</span>",
+    "plain": "<span class='first'>make</span> the following <span class='emphasis'>informal</span>",
+    "polite": "<span class='first'>make</span> the following <span class='emphasis'>polite</span>",
+    "て": "<span class='emphasis first'>add</span> the <span class='emphasis'>て pattern</span> to the following",
+    "non-て": "<span class='emphasis first'>remove</span> the <span class='emphasis'>て pattern</span> from the following",
+    "potential": "<span class='first'>make</span> the following <span class='emphasis'>potential</span>",
+    "non-potential": "<span class='first'>make</span> the following <span class='emphasis'>non-potential</span>",
+    "imperative": "<span class='first'>make</span> the following <span class='emphasis'>imperative</span>",
+    "non-imperative": "<span class='first'>make</span> the following <span class='emphasis'>non-imperative</span>",
+    "causative": "<span class='first'>make</span> the following <span class='emphasis'>causative</span>",
+    "non-causative": "<span class='first'>make</span> the following <span class='emphasis'>non-causative</span>",
+    "passive": "<span class='first'>make</span> the following <span class='emphasis'>passive</span>",
+    "active": "<span class='first'>make</span> the following <span class='emphasis'>active</span>",
+    "progressive": "<span class='first'>make</span> the following <span class='emphasis'>progressive</span>",
+    "non-progressive": "<span class='first'>make</span> the following <span class='emphasis'>non-progressive</span>",
+    "&apos;desire&apos;": "<span class='first'>convert</span> the following to the <span class='emphasis'>&apos;desire&apos;</span> form",
+    "&apos;non-desire&apos;": "<span class='first'>convert</span> the following to the <span class='emphasis'>&apos;non-desire&apos;</span> form",
+    "volitional": "<span class='first'>make</span> the following <span class='emphasis'>volitional</span>",
+    "non-volitional": "<span class='first'>make</span> the following <span class='emphasis'>non-volitional</span>"
   };
 
   var entry;
@@ -349,10 +349,14 @@ function generateQuestion() {
     givenWord = wordWithFurigana(furiganaForms[from_form]).randomElement();
   }
 
-  var questionFirstHalf = questionText[transformation.phrase];
-  var questionSecondHalf = givenWord + "?";
+  var thisQuestionText = questionText[transformation.phrase];
 
-  var question = questionFirstHalf + questionSecondHalf;
+  // thisQuestionText = thisQuestionText[0].toUpperCase() + thisQuestionText.substring(1);
+
+  var questionFirstHalf = thisQuestionText;
+  var questionSecondHalf = givenWord;
+
+  var question = questionFirstHalf.replace("the following", questionSecondHalf);
 
   var answer = kanjiForms[to_form];
   var answer2 = kanaForms[to_form];
@@ -367,13 +371,13 @@ function generateQuestion() {
   $('#questionSecondHalf').html(questionSecondHalf);
 
   window.questionData = {
-    entry:              entry,
-    transformation:     transformation,
-    question:           question,
-    answer:             answer,
-    answer2:            answer2,
+    entry: entry,
+    transformation: transformation,
+    question: question,
+    answer: answer,
+    answer2: answer2,
     answerWithFurigana: answerWithFurigana,
-    givenWord:          givenWord,
+    givenWord: givenWord,
   };
 
   // Construct the explanation page.
@@ -381,14 +385,14 @@ function generateQuestion() {
   var data = window.questionData;
 
   var groupLabels = {
-    "godan" : "godan verb",
-    "ichidan" : "ichidan verb",
-    "iku" : "godan verb",
-    "suru" : "suru verb",
-    "kuru" : "special verb",
-    "i-adjective" : "い adjective",
-    "ii" : "i-adjective",
-    "na-adjective" : "な adjective",
+    "godan": "godan verb",
+    "ichidan": "ichidan verb",
+    "iku": "godan verb",
+    "suru": "suru verb",
+    "kuru": "special verb",
+    "i-adjective": "い-adjective",
+    "ii": "い-adjective",
+    "na-adjective": "な-adjective",
   };
 
   var dictionary = words[data.entry].conjugations["dictionary"].forms;
@@ -461,7 +465,7 @@ function processAnswer() {
 
   if (response == "")
     shake = true;
-  
+
   if (!response.match(japaneseTextPattern))
     shake = true;
 
@@ -507,7 +511,7 @@ function shakeInputArea() {
   var shakeClass = "shake";
 
   inputArea.addClass(shakeClass);
-  
+
   setTimeout(function () {
     inputArea.removeClass(shakeClass)
   }, 1000);
@@ -520,15 +524,7 @@ function updateHistoryView(log) {
   var total = 0;
   var correct = 0;
 
-  var header_tr = $('<div class="row d-none d-md-flex">');
-
-  header_tr.append($('<div class="col-md-6">Question</div>'));
-  header_tr.append($('<div class="col-md-3">Answer</div>'));
-  header_tr.append($('<div class="col-md-3">Response</div>'));
-
-  review.append(header_tr);
-
-  log.history.forEach(function (entry) {
+  log.history.forEach(function (entry, index) {
 
     total++;
 
@@ -536,25 +532,37 @@ function updateHistoryView(log) {
       correct++;
     }
 
-    var tr = $('<div class="row">');
+    var tr = $('<div class="row mt-4">');
 
-    var td1 = $('<div class="col-md-6">');
-    var td2 = $('<div class="col-md-3">');
-    var td3 = $('<div class="col-md-3">');
+    var td1 = $('<div class="col-md-6 mb-2">');
+    var td2 = $('<div class="col-md-3 ml-4 ml-md-0">');
 
-    td1.html(entry.question);
-    td2.html(commaList(entry.answer, "or"));
-    td3.text(entry.response);
+    td1.html((index + 1) + ". " + entry.question + ".");
+
+    var responseDiv = $('<div>');
+    responseDiv.text(entry.response);
+
+    if (entry.correct) {
+      responseDiv.append("<span class='answer-correct'> 〇</span>");
+    } else {
+      responseDiv.append("<span class='answer-wrong'> ×</span>");
+    }
+
+    td2.append(responseDiv);
+
+    if (!entry.correct) {
+
+      var correctDiv = $('<div>');
+
+      correctDiv.html(commaList(entry.answer, "or"));
+      correctDiv.append("<span class='answer-correct'> 〇</span>");
+
+      td2.append(correctDiv);
+    }
 
     tr.append(td1);
     tr.append(td2);
-    tr.append(td3);
 
-    if (entry.correct) {
-      td3.append("<span class='answer-correct'> 〇</span>");
-    } else {
-      td3.append("<span class='answer-wrong'> ×</span>");
-    }
     review.append(tr);
   });
 
@@ -563,12 +571,15 @@ function updateHistoryView(log) {
   var resultString;
 
   if (correct == total) {
-    resultString = "All correct";
+    resultString = "All correct!";
+  } else if (correct == 0) {
+    resultString = "All incorrect!";
   } else {
-    resultString = correct + " of " + total + " correct";
+    resultString = correct + " of " + total + " correct.";
   }
 
-  $('#scoreSectionTitle').html("<h1>Result: " + resultString + "</h1>");
+  $('#scoreSectionTitleNarrow').text(resultString);
+  $('#scoreSectionTitleWide').text(resultString);
 }
 
 function proceed() {
@@ -653,7 +664,7 @@ function calculateTransitions() {
 
   var allTags = {};
 
-  Object.keys(words).forEach(function(word) {
+  Object.keys(words).forEach(function (word) {
 
     Object.keys(words[word].conjugations).forEach(function (conjugation) {
 
