@@ -130,7 +130,7 @@ function wordWithFurigana(words) {
       } else if (options["furigana_always"]) {
         bits[0] = bits[0] + "<ruby>" + bits[1] + "<rp>(</rp><rt>" + bits[2] + "</rt><rp>)</rp></ruby>" + bits[3];
       } else {
-        bits[0] = bits[0] + bits[1] + bits[3];
+        bits[0] = bits[0] + "<ruby class='furiganaHover'>" + bits[1] + "<rp>(</rp><rt>" + bits[2] + "</rt><rp>)</rp></ruby>" + bits[3];
       }
       bits.splice(1, 3);
     }

@@ -267,3 +267,12 @@ dl.questionOptions dd {
 #scoreSection span.first {
   text-transform: capitalize;
 }
+
+ruby.furiganaHover rt, ruby.furiganaHover rp {
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+ruby.furiganaHover:hover rt, ruby.furiganaHover:hover rp {
+  opacity: 100;
+}
