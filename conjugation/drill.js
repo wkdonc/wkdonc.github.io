@@ -575,7 +575,7 @@ function updateHistoryView(log) {
   } else if (correct == 0) {
     resultString = "All incorrect!";
   } else {
-    resultString = correct + " of " + total + " correct.";
+    resultString = correct + " of " + total + " correct";
   }
 
   $('#scoreSectionTitleNarrow').text(resultString);

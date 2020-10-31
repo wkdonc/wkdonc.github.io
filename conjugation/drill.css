@@ -276,3 +276,9 @@ ruby.furiganaHover rt, ruby.furiganaHover rp {
 ruby.furiganaHover:hover rt, ruby.furiganaHover:hover rp {
   opacity: 100;
 }
+
+div#history {
+  height: calc(100vh - 11em);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
