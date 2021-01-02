@@ -444,9 +444,8 @@ function generateQuestion() {
     $('.explain-answer-multiple').show();
   }
 
-  $('#next').prop('disabled', true);
   $('#response').html("");
-  $('#message').html("");
+  $('#message').hide();
 
   $('#proceed').hide();
   $('#explanation').hide();
@@ -488,13 +487,12 @@ function processAnswer() {
 
   $('#answer').val("");
   $('#responseButton').prop('class', klass).text(response);
-  $('#next').prop('disabled', false);
 
   if (correct) {
-    $('#message').html("");
+    $('#message').hide();
   } else {
     $('#message').show();
-    $('#message').html("<div>The correct answer was " + commaList(questionData.answerWithFurigana, "or") + " <button class='btn btn-primary mb-2 mr-sm-2' onclick='explain()'>Explain</button></div>");
+    $('#message #correction').html("The correct answer was " + commaList(questionData.answerWithFurigana, "or"));
   }
 
   $('#inputArea').hide();

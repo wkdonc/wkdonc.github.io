@@ -1,3 +1,7 @@
+:root {
+  --primary-colour: #0060c0;
+}
+
 body, input {
   font-family: Amaranth, sans-serif; 
   background: #eee;
@@ -281,4 +285,21 @@ div#history {
   height: calc(100vh - 11em);
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+a, a:hover, a:visited, .breadcrumb-item.active {
+  color: var(--primary-colour);
+}
+
+button.btn.btn-primary {
+  background-color: var(--primary-colour);
+  border-color: var(--primary-colour);
+}
+
+.btn.focus, .btn:focus {
+      box-shadow: 0 0 0 .2rem #0060c080;
+}
+
+.btn-primary.focus, .btn-primary:focus {
+      box-shadow: 0 0 0 .2rem #0060c080;
 }

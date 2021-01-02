@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-<head lang="en">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -37,7 +37,7 @@
             <label for="questionFocus" class="col-form-label">Question Focus</label>
           </dt>
           <dd>
-            <select id="questionFocus" class="form-control ml-2">
+            <select id="questionFocus" class="form-control ml-2" aria-label="Question Focus">
               <option value="none">None</option>
               <option value="politeness">Politeness</option>
               <option value="negative">Negative</option>
@@ -203,7 +203,7 @@
     <div id="inputArea" class="row">
       <div class="col-12">
         <form action="javascript:processAnswer()">
-          <input placeholder="答え" autocomplete="off" id="answer">
+          <input placeholder="答え" autocomplete="off" id="answer" aria-label="答え">
         </form>
       </div>
     </div>
@@ -213,7 +213,13 @@
       <button id="responseButton" onclick="javascript:proceed()">
       </button>
 
-      <div class="ml-4 mr-4 text-center" id="message">
+      <div id="message">
+        <div class="row mt-4">
+          <div class="col-12 text-center" id="correction"></div>
+        </div>
+        <div class="row mt-4">
+          <button class="col-1 btn btn-primary mb-2 mx-auto" onclick="explain()">Explain</button>
+        </div>
       </div>
 
     </div>
