@@ -230,6 +230,22 @@ function processAnswerKey() {
   }
 }
 
+function processAnswerKeyDown(evt) {
+
+  if (evt.keyCode == 32) {
+
+    var options = getOptions();
+
+    if (options.use_voice) {
+
+      window.speechSynthesis.cancel();
+
+      textToSpeech(window.questionData.givenWordAsKanji, evt.shiftKey);
+      evt.preventDefault();
+    }
+  }
+}
+
 function validQuestion(entry, forms, transformation, options) {
 
   var valid = true;
@@ -341,13 +357,18 @@ function generateQuestion() {
   var kanaForms = forms["hiragana"];
   var furiganaForms = forms["furigana"];
 
-  var givenWord;
+  var candidates;
 
   if (options["kana"]) {
-    givenWord = kanaForms[from_form].randomElement();
+    candidates = kanaForms[from_form];
   } else {
-    givenWord = wordWithFurigana(furiganaForms[from_form]).randomElement();
+    candidates = wordWithFurigana(furiganaForms[from_form]);
   }
+
+  var candidateIndex = Math.floor(Math.random() * candidates.length);
+
+  var givenWord = candidates[candidateIndex];
+  var givenWordAsKanji = kanjiForms[from_form][candidateIndex];
 
   var thisQuestionText = questionText[transformation.phrase];
 
@@ -355,7 +376,6 @@ function generateQuestion() {
 
   var questionFirstHalf = thisQuestionText;
   var questionSecondHalf = givenWord;
-
   var question = questionFirstHalf.replace("the following", questionSecondHalf);
 
   var answer = kanjiForms[to_form];
@@ -368,7 +388,12 @@ function generateQuestion() {
   }
 
   $('#questionFirstHalf').html(questionFirstHalf);
-  $('#questionSecondHalf').html(questionSecondHalf);
+
+  if (options.use_voice) {
+    $('#questionSecondHalf').html("<div id='speechSpace'><i>Press Space for word</i><br><div class='halfSpeed'>Use Shift key for half speed</div></div>");
+  } else {
+    $('#questionSecondHalf').html(questionSecondHalf);
+  }
 
   window.questionData = {
     entry: entry,
@@ -378,6 +403,7 @@ function generateQuestion() {
     answer2: answer2,
     answerWithFurigana: answerWithFurigana,
     givenWord: givenWord,
+    givenWordAsKanji: givenWordAsKanji,
   };
 
   // Construct the explanation page.
@@ -453,6 +479,7 @@ function generateQuestion() {
   $('#answer').focus();
 
   $('#answer').on('input', processAnswerKey);
+  $('#answer').on('keydown', processAnswerKeyDown);
 }
 
 function processAnswer() {
@@ -597,11 +624,21 @@ function showSplash() {
 }
 
 function startQuiz() {
+
+  var options = getOptions();
+
+  const voiceSelectError = document.querySelector('#voiceSelectError');
+
+  if (options.use_voice && !getVoiceConfig()) {
+    voiceSelectError.style.display = "block";
+    return;
+  } else {
+    voiceSelectError.style.display = "none";
+  }
+
   $('#splash').hide();
   $('#quizSection').show();
   $('#scoreSection').hide();
-
-  var options = getOptions();
 
   if (options.furigana_always) {
     $('body').addClass("furiganaAlways");
@@ -619,6 +656,98 @@ function endQuiz() {
   $('#scoreSection').show();
 
   $('#backToStart').focus();
+}
+
+// Text to Speech
+
+function loadVoiceList(callback) {
+	if (window.speechSynthesis.getVoices().length == 0) {
+		window.speechSynthesis.addEventListener('voiceschanged', function () {
+      if (callback) {
+  			callback();
+      }
+		});
+	} else {
+    if (callback) {
+		  callback();
+    }
+	}
+}
+
+function populateVoiceList() {
+
+	loadVoiceList(function () {
+
+	  var voiceSelect = document.querySelector("#voice_select");
+
+	  voiceSelect.innerHTML = "<option>Select voice...</option>" +
+        window.speechSynthesis.getVoices().map(function (voice) { return "<option>" + voice.name + "</option>" }).join("");
+
+	  var currentVoice = getCurrentVoice();
+
+	  if (currentVoice) {
+	  	voiceSelect.value = currentVoice;
+	  }
+	});
+}
+
+function getVoiceConfig() {
+	return JSON.parse(localStorage.getItem("voiceConfig"));
+}
+
+function setVoiceConfig(config) {
+	localStorage.setItem("voiceConfig", JSON.stringify(config));
+}
+
+function getCurrentVoice() {
+    const voiceConfig = getVoiceConfig();
+
+    if (voiceConfig) {
+		    return voiceConfig.voice;
+    }
+}
+
+function textToSpeech(text, slowMode, callback) {
+
+	loadVoiceList(function () {
+
+		const availableVoices = window.speechSynthesis.getVoices();
+
+    const voiceConfig = getVoiceConfig();
+		const currentVoice = voiceConfig.voice;
+
+		var voice = '';
+
+		for (var i = 0; i < availableVoices.length; i++) {
+			if (availableVoices[i].name == currentVoice) {
+				voice = availableVoices[i];
+				break;
+			}
+		}
+
+		if (voice === '') {
+			voice = availableVoices[0];
+		}
+
+		// new SpeechSynthesisUtterance object
+
+		var utter = new SpeechSynthesisUtterance();
+		utter.rate = slowMode ? voiceConfig.rate * 0.5 : voiceConfig.rate;;
+		utter.pitch = voiceConfig.pitch;
+		utter.text = text;
+		utter.voice = voice;
+
+		// event after text has been spoken
+
+		utter.onend = function () {
+			if (callback) {
+				callback(undefined);
+			}
+		}
+
+		// speak
+		window.speechSynthesis.speak(utter);
+	});
 }
 
 function arrayDifference(a, b) {
@@ -803,6 +932,31 @@ function updateOptionSummary() {
   $("#questionCount").text(applicable);
 }
 
+function updateVoiceSelect() {
+
+  const options = getOptions();
+  const voice_select_options = document.querySelector("#voice_select_options");
+  
+  if (options.use_voice) {
+    voice_select_options.style.display = "block";
+  } else {
+    voice_select_options.style.display = "none";
+  }
+}
+
+function updateVoiceSelection() {
+
+  const newSelection = document.querySelector("#voice_select").selectedOptions[0].text;
+
+  const voiceConfig = {
+    voice: document.querySelector("#voice_select").selectedOptions[0].text,
+    rate: 1,
+    pitch: 1
+  };
+
+  setVoiceConfig(voiceConfig);
+}
+
 function explain() {
   $('#explanation').show();
   $('#message').hide();
@@ -814,7 +968,8 @@ function getOptions() {
   var options = ["plain", "polite", "negative", "past", "te-form",
     "progressive", "potential", "imperative", "passive", "causative",
     "godan", "ichidan", "iku", "kuru", "suru", "i-adjective", "na-adjective",
-    "ii", "desire", "volitional", "trick", "kana", "furigana_always"];
+    "ii", "desire", "volitional", "trick", "kana", "furigana_always",
+    "use_voice"];
 
   var selects = ["questionFocus"];
 
@@ -832,6 +987,13 @@ function getOptions() {
 }
 
 $('window').ready(function () {
+
+	if (window.speechSynthesis) {
+    populateVoiceList();
+    $('#useVoiceSection').show();
+    $('input#use_voice').click(updateVoiceSelect);
+    $('select#voice_select').on('change', updateVoiceSelection);
+  }
 
   calculateAllConjugations();
   calculateTransitions();

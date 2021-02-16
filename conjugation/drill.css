@@ -303,3 +303,12 @@ button.btn.btn-primary {
 .btn-primary.focus, .btn-primary:focus {
       box-shadow: 0 0 0 .2rem #0060c080;
 }
+
+#voiceSelectError {
+  color: red;
+}
+
+div.halfSpeed {
+  font-size: 50%;
+  text-align: center;
+}

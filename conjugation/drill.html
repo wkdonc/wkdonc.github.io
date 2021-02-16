@@ -63,6 +63,12 @@
       </div>
     </div>
 
+    <div id="voiceSelectError" style="display: none">
+        <div class="row justify-content-center mb-2 ml-2 mr-2">
+             <div>You must select a voice first for speech synthesis.</div>
+        </div>
+    </div>
+
     <div class="container options">
 
       <div class="row">
@@ -144,6 +150,16 @@
     <div class="text-center mb-4">Question pool size: <span id="questionCount">...</span></div>
 
     <div class="row justify-content-center mt-3 ml-2 mr-2">
+        <div id="voice_select_options" class="form-check" style="display: none">
+            <label class="form-check-label" for="voice_select">Select voice (Notice: Online voices may incur data charges!)</label>
+            <br>
+            <div>Also: Non-Japanese voices may not work at all.</div>
+            <br>
+            <select id="voice_select"><option><i>Select voice...</i></option></select>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mt-3 ml-2 mr-2">
       <div class="form-group">
         <div class="form-check"><input class="form-check-input" type="checkbox" id="trick" checked><label
             class="form-check-label" for="trick">Trick questions (answers may be the same as the given form)</label>
@@ -152,6 +168,8 @@
             class="form-check-label" for="kana">Use hiragana throughout the test (no kanji)</label></div>
         <div class="form-check"><input class="form-check-input" type="checkbox" id="furigana_always" checked><label
             class="form-check-label" for="furigana_always">Show furigana on questions</label></div>
+        <div class="form-check" id="useVoiceSection" style="display: none"><input class="form-check-input" type="checkbox" id="use_voice"><label
+            class="form-check-label" for="use_voice">Use speech synthesis (experimental)</label></div>
       </div>
     </div>
 
@@ -218,7 +236,7 @@
           <div class="col-12 text-center" id="correction"></div>
         </div>
         <div class="row mt-4">
-          <button class="col-1 btn btn-primary mb-2 mx-auto" onclick="explain()">Explain</button>
+          <button class="btn btn-primary mb-2 mx-auto" onclick="explain()">Explain</button>
         </div>
       </div>
 
