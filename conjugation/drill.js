@@ -930,6 +930,12 @@ function updateOptionSummary() {
   });
 
   $("#questionCount").text(applicable);
+
+  if (!options.plain && !options.polite) {
+    document.querySelector('#politePlainError').style.display = 'block';
+  } else {
+    document.querySelector('#politePlainError').style.display = 'none';
+  }
 }
 
 function updateVoiceSelect() {

@@ -308,6 +308,10 @@ button.btn.btn-primary {
   color: red;
 }
 
+#politePlainError {
+  color: red;
+}
+
 div.halfSpeed {
   font-size: 50%;
   text-align: center;
