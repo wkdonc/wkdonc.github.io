@@ -424,6 +424,9 @@ function generateQuestion() {
   var dictionary = words[data.entry].conjugations["dictionary"].forms;
 
   if (words[data.entry].group == "na-adjective") {
+    if (dictionary.constructor == Array) {
+      dictionary = dictionary[0];
+    }
     dictionary = dictionary.replace(/だ$/, '')
   }
 
