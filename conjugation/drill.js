@@ -4,6 +4,14 @@ var transformations = [];
 
 var log;
 
+var options = ["plain", "polite", "negative", "past", "te-form",
+"progressive", "potential", "imperative", "passive", "causative",
+"godan", "ichidan", "iku", "kuru", "suru", "i-adjective", "na-adjective",
+"ii", "desire", "volitional", "trick", "kana", "furigana_always",
+"use_voice"];
+
+var selects = ["questionFocus"];
+
 Array.prototype.randomElement = function () {
   return this[Math.floor(Math.random() * this.length)]
 }
@@ -628,6 +636,7 @@ function showSplash() {
 function startQuiz() {
 
   var options = getOptions();
+  localStorage.setItem('options', JSON.stringify(options));
 
   const voiceSelectError = document.querySelector('#voiceSelectError');
 
@@ -972,15 +981,6 @@ function explain() {
 }
 
 function getOptions() {
-
-  var options = ["plain", "polite", "negative", "past", "te-form",
-    "progressive", "potential", "imperative", "passive", "causative",
-    "godan", "ichidan", "iku", "kuru", "suru", "i-adjective", "na-adjective",
-    "ii", "desire", "volitional", "trick", "kana", "furigana_always",
-    "use_voice"];
-
-  var selects = ["questionFocus"];
-
   var result = {};
 
   options.forEach(function (option) {
@@ -994,6 +994,18 @@ function getOptions() {
   return result;
 }
 
+function loadOptions() {
+  var storedOptions = JSON.parse(localStorage.getItem('options'));  
+
+  options.forEach(function (option) {
+    ($('#' + option)).checked = storedOptions[option];
+  });
+
+  selects.forEach(function (select) {
+    $('#' + select).value = storedOptions[select];
+  });
+}
+
 $('window').ready(function () {
 
 	if (window.speechSynthesis) {
@@ -1005,6 +1017,7 @@ $('window').ready(function () {
 
   calculateAllConjugations();
   calculateTransitions();
+  loadOptions();
 
   $('#go').click(startQuiz);
   $('#backToStart').click(showSplash);
