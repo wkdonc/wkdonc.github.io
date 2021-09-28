@@ -424,7 +424,9 @@ function generateQuestion() {
   var dictionary = words[data.entry].conjugations["dictionary"].forms;
 
   if (words[data.entry].group == "na-adjective") {
-    dictionary = dictionary.replace(/だ$/, '')
+    for (var i = 0; i < dictionary.length; i++) {
+      dictionary[i] = dictionary[i].replace(/だ$/, '')
+    }
   }
 
   if (!options["kana"]) {
