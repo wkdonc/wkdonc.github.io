@@ -4,13 +4,48 @@ var transformations = [];
 
 var log;
 
-var options = ["plain", "polite", "negative", "past", "te-form",
-"progressive", "potential", "imperative", "passive", "causative",
-"godan", "ichidan", "iku", "kuru", "suru", "i-adjective", "na-adjective",
-"ii", "desire", "volitional", "trick", "kana", "furigana_always",
-"use_voice"];
+const configOptions = {
 
-var selects = ["questionFocus"];
+  options: ["plain", "polite", "negative", "past", "te-form", "progressive",
+    "potential", "imperative", "passive", "causative", "godan", "ichidan",
+    "iku", "kuru", "suru", "i-adjective", "na-adjective", "ii", "desire",
+    "volitional", "trick", "kana", "furigana_always", "use_voice"],
+
+  selects: ["questionFocus"],
+
+  inputs: ["numQuestions"]
+}
+
+const defaultConfig = {
+  "plain": true,
+  "polite": true,
+  "negative": true,
+  "past": true,
+  "te-form": false,
+  "progressive": false,
+  "potential": false,
+  "imperative": false,
+  "passive": false,
+  "causative": false,
+  "godan": true,
+  "ichidan": true,
+  "iku": true,
+  "kuru": true,
+  "suru": true,
+  "i-adjective": false,
+  "na-adjective": false,
+  "ii": false,
+  "desire": false,
+  "volitional": false,
+  "trick": true,
+  "kana": false,
+  "furigana_always": true,
+  "use_voice": false,
+  "questionFocus": "none",
+  "numQuestions": "10"
+}
+
+const localStorageOptionsKey = "conjugationDrillOptions";
 
 Array.prototype.randomElement = function () {
   return this[Math.floor(Math.random() * this.length)]
@@ -636,7 +671,6 @@ function showSplash() {
 function startQuiz() {
 
   var options = getOptions();
-  localStorage.setItem('options', JSON.stringify(options));
 
   const voiceSelectError = document.querySelector('#voiceSelectError');
 
@@ -949,6 +983,16 @@ function updateOptionSummary() {
   }
 }
 
+function saveOptions() {
+  localStorage.setItem(localStorageOptionsKey, JSON.stringify(getOptions()));
+}
+
+function restoreDefaults() {
+  localStorage.setItem(localStorageOptionsKey, JSON.stringify(defaultConfig));
+  loadOptions();
+  updateOptionSummary();
+}
+
 function updateVoiceSelect() {
 
   const options = getOptions();
@@ -981,29 +1025,51 @@ function explain() {
 }
 
 function getOptions() {
+
   var result = {};
 
-  options.forEach(function (option) {
+  configOptions.options.forEach(function (option) {
     result[option] = $('#' + option).is(':checked') != false;
   });
 
-  selects.forEach(function (select) {
+  configOptions.selects.forEach(function (select) {
     result[select] = $('#' + select).val();
+  });
+
+  configOptions.inputs.forEach(function (input) {
+    result[input] = $('#' + input).val();
   });
 
   return result;
 }
 
 function loadOptions() {
-  var storedOptions = JSON.parse(localStorage.getItem('options'));  
 
-  options.forEach(function (option) {
-    ($('#' + option)).checked = storedOptions[option];
-  });
+  var storedOptionsText = localStorage.getItem(localStorageOptionsKey);
 
-  selects.forEach(function (select) {
-    $('#' + select).value = storedOptions[select];
-  });
+  if (storedOptionsText) {
+
+    var storedOptions = JSON.parse(storedOptionsText);
+
+    configOptions.options.forEach(function (option) {
+      if (storedOptions[option] != undefined) {
+        $(`#${option}`).prop('checked', storedOptions[option]);
+      }
+    });
+
+    configOptions.selects.forEach(function (select) {
+      if (storedOptions[select] != undefined) {
+        $(`#${select} [value=${storedOptions[select]}]`).attr('selected', false)
+        $(`#${select} [value=${storedOptions[select]}]`).attr('selected', 'selected')
+      }
+    });
+
+    configOptions.inputs.forEach(function (input) {
+      if (storedOptions[input] != undefined) {
+        $(`#${input}`).val(storedOptions[input]);
+      }
+    });
+  }
 }
 
 $('window').ready(function () {
@@ -1020,12 +1086,16 @@ $('window').ready(function () {
   loadOptions();
 
   $('#go').click(startQuiz);
+  $('#defaults').click(restoreDefaults);
   $('#backToStart').click(showSplash);
 
   $('div.options input').click(updateOptionSummary);
   $('select#questionFocus').on('change', updateOptionSummary);
   $('input#trick').click(updateOptionSummary);
   $('input#focus_mode').click(updateOptionSummary);
+
+  $('select').change(saveOptions);
+  $('input').change(saveOptions);
 
   updateOptionSummary();
 
