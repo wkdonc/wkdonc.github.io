@@ -605,7 +605,7 @@ function updateHistoryView(log) {
     var tr = $('<div class="row mt-4">');
 
     var td1 = $('<div class="col-md-6 mb-2">');
-    var td2 = $('<div class="col-md-3 ml-4 ml-md-0">');
+    var td2 = $('<div class="col-md-6">');
 
     td1.html((index + 1) + ". " + entry.question + ".");
 
