@@ -316,3 +316,14 @@ div.halfSpeed {
   font-size: 50%;
   text-align: center;
 }
+
+.progressContainer {
+  width: 100vw;
+  height: 5px;
+  background: black;
+}
+
+.progressBar {
+  height: 5px;
+  background: white;
+}

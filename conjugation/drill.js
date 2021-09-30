@@ -557,6 +557,11 @@ function processAnswer() {
     "correct": correct
   });
 
+  var totalQuestions = $('#numQuestions').val();
+  var answeredQuestions = log.history.length;
+
+  updateProgressBar(answeredQuestions / totalQuestions * 100);
+
   $('#answer').val("");
   $('#responseButton').prop('class', klass).text(response);
 
@@ -652,6 +657,10 @@ function updateHistoryView(log) {
   $('#scoreSectionTitleWide').text(resultString);
 }
 
+function updateProgressBar(progress) {
+  $('.progressBar').attr('style', 'width: ' + progress + '%');
+}
+
 function proceed() {
   if (log.history.length == $('#numQuestions').val()) {
     endQuiz();
@@ -680,6 +689,8 @@ function startQuiz() {
   } else {
     voiceSelectError.style.display = "none";
   }
+
+  updateProgressBar(0);
 
   $('#splash').hide();
   $('#quizSection').show();
