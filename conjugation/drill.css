@@ -150,6 +150,7 @@ body, input {
 
 #answer:focus {
   outline-width: 0;
+  outline: none;
 }
 
 .correct,
