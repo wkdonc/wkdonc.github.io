@@ -14,28 +14,20 @@
 </head>
 
 <body>
-
-
   <div id="splash" class="container mt-4">
-
     <h2 class="text-center mb-4">Don's Japanese Conjugation Drill</h2>
-
     <div class="row">
-      <dl class="questionOptions mx-auto mb-0">
-        <div class="form-group">
-          <dt>
-            <label for="numQuestions" class="col-form-label mr-2">Number of Questions</label>
-          </dt>
-          <dd>
-            <input class="mb-2 form-control" type="number" placeholder="Questions"
+      <div class="questionOptions col-12 col-sm-8 mx-auto mb-0">
+        <div class="form-group row">
+          <label for="numQuestions" class="col-sm-6 col-form-label">Number of Questions</label>
+          <div class="col-sm-6">
+            <input class="form-control" type="number" placeholder="Questions"
               aria-label="Number of Questions" aria-describedby="basic-addon2" id="numQuestions" value="10">
-          </dd>
+          </div>
         </div>
-        <div class="form-group">
-          <dt>
-            <label for="questionFocus" class="col-form-label mr-2">Question Focus</label>
-          </dt>
-          <dd>
+        <div class="form-group row">
+          <label for="questionFocus" class="col-sm-6 col-form-label">Question Focus</label>
+          <div class="col-sm-6">
             <select id="questionFocus" class="form-control" aria-label="Question Focus">
               <option value="none">None</option>
               <option value="politeness">Politeness</option>
@@ -51,16 +43,16 @@
               <option value="causative">Causative</option>
               <option value="tetakei">Godan て / た form</option>
             </select>
-          </dd>
+          </div>
         </div>
-      </dl>
+      </div>
     </div>
 
     <div class="row justify-content-center mb-4 mt-4">
-      <div class="col-4">
+      <div class="col-6 col-sm-4">
         <button class="btn btn-primary col-12" type="button" id="go">Go</button>
       </div>
-      <div class="col-4">
+      <div class="col-6 col-sm-4">
         <button class="btn btn-secondary col-12" type="button" id="defaults">Reset</button>
       </div>
     </div>
@@ -71,11 +63,9 @@
         </div>
     </div>
 
-    <div class="container options">
-
+    <div class="options">
       <div class="row">
-
-        <div class="col-4 text-center">
+        <div class="col-12 col-sm-4 text-sm-center text-left">
           <div class="form-group">
             <div style="display: inline-block">
               <h4 class="text-left mt-2 mb-4">Forms</h4>
@@ -108,10 +98,8 @@
         </div>
 
         <div class="col-8">
-
           <div class="row">
-
-            <div class="col-md-6 text-center">
+            <div class="col-12 col-sm-6 text-sm-center text-left">
               <div class="form-group">
                 <div style="display: inline-block">
                   <h4 class="text-left mt-2 mb-4">Verbs</h4>
@@ -130,7 +118,7 @@
               </div>
             </div>
 
-            <div class="col-md-6 text-center">
+            <div class="col-12 col-sm-6 text-sm-center text-left">
               <div class="form-group">
                 <div style="display: inline-block">
                   <h4 class="text-left mt-2 mb-4">Adjectives</h4>
@@ -150,7 +138,7 @@
     </div>
 
     <div id="politePlainError" style="display: none">
-        <div class="text-center mb-2">You must select at least one of 'Plain' and 'Polite'.</div>
+      <div class="text-center mb-2">You must select at least one of 'Plain' and 'Polite'.</div>
     </div>
 
     <div class="text-center mb-4">Question pool size: <span id="questionCount">...</span></div>
@@ -182,9 +170,7 @@
   </div>
 
   <div id="scoreSection" class="mt-4 ml-4 mr-4">
-
     <div>
-
       <div class="row">
         <div class="col-12">
           <h1 class="text-center">
@@ -209,14 +195,10 @@
       </div>
     </div>
 
-    <div class="row col-12 mt-4 mx-auto">
-
-    </div>
-
+    <div class="row col-12 mt-4 mx-auto"></div>
   </div>
 
   <div id="quizSection">
-
     <div class="progressContainer">
       <div class="progressBar" style="width: 0%">
       </div>
@@ -238,10 +220,7 @@
     </div>
 
     <div id="proceed">
-
-      <button id="responseButton" onclick="javascript:proceed()">
-      </button>
-
+      <button id="responseButton" onclick="javascript:proceed()"></button>
       <div id="message">
         <div class="row mt-4">
           <div class="col-12 text-center" id="correction"></div>
@@ -250,20 +229,15 @@
           <button class="btn btn-primary mb-2 mx-auto" onclick="explain()">Explain</button>
         </div>
       </div>
-
     </div>
 
     <div class="row ml-4 mr-4">
-
       <div style="display: none" id="explanation" class="mt-4 col mx-auto">
-
         <h3>1. Recognise the given form</h3>
-
         <p><span id="explain-given"></span> is the <span id="explain-given-tags"></span> form of the <span
             id="explain-group"></span> <span class="explain-given-dictionary"></span>.</p>
-
+        
         <h3>2. Change the form</h3>
-
         <div class="explain-answer-single">
           <p class="explain-no-trick">The answer is the <span class="explain-answer-tags"></span> form of the word
             because the question asked for the <span class="highlight"><span class="explain-transform"></span></span>
@@ -283,7 +257,6 @@
         </div>
 
         <h3>3. Produce the required form</h3>
-
         <p class="explain-answer-single">The correct answer is the
           <span class="explain-answer-tags2"></span> form: <span class="explain-answer"></span>
         </p>
@@ -299,14 +272,10 @@
           <button id="explain-proceed-button" class="centre btn btn-primary mb-2 mx-auto"
             onclick="javascript:proceed()">OK, next question</button>
         </div>
-
       </div>
     </div>
-
-
   </div>
 
   <script src="assets/bootstrap.min.js"></script>
 </body>
-
 </html>
