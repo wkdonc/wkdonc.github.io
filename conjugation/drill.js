@@ -578,6 +578,7 @@ function processAnswer() {
   $('#proceed button').focus();
 
   updateHistoryView(log);
+  window.scrollTo(0, 0);
 }
 
 function shakeInputArea() {
