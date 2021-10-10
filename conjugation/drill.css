@@ -25,9 +25,16 @@ body, input {
 #question {
   padding-top: 40px;
   padding-bottom: 40px;
+  margin-right: 8px;
+  margin-left: 8px;
   font-size: 16px;
   text-shadow: 2px 2px 4px var(--neutral-dark);
+  text-align: center;
   color: white;
+}
+
+#questionFirstHalf {
+  margin-bottom: 8px;
 }
 
 #questionFirstHalf,
@@ -53,21 +60,35 @@ body, input {
     font-size: 1.15rem;
   }
 }
-
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-
+/* Small devices (landscape phones, below 576px) */
+@media (max-width: 576px) {
   #question {
     font-size: 24px;
   }
 
   #answer, .correct, .incorrect {
-    font-size: 24px;
+    font-size: 28px;
   }
 
   #responseButton {
-    font-size: 24px;
-    line-height: 24px;
+    font-size: 28px;
+    line-height: 28px;
+  }
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+
+  #question {
+    font-size: 32px;
+  }
+
+  #answer, .correct, .incorrect {
+    font-size: 32px;
+  }
+
+  #responseButton {
+    font-size: 32px;
+    line-height: 32px;
   }
 }
 
