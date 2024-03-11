@@ -168,15 +168,30 @@
 
     <div class="row justify-content-center mt-3 ml-2 mr-2">
       <div class="form-group">
-        <div class="form-check"><input class="form-check-input" type="checkbox" id="trick" checked><label
-            class="form-check-label" for="trick">Trick questions (answers may be the same as the given form)</label>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="trick" checked>
+          <label class="form-check-label" for="trick">Trick questions (answers may be the same as the given form)</label>
         </div>
-        <div class="form-check"><input class="form-check-input" type="checkbox" id="kana"><label
-            class="form-check-label" for="kana">Use hiragana throughout the test (no kanji)</label></div>
-        <div class="form-check"><input class="form-check-input" type="checkbox" id="furigana_always" checked><label
-            class="form-check-label" for="furigana_always">Show furigana on questions</label></div>
-        <div class="form-check" id="useVoiceSection" style="display: none"><input class="form-check-input" type="checkbox" id="use_voice"><label
-            class="form-check-label" for="use_voice">Use speech synthesis (experimental)</label></div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="kana">
+          <label class="form-check-label" for="kana">Use hiragana throughout the test (no kanji)</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="furigana_always" checked>
+          <label class="form-check-label" for="furigana_always">Show furigana on questions</label>
+        </div>
+        <div class="form-check" id="goToNextQuestion">
+          <input class="form-check-input" type="checkbox" id="go_to_next_question">
+          <label class="form-check-label" for="go_to_next_question">Automatically go to the next question on success</label>
+        </div>
+        <div class="form-check" id="autoShowExplanatioj">
+          <input class="form-check-input" type="checkbox" id="auto_show_explanation">
+          <label class="form-check-label" for="auto_show_explanation">Automatically show the explanation on error</label>
+        </div>
+        <div class="form-check" id="useVoiceSection" style="display: none">
+          <input class="form-check-input" type="checkbox" id="use_voice">
+          <label class="form-check-label" for="use_voice">Use speech synthesis (experimental)</label>
+        </div>
       </div>
     </div>
 
